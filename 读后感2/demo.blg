@@ -1,0 +1,9 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'demo.blg'
+[28] biber-MSWIN32:313> INFO - === 
+[50] Biber.pm:371> INFO - Reading 'demo.bcf'
+[131] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[137] Utils.pm:193> WARN - The file 'demo.bcf' does not contain any citations!
+[145] bbl.pm:617> INFO - Writing 'demo.bbl' with encoding 'UTF-8'
+[145] bbl.pm:720> INFO - Output to demo.bbl
+[145] Biber.pm:110> INFO - WARNINGS: 1
