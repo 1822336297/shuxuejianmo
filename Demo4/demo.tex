@@ -1,0 +1,205 @@
+\documentclass{whutmod}
+\usepackage{metalogo}
+\usepackage{float}
+\usepackage{subfigure} 
+\usepackage{url}
+\usepackage[style=caspervector,backend=biber,utf8]{biblatex}
+\addbibresource{wenxian.bib}
+\team{23}	% 组号
+\membera{刘子川}
+\joba{编程}
+\memberb{程宇}
+\jobb{建模}
+\memberc{陈荣兴}
+\jobc{建模}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+
+\title{第四次论文格式}
+\tihao{4} % 题号
+
+\begin{document}
+%	这里的封面你们有问题，先注释着
+%	\maketitle
+	
+	\begin{abstract}
+“拍照赚钱”APP 是基于移动互联网的自助式劳务众包平台，使得企业可利 用大众力量，低成本、高效率地完成各种商品检查与信息搜集的任务。本文通过 建立数学模型，就 APP 中的任务定价问题进行分析，给出最优的任务定价方案。
+   ~\\%~\\为换行
+   
+针对问题一, 针对问题的这一段总结。利用什么软件+建立什么模型+算法方法+求解的特点+主要的结果+评价及其推广。  注意黑体字\text{描黑重点关键词}。
+~\\
+
+\textbf{例子：}针对问题二，对项目的任务定价规律进行\textbf{定性与定量研究}。利用 Matlab 的 cftool 工具箱绘制出任务的经纬度坐标与定价数据的\textbf{三维拟合图}，观察到任务 分布密集的地区任务定价较低。对任务的位置数据进行空间离散化处理和 K-Means 分析，将任务分布的区域等划分为若干网格区域，定义影响任务定价的 四个因子，即网格内任务数量、会员人数、会员平均完成能力、任务与中心点的 距离。运用灰色关联矩阵定量分析四个影响因子与定价的相关度，分别为 0.9710,0.9671,0.9633,0.9390。得出所定义的指标对定价相关性很高，能较好 描述定价规律。最后通过比较未完成任务与已完成任务的相关度矩阵得出距离对 任务的完成的影响是最显著的
+   ~\\
+
+针对问题三，
+   ~\\
+   
+针对问题四，
+   ~\\
+
+本文中所提到的模型优点主要有两点：一、在与污染源头距离较短时预测抗噪能力较强；二、利用更高定位精度和鲁棒性的直线解析法，溯源追踪能力较强。
+  
+		\keywords{对流扩散方程\quad  直线解析法\quad  溯源算法\quad 拉普拉斯变换\quad }
+		
+	\end{abstract}
+	
+	%目录
+	\tableofcontents
+	\newpage	%换页符
+	
+	\section{问题重述}
+	\subsection{问题背景}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	
+	\subsection{问题提出}
+	
+	围绕xxxxxxx,依次提出以下问题：
+	
+	\begin{itemize}
+		\item [(1)]
+		 抄
+		\item [(2)] 
+		\item [(3)] 
+		\item [(4)] 
+	\end{itemize}
+	
+	\section{模型假设}
+	\begin{itemize}
+		\item [(1)] 就写假设就行了吧
+		\item [(2)] 
+		\item [(3)]
+		\item [(4)]
+	\end{itemize}
+	
+	
+	\section{符号说明}
+%	每行都有线的表
+%	\begin{center}
+%		\begin{tabular}{cc}
+%			\hline
+%			\makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
+%			$C_{0}$	    &  污染源初始浓度 \\ \hline
+%			$C(x,t)$	    &  污染浓度随时空变化 \\ \hline
+%			$u_{x}$	    &  江河平均纵向流速 \\ \hline
+%			$E_{x}$  &  铊在江河纵向弥散系数\\ \hline
+%		$p$   &  面污染物纵向距离\\ \hline
+%			$K_{c}$	    & 污染物降解系数  \\ \hline
+%		    $a$	& 污染超标系数 \\ \hline
+%		     $x$	& 距污染源的一维距离 \\ \hline
+%		      $t$	& 距污染发生后的时间 \\ \hline
+%		       $V_{A}$	& 溶液摩尔体积 \\ \hline
+%		      $M_{B}$	& 江水的摩尔质量 \\ \hline
+%		     $\mu_{B}$	& 溶剂的粘度 \\ \hline		      
+%		\end{tabular}
+%	\end{center}
+
+%三线表
+	\begin{table}[H]
+	\label{biao} \centering
+		\begin{tabular}{cccc}
+			\toprule[1.5pt]
+			%%表示第一列占4cm 第二列占4cm 第三列占4cm 的距离 并且这几个字都是居中对齐
+			\multicolumn{1}{m{4cm}}{\centering 符号} & \multicolumn{1}{m{4cm}}{\centering 说明} & \multicolumn{1}{m{4cm}}{\centering 单位}\\
+			\midrule[1pt]
+			$C_{0}$	 &  污染源初始浓度 & 单位\\ 
+			$C(x,t)$ &  污染浓度随时空变化 & 单位\\ 
+			$u_{x}$	 &  江河平均纵向流速 & 单位\\ 
+			$E_{x}$  &  铊在江河纵向弥散系数& 单位\\ 
+			\bottomrule[1.5pt]
+		\end{tabular}
+	\end{table}
+	注：未列出符号及重复的符号以出现出为准
+
+	
+	\section{一级标题}
+	\subsection{二级标题}
+	\subsubsection{三级标题}
+	\paragraph{段落}
+
+	\subsection{模型的建立与求解}
+
+%	数学环境（带编号
+%	$ $为数学环境
+	\begin{gather}
+		\frac{\partial c}{\partial t}+u_{x}\frac{\partial c}{\partial x}=E_{x}\frac{\partial^{2} C}{\partial x^{2}}-Kc
+	\end{gather}
+
+	式中：$E_{x}$为 纵向分散系数，$K_{c}$为污染物的降解系数，
+	$\frac{\partial c}{\partial t}$ 浓度随时间的变化率，$\frac{\partial c}{\partial x}$ 浓度随空间的变化率。
+	
+%	数学环境（不带编号
+	\begin{gather*}
+	C(0,t)=C_{0}\delta (t)\\
+	 C(x,0)=0(x>0)
+	\end{gather*}
+
+%	\parencite{geng2019novel}为文献引用
+	查阅资料可得\parencite{geng2019novel}
+	
+%	~\ref{llllll}~为图表引用，中间为为图表\label{}
+具体浓度分布如图~\ref{llllll}~所示：
+
+%	图片插入，大小调整[width=.5\textwidth]	[width=.7\textwidth]等
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figures/matlab.png}
+		\caption{浓度分布随时间推移过程图}\label{llllll}
+	\end{figure}
+
+	\section{问题二模型的建立与求解}
+	\subsection{问题的描述与分析}
+	问题分析写\textbf{流程图！！}其流程图如图~\ref{lct}~所示:
+			\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\textwidth]{figures/lct.png}
+	\caption{算法流程图}\label{lct}
+	\end{figure}
+	\subsection{模型的建立与求解}
+	
+
+	\section{问题三模型的建立与求解}
+	
+	
+	\subsection{问题的描述与分析}
+
+	\subsection{模型的建立与求解}
+
+	\section{问题四模型的建立与求解}
+	
+	\subsection{问题的描述与分析}
+	
+	\subsection{模型的建立与求解}
+
+
+
+	\section{模型的评价}
+	\subsection{模型的优点}
+xxxxxxxxxxxxxxxxxxxxxxxxx
+	
+	\subsection{模型的缺点}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+	\subsection{模型的改进与展望}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	\newpage	%换页符
+	%%参考文献
+	%\begin{thebibliography}{9}%宽度9
+	% \setlength{\itemsep}{-2mm}
+	
+	\printbibliography[title = {参考文献}]	%使用国标参考文献添加方式
+	%参考文献添加到wenxian.bib里，再引用
+	
+	\newpage
+	%附录
+	\appendix %%附录
+\section{代码}
+\subsection{爬取数据--python源代码}
+\begin{lstlisting}[language=python]%这里修改语言
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end{lstlisting}
+
+\end{document}
