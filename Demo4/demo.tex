@@ -118,23 +118,47 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	\subsection{二级标题}
 	\subsubsection{三级标题}
 	\paragraph{段落}
-
+	\section{问题一模型的建立与求解}
+	\subsection{问题的描述与分析}
+	针对问题一，本题要求对武汉的人才吸引力做出量化评价，本文采用因子分析法建立模型，将通过不同的因子对变量的影响程度进行分析，建立客观的评价模型。首先根据题目要求和以往人才吸引要素研究，寻找合适的人才吸引力因素，确立要素框架并寻找各个因素相对应的数据。在将所得数据进行标准化与归一化处理后，进行$KMO$检验和巴特利特检验以验证所选变量是否适合做因子分析。通过主成分分析法确定公因子数目，求解旋转后因子荷载矩阵并对公因子命名。
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.8\textwidth]{figures/lct.png}
+		\caption{算法流程图}\label{lct}
+	\end{figure}
 	\subsection{模型的建立与求解}
-
-%	数学环境（带编号
-%	$ $为数学环境
+	\subsubsection{评价指标建立}
+	\subsubsection{公因子的确定}
+	标准化后数据如表一所示（附表一），表一相关系数矩阵$R$如下（附加相关系数矩阵）
+	设$\lambda_{1} \geqslant \lambda_{2} \geqslant \cdots \geqslant \lambda_{p}$为样本相关系数矩阵$R$的特征值，$??$为相应的标准正交化特征向量。设$m<p$，则因子载荷矩阵$\Lambda$为
 	\begin{gather}
-		\frac{\partial c}{\partial t}+u_{x}\frac{\partial c}{\partial x}=E_{x}\frac{\partial^{2} C}{\partial x^{2}}-Kc
+	\Lambda=\left[\sqrt{\lambda_{1}} \eta_{1}, \sqrt{\lambda_{2}} \eta_{2}, \cdots, \sqrt{\lambda_{m}} \eta_{m}\right]
 	\end{gather}
+    用$\boldsymbol{R}-\boldsymbol{\Lambda} \boldsymbol{\Lambda}^{\mathrm{T}}$对角元来估计特殊因子的的方差
+	\begin{gather}
+	\sigma_{i}^{2}=1-\sum_{j=1}^{m} \alpha_{i j}^{2}
+	\end{gather}
+	得总方差解释如表三（附表三）
+	由表$3$特征根知，因子$1$的特征值$λ1=$，占方差的 $\%$。由图$1$知，当提取$1、2$个公因子时，特征值变化非常明显，当提取第$n+1$个以后的公因子时，特征值变化比较小，基本趋于平缓。由此说明，提取$n$个公因子对原变量信息的刻画有显著作用。因此，在这里我们提取$n$个公共因子，这$n$个公因子的累计方差达到$\%$，即这$n$个公因子可以反映原来$?$个指标的$???\%$的信息量，可见采用前$n$个公因子对这$?$个城市吸引力进行评价是比较合适的。
+	\subsubsection{未转轴的因子载荷矩阵}
+	表 4 中的每个数据表示了相应因子变量对相应原变量的相对重要程度。由于得到的公共因子与各指标的载荷分布归类比较困难，需要对因子载荷矩阵进行正交旋转，这里运用方差最大正交旋转法，得到旋转后的因子载荷矩阵表(4)。
+	表$3$是初始因子载荷矩阵，由此可写出因子分析模型的如下：
+	\begin{gather}
+	\sigma_{i}^{2}=1-\sum_{j=1}^{m} \alpha_{i j}^{2}%(附线性方程公式)
+	\end{gather}
+	\subsubsection{未转轴的因子载荷矩阵}
+	通过凯撒正态化最大方差法，旋转在$?$次迭代后已收敛。得表$5$(附表五)
+	根据表 5 发现，旋转后的因子系数已经明显向两极分化，有了更鲜明的实际意义。因子载荷的绝对值越大，则表明该因子与变量的重叠性越高，在解释因子的时候就越重要。
+	(因子命名)
+	\subsubsection{求得因子得分和综合绩效得分}
+	采用回归法估计因子得分系数，并输出因子得分系数矩阵。具体结果见表$6$
+	由估计出的因子得分，可以量化描述城市人才吸引力水平，利用因子得分可以从不同角度对城市人才吸引力水平进行比较分析。为了便于对各城市进行人才吸引力评价，现利用各城市的因子得分表计算综合得分，吸引力水平的获取是基于总方差分解表中旋转后各因子的方差贡献率及计算所得的城市各因子得分获取的。其计算公式如下：
+	\begin{gather}
+	\sigma_{i}^{2}=1-\sum_{j=1}^{m} \alpha_{i j}^{2}%(附结果计算公式)
+	\end{gather}
+	计算结果见表$7$
+	\subsection{结果分析}
 
-	式中：$E_{x}$为 纵向分散系数，$K_{c}$为污染物的降解系数，
-	$\frac{\partial c}{\partial t}$ 浓度随时间的变化率，$\frac{\partial c}{\partial x}$ 浓度随空间的变化率。
-	
-%	数学环境（不带编号
-	\begin{gather*}
-	C(0,t)=C_{0}\delta (t)\\
-	 C(x,0)=0(x>0)
-	\end{gather*}
 
 %	\parencite{geng2019novel}为文献引用
 	查阅资料可得\parencite{geng2019novel}
@@ -183,7 +207,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-	\subsection{模型的改进与展望}
+	\subsection{模型的改进与展望}%
 xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	\newpage	%换页符
 	%%参考文献
