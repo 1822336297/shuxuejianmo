@@ -1,0 +1,56 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{geng2019novel}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5072bc1d22ab66de0bc83139894150a9}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Runzhe},
+           giveni={R\bibinitperiod}}}%
+        {{hash=46d236aeda09080515e1280b52e2beb4}{%
+           family={Sharpley},
+           familyi={S\bibinitperiod},
+           given={Andrew\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{fullhash}{301f447fa4ced009361704a875f36bb5}
+      \strng{bibnamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authorbibnamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authornamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authorfullhash}{301f447fa4ced009361704a875f36bb5}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Cleaner Production}
+      \field{title}{A Novel Spatial Optimization Model for Achieve the trad-offs placement of best management practices for agricultural non-point source pollution control at multi-spatial scales}
+      \field{userf}{en}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

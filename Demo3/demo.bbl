@@ -1,0 +1,335 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{liu2019treatment}{article}{}
+      \name{author}{8}{}{%
+        {{hash=f63248af92792b4940014790209d0a2c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yulei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=948f26b38fba102b6f820808e554bc53}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+        {{hash=35bde60a328abfdeab03cf2da9e2d41f}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Haiming},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a53983a49f1e58385ec2987f130bd62b}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhuangsong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7afb9f9f30527f16b98d10d487b5bccf}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chengbiao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4097d1329fbc9c7576e8283ac57d9ca6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Guojun},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7f2ee26ce337a5cace4796fd0d786569}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Haiyang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=70d98ba727cc8114a6e494cf39de84a7}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9f422a039aa5d4ca303a75270bd2f3cf}
+      \strng{fullhash}{e471b762fcda6492a88374cc9168598d}
+      \strng{bibnamehash}{fa9c97901ccb477735f15d997c1ed71c}
+      \strng{authorbibnamehash}{fa9c97901ccb477735f15d997c1ed71c}
+      \strng{authornamehash}{9f422a039aa5d4ca303a75270bd2f3cf}
+      \strng{authorfullhash}{e471b762fcda6492a88374cc9168598d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Separation and Purification Technology}
+      \field{title}{Treatment of trace thallium in contaminated source waters by ferrate pre-oxidation and poly aluminium chloride coagulation}
+      \field{userf}{en}
+      \field{year}{2019}
+    \endentry
+    \entry{张永祥2018龙江河镉污染分布及迁移研究}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=1947b33b0a27cc65260449493f16fe11}{%
+           family={张永祥},
+           familyi={张\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {广西大学}%
+      }
+      \strng{namehash}{1947b33b0a27cc65260449493f16fe11}
+      \strng{fullhash}{1947b33b0a27cc65260449493f16fe11}
+      \strng{bibnamehash}{1947b33b0a27cc65260449493f16fe11}
+      \strng{authorbibnamehash}{1947b33b0a27cc65260449493f16fe11}
+      \strng{authornamehash}{1947b33b0a27cc65260449493f16fe11}
+      \strng{authorfullhash}{1947b33b0a27cc65260449493f16fe11}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{龙江河镉污染分布及迁移研究}
+      \field{type}{phdthesis}
+      \field{userf}{en}
+      \field{year}{2018}
+      \field{pages}{95\bibrangedash 103}
+      \range{pages}{9}
+    \endentry
+    \entry{geng2019novel}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5072bc1d22ab66de0bc83139894150a9}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Runzhe},
+           giveni={R\bibinitperiod}}}%
+        {{hash=46d236aeda09080515e1280b52e2beb4}{%
+           family={Sharpley},
+           familyi={S\bibinitperiod},
+           given={Andrew\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{fullhash}{301f447fa4ced009361704a875f36bb5}
+      \strng{bibnamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authorbibnamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authornamehash}{301f447fa4ced009361704a875f36bb5}
+      \strng{authorfullhash}{301f447fa4ced009361704a875f36bb5}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Cleaner Production}
+      \field{title}{A Novel Spatial Optimization Model for Achieve the trad-offs placement of best management practices for agricultural non-point source pollution control at multi-spatial scales}
+      \field{userf}{en}
+      \field{year}{2019}
+    \endentry
+    \entry{xie2019intra}{article}{}
+      \name{author}{9}{}{%
+        {{hash=c62eb44c432ce3fe7311307383d49760}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b70a6174e98e7895945104f84974c9e3}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Jianwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f008f9019944925dd1d36ae1d8f9a76b}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Zhenyao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=046842e5933d7131df18c28d8bce94ff}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a173350dc554e94a6dec498fc93a508c}{%
+           family={Lai},
+           familyi={L\bibinitperiod},
+           given={Xijun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=615055627e8f648adac252a0a8ce7dda}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={Jiali},
+           giveni={J\bibinitperiod}}}%
+        {{hash=271563e409be3bd62b190507f8c3ad6e}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Guoyuan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=93046bf43e9f8133cb4daf771247e4f9}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Yexuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6d64c7b054fe260df46c0b56cb930f8f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Xinquan},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9c91a9bb01cca30311fd71f947277d11}
+      \strng{fullhash}{3ee3c5df5f8f19ebae679d8dcc3e7908}
+      \strng{bibnamehash}{656bdf6ca732a66dbded5eabed2a567f}
+      \strng{authorbibnamehash}{656bdf6ca732a66dbded5eabed2a567f}
+      \strng{authornamehash}{9c91a9bb01cca30311fd71f947277d11}
+      \strng{authorfullhash}{3ee3c5df5f8f19ebae679d8dcc3e7908}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Catena}
+      \field{title}{Intra-and inter-event characteristics and controlling factors of agricultural nonpoint source pollution under different types of rainfall-runoff events}
+      \field{userf}{en}
+      \field{volume}{182}
+      \field{year}{2019}
+      \field{pages}{104105}
+      \range{pages}{1}
+    \endentry
+    \entry{沈凤文2016点源污染的移动式检测定位及应用}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=ba9125bb9377e0a3f167f6a19c298e4e}{%
+           family={沈凤文},
+           familyi={沈\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {湖南大学}%
+      }
+      \strng{namehash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \strng{fullhash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \strng{bibnamehash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \strng{authorbibnamehash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \strng{authornamehash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \strng{authorfullhash}{ba9125bb9377e0a3f167f6a19c298e4e}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{点源污染的移动式检测定位及应用}
+      \field{type}{mathesis}
+      \field{userf}{en}
+      \field{year}{2016}
+      \field{pages}{101\bibrangedash 120}
+      \range{pages}{20}
+    \endentry
+    \entry{ahn2019uncertainty}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5e1b1cc517181689fbb57052f20465a2}{%
+           family={Ahn},
+           familyi={A\bibinitperiod},
+           given={Myeonghui},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5d951c90ae2cef0abc278079742260ef}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Byungman},
+           giveni={B\bibinitperiod}}}%
+        {{hash=105fc8b5f79bd81a66e7efda3b32e260}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Un},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{64d4745ccfb71ce3cd76f773a3464363}
+      \strng{fullhash}{f8873d1f70b65ef7072668c66e1f599e}
+      \strng{bibnamehash}{f8873d1f70b65ef7072668c66e1f599e}
+      \strng{authorbibnamehash}{f8873d1f70b65ef7072668c66e1f599e}
+      \strng{authornamehash}{64d4745ccfb71ce3cd76f773a3464363}
+      \strng{authorfullhash}{f8873d1f70b65ef7072668c66e1f599e}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{KSCE Journal of Civil Engineering}
+      \field{title}{Uncertainty Analysis for Mean Flow Velocity and Discharge Measurements using Floats based on Large-Scale Experiments}
+      \field{userf}{en}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+    \endentry
+    \entry{邓朝华2017浅谈长江航道表面流速流向的数据采集}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c299e37b35aebfb62a1fa6d082239390}{%
+           family={邓朝华},
+           familyi={邓\bibinitperiod}}}%
+      }
+      \strng{namehash}{c299e37b35aebfb62a1fa6d082239390}
+      \strng{fullhash}{c299e37b35aebfb62a1fa6d082239390}
+      \strng{bibnamehash}{c299e37b35aebfb62a1fa6d082239390}
+      \strng{authorbibnamehash}{c299e37b35aebfb62a1fa6d082239390}
+      \strng{authornamehash}{c299e37b35aebfb62a1fa6d082239390}
+      \strng{authorfullhash}{c299e37b35aebfb62a1fa6d082239390}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{中国水运: 航道科技}
+      \field{number}{1}
+      \field{title}{浅谈长江航道表面流速流向的数据采集}
+      \field{userf}{en}
+      \field{year}{2017}
+      \field{pages}{75\bibrangedash 80}
+      \range{pages}{6}
+    \endentry
+    \entry{miyabe2011estimation}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d0513aca3910e97c94b956562b9cf4be}{%
+           family={Miyabe},
+           familyi={M\bibinitperiod},
+           given={Kanji},
+           giveni={K\bibinitperiod}}}%
+        {{hash=26a35adc13fa763c28ce52fdd0aa04f5}{%
+           family={Isogai},
+           familyi={I\bibinitperiod},
+           given={Ryo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \strng{fullhash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \strng{bibnamehash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \strng{authorbibnamehash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \strng{authornamehash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \strng{authorfullhash}{516ad2ce3467dfa060dc05ebedce8b91}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chromatography A}
+      \field{number}{38}
+      \field{title}{Estimation of molecular diffusivity in liquid phase systems by the Wilke--Chang equation}
+      \field{userf}{en}
+      \field{volume}{1218}
+      \field{year}{2015}
+      \field{pages}{6639\bibrangedash 6645}
+      \range{pages}{7}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
