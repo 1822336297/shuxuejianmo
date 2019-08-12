@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  12 AUG 2019 18:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  12 AUG 2019 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1230,6 +1230,9 @@ LaTeX Warning: Label `llll' multiply defined.
 
 LaTeX Warning: Label `tab1' multiply defined.
 
+
+LaTeX Warning: Label `tab:addlabel' multiply defined.
+
 )
 \openout1 = `demo.aux'.
 
@@ -1460,11 +1463,11 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-)
+ [2])
 \tf@toc=\write6
 \openout6 = `demo.toc'.
 
- [2] [3]
+ [3]
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 106.
 LaTeX Font Info:    Try loading font information for U+msa on input line 106.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1487,13 +1490,35 @@ File: figures/clt.png Graphic file (type bmp)
  [6] [7]
 Missing character: There is no α in font cmmi12!
 Missing character: There is no α in font cmmi12!
- [8]
-Missing character: There is no λ in font cmmi12!
- [9]
 
-LaTeX Warning: Reference `llllll' on page 10 undefined on input line 261.
 
-[10] [11] [12] (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+LaTeX Warning: Reference `shuju' on page 8 undefined on input line 179.
+
+[8] [9]
+File: figures/123.png Graphic file (type bmp)
+<figures/123.png>
+
+
+LaTeX Warning: Reference `cehngfenjuzheng' on page 10 undefined on input line 2
+63.
+
+
+LaTeX Warning: Reference `cehngfenjuzheng' on page 10 undefined on input line 2
+67.
+
+
+LaTeX Warning: Reference `xuanzhuanhuo' on page 10 undefined on input line 267.
+
+
+
+LaTeX Warning: Reference `xuanzhuanhuo' on page 10 undefined on input line 271.
+
+
+[10]
+
+LaTeX Warning: Reference `llllll' on page 11 undefined on input line 294.
+
+[11] [12] [13] (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1521,17 +1546,36 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 307
+Package Listings Warning: Text dropped after begin of listing on input line 340
 .
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+
+Overfull \hbox (980.68976pt too wide) in paragraph at lines 348--418
+ [][][] 
+ []
+
+[14] [15]
+Overfull \vbox (413.18877pt too high) has occurred while \output is active []
+
+
+[16]
+File: figures/1.png Graphic file (type bmp)
+<figures/1.png>
+ [17]
+Overfull \vbox (43.13416pt too high) has occurred while \output is active []
+
+
+[18]
+File: figures/2.png Graphic file (type bmp)
+<figures/2.png>
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: C338958D1438302E95D572E10567904B.
+(rerunfilecheck)             Checksum: 36D2CE5A1857892CB3740C9C63C119FE.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1545,15 +1589,15 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'demo.run.xml'.
 \openout1 = `demo.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 35461 strings out of 494857
- 687200 string characters out of 6176225
- 1143500 words of memory out of 5000000
- 38930 multiletter control sequences out of 15000+600000
+ 35479 strings out of 494857
+ 687435 string characters out of 6176225
+ 1195742 words of memory out of 5000000
+ 38945 multiletter control sequences out of 15000+600000
  540717 words of font info for 116 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 61i,14n,81p,937b,4571s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,14n,81p,1561b,4571s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (13 pages).
+Output written on demo.pdf (19 pages).
