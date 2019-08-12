@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  12 AUG 2019 13:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  12 AUG 2019 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1454,21 +1454,20 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-)
+ [2])
 \tf@toc=\write6
 \openout6 = `demo.toc'.
 
- [2]
+ [3]
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 105.
 LaTeX Font Info:    Try loading font information for U+msa on input line 105.
  (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 105.
-
-(d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3]
+) [4]
 File: figures/clt.png Graphic file (type bmp)
 <figures/clt.png>
 
@@ -1476,13 +1475,34 @@ File: figures/clt.png Graphic file (type bmp)
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
 (Font)              using `TU/SimSun(1)/m/n' instead on input line 135.
 
-[4] [5]
-Missing character: There is no λ in font cmmi12!
+[5]
+Missing character: There is no α in font cmmi12!
+Missing character: There is no α in font cmmi12!
  [6]
+Missing character: There is no λ in font cmmi12!
+ [7]
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+ [8]
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
 
-LaTeX Warning: Reference `llllll' on page 7 undefined on input line 193.
 
-[7] [8] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+LaTeX Warning: Reference `llllll' on page 9 undefined on input line 241.
+
+[9] [10] [11] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1510,17 +1530,17 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 239
+Package Listings Warning: Text dropped after begin of listing on input line 287
 .
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 242.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 49F9F479B0EA35BB169EDCFCA987A77C.
+(rerunfilecheck)             Checksum: F1D6CC7DB86F959EFF07C6E197F5DE32.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1531,15 +1551,15 @@ LaTeX Warning: There were undefined references.
 Package logreq Info: Writing requests to 'demo.run.xml'.
 \openout1 = `demo.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 35433 strings out of 492922
- 685858 string characters out of 6136751
- 1144570 words of memory out of 5000000
- 39026 multiletter control sequences out of 15000+600000
+ 35477 strings out of 492922
+ 688613 string characters out of 6136751
+ 1147290 words of memory out of 5000000
+ 39070 multiletter control sequences out of 15000+600000
  540717 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  61i,14n,81p,937b,4578s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (9 pages).
+Output written on demo.pdf (12 pages).
