@@ -18,6 +18,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}基于因子分析的人才吸引力评价分析}{5}{subsubsection.4.1.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{同向化处理}{5}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{标准化处理}{5}{section*.5}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}问题的描述与分析}{5}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的建立与求解}{6}{subsection.4.3}
