@@ -1,0 +1,220 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{lepawsky2010metropolis}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9e6afc0928e0ca0359b340af27bfc0cd}{%
+           family={Lepawsky},
+           familyi={L\bibinitperiod},
+           given={Josh},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2d943678b4599c6eb3ce7f1f3a6ec80c}{%
+           family={Phan},
+           familyi={P\bibinitperiod},
+           given={Chrystal},
+           giveni={C\bibinitperiod}}}%
+        {{hash=65ffbf5c5b9f6210aa2f770718e28ac7}{%
+           family={Greenwood},
+           familyi={G\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{522ec513baa3ce913c040064c3f7feb7}
+      \strng{fullhash}{f83c5051cc3d6ec01f8e14e977fd1663}
+      \strng{bibnamehash}{f83c5051cc3d6ec01f8e14e977fd1663}
+      \strng{authorbibnamehash}{f83c5051cc3d6ec01f8e14e977fd1663}
+      \strng{authornamehash}{522ec513baa3ce913c040064c3f7feb7}
+      \strng{authorfullhash}{f83c5051cc3d6ec01f8e14e977fd1663}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Canadian Geographer/Le G{é}ographe canadien}
+      \field{number}{3}
+      \field{title}{Metropolis on the margins: talent attraction and retention to the St. John's city-region}
+      \field{userf}{en}
+      \field{volume}{54}
+      \field{year}{2010}
+      \true{nocite}
+      \field{pages}{324\bibrangedash 346}
+      \range{pages}{23}
+    \endentry
+    \entry{张瑞红2012河南省产业集群环境人才吸引力评价研究}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9bafd6b2f396bebbf177a9e0e9c6ac82}{%
+           family={张瑞红},
+           familyi={张\bibinitperiod}}}%
+      }
+      \strng{namehash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \strng{fullhash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \strng{bibnamehash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \strng{authorbibnamehash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \strng{authornamehash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \strng{authorfullhash}{9bafd6b2f396bebbf177a9e0e9c6ac82}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{科技管理研究}
+      \field{number}{10}
+      \field{title}{河南省产业集群环境人才吸引力评价研究}
+      \field{userf}{en}
+      \field{volume}{32}
+      \field{year}{2012}
+      \true{nocite}
+      \field{pages}{180\bibrangedash 184}
+      \range{pages}{5}
+    \endentry
+    \entry{宋鸿2010城市人才吸引力的影响因素及提升对策}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f161926f4304c47513dec50faff5f916}{%
+           family={宋鸿},
+           familyi={宋\bibinitperiod}}}%
+        {{hash=1e0c8256c0dd03e33f11e48548f5a3ff}{%
+           family={张培利},
+           familyi={张\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {湖北社會科學編輯部}%
+      }
+      \strng{namehash}{5e162eca79112ab142994c7711d8d40e}
+      \strng{fullhash}{5e162eca79112ab142994c7711d8d40e}
+      \strng{bibnamehash}{5e162eca79112ab142994c7711d8d40e}
+      \strng{authorbibnamehash}{5e162eca79112ab142994c7711d8d40e}
+      \strng{authornamehash}{5e162eca79112ab142994c7711d8d40e}
+      \strng{authorfullhash}{5e162eca79112ab142994c7711d8d40e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{湖北社會科學}
+      \field{number}{2}
+      \field{title}{城市人才吸引力的影响因素及提升对策}
+      \field{userf}{en}
+      \field{volume}{2010}
+      \field{year}{2010}
+      \true{nocite}
+      \field{pages}{43\bibrangedash 45}
+      \range{pages}{3}
+    \endentry
+    \entry{gertler2014attracting}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9007a45fd2857d514b64b4f7d0a27f28}{%
+           family={Gertler},
+           familyi={G\bibinitperiod},
+           given={Meric\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=0e7893f345ed20fc936e50bdf41c1985}{%
+           family={Geddie},
+           familyi={G\bibinitperiod},
+           given={Kate},
+           giveni={K\bibinitperiod}}}%
+        {{hash=169713cdcce61facb8454a055fff57c8}{%
+           family={Hatch},
+           familyi={H\bibinitperiod},
+           given={Carolyn},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2bf74a114410b3c36600ed4fa778adfb}{%
+           family={Rekers},
+           familyi={R\bibinitperiod},
+           given={Josephine},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Toronto Press Toronto}%
+      }
+      \strng{namehash}{b779134d9c665383207afcdf511b45fe}
+      \strng{fullhash}{1aa76131ba9cb3ce118e190c3ad55116}
+      \strng{bibnamehash}{55cf0603adf6ccb2f9d14b68ef7758c9}
+      \strng{authorbibnamehash}{55cf0603adf6ccb2f9d14b68ef7758c9}
+      \strng{authornamehash}{b779134d9c665383207afcdf511b45fe}
+      \strng{authorfullhash}{1aa76131ba9cb3ce118e190c3ad55116}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Seeking talent for creative cities: The social dynamics of innovation}
+      \field{title}{Attracting and retaining talent: Evidence from Canada’s city-regions}
+      \field{userf}{en}
+      \field{year}{2014}
+      \true{nocite}
+      \field{pages}{3\bibrangedash 30}
+      \range{pages}{28}
+    \endentry
+    \entry{中国宏观经济数据库}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4fb16866a0ef91a34495131b20624efc}{%
+           family={EPS数据平台},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4fb16866a0ef91a34495131b20624efc}
+      \strng{fullhash}{4fb16866a0ef91a34495131b20624efc}
+      \strng{bibnamehash}{4fb16866a0ef91a34495131b20624efc}
+      \strng{authorbibnamehash}{4fb16866a0ef91a34495131b20624efc}
+      \strng{authornamehash}{4fb16866a0ef91a34495131b20624efc}
+      \strng{authorfullhash}{4fb16866a0ef91a34495131b20624efc}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{note}{中国宏观经济数据库}
+      \field{title}{http://olap.epsnet.com.cn/auth/platform.html}
+      \field{urlday}{20}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{userf}{en}
+      \field{urldateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{武汉统计局}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c2b083648e82c776b311f082a7737f97}{%
+           family={武汉统计局},
+           familyi={武\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2b083648e82c776b311f082a7737f97}
+      \strng{fullhash}{c2b083648e82c776b311f082a7737f97}
+      \strng{bibnamehash}{c2b083648e82c776b311f082a7737f97}
+      \strng{authorbibnamehash}{c2b083648e82c776b311f082a7737f97}
+      \strng{authornamehash}{c2b083648e82c776b311f082a7737f97}
+      \strng{authorfullhash}{c2b083648e82c776b311f082a7737f97}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{note}{武汉市国民经济和社会发展统计公报}
+      \field{title}{http://tjj.wuhan.gov.cn/newslist.aspx?id=2018061817071264}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2018}
+      \field{userf}{en}
+      \field{urldateera}{ce}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
