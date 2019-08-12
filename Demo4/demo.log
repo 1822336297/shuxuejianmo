@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  11 AUG 2019 20:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  12 AUG 2019 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2080,38 +2080,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--45
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-)
+ [2])
 \tf@toc=\write7
 \openout7 = `demo.toc'.
 
- [2]
+ [3]
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 105.
 LaTeX Font Info:    Try loading font information for U+msa on input line 105.
  (e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 105.
-
-(e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3]
-File: figures/lct.png Graphic file (type bmp)
-<figures/lct.png>
- [4]
+) [4]
 File: figures/lct.png Graphic file (type bmp)
 <figures/lct.png>
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 147.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 126.
 
 [5]
-File: figures/matlab.png Graphic file (type bmp)
-<figures/matlab.png>
- [6]
 File: figures/lct.png Graphic file (type bmp)
 <figures/lct.png>
- [7] [8] [9] [10]
+ [6] [7]
+Missing character: There is no λ in font cmmi12!
+Missing character: There is no 、 in font Times New Roman/OT:script=latn;languag
+e=DFLT;mapping=tex-text;!
+ [8]
+File: figures/matlab.png Graphic file (type bmp)
+<figures/matlab.png>
+File: figures/lct.png Graphic file (type bmp)
+<figures/lct.png>
+ [9] [10] [11] [12]
 (e:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -2145,17 +2147,17 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 .................................................
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 229
+Package Listings Warning: Text dropped after begin of listing on input line 249
 .
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 232.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 252.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 57B76823FF5A17408E4397032FCDCC0C.
+(rerunfilecheck)             Checksum: DD60B79B6FB87A3F6EA9A71B71C5E873.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2166,15 +2168,15 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'demo.run.xml'.
 \openout1 = `demo.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 33887 strings out of 494895
- 652891 string characters out of 6176373
- 1103302 words of memory out of 5000000
- 37328 multiletter control sequences out of 15000+600000
- 538483 words of font info for 93 fonts, out of 8000000 for 9000
+ 33925 strings out of 494895
+ 655235 string characters out of 6176373
+ 1106137 words of memory out of 5000000
+ 37364 multiletter control sequences out of 15000+600000
+ 538499 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  60i,10n,78p,10457b,4374s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (11 pages).
+Output written on demo.pdf (13 pages).
