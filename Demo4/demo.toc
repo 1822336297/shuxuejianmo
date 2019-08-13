@@ -56,19 +56,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{17}{subsection.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的改进与展望}{17}{subsection.7.3}
+\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的改进与展望}{18}{subsection.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {附录A}代码}{18}{appendix.A}
+\contentsline {section}{\numberline {附录A}代码}{19}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}数据预处理--python源代码}{18}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.1}数据预处理--python源代码}{19}{subsection.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}数据可视化--python源代码}{18}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.2}数据可视化--python源代码}{19}{subsection.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3}相关系数矩阵}{22}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.3}相关系数矩阵}{23}{subsection.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4}初始因子载荷矩阵}{22}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.4}初始因子载荷矩阵}{23}{subsection.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.5}旋转后的因子载荷矩阵}{24}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.5}旋转后的因子载荷矩阵}{25}{subsection.A.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.6}成分得分系数矩阵}{26}{subsection.A.6}
+\contentsline {subsection}{\numberline {A.6}成分得分系数矩阵}{27}{subsection.A.6}
 \contentsfinish 

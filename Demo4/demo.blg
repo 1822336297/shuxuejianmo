@@ -1,14 +1,14 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'demo.blg'
-[25] biber-MSWIN32:313> INFO - === 
-[50] Biber.pm:371> INFO - Reading 'demo.bcf'
-[127] Biber.pm:854> INFO - Using all citekeys in bib section 0
-[139] Biber.pm:3976> INFO - Processing section 0
-[150] Biber.pm:4136> INFO - Looking for bibtex format file 'wenxian.bib' for section 0
-[154] bibtex.pm:1500> INFO - LaTeX decoding ...
-[163] bibtex.pm:1316> INFO - Found BibTeX data source 'wenxian.bib'
-[231] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[231] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
-[231] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'zh__pinyin'
-[235] bbl.pm:617> INFO - Writing 'demo.bbl' with encoding 'UTF-8'
-[238] bbl.pm:720> INFO - Output to demo.bbl
+[26] biber-MSWIN32:313> INFO - === 
+[51] Biber.pm:371> INFO - Reading 'demo.bcf'
+[129] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[140] Biber.pm:3976> INFO - Processing section 0
+[151] Biber.pm:4136> INFO - Looking for bibtex format file 'wenxian.bib' for section 0
+[155] bibtex.pm:1500> INFO - LaTeX decoding ...
+[165] bibtex.pm:1316> INFO - Found BibTeX data source 'wenxian.bib'
+[233] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
+[233] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[233] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'zh__pinyin'
+[237] bbl.pm:617> INFO - Writing 'demo.bbl' with encoding 'UTF-8'
+[239] bbl.pm:720> INFO - Output to demo.bbl
