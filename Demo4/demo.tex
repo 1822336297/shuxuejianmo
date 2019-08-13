@@ -115,6 +115,20 @@
 			$F_{2}$	 &  医疗卫生环境因子 \\ 
 			$F_{3}$  &  经济贸易因子 \\ 
 			$F_{4}$  &  拥挤程度因子 \\ 
+			$X$  &  原始指标 \\ 
+			$\overline{X}$  &  指标平均值 \\ 
+			$\widetilde{X}$  &  同向化指标 \\ 
+	     	$\delta_{X}$  &  指标标准差 \\ 
+	     	$Z$  & 标准化指标 \\ 
+	     	$R$  & 相关系数矩阵 \\ 
+	     	$lambda_{p}$  & 相关系数矩阵特征值 \\ 
+	     	$eta _ {p}$  & 标准正交化特征向量 \\ 
+	     	$\Lambda$ & 因子载荷矩阵 \\ 
+	     	$\sigma_{i}$ & 方差 \\
+	     	$\alpha_{i j}$ & 载荷因子 \\
+	     	$k$ & 两极最小差 \\
+	     	$K$ & 两极最大差 \\
+	     	$\Delta _{i}(t)$ & 特征序列与因素序列的序列差 \\
 			\bottomrule[1.5pt]
 		\end{tabular}
 	\end{table}
@@ -214,7 +228,7 @@
 	\begin{gather}
 	\sigma_{i}^{2}=1-\sum_{j=1}^{m} \alpha_{i j}^{2}
 	\end{gather}
-	式中：$\sigma_{i}^{2}$为方差，$\alpha_{i j}^{2}$表示载荷因子。由上述分析，得总方差解释部分数据如表~\ref{biaosan}~所示：	
+	式中：$\sigma_{i}$为方差，$\alpha_{ij}$表示载荷因子。由上述分析，得总方差解释部分数据如表~\ref{biaosan}~所示：	
 		\begin{table}[H]
 		\centering
 		\caption{总方差解释}\label{biaosan}
@@ -415,6 +429,8 @@
 	\begin{gather}
 	\Phi _ { 0 , ( p ) } = \frac { k + \varepsilon K } { \Delta _ { 0 i } ( t ) + \varepsilon K }
 	\end{gather}
+	其中 $\varepsilon$为分辨系数，取$\varepsilon=0.5$。
+	
 	利用 MATLAB 软件分析计算得分别出第一、第二和第三产业人才与$33$个影响因素的相关联程度如表(8.3)所示。
 	
 	表(8.3)
