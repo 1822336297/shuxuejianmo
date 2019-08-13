@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  12 AUG 2019 20:55
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  13 AUG 2019 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1995,92 +1995,8 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `demo.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-
-
-Package biblatex Warning: File 'demo.bbl' is wrong format version - expected 2.
-9.
-
 Package biblatex Info: ... file 'demo.bbl' found.
-(./demo.bbl
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.62     \endentry
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.88     \endentry
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120     \endentry
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164     \endentry
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.190     \endentry
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.216     \endentry
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
+ (./demo.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
 
@@ -2164,11 +2080,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-)
+ [2])
 \tf@toc=\write7
 \openout7 = `demo.toc'.
 
- [2] [3]
+ [3]
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 106.
 LaTeX Font Info:    Try loading font information for U+msa on input line 106.
  (e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -2186,41 +2102,18 @@ LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
 (Font)              using `TU/SimSun(1)/m/n' instead on input line 127.
 
 [5]
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.134 ...性、可比性原则\parencite{lepawsky2010metropolis}
-                                                  ，并兼顾总量指标和相对指标，选取城市发展前景、主要行...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 File: figures/clt.png Graphic file (type bmp)
 <figures/clt.png>
-[6]
-
-! Package etoolbox Error: Toggle 'abx@bool@nocite' undefined.
-
-See the etoolbox package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.143 ...向化处理\parencite{张瑞红2012河南省产业集群环境人才吸引力评价研究}
-                                                  ， 公式如下:
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[7]
+ [6] [7]
 Missing character: There is no α in font cmmi12!
 Missing character: There is no α in font cmmi12!
-Missing character: There is no λ in font cmmi12!
  [8] [9]
+File: figures/123.png Graphic file (type bmp)
+<figures/123.png>
+ [10] [11] [12]
+File: figures/wuhan.png Graphic file (type bmp)
+<figures/wuhan.png>
+ [13]
 Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
 e=DFLT;mapping=tex-text;!
 Missing character: There is no ？ in font Times New Roman/OT:script=latn;languag
@@ -2239,9 +2132,9 @@ Missing character: There is no ？ in font Times New Roman/OT:script=latn;langua
 e=DFLT;mapping=tex-text;!
 
 
-LaTeX Warning: Reference `llllll' on page 10 undefined on input line 264.
+LaTeX Warning: Reference `llllll' on page 14 undefined on input line 412.
 
-[10] [11] [12] (e:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+[14] [15] [16] (e:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 \g__fontspec_family_FangSong_int=\count466
@@ -2274,17 +2167,50 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 .................................................
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 320
+Package Listings Warning: Text dropped after begin of listing on input line 468
 .
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
+
+Package Listings Warning: Text dropped after begin of listing on input line 509
+.
+
+[17]
+Overfull \hbox (981.48975pt too wide) in paragraph at lines 540--578
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 248.88112pt on input line 578.
+
+File: figures/1.png Graphic file (type bmp)
+<figures/1.png>
+[18] [19] [20]
+Overfull \vbox (71.21211pt too high) has occurred while \output is active []
+
+
+[21]
+File: figures/2.png Graphic file (type bmp)
+<figures/2.png>
+File: figures/3.png Graphic file (type bmp)
+<figures/3.png>
+ [22]
+File: figures/4.png Graphic file (type bmp)
+<figures/4.png>
+ [23]
+File: figures/5.png Graphic file (type bmp)
+<figures/5.png>
+ [24]
+File: figures/6.png Graphic file (type bmp)
+<figures/6.png>
+ [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 616.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 616.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 323.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 616.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 616.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: EE48417EB3F27D2F1E0C5B1BF0062986.
+(rerunfilecheck)             Checksum: 9711EDDA2F0174303E0DA32DA39D3A6C.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2295,23 +2221,18 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                demo
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'demo.run.xml'.
 \openout1 = `demo.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 616.
  ) 
 Here is how much of TeX's memory you used:
- 33981 strings out of 494895
- 658663 string characters out of 6176373
- 1107941 words of memory out of 5000000
- 37421 multiletter control sequences out of 15000+600000
- 538491 words of font info for 94 fonts, out of 8000000 for 9000
+ 34115 strings out of 494895
+ 662432 string characters out of 6176373
+ 1171030 words of memory out of 5000000
+ 37546 multiletter control sequences out of 15000+600000
+ 538499 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 60i,14n,78p,10457b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,14n,78p,10457b,1822s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (13 pages).
+Output written on demo.pdf (26 pages).
