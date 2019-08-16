@@ -128,11 +128,17 @@
 	\section{问题一模型的建立与求解}
 	\subsection{问题的描述与分析}
 
-	针对问题一，本题要求建立合适方案提取二值化图片中的数据，并对所提取数据的量化指标进行分析说明。本组通过解析几何计算和时间序列展开，将目标图像转化成两个特征向量。本组根据题目要求和近年的图像识别研究，确定了针对二值化图像的两个重点识别因素——轮廓特征因素和边缘特征因素。针对轮廓特征因素，首先利用matlab做解析几何运算，计算与图像轮廓有关的特征量，并将计算结果作为元素，组成轮廓特征向量。针对边缘特征因素，首先将图像边缘通过极化投影展开为时间序列，计算每支时间序列的特征量，并将计算结果作为元素，组成边缘特征向量。最后合并两个向量得到总体特征向量。
+	针对问题一，本题要求建立合适方案提取二值化图片中的数据，并对所提取数据的量化指标进行分析说明。本组通过解析几何计算和时间序列展开，将目标图像转化成两个特征向量。本组根据题目要求和近年的图像识别研究，确定了针对二值化图像的两个重点识别因素——轮廓特征因素和边缘特征因素。针对轮廓特征因素，首先利用matlab做解析几何运算，计算与图像轮廓有关的特征量，并将计算结果作为元素，组成轮廓特征向量。针对边缘特征因素，首先将图像边缘通过极化投影展开为时间序列，计算每支时间序列的特征量，并将计算结果作为元素，组成边缘特征向量。最后合并两个向量得到总体特征向量。其具体特征值如图~\ref{77}~所示：
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[width=.6\textwidth]{figures/flt.png}
+		\caption{图形特征示意图}\label{77}
+    	\end{figure}
+	
 	    \subsection{模型的建立}
 	    \subsubsection{图像基本参数与运算符号定义}
 		定义$I$表示目标树叶所对应的图像，$\partial I$表示图像边界，$D(I)$表示图像最小外接圆直径，$d(I)$表示图像最大内切圆半径，$A(I)$表示研究对象面积,$L(\partial I)$表示研究对象的轮廓线长度，$H(I)$表示研究对象的凸包域，$C(I)$为图像几何中心坐标，运算符$d(.)$代表欧式距离。
-<<<<<<< HEAD
+
 	    \subsubsection{形状特征因素}
 		定义轮廓特征向量为$ID_{shape}=[id_{1},id_{2},\cdots,id_{n}](n=6)$其中$id_{k}(k=1,2,\cdots,6)$为二值化矩阵的轮廓特征，其具体计算公式如下：
 		\begin{itemize}	
@@ -191,31 +197,7 @@
 		
 		
 		\end{itemize}	
-=======
-	    \subsubsection{轮廓特征因素}
-		定义轮廓特征向量为$ID1_{1}=[id_{1},id_{2},\cdots,id_{n}](n=6)$其中$id_{k}(k=1,2,\cdots,6)$为二值化矩阵的轮廓特征，其具体计算公式如下：
-	
-		\begin{itemize}	
-		\item [(1)]长宽比(Aspect Ratio):
-		定义$X_{I}$为图像最上方非零行与最下方非零行的行数差(长)，$Y_{I}$为图像最左方非零列与最右方非零列的列数差(宽)，长宽比$id_{1}=X_{I}/Y_{I}$。
-		
-		\item [(2)]离心率(Eccentricity): 
-		定义$E(I)$是与研究图像具有相同的二阶矩的椭圆,$a$和$b$分别为$E(I)$对应的长轴与短轴，离心率$id_{2}=\sqrt{1-(\frac{b}{a})^{2}}$，变化范围为(0,1)。
-		
-		\item[(3)]密实度(Solidity):
-		实密度$id_{3}=\frac{ A }{A(H(I))}$。其反映研究对象的仿射特征,即研究对象区域的固靠性程度。
-		
-		\item [(4)]等周因子(Isoperimetric Factor):
-		等周因子$id_{4}=\frac{4\pi \cdot  A}{L(\partial I)^{2}}$ ，其变化范围为(0,1)，描述目标树叶轮廓规整度，叶子边缘越规则,其值越接近于最大值1。
-		
-		\item [(5)]伸长率(Elongation): 
-		伸长率$id_{5}=1-\frac{2d_{I}}{D(I)}$,变化范围为(0,1),树叶越趋于圆形,相应的伸长率越小,比率$\frac{2d_{max}}{D(I)}$ 其描述目标树叶轮廓向外伸展的趋势。
-		
-		\item[(6)]最大压痕深度(MaximalIndentationDepth):
-		定义$C_{H(I)}$为研究对象凸型区域的几何中心,$L(\partial I)$表示为$H(I)$的轮廓线长度,$\forall X\in H(I)$和$\forall Y\in \partial I$,计算距离$d(X,C_{H(I)})$和$d(Y,C_{H(I)})$。定义函数$\frac{ d(X,C_{H(I)})- d(Y,C_{H(I)})}{L(H(I))}$,该函数的最大值即最大压痕深度$id_{6}$。
 
-
-		\end{itemize}
 	
 
 		\subsubsection{边缘特征因素}
@@ -226,7 +208,12 @@
 		\begin{gather}
 		\theta _{p}=y_{p}/x_{p},
 		\end{gather}
-		(图1)
+		
+	  \begin{figure}[H]
+		\centering
+		\includegraphics[width=.6\textwidth]{figures/jihua.png}
+		\caption{极化投影实意图}\label{66}
+	\end{figure}
 		
 		定义点集${{P}'(r_{p},\theta _{p})}$为研究样本，其中中包含${d}'$个一元时间序列，$Q$为单个样本一维的长度。将数据集中每个样本第$j$维$(j\in \left \{1,2,\cdots,d  \right \})$数据组成一个一元时间序列数据集，记为$X$。且
 		其中表类样本$y _ { i } \in \{ 1,2 , \cdots , C \} , i \in \{ 1 , \cdots , N \}$。
@@ -245,17 +232,31 @@
 		\begin{gather}
 		D _ { i , k } = \min _ { j = 1 , \cdots , j } \frac { 1 } { M } \sum _ { m = 1 } ^ { M } \left( X _ { i , j + m - 1 } - S _ { k , m } \right) ^ { 2 }
 		\end{gather}
-		其中$M$表示所选定的$X_{i}$与$S_{k}$的子序列长度。再找到在找到$K$个最优shapelet后，计算$K$个最优shapelet与一个时间序列间的距离作为该时间序列的新特征，时间序列样本集被映射至新特征空间，最终将之间序列降至一维向量arrays。
+		其中$M$表示所选定的$X_{i}$与$S_{k}$的子序列长度。再找到在找到$K$个最优shapelet后，计算$K$个最优shapelet与一个时间序列间的距离作为该时间序列的新特征，时间序列样本集被映射至新特征空间，最终将之间序列降至一维时间序列arrays，展开效果如图~\ref{99}~所示：
 		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figures/sjxl.png}
+		\caption{时间序列展开效果图}\label{99}
+		\end{figure}
+	
 		将arrays滤波处理后，计算每支时间序列上的极大值点数$id_{10}$，极小值点数$id_{11}$。得到边缘特征向量$ID_{margin}=[id_{9},id_{10},id_{11}]$，合并轮廓特征向量与边缘特征向量得：
 		\begin{gather}
 		ID=[ID_{shape},ID_{margin}]
 		\end{gather}
 	     其中ID为总体特征向量。
 	      \subsection{模型的求解}
-	      首先使用matlab围绕regionprops函数对研究对象进行解析几何计算，用遍历式算法逐一算出研究对象长宽比、离心率、实密度、等周因子、伸长率和最大压痕深度，得到轮廓特征向量(见代码？)。再将图片通过numpy工具箱标准正立化，以其几何中心为极点将其边缘坐标转换为极坐标，然后使用ndarrays函数将所得极坐标降维展开成时间序列，搜寻滤波后时间序列的极点数得到边缘特征向量。
+	      首先使用matlab围绕regionprops函数对研究对象进行解析几何计算，用遍历式算法逐一算出研究对象长宽比、离心率、实密度、等周因子、伸长率和最大压痕深度，得到轮廓特征向量。再将图片通过numpy工具箱标准正立化，以其几何中心为极点将其边缘坐标转换为极坐标，然后使用ndarrays函数将所得极坐标降维展开成时间序列，搜寻滤波后时间序列的极点数得到边缘特征向量。其算法流程图如图~\ref{88}~
+	      
+	      \begin{figure}[H]
+	      	\centering
+	      	\includegraphics[width=.8\textwidth]{figures/lct.png}
+	      	\caption{算法流程图}\label{88}
+	      \end{figure}
+	      	
 	
-
+	
+	
 	
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
