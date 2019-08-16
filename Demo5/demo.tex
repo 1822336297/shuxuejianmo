@@ -197,7 +197,7 @@
 	\end{gather}
 	其中:$x_{i}$表示第 i 个输入; $w_{ki}$表示与第 i 输入量相 连的权值; $u_{k}$表示所有输入的加权和; $b_{k}$为神经 元阈值;$ f$ 为激活函数; $y_{k}$ 为神经网络的输出。
 	
-	激活函数的种类有很多，如 $sigmoid$， $tanh$ 及$ Relu$，本文应用的是 $ReLU$作为激活函数搭建两层隐层，如式~\ref{shiw}~所示：
+	激活函数的种类有很多，如 $sigmoid$， $tanh$ 及$ Relu$，本文应用的是 $ReLU$作为激活函数搭建两层隐含层，如式~\ref{shiw}~所示：
 	\begin{gather}\label{shiw}
 		\begin{array}{c}{f_{\text {Relu}}=\max (0, z)}\\
 		\frac{d}{d z} f_{R e L U}=\left\{\begin{array}{ll}{1,} & {z>0} \\ {0,} & {z \leqslant 0}\end{array}\right.
@@ -249,69 +249,26 @@
 	
 	\end{itemize}
 	
-	\subsubsection{分类型人才吸引力分析}
-	将归类后所得的影响第一产业人才吸引力的$10$个影响因素在五个城市中2013—2017年的数据，使用SPSS进行因子分析，按照累积贡献率的原则提取公因子，以综合性指标来相对全面的反映出全体因子对第一产业人才吸引力的影响情况。按照主因子的提取原则，通过碎石图可看出可以用$3$个主因子来描述此$10$个因子的影响；再通过旋转后因子贡献率计算所得的城市各因子得分得到各城市每年的第一产业人才吸引力综合得分。其计算公式如下：
-	\begin{gather}
-	\mathrm { F } = \left( 48.328 \mathrm { F } _ { 1 } + 28.667 \mathrm { F } _ { 2 } + 12.283 \mathrm { F } _ { 3 } \right) / 89.277
-	%(附结果计算公式)
+	\subsubsection{参数的选取与确定}
+	由于训练epochs与步长选取较为困难，实验采取网格搜索法（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
+	
+	在迭代修正的过程中，实验采用$Keras$自带优化器$Adam$函数进行迭代修正，如式~\ref{adam}~所示，其中$\beta_{1}$一般取0.9，$\beta_{2}$一般取0.999。
+	
+	\begin{gather}\label{adam}
+	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
 	\end{gather}
-	将得到的五个城市2013—2017年的综合得分绘制为折线图的到图~\ref{11}~如下所示：
-	\begin{figure}[H]
+
+
+	\subsection{实验结果与分析}
+	随机选取80\%的数据作为训练集，训练输入样本为$1280*11$，测试输入样本为$320*11$。DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含2个隐含层，适应度函数选择均方误差，取$c_{1}=c_{2}=2$，选择粒子个数为$30$，最大迭代次数$500$次。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。其迭代过程中损失与准确率如下图所示：
+			\begin{figure}[H]
 		\centering
-		\includegraphics[width=.9\textwidth]{figures/11.png}
-		\caption{第一产业人才吸引力综合得分折线图}\label{11}
-	\end{figure} 
-	同理将归类后所得的影响第二产业人才吸引力的$10$个影响因素使用SPSS进行因子分析，得到第二产业人才吸引力综合得分计算公式：
-	\begin{gather}
-	\mathrm { F } = \left( 27.594 \mathrm { F } _ { 1 } + 26.960 \mathrm { F } _ { 2 } + 16.609 \mathrm { F } _ { 3 } + 16.356 \mathrm { F } _ { 4 } \right) / 87.519
-	%(附结果计算公式)
-	\end{gather}
-	第二产业人才吸引力综合得分折线图：
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=.9\textwidth]{figures/22.png}
-		\caption{第二产业人才吸引力综合得分折线图}\label{22}
+		\includegraphics[width=\textwidth]{figures/x.png}
+		\caption{迭代损失与准确率}\label{xxx}
 	\end{figure}
 	
-	同理将归类后所得的影响第三产业人才吸引力的$10$个影响因素使用SPSS进行因子分析，得到第二产业人才吸引力综合得分计算公式：
-	\begin{gather}
-	\mathrm { F } = \left( 37.063 \mathrm { F } _ { 1 } + 25.130 \mathrm { F } _ { 2 } + 11.972 \mathrm { F } _ { 3 } + 10.477 \mathrm { F } _ { 4 } \right) / 84.642
-	%(附结果计算公式)
-	\end{gather}
-
-	第三产业人才吸引力综合得分折线图：
-		\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{figures/33.png}
-		\caption{第三产业人才吸引力综合得分折线图}\label{33}
-	\end{figure}
-
-
-	\subsection{结果分析}
-	由图表可以看出，武汉市的人才吸引力水平近几年有较高的水平，尤其是对第二、三产业人才的吸引力表现出逐年增加趋势和较高水平，相对于西安和成都而言，武汉市具有较强的人才吸引力，十分符合地区的经
-	济发展特点。而天津作为老牌北方直辖市，近年发展速度相比略显缓慢，导致其相应人才吸引力也有所下滑。
 	
-	但是，武汉在发展中也存在一些不足。特别是工业发展与薪酬因子处于人才吸引主导地位，而环境方面的因素尚未
-	完全建立；优质教育与医疗资源分
-	配不均、生活成本高、高校科研机构偏少等因素限制良好人才环境
-	构建等。
-	
-	提高武汉市的人才吸引力水平，提出以下几点建议：
-\begin{itemize}
-	\item [(1)] 大力发展地方生产总值，为经济社会发展打下坚实的基础。
-	\item [(2)]主要行业是加快人
-	才发展的主导力量。建立较为高效的人才市场，通过各行业市场
-	机制，人才较为充分地实现了自身价值，也为武汉的人才持续发展创
-	造了良好条件。
-	\item [(3)]注重整合空间结构全面发展，引导各大区块均衡协调稳步发展，
-	建设全面型社会，注重生态建设，贯彻落实以人为本的科学发展理
-	念。
-	\item [(4)]加大营商环境改革力度，营
-	造更加开放的贸易投资环境，营造综合成本适宜的产业发展环境，
-	营造更加高效透明的政务环境。
-	\item [(5)]政府不断完善就业服务政策，出台大量相关文件，高度重视高
-	校毕业生的就业情况。
-\end{itemize}
+
 
 	\section{问题三模型的建立与求解}
     \subsection{问题描述与分析}
