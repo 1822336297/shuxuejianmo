@@ -360,7 +360,7 @@
 		\caption{参数设置表}\label{canshu}
 	\end{table}
 	
-	通过上述参数设置，训练后各维度权值和阈值依次分别为：？？？？？？，且最小均方误差为0.458，预测准确率为$91.237\%$。
+	通过上述参数设置，训练后各维度权重占比如图~\ref{quanzhong}~所示，最小均方误差为0.458，\textbf{预测准确率为$91.237\%$}。
 	其迭代过程中损失与准确率如下图所示：
 	\begin{figure}[H]
 		\centering
@@ -368,6 +368,11 @@
 		\caption{PSO-DNN迭代过程中损失与准确率}\label{xxx}
 	\end{figure}
 
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/quanzhong2.png}
+	\caption{各维度权重占比图}\label{quanzhong}
+\end{figure}
 %	从图~\ref{xxx}~可以看出，PSO-DNN网络训练后，在测试集中表现良好效果良好，在
 	\subsubsection{模型性能评估}
 	表~\ref{heng}~中，实验与三种神经网络进行纵向比较可知，四种神经网络训练后准确率都在90\%左右，证实了神经网络非线性映射能力较强。Elman网络和DNN网络的测试准确率都大于BP网络，说明反馈动态网络的逼近能力要强于前反馈静态网络。使用PSO优化DNN网络后，模型的跟踪性能有所改善，测试集中损失(Validation Loss)仅为0.458，说明PSO-DNN网络的泛化能力和稳定性明显提高，且全局收敛性增强。
