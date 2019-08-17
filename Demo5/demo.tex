@@ -402,16 +402,63 @@
 
 	\section{问题三模型的建立与求解}
     \subsection{问题描述与分析}
-    针对问题三,本题要求结合给出的叶子纹理的数据信息,对问题二原有模型进行改进并进行分析比较。本组通过主成分分析法对树叶纹理数据信息降维,基于问题二模型中原有的11个输入自变量,把降维后的纹理信息添加成一个新的输入变量,搭建深度神经网络(DNN),引入变异粒子群(MPSO)算法优化参数。新的$MPSO-DNN$模型相较于问题二模型增加了树叶叶片的指标特征数量,提高了叶片识别与分类的精度。
-    	
-	
+    针对问题三，本题要求结合给出的叶子纹理的数据信息，对问题二原有模型进行改进并进行分析比较。本组基于问题二模型中原有的11维数据，加入叶子纹理的数据信息后增加网络输入层个数，修改PSO-DNN网络的参数，从而提高了叶片识别与分类的精度。
 		
     \subsection{模型的建立与求解}
+    加入叶片纹理数据后，根据第二问中模型原理进行参数调整，进行树叶分类预测的仿真实验：随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*75$，测试输入样本为$320*75$，DNN网络输入层神经元$75$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。具体参数设置间表~\ref{canshu2}~。具体参数：
+    \begin{table}[H]
+    	\centering		\caption{参数设置表}\label{canshu2}
+    	\begin{tabular}{ccc}
+    		\toprule[2pt]
+    		\multicolumn{1}{m{4cm}}{\centering 参数名称}
+    		& \multicolumn{1}{m{3cm}}{\centering 参数符号}
+    		&\multicolumn{1}{m{3cm}}{\centering 参数值}
+    		\\
+    		\midrule[1pt]
+    		选择粒子个数为	 &  T &$30$ \\ 
+    		计算精度	 &  $\varepsilon$&$0.00001$  \\ 
+    		学习率	 &  $\eta $ &0.01 \\ 
+    		最大迭代次数	 &  $M$ &500\\ 
+    		维度	 &  $S$ &75 \\ 
+    		加速因子1	 &  $c_{1}$ &1.49\\ 
+    		加速因子2	 &  $c_{2}$ &1.49 \\ 
+    		惯性权重	 &  $\beta $ &$0.9$ \\ 
+    		\bottomrule[2pt]	
+    	\end{tabular}
+        \end{table}
     
+    
+    通过上述参数设置，训练后求得最小均方误差为$0.253$，\textbf{预测准确率为$96.634\%$}，其迭代过程中损失与准确率如下图所示：
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=\textwidth]{figures/moxingsan.png}
+    	\caption{PSO-DNN迭代过程中损失与准确率}\label{xxxx}
+    \end{figure}	
+    
+
     \subsection{结果分析}
 	
-	Epoch 498/500
-	1296/1296 [==============================] - 1s 689us/step - loss: 0.1006 - acc: 0.9861 - val-loss: 0.4902 - val-acc: 0.9653
+	\begin{table}[H]
+		\centering	\caption{新旧PSO-DNN网络的比较}\label{hengs}
+		\begin{tabular}{ccc}
+			\toprule[2pt]
+						\multicolumn{1}{m{3cm}}{\centering 网络模型}
+						&
+			\multicolumn{1}{m{3cm}}{\centering Validation Loss}
+			& \multicolumn{1}{m{4cm}}{\centering Validation Accuracy}
+
+
+			\\
+			\midrule[1pt]
+			新PSO-DNN网络	 &  0.253 &96.634\%  \\ 
+			旧PSO-DNN网络	 &  0.458 &91.037\%  \\ 
+			新DNN网络	 &  0.542 &89.912\%  \\ 
+			旧DNN网络	 &  0.718 &95.142\%  \\ 
+			\bottomrule[2pt]	
+		\end{tabular}
+		
+	\end{table}
+	
 	\section{模型的评价}
 	\subsection{模型的优点}
 
