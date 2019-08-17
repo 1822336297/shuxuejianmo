@@ -436,7 +436,7 @@
     
 
     \subsection{结果分析}
-	
+	分别与问题二中的PSO优化前后DNN模型进行比较，其结果如下所示：
 	\begin{table}[H]
 		\centering	\caption{新旧PSO-DNN网络的比较}\label{hengs}
 		\begin{tabular}{ccc}
@@ -451,12 +451,14 @@
 			\midrule[1pt]
 			新PSO-DNN网络	 &  0.253 &96.634\%  \\ 
 			旧PSO-DNN网络	 &  0.458 &91.037\%  \\ 
-			新DNN网络	 &  0.542 &89.912\%  \\ 
-			旧DNN网络	 &  0.718 &95.142\%  \\ 
+			新DNN网络	 &  0.291 &95.142\%  \\ 
+			旧DNN网络	 &  0.518 &89.912\%  \\ 
 			\bottomrule[2pt]	
 		\end{tabular}
 		
 	\end{table}
+
+	结果表明，问题三的PSO-DNN网络在测试集中准确率高于问题二中网络，说明在加入叶子纹理数据后，其分类模型预测能力升高，符合实际情况。与未经过PSO优化权值的网络比较均提升1\%左右，证实了PSO-DNN网络非线性映射能力较强。
 	
 	\section{模型的评价}
 	\subsection{模型的优点}
