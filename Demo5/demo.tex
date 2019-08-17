@@ -290,6 +290,53 @@
 	\begin{gather}\label{shiq}
 		f_{\text {softinax }}=\mathrm{e}^{i} / \sum_{j} \mathrm{e}^{j}
 	\end{gather}
+	具体算法步骤如下：
+	\begin{itemize}
+	\item [(1)]进行网络的初始化设置，用$(-1,1)$之间的随机数对DNN各个层的权值和阈值分别进行相应初始化，设定误差函数为$e$、计算精度为$\epsilon $、学习速率为$\eta $以及最大学习次数为$M$。
+	\item [(2)]随机选取第$k$次输入样本$x(k)$以及对应的实际期望输出$d(k)$如下:
+	\begin{gather*}
+	x(k)=[x_{1}(k),x_{2}(k),...,x_{n}(k)]\\
+	d(k)=[d_{1}(k),d_{2}(k),...,d_{r}(k)]
+	\end{gather*}
+	
+	\item [(3)]计算DNN中第$1$隐含层、第$2$隐含层以及输出层的输入值和输出值具体计算公式如下:
+	\begin{gather*}
+	h_{\mathrm{bs}} (k)=\sum_{i=1}^{n} u_{i s} x_{i}(k)+b_{s} \quad s=1,2, \cdots,p\\
+	h_{\mathrm{os}} s(k)=f_{1}\left(h_{\mathrm{bs}}(k)\right) \quad s=1,2, \cdots, p	\\
+    g_{\mathrm{bt}}(k)=\sum_{s=1}^{p} v_{s t} h_{\mathrm{os}}(k)+b_{t} \quad t=1,2, \cdots, q\\
+   	g_{\mathrm{ot}}(k)=f_{2}\left(g_{\mathrm{bt}}(k)\right) \quad s=1,2, \cdots, q	\\
+   	y_{\mathrm{bj}}( k )=\sum_{i = 1 }^{q}w_{ij}g_{\mathrm{at}}(k)+b_{j} \quad j = 1,2 , \cdots,r\\
+   y_{\mathrm{oj}}( k ) = f _ { 3 } \left( y _ { b j } ( k ) \right) \quad j = 1,2 , \cdots,r
+	\end{gather*}
+	其中$x_{i}$输入层输入向量,$h_{\mathrm{b}}$为第$1$隐含层输入向量,$h_{\mathrm{o}}$为第$1$隐含层输出向量，$g_{\mathrm{b}}$为第$2$隐含层输入向量,$g_{\mathrm{o}}$为第$2$隐含层输出向量，$y_{\mathrm{b}}$为输出层输入向量，$y_{\mathrm{o}}$为输出层输出向量
+	输入向量
+	\item [(4)]首先给定误差函数如下：
+	\begin{gather*}
+	e = \frac { 1 } { 2 } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { bj } ( k ) \right) ^ { 2 }
+	\end{gather*}
+	误差函数$e$对输出各层求偏导数得：
+		\begin{gather*}
+        \frac { \partial e } { \partial y _ { b j}(k) }=\delta _{j}(k)\\
+        \frac { \partial e } { \partial g _ { bt }(k) }=\delta _{t}(k)\\
+        \frac { \partial e } { \partial h _ { bs} }(k)=\delta _{s}(k)
+        \end{gather*}
+
+	即通过$\delta$值与各层的输出修正各层级间的权值,其计算公式如下：
+	\begin{gather*}
+	w _ { t j } ^ { N + 1 } = w _ { t j } ^ { N } + \eta \delta _ { j } ( k ) g _ { o t } ( k )\\
+	w _ { s t } ^ { N + 1 } = w _ { s t } ^ { N } + \eta \delta _ { t } ( k ) g _ { o s } ( k )\\
+	w _ { i s } ^ { N + 1 } = w _ { i s } ^ { N } + \eta \delta _ { j } ( k ) g _ { o t } ( k )
+	\end{gather*}
+	同理，各层级阈值变化公式如下
+	\begin{gather*}
+	\begin{array} { l } { \Delta b _ { j } ( k ) = \eta \delta _ { j } ( k ) } \\ { \Delta b _ { l } ( k ) = \eta \delta _ { t } ( k ) } \\ { \Delta b _ { s } ( k ) = \eta \delta _ { s } ( k ) } \end{array}
+	\end{gather*}
+	使用当前权值计算全局误差，公式如下：
+	\begin{gather*}
+	E = \frac { 1 } { 2 m } \sum _ { k = 1 } ^ { m } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { o j } ( k ) \right) ^ { 2 }
+	\end{gather*}
+	当误差小于预设精度$\varepsilon $或达到最大学习次数$M$时网络算法结束,否则返回(2)进行下一轮学习训练.
+		\end{itemize}
 	
 		\begin{figure}[H]
 		\centering
@@ -303,15 +350,13 @@
 	\begin{itemize}
 		\item [(1)]将DNN网络结构中所有神经元间的连接权值和各个神经元的阈值编码成实数码串表示的个体作为PSO算法要寻优的位置向量。
 		\item [(2)]在编码空间中随机生成一定数目的个体组成种群，其不同个体代表神经网络不同权值。
-		\item [(3)]DNN网络训练及个体的适应度评价。将微粒群中的每一个个体的分量映射为网络中的权值和阈值，从而构成个体对应的神经网络。首先划分训练样本和测试样本;其次输入训练样本进行网络训练，通过反复迭代来优化网络权值，并计算每一个网络在训练集上产生的均方误差,，以此作为目标函数;最后对每个个体进行适应度评价，从中找到最佳个体用来判断是否需要更新微粒的Gbest与Pbest，构造如下的适应度函数:
-			\begin{gather}
-		E\left(X_{p}\right)=\frac{1}{n} \sum_{p=1}^{n} \sum_{k=1}^{c}\left[Y_{k, p}\left(X_{p}\right)-t_{k, p}\right]^{2}
-		\end{gather}
+		\item [(3)]DNN网络训练及个体的适应度评价。将微粒群中的每一个个体的分量映射为网络中的权值和阈值，从而构成个体对应的神经网络。首先划分训练样本和测试样本;其次输入训练样本进行网络训练，通过反复迭代来优化网络权值，并计算每一个网络在训练集上产生的均方误差,，以此作为目标函数;最后对每个个体进行适应度评价，从中找到最佳个体用来判断是否需要更新微粒的Gbest与Pbest，以全局误差值作为适应度函数:
+		\begin{gather*}
+		E = \frac { 1 } { 2 m } \sum _ { k = 1 } ^ { m } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { o j } ( k ) \right) ^ { 2 }
+		\end{gather*}
 		
-		式中：$n$为训练样本个数，
-		$c$为输出端个数，$t_{k,p}$为训练样本
-		$p$在$k$端的给定输出，
-		$Y_{k,p}\left(X_{p}\right)$为训练样本$p$在$k$端的实测值，他们俩个值的误差平方和越小，表示实际值和预测值越接近，网络的性能越好。
+		式中：$m$为训练样本个数，
+		$r$为输出端个数，$y_{oj}(k)$为训练样本在输出端的给定输出，$ d _ { j } ( k ) $为训练样本在输出端的实测值，他们俩个值的误差平方和越小，表示实际值和预测值越接近，网络的性能越好。
 		
 		\item [(4)]更新每个粒子的速度和位置，产生下一代的粒子群。更新公式如下:
 		\begin{gather}
