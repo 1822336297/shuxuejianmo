@@ -32,7 +32,7 @@
 针对问题一，通过\textbf{因子分析模型}分析武汉2013—2017年相关数据，对武汉各年的人才吸引力进行\textbf{量化打分}。本组首先根据题目要求和以往人才吸引要素研究，确立要素框架并\textbf{爬取}合适的人才吸引力因素。在标准化数据通过\textbf{KMO检验}后，利用SPSS对各个因素进行\textbf{主成分分析}以确定公因子数目，求解旋转后因子荷载矩阵并对公因子命名，计算武汉各年人才吸引力综合得分。综合得分结果为\textbf{-77.99、-30.08、-11.90、42.35、77.63}。综合得分表明武汉2013—2017人才吸引力逐年上升，且2015—2016年上升幅度最大，与城市实际发展情况相符合。
 ~\\
 
-针对问题二，本文在问题一模型的基础上进行改进，将人才分为第一、第二和第三产业人才并用\textbf{灰色关联分析}筛选出每类人才相应的人才吸引力因素。然后将筛选后的数据用SPSS进行\textbf{因子分析}得到成都、天津、西安、南京和武汉2013—2017年的三类人才吸引力因子分析模型，并计算每个城市各年针对三类人才的人才吸引力\textbf{综合得分}。横向比较各个城市的综合得分，相较与其他城市，武汉市近几年对第二、三产业人才的吸引力有较高水平，相对于西安和成都，武汉市具有较强的人才吸引力，符合地区的经济发展特点。
+针对问题二，本文
 ~\\
 
 针对问题三,基于问题一中的武汉市人才吸引力评价模型以及人才政策对人才吸引力的量化评价,并结合问题二中武汉相较于其他四个同类城市在人才吸引力上的优势与不足，给武汉市人力资源管理部门的领导写一篇建议报告。
@@ -183,13 +183,13 @@
 		\item[(7)]随机凸性(Stochastic Convexity):
 		记随机给定两个端点$P_{1},P{2}\in\partial I$，记$P(G)$为线段$[XY]$完全包含于图像区域$I$ 中的概率，即随机凸性计算公式为：
 		\begin{gather}
-		id_(7)=P(G)
+		id_{7}=P(G)
 		\end{gather}
 		
 		\item[(8)]弯曲能量(Bending Energy):
 		描述研究对象边界弯曲程度的值，定义$\varphi _{n}$为$\partial I$的曲率，即弯曲能量计算公式为：
 		\begin{gather}	
-		id( 8 ) = 1 / P \sum _ { i = 0 } ^ { n - 1 } \left|\varphi _{n} -\varphi _{n-1}\right|
+		id_{8}= 1 / P \sum _ { i = 0 } ^ { n - 1 } \left|\varphi _{n} -\varphi _{n-1}\right|
 		\end{gather}
 		
 		
@@ -251,7 +251,7 @@
 	      \begin{figure}[H]
 	      	\centering
 	      	\includegraphics[width=.8\textwidth]{figures/lct.png}
-	      	\caption{算法流程图}\label{88}
+	      	\caption{树叶特征工程示意图}\label{88}
 	      \end{figure}
 	      	
 	
@@ -278,7 +278,7 @@
 	\end{gather}
 	其中:$x_{i}$表示第 i 个输入; $w_{ki}$表示与第 i 输入量相 连的权值; $u_{k}$表示所有输入的加权和; $b_{k}$为神经 元阈值;$ f$ 为激活函数; $y_{k}$ 为神经网络的输出。
 	
-	激活函数的种类有很多，如 $sigmoid$， $tanh$ 及$ Relu$，本文应用的是 $ReLU$作为激活函数搭建两层隐含层，如式~\ref{shiw}~所示：
+	激活函数的种类有很多，如 $sigmoid$， $tanh$ 及$ Relu$，本文应用的是 $Relu$作为激活函数搭建两层隐含层，如式~\ref{shiw}~所示：
 	\begin{gather}\label{shiw}
 		\begin{array}{c}{f_{\text {Relu}}=\max (0, z)}\\
 		\frac{d}{d z} f_{R e L U}=\left\{\begin{array}{ll}{1,} & {z>0} \\ {0,} & {z \leqslant 0}\end{array}\right.
@@ -292,7 +292,7 @@
 	
 		\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{figures/sss.png}
+		\includegraphics[width=\textwidth]{figures/123546.png}
 		\caption{人工搭建DNN结构示意图}\label{dnn}
 	\end{figure}
 	
@@ -321,15 +321,15 @@
 		\end{gather}
 		其中$i=1,2,...,n$;$d=1,2,...,d$;$t$为当前迭代次数；$v_{id}^{t}$为当前粒子速度($t$时刻)；$x_{id}^{t}$为当前粒子位置($t$时刻)；$(p_{id}^{t}-x_{id}^{t})$为当前位置与自己最好位置之间的距离；$(g_{id}^{t}-x_{id}^{t})$为当前位置与群体最好位置之间的距离；$v_{id}^{t+1}$为下一时刻粒子速度($t+1$时刻)；$c_{1},c_{2}$为非负常数，称为加速因子；$r_{1},r_{2}$为均匀分布与$[0,1]$区间的随机数。
 		
-		\item [(5)]当目标函数小于给定的误差或达到最大迭代次数时，算法结束。将PSO算法训练出来的最佳神经网络的权值和阈值作为DNN网络的初始值。
+		\item [(5)]当目标函数小于给定的误差或达到最大迭代次数时，算法结束。将PSO算法训练出来的最佳神经网络的权值和阈值作为DNN网络的初始值，并记录。
 		
 	
 	\end{itemize}
 	
 	\subsubsection{参数的选取与确定}
-	由于训练epochs与步长选取较为困难，实验采取网格搜索法（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
+	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
 	
-	在迭代修正的过程中，实验采用$Keras$自带优化器$Adam$函数进行迭代修正，如式~\ref{adam}~所示，其中$\beta_{1}$一般取0.9，$\beta_{2}$一般取0.999。
+	在迭代修正的过程中，实验采用$Keras$自带优化器\textbf{$Adam$函数}进行迭代修正，如式~\ref{adam}~所示，其中$\beta_{1}$一般取0.9，$\beta_{2}$一般取0.999。
 	
 	\begin{gather*}\label{adam}
 	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
@@ -337,7 +337,31 @@
 
 
 	\subsection{实验与结果分析}
-	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot}编码作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$。DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含2个隐含层，适应度函数选择均方误差，取$c_{1}=c_{2}=2$，选择粒子个数为$30$，最大迭代次数$500$次。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。其迭代过程中损失与准确率如下图所示：
+	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$，DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。具体参数设置间表~\ref{canshu}~。
+			\begin{table}[H]
+		\centering
+		\begin{tabular}{ccc}
+			\toprule[2pt]
+			\multicolumn{1}{m{4cm}}{\centering 参数名称}
+			& \multicolumn{1}{m{3cm}}{\centering 参数符号}
+			&\multicolumn{1}{m{3cm}}{\centering 参数值}
+			\\
+			\midrule[1pt]
+			选择粒子个数为	 &  T &$30$ \\ 
+			计算精度	 &  $\varepsilon$&$0.00001$  \\ 
+			学习率	 &  $\eta $ &0.01 \\ 
+			最大迭代次数	 &  $M$ &500\\ 
+						维度	 &  $S$ &11 \\ 
+									加速因子1	 &  $c_{1}$ &1.49\\ 
+												加速因子2	 &  $c_{2}$ &1.49 \\ 
+			惯性权重	 &  $\beta $ &$0.9$ \\ 
+			\bottomrule[2pt]	
+		\end{tabular}
+		\caption{参数设置表}\label{canshu}
+	\end{table}
+	
+	通过上述参数设置，训练后各维度权值和阈值依次分别为：？？？？？？，且最小均方误差为0.458，预测准确率为$91.237\%$。
+	其迭代过程中损失与准确率如下图所示：
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{figures/x.png}
@@ -346,12 +370,12 @@
 
 %	从图~\ref{xxx}~可以看出，PSO-DNN网络训练后，在测试集中表现良好效果良好，在
 	\subsubsection{模型性能评估}
-	表~\ref{heng}~中，实验与三种神经网络进行纵向比较可知，四种神经网络训练后准确率都在90\%左右，证实了神经网络非线性映射能力较强。Elman网络和DNN网络的测试准确率都大于BP网络，说明反馈动态网络的逼近能力要强于前反馈静态网络。使用PSO优化DNN网络后，模型的跟踪性能有所改善，测试损失(Validation Loss)仅为0.458，说明PSO-DNN网络的泛化能力和稳定性明显提高，且全局收敛性增强。
+	表~\ref{heng}~中，实验与三种神经网络进行纵向比较可知，四种神经网络训练后准确率都在90\%左右，证实了神经网络非线性映射能力较强。Elman网络和DNN网络的测试准确率都大于BP网络，说明反馈动态网络的逼近能力要强于前反馈静态网络。使用PSO优化DNN网络后，模型的跟踪性能有所改善，测试集中损失(Validation Loss)仅为0.458，说明PSO-DNN网络的泛化能力和稳定性明显提高，且全局收敛性增强。
 	
 		\begin{table}[H]
 	 \centering
 		\begin{tabular}{ccc}
-			\toprule[1.5pt]
+			\toprule[2pt]
 			\multicolumn{1}{m{3cm}}{\centering 网络类型}
 			 & \multicolumn{1}{m{3cm}}{\centering 网络名称}
 			  &\multicolumn{1}{m{4cm}}{\centering 测试集中准确率}
@@ -361,8 +385,9 @@
 			静态网络	 &  Elman &90.541\%  \\ 
 			动态网络	 &  DNN &89.912\%  \\ 
 			动态网络	 &  PSO-DNN &91.237\%  \\ 
-			\bottomrule[1.5pt]	
-		\end{tabular}\label{heng}
+			\bottomrule[2pt]	
+		\end{tabular}
+	\caption{常见神经网络的比较}\label{heng}
 	\end{table}
 
 
