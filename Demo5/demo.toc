@@ -22,15 +22,15 @@
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题描述与分析}{18}{subsection.6.1}
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立与求解}{18}{subsection.6.2}
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}结果分析}{19}{subsection.6.3}
-\contentsline {section}{\numberline {七、}模型的评价}{19}{section.7}
-\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{19}{subsection.7.1}
-\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{19}{subsection.7.2}
-\contentsline {section}{\numberline {附录A}代码}{21}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}图片名称读取--matlab源代码}{21}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}树叶形状id计算--matlab源代码}{21}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}时间序列展开--python源代码}{23}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}边缘测试时间序列--C++源代码}{29}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}数据可视化--python源代码}{32}{subsection.A.5}
-\contentsline {subsection}{\numberline {A.6}PSO-DNN网络搭建--python源代码}{34}{subsection.A.6}
-\contentsline {subsection}{\numberline {A.7}各类分类器比较--python源代码}{37}{subsection.A.7}
+\contentsline {section}{\numberline {七、}模型的评价}{20}{section.7}
+\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{20}{subsection.7.1}
+\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{20}{subsection.7.2}
+\contentsline {section}{\numberline {附录A}代码}{22}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}图片名称读取--matlab源代码}{22}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}树叶形状id计算--matlab源代码}{22}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}时间序列展开--python源代码}{24}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}边缘测试时间序列--C++源代码}{30}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}数据可视化--python源代码}{33}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.6}PSO-DNN网络搭建--python源代码}{35}{subsection.A.6}
+\contentsline {subsection}{\numberline {A.7}各类分类器比较--python源代码}{38}{subsection.A.7}
 \contentsfinish 
