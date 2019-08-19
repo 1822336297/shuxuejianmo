@@ -52,20 +52,23 @@
 	
 	\section{问题重述}	
 	\subsection{问题背景}
-    植物的种类繁多,要了解和掌握如此多的植物,必须进行一个科学的分类。人们常常根据植物的用途，或根据植物的一个或几个明显的形态进行分类，植物的识别与分类对于区分植物种类,探索植物间的亲缘关系,阐明植物系统的进化规律具有重要的意义。因此植物分类学是植物科学甚至整个生命科学的基础学科。目前对于树叶识别与分类主要由人完成,但是树叶种类庞大,依赖人工地进行树叶识别与分类是不现实的。所以树叶的研究对于植物总体的研究能提供很大的帮助。
+    诺曼底登陆：代号“霸王行动”，是第二次世界大战中盟军在欧洲西线战场发起的一场大规模攻势，接近三百万士兵渡过英吉利海峡前往法国诺曼底。诺曼底战役是人类战争史上规模最大的一次海上登陆战役行动，使第二次世界大战的战略态势发生了根本性的变化。
     
-    从树叶的各个方面,纹理,硬度,离心率等方面都可作为主要方向研究,现对树叶的研究主要通过采集树叶图形,利用数字图像处理来对树叶进行分类识别,这种方法只停留在处理形态特征,有很大的局限性,忽略了树叶的生理特征和其他特征,所以研究方法来综合处理树叶平面图像特征,形态特征和生理特征很有必要性。
+    海运装载是海上登陆战役中的一种作战行动，将需要登陆的部队人员、装备、补给品装载到海上运输工具，该行动会直接影响着登陆作战效果。以诺曼底战役的第一批海上登陆输送兵力为参考，不同成建制单位的部队人员、装备和补给品都有不同的数量级需求,研究合理利用海军运输船和民用船只进行兵力装载以及对装载方案的优化都具有重要意义。
+    
     
     
 
-	\subsection{问题提出}
-    围绕植物分类进行树叶识别与分类,以树叶二值化图片为依据,依次提出以下问题:
+	\subsection{问题概述}
+    围绕相关附件和条件要求，研究海运装载行动输送兵力任务的合理安排，依次提出以下问题:
 		 
-	\begin{itemize}
-	\item [(1)] 结合附件中的二值化的图片数据,建立合适的图片数据提取方案, 量化处理图片数据,并具体分析说明所提取数据信息的量化指标体系。
-	\item [(2)] 基于问题一中提取的数据信息,建立合适的数学模型由数据出发判断叶子的种类,研究判别分类的核心指标,并估计出模型的性能以及核心指标对模型判别性能的影响。
-	\item [(3)] 基于二值化图片数据,结合附件中叶子纹理的数据信息,对原有模型进行改进,并对新旧模型进行比较分析。
-	\end{itemize}
+	
+	\textbf{问题一：}根据输送任务和海上运输工具情况，结合相关条件和要求，分析运输船只和兵力的关系，概算各类型旅一个旅级单位的运输工具的需求量,并给出具体装载方案。
+	
+	\textbf{问题二：}根据输送任务，结合附件中的港口及码头泊位,制定时间最短、船只数量最少的兵力装载方案。
+	
+	\textbf{问题三：}假设装载行动开始24小时后,A港口的两个A1和一个A2泊位,D港口的一个D2和两个D3泊位被毁，给出具体调整方案以及完成装载任务的对策建议。
+	
 	
 	\section{模型假设}
 	\begin{itemize}                                             
@@ -137,140 +140,42 @@
 	\section{问题一模型的建立与求解}
 	\subsection{问题的描述与分析}
 
-	针对问题一，本题要求建立合适方案提取二值化图片中的数据，并对所提取数据的量化指标进行分析说明。本组通过解析几何计算和时间序列展开，将目标图像转化成两个特征向量。本组根据题目要求和近年的图像识别研究，确定了针对二值化图像的两个重点识别因素——形状特征因素和边缘特征因素。针对形状特征因素，首先利用matlab做解析几何运算，计算与图像轮廓有关的特征量，并将计算结果作为元素，组成轮廓特征向量。针对边缘特征因素，首先将图像边缘通过极化投影展开为时间序列，计算每支时间序列的特征量，并将计算结果作为元素，组成边缘特征向量。最后合并两个向量得到总体特征向量。其具体特征值如图~\ref{77}~所示：
+	针对问题一，。其具体特征值如图~\ref{77}~所示：
 	    \begin{figure}[H]
 		\centering
 		\includegraphics[width=.6\textwidth]{figures/flt.png}
 		\caption{图形特征示意图}\label{77}
     	\end{figure}
+	\subsection{预备工作}
 	
-	    \subsection{模型的建立}
-	    \subsubsection{图像基本参数与运算符号定义}
-		定义$I$表示目标树叶所对应的图像，$\partial I$表示图像边界，$D(I)$表示图像最小外接圆直径，$d(I)$表示图像最大内切圆半径，$A(I)$表示研究对象面积,$L(\partial I)$表示研究对象的轮廓线长度，$H(I)$表示研究对象的凸包域，$C(I)$为图像几何中心坐标，运算符$d(.)$代表欧式距离。
-
-	    \subsubsection{形状特征因素}
-		定义轮廓特征向量为$ID_{shape}=[id_{1},id_{2},\cdots,id_{n}](n=6)$其中$id_{k}(k=1,2,\cdots,6)$为二值化矩阵的轮廓特征，其具体计算公式如下：
-		\begin{itemize}	
-		\item [(1)]长宽比(Aspect Ratio):
-		定义$X_{I}$为图像最上方非零行与最下方非零行的行数差(长)，$Y_{I}$为图像最左方非零列与最右方非零列的列数差(宽)，即长宽比计算公式：
-		\begin{gather}
-		id_{1}=X_{I}/Y_{I}
-		\end{gather}
-
-		
-		\item [(2)]离心率(Eccentricity): 
-		定义$E(I)$是与研究图像具有相同的二阶矩的椭圆,$a$和$b$分别为$E(I)$对应的长轴与短轴，即离心率计算公式：
-		\begin{gather}
-		id_{2}=\sqrt{1-(\frac{b}{a})^{2}}
-		\end{gather}
-		
-		
-		\item[(3)]密实度(Solidity):
-		反映研究对象的仿射特征的变量,即研究对象区域的固靠性程度，计算公式：
-		\begin{gather}
-		id_{3}=\frac{ A }{A(H(I))}
-		\end{gather}
-		
-		\item [(4)]等周因子(Isoperimetric Factor):
-		描述目标树叶轮廓规整度的变量，变化范围为(0,1)，叶子边缘越规则,其值越接近于最大值1，计算公式：
-		\begin{gather}
-		id_{4}=\frac{4\pi \cdot  A}{L(\partial I)^{2}}
-		\end{gather}
-		
-		\item [(5)]伸长率(Elongation): 
-		描述研究对象向某方向伸展趋势的变量,变化范围为(0,1),树叶越趋于圆形相应的伸长率越小，计算公式：
-		\begin{gather}
-		id_{5}=1-\frac{2d_{I}}{D(I)}
-		\end{gather}
-		
-		\item[(6)]最大压痕深度(MaximalIndentationDepth):
-		定义$C_{H(I)}$为研究对象凸型区域的几何中心,$L(\partial I)$表示为$H(I)$的轮廓线长度,$\forall X\in H(I)$和$\forall Y\in \partial I$,计算距离$d(X,C_{H(I)})$和$d(Y,C_{H(I)})$。即最大压痕深度计算公式为：
-		\begin{gather}
-		max\left \{ \frac{ d(X,C_{H(I)})- d(Y,C_{H(I)})}{L(H(I))} \right \}
-		\end{gather}
-		
-		\item[(7)]随机凸性(Stochastic Convexity):
-		记随机给定两个端点$P_{1},P{2}\in\partial I$，记$P(G)$为线段$[XY]$完全包含于图像区域$I$ 中的概率，即随机凸性计算公式为：
-		\begin{gather}
-		id_{7}=P(G)
-		\end{gather}
-		
-		\item[(8)]弯曲能量(Bending Energy):
-		描述研究对象边界弯曲程度的值，定义$\varphi _{n}$为$\partial I$的曲率，即弯曲能量计算公式为：
-		\begin{gather}	
-		id_{8}= 1 / P \sum _ { i = 0 } ^ { n - 1 } \left|\varphi _{n} -\varphi _{n-1}\right|
-		\end{gather}
-		
-
-		\end{itemize}	
-
 	
-
-		\subsubsection{边缘特征因素}
-		为得到研究对象的边缘特征，首先以$C(I)$为坐标原点建立笛卡尔坐标系，对于曲线$\partial I$上任意一点$P$可以在该坐标系下表示为$P(x_{p},y_{p})$，将其投影至以$C(I)$为极点的极坐标系得${P}'(r_{p},\theta _{p})$，其中：
-		\begin{gather}
-		r_{p}=d(P(x_{p},y_{p}).C(I))
-		\end{gather}
-		\begin{gather}
-		\theta _{p}=y_{p}/x_{p},
-		\end{gather}
-
-	  \begin{figure}[H]
-		\centering
-		\includegraphics[width=.6\textwidth]{figures/jihua.png}
-			\centering 		\caption{极化投影实意图}\label{66}
-	\end{figure}
-		
-		定义点集${{P}'(r_{p},\theta _{p})}$为研究样本，其中中包含${d}'$个一元时间序列，$Q$为单个样本一维的长度。将数据集中每个样本第$j$维$(j\in \left \{1,2,\cdots,d  \right \})$数据组成一个一元时间序列数据集，记为$X$。且
-		其中表类样本$y _ { i } \in \{ 1,2 , \cdots , C \} , i \in \{ 1 , \cdots , N \}$。
-		
-		得到一元时间序列集$X$后，记$N$为序列集中的时间序列条数。在数据集$D$中有$n_{i}$个实例，并且$n_{1}+n_{2},\cdots,n_{n}=N$计算$X$序列集熵值作为边缘特征值：
-		\begin{gather}
-		id_{9}= - \sum _ { i = 1 } ^ { C } \frac { n _ { i } } { N } \log \frac { n _ { i } } { N }
-		\end{gather}
-		
-		定义$shapelet$为时间序列集$X$中能够最大程度区分不同类别时间序列的子序列。在一元时间序列分类问题中选出$K$个最优shapelet并记为$S\in R^{K\times M}$(其中M为shapelet的长度。一个长度为M的shapelet
-		\begin{gather}
-		S_{k}=\left\{ s _ { k 1 } , s _ { k 2 } , \cdots , s _ { k n } \right\} ( k \in \{ 1 , \cdots , K \} )
-		\end{gather}
 	
-		是时间序列$X_{i}(i\in \left \{1,2,\cdots,d  \right \})$的子序列，定义$X_{i}$与$S_{k}$之间的距离为：
-		\begin{gather}
-		D _ { i , k } = \min _ { j = 1 , \cdots , j } \frac { 1 } { M } \sum _ { m = 1 } ^ { M } \left( X _ { i , j + m - 1 } - S _ { k , m } \right) ^ { 2 }
-		\end{gather}
-		其中$M$表示所选定的$X_{i}$与$S_{k}$的子序列长度。再找到在找到$K$个最优shapelet后，计算$K$个最优shapelet与一个时间序列间的距离作为该时间序列的新特征，时间序列样本集被映射至新特征空间，最终将之间序列降至一维时间序列arrays，展开效果如图~\ref{99}~所示：
-					\begin{figure} [H]
-			\centering 
-			\subfigure[Acer-Campestre]{% 
-				\includegraphics[width=\textwidth]{figures/sjxl.png}}
-			\quad
-			\subfigure[Cornus-Controversa]{% 
-				\includegraphics[width=\textwidth]{figures/sjxl2.png}}
-				\caption{时间序列展开效果图}\label{99}	
-		\end{figure}
-
 	
-		将arrays滤波处理后，计算每支时间序列上的极大值点数$id_{10}$，极小值点数$id_{11}$。得到边缘特征向量$ID_{margin}=[id_{9},id_{10},id_{11}]$，合并轮廓特征向量与边缘特征向量得：
-		\begin{gather}
-		ID=[ID_{shape},ID_{margin}]
-		\end{gather}
-	     其中ID为总体特征向量。
-	      \subsection{模型的求解}
-	      首先使用matlab围绕regionprops函数对研究对象进行解析几何计算，用遍历式算法逐一算出研究对象长宽比、离心率、实密度、等周因子、伸长率和最大压痕深度，得到轮廓特征向量。再将图片通过numpy工具箱标准正立化，以其几何中心为极点将其边缘坐标转换为极坐标，然后使用ndarrays函数将所得极坐标降维展开成时间序列，搜寻滤波后时间序列的极点数得到边缘特征向量。其算法流程图如图~\ref{88}~
+	\subsection{模型的建立与求解}
+	     
+	     
+	     
+	     
+	     
+	     其算法流程图如图~\ref{77}~
+	 
+	  
+
 	      
 	      \begin{figure}[H]
 	      	\centering
 	      	\includegraphics[width=.8\textwidth]{figures/lct.png}
-	      	\caption{树叶特征工程示意图}\label{88}
+	      	\caption{树叶特征工程示意图}\label{77}
 	      \end{figure}
 	      	
 	
-	
+	\subsection{结果分析}
 	
 	
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
-	问题二要求针对所提取数据信息，建立数学模型判别叶子的种类并研究其核心指标。本组通过问题一中所提取的$11$维度的特征，采用$Keras$工具库搭建深度神经网络（Deep Neural Network）解决树叶多分类问题，并输出各维度特征的权重作为指标贡献率。DNN神经网络采用BP算法基于梯度信息来调整连接权值，因而初始权值和阈值选取的随机性会导致网络稳定性差。为克服此缺点，引入收敛速度快、全局搜索能力强的粒子群(PSO)算法来优化DNN网络的连接权值和阈值，建立一种新的$PSO-DNN$网络模型实现对树叶分类。当考虑到步长等参数的选取时，使用网格搜索的方式对参数进行优化，其流程图如下：
+	针对问题二，
+	，其流程图如下：
 		
 	\begin{figure}[H]
 	\centering
