@@ -138,20 +138,89 @@
 	\end{table}
 
 	\section{问题一模型的建立与求解}
-	\subsection{问题的描述与分析}
 
-	针对问题一，。其具体特征值如图~\ref{77}~所示：
-	    \begin{figure}[H]
-		\centering
-		\includegraphics[width=.6\textwidth]{figures/flt.png}
-		\caption{图形特征示意图}\label{77}
-    	\end{figure}
-	\subsection{预备工作}
+	    \subsection{模型的建立}
+	    \subsubsection{预备工作}
+	    \paragraph{兵力、装备与船载的面积量化}
+	    计算附件2中的每种装备与所占面积：
+	    \begin{gather}
+	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+	    \end{gather}
+	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。得到装备占用面积向量：
+	     \begin{gather}
+	     S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+	     \end{gather}
+	     计算附件2中每种旅一个营的占用面积：
+	     \begin{gather}
+	     s_{pi}=p_{i}\times s
+	     \end{gather}
+	     其中$p_{i}$是第$i(i=1,2,\cdots,12)$的全副武装人员数，取$s=0.5m^2$为每个全副武装人员占用的面积。得到每营人口所占面积向量：
+	     \begin{gather}
+	     S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+	     \end{gather}
+	     计算附件3中船舰可用装载面积：
+	      \begin{gather}
+	      s_{yi}=s_{i}\times \eta_{1}
+	      \end{gather}
+	    其中$s_{yi}$是登陆舰$Y_{i}(i=1,2\cdots,14)$的可用装载面积，$s_{i}$是登陆舰$Y_{i}$的总装载面积，取$\eta_{1}=75\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
+	     \begin{gather}
+	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+	      \end{gather}
+	      \begin{gather}
+	      s_{zj}=s_{j}\times \eta_{2}
+	      \end{gather}
+	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
+	       \begin{gather}
+	       S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+	      \end{gather}
+
+	    \subsubsection{优化函数与约束条件}
+	    定义决策向量为：
+	     \begin{gather}
+	     D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
+	    \end{gather}
+	    其中$y_{k}$是派出的登陆舰数量，$z_{k}$是派出民用船的数量。
+	    
+	    根据题意尽可能使用少的船舰数，即定义优化函数为使用船舰总数：
+	     \begin{gather}
+	     min Z=\sum D
+	  \end{gather}
+	    
+	    
+	   定义舰载面积系数向量为：
+	    \begin{gather}
+	    S_{D}=[S_{y}, S_{z}]
+    	\end{gather}
+    	根据题目要求总舰载有效面积不小于总兵力装备占用面积：
+    	 \begin{gather}
+    	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+    	 \end{gather}
+    	 ~\\
+    	 
+    	 且由登陆舰Y1的有效舰载面积大于装备X9(直升机)的部队占用的面积：
+    	  \begin{gather}
+    	 y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+    	 \end{gather}
+    	 其中$\sum  s_{p6}$是唯一装备的部队——$\uppercase\expandafter{\romannumeral6}$旅的人口总和。
+    	 
+    	 即使用最少船舰装载每种旅各一个旅级编制的模型为：
+    	  \begin{gather}
+    	 min Z=\sum D\\ 
+    	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+    	 \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+    	 \\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+    	 \\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+    	 \\s_{pi}=p_{i}\times s
+    	 \\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+    	 \\     s_{yi}=s_{i}\times \eta_{1}
+    	 \\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+    	 \end{matrix}\right. 
+     	 \end{gather}
+    	 
+    	 
+	    
 	
-	
-	
-	
-	\subsection{模型的建立与求解}
+	\subsection{模型的求解}
 	
 	     
 	     
