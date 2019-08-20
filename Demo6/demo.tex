@@ -171,7 +171,7 @@
 	     \begin{gather}
 	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
 	      \end{gather}
-	      \begin{gather}
+2	      \begin{gather}
 	      s_{zj}=s_{j}\times \eta_{2}
 	      \end{gather}
 	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
@@ -208,87 +208,62 @@
     	 \end{gather}
     	 其中$\sum  s_{p6}$是唯一装备的部队——$\uppercase\expandafter{\romannumeral6}$旅的人口总和。
     	 
-    	 即使用最少船舰装载每种旅各一个旅级编制的模型为：
+    	 即使用最少船舰装载每种旅的各一个旅级编制的模型为：
     	  \begin{gather}
     	 min Z=\sum D\\ 
     	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
     	 \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+    	 \\S_{D}=[S_{y}, S_{z}]
     	 \\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
     	 \\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
     	 \\s_{pi}=p_{i}\times s
     	 \\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
     	 \\     s_{yi}=s_{i}\times \eta_{1}
     	 \\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+    	 \\      s_{zj}=s_{j}\times \eta_{2}
+    	 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
     	 \end{matrix}\right. 
      	 \end{gather}
     	 
-    	 
-	    
-	
-	
-	
-
-		\subsubsection{边缘特征因素}
-		为得到研究对象的边缘特征，首先以$C(I)$为坐标原点建立笛卡尔坐标系，对于曲线$\partial I$上任意一点$P$可以在该坐标系下表示为$P(x_{p},y_{p})$，将其投影至以$C(I)$为极点的极坐标系得${P}'(r_{p},\theta _{p})$，其中：
-		\begin{gather}
-		r_{p}=d(P(x_{p},y_{p}).C(I))
+		\subsubsection{沙石算法}
+		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+	    \begin{gather}
+		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
 		\end{gather}
-		\begin{gather}
-		\theta _{p}=y_{p}/x_{p},
+	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
+	 \paragraph{算法思想}
+	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
+	 \paragraph{算法描述}
+	 	\begin{itemize}
+	 	\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
+	 \begin{gather}
+	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
+	\end{gather}
+	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+	 	\begin{gather}
+	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
+	 	\end{gather}
+	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
+			\begin{gather}
+	T_{n}\geqslant 	T_{n+1}\\
+	n\leq \sum_{1}^{K}n_{k}
 		\end{gather}
-
-	  \begin{figure}[H]
-		\centering
-		\includegraphics[width=.6\textwidth]{figures/jihua.png}
-			\centering 		\caption{极化投影实意图}\label{66}
-	\end{figure}
-		
-		定义点集${{P}'(r_{p},\theta _{p})}$为研究样本，其中中包含${d}'$个一元时间序列，$Q$为单个样本一维的长度。将数据集中每个样本第$j$维$(j\in \left \{1,2,\cdots,d  \right \})$数据组成一个一元时间序列数据集，记为$X$。且
-		其中表类样本$y _ { i } \in \{ 1,2 , \cdots , C \} , i \in \{ 1 , \cdots , N \}$。
-		
-		得到一元时间序列集$X$后，记$N$为序列集中的时间序列条数。在数据集$D$中有$n_{i}$个实例，并且$n_{1}+n_{2},\cdots,n_{n}=N$计算$X$序列集熵值作为边缘特征值：
-		\begin{gather}
-		id_{9}= - \sum _ { i = 1 } ^ { C } \frac { n _ { i } } { N } \log \frac { n _ { i } } { N }
+		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
+			\begin{gather}
+		P_{n}\geqslant 	P_{n+1}\\
+		n\leq \sum D
 		\end{gather}
-		
-		定义$shapelet$为时间序列集$X$中能够最大程度区分不同类别时间序列的子序列。在一元时间序列分类问题中选出$K$个最优shapelet并记为$S\in R^{K\times M}$(其中M为shapelet的长度。一个长度为M的shapelet
+		依次检索总部对数列$ \left \{T_{n}\right \}$，并依次检索数列$ \left \{P_{n}\right \}$对应的船舰，将其装入剩余面积足够的船舰，即若$P_{n}\geqslant 	T_{n}$ 令：
 		\begin{gather}
-		S_{k}=\left\{ s _ { k 1 } , s _ { k 2 } , \cdots , s _ { k n } \right\} ( k \in \{ 1 , \cdots , K \} )
+		P_{n}=	P_{n}-	T_{n}
 		\end{gather}
-	
-		是时间序列$X_{i}(i\in \left \{1,2,\cdots,d  \right \})$的子序列，定义$X_{i}$与$S_{k}$之间的距离为：
-		\begin{gather}
-		D _ { i , k } = \min _ { j = 1 , \cdots , j } \frac { 1 } { M } \sum _ { m = 1 } ^ { M } \left( X _ { i , j + m - 1 } - S _ { k , m } \right) ^ { 2 }
-		\end{gather}
-		其中$M$表示所选定的$X_{i}$与$S_{k}$的子序列长度。再找到在找到$K$个最优shapelet后，计算$K$个最优shapelet与一个时间序列间的距离作为该时间序列的新特征，时间序列样本集被映射至新特征空间，最终将之间序列降至一维时间序列arrays，展开效果如图~\ref{99}~所示：
-					\begin{figure} [H]
-			\centering 
-			\subfigure[Acer-Campestre]{% 
-				\includegraphics[width=\textwidth]{figures/sjxl.png}}
-			\quad
-			\subfigure[Cornus-Controversa]{% 
-				\includegraphics[width=\textwidth]{figures/sjxl2.png}}
-				\caption{时间序列展开效果图}\label{99}	
-		\end{figure}
-
-	
-		将arrays滤波处理后，计算每支时间序列上的极大值点数$id_{10}$，极小值点数$id_{11}$。得到边缘特征向量$ID_{margin}=[id_{9},id_{10},id_{11}]$，合并轮廓特征向量与边缘特征向量得：
-		\begin{gather}
-		ID=[ID_{shape},ID_{margin}]
-		\end{gather}
-	     其中ID为总体特征向量。
-	      \subsection{模型的求解}
-	      首先使用matlab围绕regionprops函数对研究对象进行解析几何计算，用遍历式算法逐一算出研究对象长宽比、离心率、实密度、等周因子、伸长率和最大压痕深度，得到轮廓特征向量。再将图片通过numpy工具箱标准正立化，以其几何中心为极点将其边缘坐标转换为极坐标，然后使用ndarrays函数将所得极坐标降维展开成时间序列，搜寻滤波后时间序列的极点数得到边缘特征向量。其算法流程图如图~\ref{88}~
-	      
-	      \begin{figure}[H]
-	      	\centering
-	      	\includegraphics[width=.8\textwidth]{figures/lct.png}
-	      	\caption{树叶特征工程示意图}\label{88}
-	      \end{figure}
-	      	
-	
-	
-	
+		重复检索直到部队装载完成，即当部队检索次数$i=\sum_{1}^{K}n_{k}$时，算法结束。
+		\item [(3)] 结果输出：输出总共使用的船舰编号，即决策向量：
+			\begin{gather}
+		  D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
+		  	\end{gather}
+		\end{itemize}
 	
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  19 AUG 2019 18:30
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  20 AUG 2019 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1218,45 +1218,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--204
  []
 
 [7]
-File: figures/jihua.png Graphic file (type bmp)
-<figures/jihua.png>
- [8]
-File: figures/sjxl.png Graphic file (type bmp)
-<figures/sjxl.png>
-File: figures/sjxl2.png Graphic file (type bmp)
-<figures/sjxl2.png>
- [9] [10]
-File: figures/lct.png Graphic file (type bmp)
-<figures/lct.png>
- [11]
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 245--247
+\TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
+/n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
+[] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
+ []
+
+[8]
 File: figures/21.png Graphic file (type bmp)
 <figures/21.png>
- [12] [13] [14]
+ [9] [10] [11]
 File: figures/123546.png Graphic file (type bmp)
 <figures/123546.png>
- [15] [16]
+ [12] [13] [14]
 File: figures/x.png Graphic file (type bmp)
 <figures/x.png>
 File: figures/quanzhong2.png Graphic file (type bmp)
 <figures/quanzhong2.png>
- [17] [18] [19]
+ [15] [16] [17]
 File: figures/moxingsan.png Graphic file (type bmp)
 <figures/moxingsan.png>
- [20] [21]
-Underfull \hbox (badness 7081) in paragraph at lines 586--587
+ [18] [19]
+Underfull \hbox (badness 7081) in paragraph at lines 561--562
 []\TU/TimesNewRoman(0)/m/n/12.05 Matheus B. Vicari,Mathias Disney,Phil Wilkes,A
 ndrew Burt,Kim Calders,William
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 590--591
+Underfull \hbox (badness 1924) in paragraph at lines 565--566
 []\TU/SimSun(1)/m/n/12.05 侯 铜\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n
 /12.05 姚 立 红\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n/12.05 阚 江 明\TU/T
 imesNewRoman(0)/m/n/12.05 . \TU/SimSun(1)/m/n/12.05 基 于 叶 片 外 形 特 征 的 植 物 识 别 研
  究 \TU/TimesNewRoman(0)/m/n/12.05 [J]. \TU/SimSun(1)/m/n/12.05 湖 南 农 业 科
  []
 
-[22] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+[20] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1284,48 +1280,48 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 635
+Package Listings Warning: Text dropped after begin of listing on input line 610
 .
 
-[23] [24] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+[21] [22] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
-Package Listings Warning: Text dropped after begin of listing on input line 727
+Package Listings Warning: Text dropped after begin of listing on input line 702
 .
 
-[25] [26] [27] [28] [29] [30]
+[23] [24] [25] [26] [27] [28]
 (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 (d:/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-) [31] [32] [33]
+) [29] [30] [31]
 
-Package Listings Warning: Text dropped after begin of listing on input line 114
-1.
+Package Listings Warning: Text dropped after begin of listing on input line 111
+6.
 
-[34]
-Overfull \hbox (10.21918pt too wide) in paragraph at lines 1200--1201
+[32]
+Overfull \hbox (10.21918pt too wide) in paragraph at lines 1175--1176
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][]  
  []
 
-[35] [36] [37] [38]
+[33] [34] [35] [36]
 
-Package Listings Warning: Text dropped after begin of listing on input line 134
-9.
+Package Listings Warning: Text dropped after begin of listing on input line 132
+4.
 
-[39] [40]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1446.
- [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1446.
+[37] [38]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1421.
+ [39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1421.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1446.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1446.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1421.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1421.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 457FD50CC2C3F41014B1D64B32FC5D44.
+(rerunfilecheck)             Checksum: 4D9F8E26C7D1590BE1BB478EAE60AF6E.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1333,15 +1329,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1446.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1421.
  ) 
 Here is how much of TeX's memory you used:
- 30128 strings out of 492922
- 576672 string characters out of 6136751
- 881944 words of memory out of 5000000
- 33772 multiletter control sequences out of 15000+600000
- 540717 words of font info for 116 fonts, out of 8000000 for 9000
+ 30107 strings out of 492922
+ 576287 string characters out of 6136751
+ 881513 words of memory out of 5000000
+ 33756 multiletter control sequences out of 15000+600000
+ 540709 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  61i,19n,81p,396b,1936s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (41 pages).
+Output written on demo.pdf (39 pages).
