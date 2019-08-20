@@ -138,8 +138,9 @@
 	\end{table}
 
 	\section{问题一模型的建立与求解}
+
     \subsection{问题描述与分析}
-    问题一要求根据输送任务和船舰情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量,给出装载方案。本文首先对兵力、装备与装载的面积进行量化，得到所占面积向量。定义船只的决策向量，并结合约束条件来优化函数，通过沙石算法进行装备均分和部队装载,得到各级旅一个旅级单位对不同种船舰的需求量,给出装备人口装载方案,沙石算法示意图如图 ~\ref{shashi}~所示：
+    问题一要求根据输送任务和船舰情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量,给出装载方案。其本质是一个多背包优化问题，要求使用尽可能少的背包，装载各种旅的一个旅编制兵力。本组首先对兵力、装备与装载的面积进行量化，根据题目要求，以派出船舰种类和数量作为决策向量，以所用的总船只数量为目标函数，设计沙石算法,使得每艘船面积利用率达到最高,从而使得调用船支数达到最小值。沙石算法示意图如图 ~\ref{shashi}~所示：
 	   
 	    
 	    \begin{figure}[H]
@@ -149,6 +150,9 @@
 	    \end{figure}
 	    
     
+
+
+
 	    \subsection{模型的建立}
 	    \subsubsection{预备工作}
 	    \paragraph{兵力、装备与船载的面积量化}
@@ -176,7 +180,7 @@
 	     \begin{gather}
 	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
 	      \end{gather}
-2	      \begin{gather}
+	      \begin{gather}
 	      s_{zj}=s_{j}\times \eta_{2}
 	      \end{gather}
 	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
@@ -185,19 +189,19 @@
 	      \end{gather}
 
 	    \subsubsection{优化函数与约束条件}
-	    定义决策向量为：
+	    \textbf{决策向量}为：
 	     \begin{gather}
 	     D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
 	    \end{gather}
 	    其中$y_{k}$是派出的登陆舰数量，$z_{k}$是派出民用船的数量。
 	    
-	    根据题意尽可能使用少的船舰数，即定义优化函数为使用船舰总数：
+	    根据题意尽可能使用少的船舰数，即\textbf{目标函数}为使用船舰总数：
 	     \begin{gather}
 	     min Z=\sum D
 	  \end{gather}
 	    
 	    
-	   定义舰载面积系数向量为：
+	   舰载面积系数向量为：
 	    \begin{gather}
 	    S_{D}=[S_{y}, S_{z}]
     	\end{gather}
@@ -205,8 +209,6 @@
     	 \begin{gather}
     	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
     	 \end{gather}
-    	 ~\\
-    	 
     	 且由登陆舰Y1的有效舰载面积大于装备X9(直升机)的部队占用的面积：
     	  \begin{gather}
     	 y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
@@ -230,6 +232,7 @@
     	 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
     	 \end{matrix}\right. 
      	 \end{gather}
+
     		    	
 	\subsection{模型的求解}
   
@@ -241,40 +244,41 @@
 	      %	\includegraphics[width=.8\textwidth]{figures/lct.png}
 	      %	\caption{树叶特征工程示意图}\label{77}
 	      %\end{figure}
-		\subsubsection{沙石算法}
-	为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
-	\begin{gather}
-	min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
-	\end{gather}
+		
+
+    	  \subsubsection{沙石算法}
+		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+	    \begin{gather*}
+		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
+		\end{gather*}
 	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
-	\paragraph{算法思想}
-	根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
-	\paragraph{算法描述}
-	\begin{itemize}
-		\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
-		\begin{gather}
-		A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
-		\end{gather}
-		其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
-		\begin{gather}
-		min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
-		\end{gather}
-		重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+	 \paragraph{算法思想}
+	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
+	 \paragraph{算法描述}
+	 	\begin{itemize}
+	 	\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
+	 \begin{gather*}
+	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
+	\end{gather*}
+	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+	 	\begin{gather*}
+	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
+	 	\end{gather*}
+	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+	
 		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
-		\begin{gather}
-		T_{n}\geqslant 	T_{n+1}\\
-		n\leq \sum_{1}^{K}n_{k}
-		\end{gather}
+			\begin{gather*}
+	T_{n}\geqslant 	T_{n+1}\\
+	n\leq \sum_{1}^{K}n_{k}
+		\end{gather*}
 		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
-		\begin{gather}
-		P_{n}\geqslant 	P_{n+1}\\
-		n\leq \sum D
-		\end{gather}
-		依次检索总部对数列$ \left \{T_{n}\right \}$，并依次检索数列$ \left \{P_{n}\right \}$对应的船舰，将其装入剩余面积足够的船舰，即若$P_{n}\geqslant 	T_{n}$ 令：
-		\begin{gather}
+	
+		依次检索总部对数列$ \left \{T_{n}\right \}$，并依次检索数列$ \left \{P_{n}\right \}$对应的船舰，将其装入剩余面积足够的船舰，即若$P_{n}\geqslant T_{n}$ 令：
+		\begin{gather*}
 		P_{n}=	P_{n}-	T_{n}
-		\end{gather}
+		\end{gather*}
 		重复检索直到部队装载完成，即当部队检索次数$i=\sum_{1}^{K}n_{k}$时，算法结束。
+
 		\item [(3)] 结果输出：输出总共使用的船舰编号，即决策向量：
 		\begin{gather}
 		D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
@@ -315,10 +319,14 @@
 	
 
 	
+
+		
+		
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
-	针对问题二，
-	，其流程图如下：
+	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。首先修改问题一中的沙石算法，作为判断每个个体是否可以存活的基础。并生成$w$个初始个体
+	
+
 		
 	\begin{figure}[H]
 	\centering
