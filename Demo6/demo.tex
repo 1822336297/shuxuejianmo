@@ -52,20 +52,23 @@
 	
 	\section{问题重述}	
 	\subsection{问题背景}
-    植物的种类繁多,要了解和掌握如此多的植物,必须进行一个科学的分类。人们常常根据植物的用途，或根据植物的一个或几个明显的形态进行分类，植物的识别与分类对于区分植物种类,探索植物间的亲缘关系,阐明植物系统的进化规律具有重要的意义。因此植物分类学是植物科学甚至整个生命科学的基础学科。目前对于树叶识别与分类主要由人完成,但是树叶种类庞大,依赖人工地进行树叶识别与分类是不现实的。所以树叶的研究对于植物总体的研究能提供很大的帮助。
+    诺曼底登陆：代号“霸王行动”，是第二次世界大战中盟军在欧洲西线战场发起的一场大规模攻势，接近三百万士兵渡过英吉利海峡前往法国诺曼底。诺曼底战役是人类战争史上规模最大的一次海上登陆战役行动，使第二次世界大战的战略态势发生了根本性的变化。
     
-    从树叶的各个方面,纹理,硬度,离心率等方面都可作为主要方向研究,现对树叶的研究主要通过采集树叶图形,利用数字图像处理来对树叶进行分类识别,这种方法只停留在处理形态特征,有很大的局限性,忽略了树叶的生理特征和其他特征,所以研究方法来综合处理树叶平面图像特征,形态特征和生理特征很有必要性。
+    海运装载是海上登陆战役中的一种作战行动，将需要登陆的部队人员、装备、补给品装载到海上运输工具，该行动会直接影响着登陆作战效果。以诺曼底战役的第一批海上登陆输送兵力为参考，不同成建制单位的部队人员、装备和补给品都有不同的数量级需求,研究合理利用海军运输船和民用船只进行兵力装载以及对装载方案的优化都具有重要意义。
+    
     
     
 
-	\subsection{问题提出}
-    围绕植物分类进行树叶识别与分类,以树叶二值化图片为依据,依次提出以下问题:
+	\subsection{问题概述}
+    围绕相关附件和条件要求，研究海运装载行动输送兵力任务的合理安排，依次提出以下问题:
 		 
-	\begin{itemize}
-	\item [(1)] 结合附件中的二值化的图片数据,建立合适的图片数据提取方案, 量化处理图片数据,并具体分析说明所提取数据信息的量化指标体系。
-	\item [(2)] 基于问题一中提取的数据信息,建立合适的数学模型由数据出发判断叶子的种类,研究判别分类的核心指标,并估计出模型的性能以及核心指标对模型判别性能的影响。
-	\item [(3)] 基于二值化图片数据,结合附件中叶子纹理的数据信息,对原有模型进行改进,并对新旧模型进行比较分析。
-	\end{itemize}
+	
+	\textbf{问题一：}根据输送任务和海上运输工具情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位的运输工具的需求量,并给出具体装载方案。
+	
+	\textbf{问题二：}根据输送任务，结合附件中的港口及码头泊位,制定时间最短、船只数量最少的兵力装载方案。
+	
+	\textbf{问题三：}假设装载行动开始24小时后,A港口的两个A1和一个A2泊位,D港口的一个D2和两个D3泊位被毁，给出具体调整方案以及完成装载任务的对策建议。
+	
 	
 	\section{模型假设}
 	\begin{itemize}                                             
@@ -135,23 +138,33 @@
 	\end{table}
 
 	\section{问题一模型的建立与求解}
-	\subsection{问题的描述与分析}
-	问题一本质是一个多背包优化问题，要求使用尽可能少的背包，装载各种旅的一个旅编制兵力。本组根据题目要求，以派出船舰种类和数量作为决策向量，以所用的总船只数量为目标函数，以每艘船的面积装载限制作为约束条件。并设计沙石算法，使得每艘船面积利用率达到最高，从而使得调用船支数达到最小值。
+
+    \subsection{问题描述与分析}
+    问题一要求根据输送任务和船舰情况分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量与装载方案。其本质是一个\textbf{多背包优化}问题：要求使用尽可能少的背包，装载各种旅的一个旅编制兵力。根据题目要求，以派出船舰种类和数量作为决策向量，以所用的总船只数量为目标函数，以每艘船的面积装载限制作为约束条件。通过本组设计的\textbf{沙石算法}，使得每艘船面积利用率达到最高，从而使得调用船支数达到最小值，并给出其装载方案。其沙石算法示意图如图 ~\ref{shashi}~所示：
+	   
+	    
+	    \begin{figure}[H]
+	    	\centering
+	    	\includegraphics[width=.8\textwidth]{figures/shashi.jpg}
+	    	\caption{沙石算法示意图}\label{shashi}
+	    \end{figure}
+	    
+    
 	    \subsection{模型的建立}
 	    \subsubsection{预备工作}
 	    \paragraph{兵力、装备与船载的面积量化}
 	    计算附件2中的每种装备与所占面积：
-	    \begin{gather}
+	    \begin{gather*}
 	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-	    \end{gather}
+	    \end{gather*}
 	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。得到装备占用面积向量：
 	     \begin{gather}
 	     S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
 	     \end{gather}
 	     计算附件2中每种旅一个营的占用面积：
-	     \begin{gather}
+	     \begin{gather*}
 	     s_{pi}=p_{i}\times s
-	     \end{gather}
+	     \end{gather*}
 	     其中$p_{i}$是第$i(i=1,2,\cdots,12)$的全副武装人员数，取$s=0.5m^2$为每个全副武装人员占用的面积。得到每营人口所占面积向量：
 	     \begin{gather}
 	     S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
@@ -199,7 +212,8 @@
     	 \end{gather}
     	 其中$\sum  s_{p6}$是唯一装备的部队——$\uppercase\expandafter{\romannumeral6}$旅的人口总和。
     	 
-    	 即使用最少船舰装载每种旅的各一个旅级编制的模型为：
+
+    	 建立得到使用最少船舰装载每种旅各一个旅级编制的模型为：
     	  \begin{gather}
     	 min Z=\sum D\\ 
     	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
@@ -215,32 +229,72 @@
     	 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
     	 \end{matrix}\right. 
      	 \end{gather}
-    	  \subsubsection{沙石算法}
-		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
-	    \begin{gather*}
-		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
-		\end{gather*}
+%%<<<<<<< HEAD
+%    	  \subsubsection{沙石算法}
+%		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+%	    \begin{gather*}
+%		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
+%		\end{gather*}
+%	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
+%	 \paragraph{算法思想}
+%	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
+%	 \paragraph{算法描述}
+%	 	\begin{itemize}
+%	 	\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
+%	 \begin{gather*}
+%	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
+%	\end{gather*}
+%	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+%	 	\begin{gather*}
+%	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
+%	 	\end{gather*}
+%	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+%		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
+%			\begin{gather*}
+%	T_{n}\geqslant 	T_{n+1}\\
+%	n\leq \sum_{1}^{K}n_{k}
+%		\end{gather*}
+%		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
+%			\begin{gather*}
+%=======
+    		    	
+	\subsection{模型的求解}
+  
+	     
+	     %其算法流程图如图~\ref{77}~
+
+	      %\begin{figure}[H]
+	      %	\centering
+	      %	\includegraphics[width=.8\textwidth]{figures/lct.png}
+	      %	\caption{树叶特征工程示意图}\label{77}
+	      %\end{figure}
+		\subsubsection{沙石算法}
+	为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+	\begin{gather}
+	min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
+	\end{gather}
 	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
-	 \paragraph{算法思想}
-	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
-	 \paragraph{算法描述}
-	 	\begin{itemize}
-	 	\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
-	 \begin{gather*}
-	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
-	\end{gather*}
-	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
-	 	\begin{gather*}
-	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
-	 	\end{gather*}
-	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+	\paragraph{算法思想}
+	根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
+	\paragraph{算法描述}
+	\begin{itemize}
+		\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
+		\begin{gather}
+		A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
+		\end{gather}
+		其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+		\begin{gather}
+		min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
+		\end{gather}
+		重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
 		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
-			\begin{gather*}
-	T_{n}\geqslant 	T_{n+1}\\
-	n\leq \sum_{1}^{K}n_{k}
-		\end{gather*}
+		\begin{gather}
+		T_{n}\geqslant 	T_{n+1}\\
+		n\leq \sum_{1}^{K}n_{k}
+		\end{gather}
 		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
-			\begin{gather*}
+		\begin{gather*}
+%>>>>>>> cxr_sxjm
 		P_{n}\geqslant 	P_{n+1}\\
 		n\leq \sum D
 		\end{gather*}
@@ -249,27 +303,52 @@
 		P_{n}=	P_{n}-	T_{n}
 		\end{gather*}
 		重复检索直到部队装载完成，即当部队检索次数$i=\sum_{1}^{K}n_{k}$时，算法结束。
+%<<<<<<< HEAD
 		\item [(3)] 结果输出：输出总共使用的船舰数量，即决策向量：
 			\begin{gather*}
 		  D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
 		  	\end{gather*}
 		\end{itemize}	
-  \subsection{模型的求解}
-  	\paragraph{算法的实现}
-	\paragraph{算法流程图}
-		
-		
-	\section{问题二模型的建立与求解}
-	\subsection{问题的描述与分析}
-	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。首先修改问题一中的沙石算法，作为判断每个个体是否可以存活的基础。并生成$w$个初始个体
+
+
+	
+	\subsection{结果分析}
+
+		\begin{table}[H]
+		\centering		\caption{各旅级单位装备人口面积装载方案}\label{zhuangzai}
+		\begin{tabular}{cccccc}
+			\toprule[2pt]
+			\multicolumn{1}{m{2cm}}{\centering 船舰类别}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
+			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
+			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
+			\\
+			\midrule[1pt]
+			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
+			$ &$42.85714286$ \\ 
+			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
+			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
+			$ &$0$\\ 
+			Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
+			$ &$0$\\ `
+			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
+			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
+			\bottomrule[2pt]	
+		\end{tabular}
+	\end{table}
+
 	
 
-		
-	\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{figures/21.png}
-	\caption{PSO算法优化DNN网络流程图}\label{2222}
-	\end{figure}
+	
+	\section{问题二模型的建立与求解}
+	\subsection{问题的描述与分析}
+
+
 
 
 	\subsection{模型的建立与求解}
@@ -391,22 +470,27 @@
 	\subsection{实验与结果分析}
 	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$，DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。具体参数设置间表~\ref{canshu}~。
 			\begin{table}[H]
-		\centering		\caption{参数设置表}\label{canshu}
-		\begin{tabular}{ccc}
+		\centering		\caption{各旅级单位装载方案}\label{zhuangzai}
+		\begin{tabular}{cccccc}
 			\toprule[2pt]
-			\multicolumn{1}{m{4cm}}{\centering 参数名称}
-			& \multicolumn{1}{m{3cm}}{\centering 参数符号}
-			&\multicolumn{1}{m{3cm}}{\centering 参数值}
+			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
+			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
+			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
 			\\
 			\midrule[1pt]
-			选择粒子个数为	 &  T &$30$ \\ 
-			计算精度	 &  $\varepsilon$&$0.00001$  \\ 
-			学习率	 &  $\eta $ &0.01 \\ 
-			最大迭代次数	 &  $M$ &500\\ 
-						维度	 &  $S$ &11 \\ 
-									加速因子1	 &  $c_{1}$ &1.49\\ 
-												加速因子2	 &  $c_{2}$ &1.49 \\ 
-			惯性权重	 &  $\beta $ &$0.9$ \\ 
+			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
+			$ &$42.85714286$ \\ 
+			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
+			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
+			$ &$0$\\ 
+			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
+			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
 			\bottomrule[2pt]	
 		\end{tabular}
 
@@ -569,849 +653,7 @@
 \section{代码}
 \subsection{图片名称读取--matlab源代码}
 \begin{lstlisting}[language=matlab]
-p = genpath('.\data');% 获得文件夹data下所有子文件的路径，这些路径存在字符串p中，以';'分割
-length_p = size(p,2);%字符串p的长度
-path = {};%建立一个单元数组，数组的每个单元中包含一个目录
-temp = [];
-for i = 1:length_p %寻找分割符';'，一旦找到，则将路径temp写入path数组中
-if p(i) ~= ';'
-temp = [temp p(i)];
-else 
-temp = [temp '\']; %在路径的最后加入 '\'
-path = [path ; temp];
-temp = [];
-end
-end  
-clear p length_p temp;
-%至此获得data文件夹及其所有子文件夹（及子文件夹的子文件夹）的路径，存于数组path中。
-%下面是逐一文件夹中读取图像
-file_num = size(path,1);% 子文件夹的个数
-for i = 1:file_num
-file_path =  path{i}; % 图像文件夹路径
-img_path_list = dir(strcat(file_path,'*.jpg'));
-img_num = length(img_path_list); %该文件夹中图像数量
-if img_num > 0
-for j = 1:img_num
-image_name = img_path_list(j).name;% 图像名
-%image =  imread(strcat(file_path,image_name));
-fprintf('%d %d %s\n',i-1,j,strcat(file_path,image_name));% 显示正在处理的路径和图像名
-%图像处理过程 省略
-%Untitled2(strcat(file_path,image_name));
-end
-end
-end
-\end{lstlisting}
-\subsection{树叶形状id计算--matlab源代码}
-\begin{lstlisting}[language=matlab]%这里修改语言
-function Untitled2(str_path)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
-I=imread(str_path);
-thresh = graythresh(I);     %自动确定二值化阈值；
-I1=im2bw(I);%二向化
-stats = regionprops(I1,'Area','Eccentricity','Solidity','Perimeter', 'ConvexImage');
-B = bwboundaries(I1,'noholes');
-B=B{1,1};%边界坐标
-A=stats.Area;%面积
-P=stats.Perimeter;%周长
-id(1)=stats.Eccentricity;%离心率
-id(2)=stats.Solidity;%实密度
-id(3)=4*pi*A/P.^2;%等周因子
-temp1=zeros(size(B,1),size(B,1));
-for i=1:size(B,1) %计算外接圆直径
-for j=i:size(B,1)
-temp1(i,j)=((B(i,1)-B(j,1)).^2+(B(i,2)-B(j,2)).^2).^0.5;
-end
-end
-D=max(max(temp1)');%外接圆直径
-temp2=zeros(size(B,1),1);
-dd=zeros(size(I1,1),size(I1,2));
-for i=1:size(I1,1)%计算内切圆半径
-for j=1:size(I1,2)
-if I1(i,j)==1
-for k=1:size(B,1)
-temp2(k,1)=((B(k,1)-i).^2+(B(k,2)-j).^2).^0.5;                
-end
-dd(i,j)=min(temp2);
-end
-end
-end
-d=max(max(dd)');%内切圆半径
-id(4)=1-2.*d./D;%伸长率
-I3=stats.ConvexImage;
-stats3 = regionprops(I3,'Centroid','Perimeter');
-B3=bwboundaries(I3,'noholes');%凸型区域边界坐标
-B3=B3{1,1};
-C=stats3.Centroid;%凸型区域中心坐标
-temp2=zeros(size(B3,1),1);
-for k=1:size(B3,1)%计算最大距离
-temp2(k,1)=((B3(k,1)-C(1,1)).^2+((B3(k,2)-C(1,2)).^2)).^0.5;
-end
-L1=max(temp2);%最大距离
-temp2=zeros(size(B,1),1);
-for k=1:size(B,1)%计算最大距离
-temp2(k,1)=((B(k,1)-C(1,1)).^2+((B(k,2)-C(1,2)).^2)).^0.5;
-end
-L2=min(temp2);%最小距离
-L=stats3.Perimeter;%凸型周长
-id(5)=(L1-L2)./L;%最大压痕深度
-for i=1:size(I1,1)
-for j=1:size(I1,2)
-if I1(i,j)==1
-y1=i;
-break;
-end
-end
-end
-for i=size(I1,1):-1:1
-for j=size(I1,2):-1:1
-if I1(i,j)==1
-y2=i;
-break;
-end
-end
-end
-for i=1:size(I1,2)
-for j=1:size(I1,1)
-if I1(j,i)==1
-x1=i;
-break;
-end
-end
-end
-for i=size(I1,2):-1:1
-for j=size(I1,1):-1:1
-if I1(j,i)==1
-x2=i;
-break;
-end
-end
-end
-id(6)=(x1-x2)./(y1-y2);%长宽比
-fid=fopen('aaa.txt','a');%写入文件路径
-fprintf(fid,'%f,%f,%f,%f,%f,%f\r\n',id);
-fclose(fid);  
-end
-\end{lstlisting}
-\subsection{时间序列展开--python源代码}
-\begin{lstlisting}[language=python]%这里修改语言
-import numpy as np
-import pandas as pd
 
-import scipy as sp
-import scipy.ndimage as ndi
-from scipy.signal import argrelextrema
-
-import pandas as pd
-
-from skimage import measure
-from sklearn import metrics
-
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-
-from pylab import rcParams
-rcParams['figure.figsize'] = (6, 6)
-
-
-# ----------------------------------------------------- I/O ---
-
-def read_img(img_no,str):
-"""reads image from disk"""
-return mpimg.imread(str)
-
-
-def get_imgs(num, str):
-"""convenience function, yields random sample from leaves"""
-if type(num) == int:
-imgs = range(1, 1600)
-num = np.random.choice(imgs, size=num, replace=False)
-
-for img_no in num:
-yield img_no, preprocess(read_img(img_no,str))
-
-
-# ----------------------------------------------------- preprocessing ---
-
-def threshold(img, threshold=250):
-"""splits img to 0 and 255 values at threshold"""
-return ((img > threshold) * 255).astype(img.dtype)
-
-
-def portrait(img):
-"""makes all leaves stand straight"""
-y, x = np.shape(img)
-return img.transpose() if x > y else img
-
-
-def resample(img, size):
-"""resamples img to size without distorsion"""
-ratio = size / max(np.shape(img))
-return sp.misc.imresize(img, ratio, mode='L', interp='nearest')
-
-
-def fill(img, size=500, tolerance=0.95):
-"""extends the image if it is signifficantly smaller than size"""
-y, x = np.shape(img)
-
-if x <= size * tolerance:
-pad = np.zeros((y, int((size - x) / 2)), dtype=int)
-img = np.concatenate((pad, img, pad), axis=1)
-
-if y <= size * tolerance:
-pad = np.zeros((int((size - y) / 2), x), dtype=int)
-img = np.concatenate((pad, img, pad), axis=0)
-
-return img
-
-# ----------------------------------------------------- postprocessing ---
-
-def standardize(arr1d):
-"""move mean to zero, 1st SD to -1/+1"""
-return (arr1d - arr1d.mean()) / arr1d.std()
-
-
-def coords_to_cols(coords):
-"""from x,y pairs to feature columns"""
-return coords[::,1], coords[::,0]
-
-
-def get_contour(img):
-"""returns the coords of the longest contour"""
-return max(measure.find_contours(img, .8), key=len)
-
-
-def downsample_contour(coords, bins=512):
-"""splits the array to ~equal bins, and returns one point per bin"""
-edges = np.linspace(0, coords.shape[0],
-num=bins).astype(int)
-for b in range(bins-1):
-yield [coords[edges[b]:edges[b+1],0].mean(),
-coords[edges[b]:edges[b+1],1].mean()]
-
-
-def get_center(img):
-"""so that I do not have to remember the function ;)"""
-return ndi.measurements.center_of_mass(img)
-
-#----------------------------------------------------- feature engineering ---
-
-def extract_shape(img):
-"""
-Expects prepared image, returns leaf shape in img format.
-The strength of smoothing had to be dynamically set
-in order to get consistent results for different sizes.
-"""
-size = int(np.count_nonzero(img)/1000)
-brush = int(5 * size/size**.75)
-return ndi.gaussian_filter(img, sigma=brush, mode='nearest') > 200
-
-
-def near0_ix(timeseries_1d, radius=5):
-"""finds near-zero values in time-series"""
-return np.where(timeseries_1d < radius)[0]
-
-
-def dist_line_line(src_arr, tgt_arr):
-"""
-returns 2 tgt_arr length arrays,
-1st is distances, 2nd is src_arr indices
-"""
-return np.array(sp.spatial.cKDTree(src_arr).query(tgt_arr))
-
-
-def dist_line_point(src_arr, point):
-"""returns 1d array with distances from point"""
-point1d = [[point[0], point[1]]] * len(src_arr)
-return metrics.pairwise.paired_distances(src_arr, point1d)
-
-
-def index_diff(kdt_output_1):
-"""
-Shows pairwise distance between all n and n+1 elements.
-Useful to see, how the dist_line_line maps the two lines.
-"""
-return np.diff(kdt_output_1)
-
-
-# ----------------------------------------------------- wrapping functions ---
-
-# wrapper function for all preprocessing tasks
-def preprocess(img, do_portrait=True, do_resample=500,
-do_fill=True, do_threshold=250):
-""" prepares image for processing"""
-if do_portrait:
-img = portrait(img)
-if do_resample:
-img = resample(img, size=do_resample)
-if do_fill:
-img = fill(img, size=do_resample)
-if do_threshold:
-img = threshold(img, threshold=do_threshold)
-
-return img
-
-
-# wrapper function for feature extraction tasks
-def get_std_contours(img):
-"""from image to standard-length countour pairs"""
-
-# shape in boolean n:m format
-blur = extract_shape(img)
-
-# contours in [[x,y], ...] format
-blade = np.array(list(downsample_contour(get_contour(img))))
-shape = np.array(list(downsample_contour(get_contour(blur))))
-
-# flagging blade points that fall inside the shape contour
-# notice that we are loosing subpixel information here
-blade_y, blade_x = coords_to_cols(blade)
-blade_inv_ix = blur[blade_x.astype(int), blade_y.astype(int)]
-
-# img and shape centers
-shape_cy, shape_cx = get_center(blur)
-blade_cy, blade_cx = get_center(img)
-
-# img distance, shape distance (for time series plotting)
-blade_dist = dist_line_line(shape, blade)
-shape_dist = dist_line_point(shape, [shape_cx, shape_cy])
-
-# fixing false + signs in the blade time series
-blade_dist[0, blade_inv_ix] = blade_dist[0, blade_inv_ix] * -1
-
-return {'shape_img': blur,
-'shape_contour': shape,
-'shape_center': (shape_cx, shape_cy),
-'shape_series': [shape_dist, range(len(shape_dist))],
-'blade_img': img,
-'blade_contour': blade,
-'blade_center': (blade_cx, blade_cy),
-'blade_series': blade_dist,
-'inversion_ix': blade_inv_ix}
-
-
-# !/usr/bin/python
-# -*- coding:utf-8 -*-
-
-
-import os
-
-outer_path = r'C:\Users\77526\PycharmProjects\untitled\Demo5\data'
-folderlist = os.listdir(outer_path)  # 列举文件夹
-
-
-for folder in folderlist:
-inner_path = os.path.join(outer_path, folder)
-total_num_folder = len(folderlist)  # 文件夹的总数
-filelist = os.listdir(inner_path)  # 列举图片
-i = 0
-for item in filelist:
-total_num_file = len(filelist)  # 单个文件夹内图片的总数
-if item.endswith('.jpg'):
-src = os.path.join(os.path.abspath(inner_path), item)  # 原图的地址
-# dst = os.path.join(os.path.abspath(inner_path), str(folder) + '_' + str(
-#     i) + '.jpg')  # 新图的地址（这里可以把str(folder) + '_' + str(i) + '.jpg'改成你想改的名称）
-try:
-# os.rename(src, dst)
-print(src)
-i += 1
-
-
-title, img = list(get_imgs([968], src))[0]
-features = get_std_contours(img)
-print(features['blade_series'])
-df = pd.DataFrame(features['blade_series'][0]).T
-# df.to_csv('blade_series.csv', mode='a', header=False, index=False)
-plt.plot(*coords_to_cols(features['shape_contour']))
-plt.plot(*coords_to_cols(features['blade_contour']))
-#plt.axis('equal')
-
-plt.subplot(122)
-plt.plot(*features['shape_series'])
-plt.plot(*features['blade_series'])
-plt.show()
-except:
-continue
-
-
-
-# plt.plot(*coords_to_cols(features['shape_contour']))
-# plt.plot(*coords_to_cols(features['blade_contour']))
-# #plt.axis('equal')
-#
-# plt.subplot(122)
-# plt.plot(*features['shape_series'])
-# plt.plot(*features['blade_series'])
-# plt.show()
-\end{lstlisting}
-\subsection{边缘测试时间序列--C++源代码}
-\begin{lstlisting}[language=c]
-#include "stdafx.h"
-#include <opencv2/opencv.hpp>  
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <string>  
-#include <io.h>  
-#include <vector>  
-#include <iostream>  
-#include <math.h> 
-
-using namespace cv;
-using namespace std;
-char * filePath = "C:\\Users\\77526\\PycharmProjects\\untitled\\Demo5\\data"; 
-//此处用的是斜杠，也可以用反斜
-//但需注意的是由于C语言的特点，要用双反斜杠，即"E:\\MATLAB\\LBP\\scene_categories"
-//cin >> folder;   //也可以用此段代码直接在DOS窗口输入地址，此时只需正常的单反斜杠即可
-
-using namespace std;
-
-void getFiles(string foler, vector<string>& files);
-
-int main() {
-string folder = filePath; 
-
-vector<string> files;
-getFiles(folder, files );  //files为返回的文件名构成的字符串向量组
-
-for( int i = 0; i < files.size(); i++ ) {    //files.size()返回文件数量
-//To do here
-get_arr(files[i]);
-cout << files[i] << endl;
-}
-system("pause");
-return 0;
-}
-
-void getFiles( string path, vector<string>& files ) {
-//文件句柄
-long hFile   =   0;
-//文件信息
-struct _finddata_t fileinfo;   //大家可以去查看一下_finddata结构组成        			         
-//以及_findfirst和_findnext的用法，了解后妈妈就再也不用担心我以后不会编了
-string p;
-if((hFile = _findfirst(p.assign(path).append("\\*").c_str(),&fileinfo)) != -1) {
-do {   
-//如果是目录,迭代之
-//如果不是,加入列表
-if((fileinfo.attrib & _A_SUBDIR)) {
-if(strcmp(fileinfo.name,".") != 0 && strcmp(fileinfo.name,"..") != 0)
-getFiles( p.assign(path).append("\\").append(fileinfo.name), files );
-} 
-else {
-files.push_back(p.assign(path).append("\\").append(fileinfo.name) );
-}
-} 
-while(_findnext(hFile, &fileinfo) == 0);_findclose(hFile);
-}
-}
-
-
-void get_arr(string str){
-//读取图像
-Mat src_image = imread(str);
-//图像读取出错处理
-if (!src_image.data)
-{
-cout << "src image load failed!" << endl;
-return -1;
-}
-//显示源图像
-namedWindow("原图", WINDOW_NORMAL);
-imshow("原图", src_image);
-
-//此处高斯去燥有助于后面二值化处理的效果
-//Mat blur_image;
-//GaussianBlur(src_image, blur_image, Size(15, 15), 0, 0);
-//imshow("GaussianBlur", blur_image);
-
-/*灰度变换与二值化*/
-Mat gray_image, binary_image;
-cvtColor(src_image, gray_image, COLOR_BGR2GRAY);
-threshold(gray_image, binary_image, 30, 255, THRESH_BINARY | THRESH_TRIANGLE);
-imshow("binary", binary_image);
-
-/*形态学闭操作*/
-Mat morph_image;
-Mat kernel = getStructuringElement(MORPH_RECT, Size(3, 3), Point(-1, -1));
-morphologyEx(binary_image, morph_image, MORPH_CLOSE, kernel, Point(-1, -1), 2);
-imshow("morphology", morph_image);
-
-/*查找外轮廓*/
-vector< vector<Point> > contours;
-vector<Vec4i> hireachy;
-findContours(binary_image, contours, hireachy, CV_RETR_EXTERNAL, CHAIN_APPROX_NONE, Point());
-
-int l;//目标轮廓索引
-//寻找最大轮廓，即目标轮廓
-for (size_t t = 0; t < contours.size(); t++)
-{
-/*过滤掉小的干扰轮廓*/
-Rect rect = boundingRect(contours[t]);
-if (rect.width < src_image.cols / 2)
-continue;
-//if (rect.width >(src_image.cols - 20))
-l = t;//找到了目标轮廓，获取轮廓的索引
-}
-//画出目标轮廓
-Mat result_image = Mat::zeros(src_image.size(), CV_8UC3);
-vector< vector<Point> > draw_contours;
-draw_contours.push_back(contours[l]);
-drawContours(result_image, draw_contours, -1, Scalar(255,255,255), 1, 8, hireachy);
-namedWindow("lunkuo", WINDOW_NORMAL);
-imshow("lunkuo", result_image);
-
-//计算轮廓的傅里叶描述子
-Point p;
-int x, y, s;
-int i = 0,j = 0,u=0;
-s = (int)contours[l].size();
-Mat src1(Size(s,1),CV_8SC2);
-float f[9000];//轮廓的实际描述子
-float fd[16];//归一化后的描述子，并取前15个
-for (u = 0; u < s; u++)
-{
-float sumx=0, sumy=0;
-for (j = 0; j < s; j++)
-{
-p = contours[l].at(j);
-x = p.x;
-y = p.y;
-sumx += (float)(x*cos(2*CV_PI*u*j/s) + y*sin(2 * CV_PI*u*j / s));
-sumy+= (float)(y*cos(2 * CV_PI*u*j / s) - x*sin(2 * CV_PI*u*j / s));
-}
-src1.at<Vec2b>(0, u)[0] = sumx;
-src1.at<Vec2b>(0, u)[1] = sumy;
-f[u] = sqrt((sumx*sumx)+(sumy*sumy));
-}
-//傅立叶描述字的归一化
-f[0] = 0;
-fd[0] = 0;
-for (int k = 2; k < 17; k++)
-{
-f[k] = f[k] / f[1];
-fd[k - 1] = f[k];
-cout << fd[k-1] << endl;
-}
-//保存数据
-for (int k = 0; k < 16; k++)
-{
-FILE *fp = fopen("1.txt", "a");
-fprintf(fp, "%8f,", fd[k]);
-fclose(fp);
-}
-FILE *fp = fopen("1.txt", "a");
-fprintf(fp, "\n");
-fclose(fp);
-waitKey();
-} 
-\end{lstlisting}
-\subsection{数据可视化--python源代码}
-\begin{lstlisting}[language=python]%这里修改语言
-from example.commons import Faker
-from pyecharts import options as opts
-from pyecharts.charts import Page, Pie
-
-
-def pie_base(list) -> Pie:
-c = (
-Pie()
-.add("", list, radius=["40%", "75%"],)
-.set_global_opts(title_opts=opts.TitleOpts(title="各指标所占权重占比"),
-legend_opts=opts.LegendOpts(
-orient="vertical", pos_top="15%", pos_left="2%"
-
-),            toolbox_opts=opts.ToolboxOpts(),
-
-)
-.set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {d}%  "))
-
-)
-return c
-
-def pie_rich_label(list) -> Pie:
-c = (
-Pie()
-.add(
-"",list,
-radius=["40%", "75%"],
-label_opts=opts.LabelOpts(
-position="outside",
-formatter=" {b|{b}: }{per|{d}%}  ",
-background_color="#eee",
-border_color="#aaa",
-border_width=1,
-border_radius=4,
-rich={
-"a": {"color": "#999", "lineHeight": 22, "align": "center"},
-"abg": {
-"backgroundColor": "#e3e3e3",
-"width": "100%",
-"align": "right",
-"height": 22,
-"borderRadius": [4, 4, 0, 0],
-},
-"hr": {
-"borderColor": "#aaa",
-"width": "100%",
-"borderWidth": 0.5,
-"height": 0,
-},
-"b": {"fontSize": 16, "lineHeight": 33},
-"per": {
-"color": "#eee",
-"backgroundColor": "#334455",
-"padding": [2, 4],
-"borderRadius": 2,
-},
-},
-),
-)
-.set_global_opts(title_opts=opts.TitleOpts(title="各指标所占权重占比"),legend_opts=opts.LegendOpts(
-orient="vertical", pos_top="15%", pos_left="2%"
-
-),            toolbox_opts=opts.ToolboxOpts(),
-)
-)
-return c
-
-list = [['长宽比',0.294],
-['离心率',0.227],
-['密实度',0.328],
-['等轴因子',0.276],
-['伸长率',0.249],
-['最大压痕深度',0.280],
-['极小值点数',0.194],
-['极大值点数',0.225],
-['随机凸度',0.233],
-['时间序列熵',0.429],
-['最大压缩深度',0.214]]
-
-c = pie_base(list)
-c.render("xs.html")
-d = pie_rich_label(list)
-d.render("xss.html")
-\end{lstlisting}
-\subsection{PSO-DNN网络搭建--python源代码}
-\begin{lstlisting}[language=python]
-import pandas as pd
-import numpy as np
-import os
-
-trainData = pd.read_csv(r'C:\Users\77526\Downloads\all_data.csv')
-trainData = trainData.iloc[:,1:]
-print(trainData.head())
-
-from sklearn.utils import shuffle
-trainData = shuffle(trainData)
-trainData = trainData.values
-y = trainData[:,0:1]
-X= trainData[:,1:].astype(float)
-
-y=pd.DataFrame(y, columns=['species'])
-df = pd.get_dummies(y,columns=['species'])
-species = [s.replace('species_', '') for s in df.columns.tolist()]
-df.columns = species
-
-y = df.values
-
-from sklearn.model_selection  import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
-
-from sklearn.preprocessing import StandardScaler
-sc_X = StandardScaler()
-X_train = sc_X.fit_transform(X_train)
-X_test = sc_X.transform(X_test)
-
-from keras.models import Sequential  #to initialize the neural network
-from keras.layers import Dense  # to build the layers of ANN
-from keras.layers import Dropout
-
-
-# Initialising the ANN
-classifier = Sequential()
-
-# Adding the input layer and the first hidden layer
-classifier.add(Dense(units = 100,  kernel_initializer ='uniform', activation = 'relu', input_dim = 192))
-classifier.add(Dropout(0.2))
-
-# Adding the second hidden layer
-classifier.add(Dense(units = 100, kernel_initializer ='uniform', activation = 'relu'))
-classifier.add(Dropout(0.2))
-
-# Adding the third hidden layer
-classifier.add(Dense(units = 100, kernel_initializer ='uniform', activation = 'relu'))
-
-# Adding the output layer
-classifier.add(Dense(units=99, kernel_initializer = 'uniform', activation = 'softmax'))
-
-# Compiling the ANN
-classifier.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
-
-# Fitting the ANN to the Training set
-model = classifier.fit(X_train, y_train, batch_size = 5, nb_epoch = 500)
-print(model)
-
-
-## Plotting the error with the number of iterations
-## With each iteration the error reduces smoothly
-import matplotlib.pyplot as plt
-# define the function
-def training_vis(hist):
-loss = hist.history['loss']
-val_loss = hist.history['val_loss']
-acc = hist.history['acc']
-val_acc = hist.history['val_acc']
-
-# make a figure
-fig = plt.figure(figsize=(8,4))
-# subplot loss
-ax1 = fig.add_subplot(121)
-ax1.plot(loss,label='train_loss')
-ax1.plot(val_loss,label='val_loss')
-ax1.set_xlabel('Epochs')
-ax1.set_ylabel('Loss')
-ax1.set_title('Loss on Training and Validation Data')
-ax1.legend()
-# subplot acc
-ax2 = fig.add_subplot(122)
-ax2.plot(acc,label='train_acc')
-ax2.plot(val_acc,label='val_acc')
-ax2.set_xlabel('Epochs')
-ax2.set_ylabel('Accuracy')
-ax2.set_title('Accuracy  on Training and Validation Data')
-ax2.legend()
-plt.tight_layout()
-plt.show()
-
-
-# call the function
-training_vis(hist)
-loss1 = hist.history['loss']
-val_loss1 = hist.history['val_loss']
-acc1 = hist.history['acc']
-val_acc1 = hist.history['val_acc']
-
-
-
-#计算权重
-# loss,accuracy=classifier.evaluate(X_test,y_test)
-
-# print('loss:',loss)
-# print('accuracy:',accuracy)
-weight_Dense_2,bias_Dense_3 = classifier.get_layer('input').get_weights()
-weight_Dense_1,bias_Dense_3 = classifier.get_layer('output').get_weights()
-df1 = pd.DataFrame(weight_Dense_1)
-df2 = pd.DataFrame(weight_Dense_2)
-df = df2.mul(df1,axis='columns',level=None, fill_value=None)
-# df2.shape
-x= abs(df2[1])
-su =0 
-for i in range(0,15):
-x= abs(df2.T[i])
-su =su+sum(x)
-print(sum(x)/100)
-print(su)
-
-\end{lstlisting}
-\subsection{各类分类器比较--python源代码}
-\begin{lstlisting}[language=python]%这里修改语言
-import numpy as np
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-def warn(*args, **kwargs): pass
-import warnings
-warnings.warn = warn
-
-from sklearn.preprocessing import LabelEncoder
-from sklearn.cross_validation import StratifiedShuffleSplit
-
-train = pd.read_csv(r'C:\Users\77526\Downloads\all_data.csv')
-# test = pd.read_csv('./test.csv')
-
-def encode(train):
-le = LabelEncoder().fit(train.species) #对数据进行标签编码
-labels = le.transform(train.species)           # encode species strings
-classes = list(le.classes_)                    # save column names for submission
-#     test_ids = test.id                             # save test ids for submission
-
-train = train.drop(['species', 'id'], axis=1)
-#     test = test.drop(['id'], axis=1)
-
-return train, labels, classes
-
-train, labels, classes = encode(train)
-sss = StratifiedShuffleSplit(labels, 10, test_size=0.2, random_state=23)
-
-for train_index, test_index in sss:
-X_train, X_test = train.values[train_index], train.values[test_index]
-y_train, y_test = labels[train_index], labels[test_index]
-
-from sklearn.metrics import accuracy_score, log_loss
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC, LinearSVC, NuSVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-
-classifiers = [
-KNeighborsClassifier(3),
-SVC(kernel="rbf", C=0.025, probability=True),
-NuSVC(probability=True),
-DecisionTreeClassifier(),
-RandomForestClassifier(),
-GradientBoostingClassifier(),
-GaussianNB(),
-LinearDiscriminantAnalysis(),]
-
-<<<<<<< HEAD
-
-
-
-
-=======
-# Logging for Visual Comparison
-log_cols=["Classifier", "Accuracy", "Log Loss"]
-log = pd.DataFrame(columns=log_cols)
-
-for clf in classifiers:
-clf.fit(X_train, y_train)
-name = clf.__class__.__name__
-
-print("="*30)
-print(name)
-
-print('****Results****')
-train_predictions = clf.predict(X_test)
-acc = accuracy_score(y_test, train_predictions)
-print("Accuracy: {:.4%}".format(acc))
-
-train_predictions = clf.predict_proba(X_test)
-ll = log_loss(y_test, train_predictions)
-print("Log Loss: {}".format(ll))
-
-log_entry = pd.DataFrame([[name, acc*100, ll]], columns=log_cols)
-log = log.append(log_entry)
-
-print("="*30)
-sns.set_color_codes("muted")
-sns.barplot(x='Accuracy', y='Classifier', data=log, color="b")
-
-plt.xlabel('Accuracy %')
-plt.title('Classifier Accuracy')
-plt.show()
-
-sns.set_color_codes("muted")
-sns.barplot(x='Log Loss', y='Classifier', data=log, color="g")
-
-plt.xlabel('Log Loss')
-plt.title('Classifier Log Loss')
-plt.show()
 \end{lstlisting}
 
 \end{document}
