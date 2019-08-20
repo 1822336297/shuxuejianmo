@@ -139,7 +139,7 @@
 
 	\section{问题一模型的建立与求解}
     \subsection{问题描述与分析}
-    问题一要求根据输送任务和船舰情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量,给出装载方案。本文首先对兵力、装备与装载的面积进行量化，得到所占面积向量。定义船只的决策向量，并结合登陆舰Y1的有效装载面积大于X9(直升机)及第$Ⅵ$级旅人口面积的约束条件优化函数，求解使用船舰总数最小值，通过xxxxxxxxxxxxx,得到各级旅一个旅级单位包裹对不同种船舰的需求量,问题一算法流程图如图所示：
+    问题一要求根据输送任务和船舰情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量,给出装载方案。本文首先对兵力、装备与装载的面积进行量化，得到所占面积向量。定义船只的决策向量，并结合登陆舰Y1的有效装载面积大于X9(直升机)及第$Ⅵ$级旅人口面积的约束条件来优化函数，求解使用船舰总数最小值，通过xxxxxxxxxxxxx,得到各级旅一个旅级单位包裹对不同种船舰的需求量,给出装备人口装载方案,问题一算法流程图如图所示：
 	    %~\ref{77}~
 	    %\begin{figure}[H]
 	    %	\centering
@@ -230,10 +230,7 @@
 	    
 	
 	\subsection{模型的求解}
-	
-	     
-	     
-	     
+  
 	     
 	     %其算法流程图如图~\ref{77}~
 
@@ -245,11 +242,14 @@
 	      	
 	
 	\subsection{结果分析}
+
+
+	
 		\begin{table}[H]
-		\centering		\caption{各旅级单位装载方案}\label{zhuangzai}
+		\centering		\caption{各旅级单位装备人口面积装载方案}\label{zhuangzai}
 		\begin{tabular}{cccccc}
 			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
+			\multicolumn{1}{m{2cm}}{\centering 船舰类别}
 			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
 			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
 			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
@@ -262,6 +262,8 @@
 			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
 			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
 			$ &$0$\\ 
+			Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
+			$ &$0$\\ `
 			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
 			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
 			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
