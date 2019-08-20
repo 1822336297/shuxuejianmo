@@ -275,13 +275,25 @@
 		\end{gather*}
 	其中$t_{d}$是决策向量$D$中第$d$各元素对应船舰的装载时间，$D[d]$为决策向量$D$中的第$d$个元素。当
 		\begin{gather*}
-		 \sum_{1}^{19}D[d]=0\\
-		 t_{0}\geqslant max t_{k}
+	\left\{\begin{matrix} \sum_{1}^{19}D[d]=0
+	\\t_{0}\geqslant max t_{k} 	
+	\end{matrix}\right.
 		\end{gather*}
-		
-	
-	
-	
+		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，作为装载最小时间。
+	\subsubsection{遗传算法}
+	 \paragraph{编码}
+	 如图所示，每个个体由下面三个方块构成，其中最后一个进行遗传操作：
+	 	\begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=.7\textwidth]{figures/yichuan.png}
+	 	\caption{指标重要度占权图}\label{yichuan}
+	 	 \end{figure}
+	 根据题目要求，优先使用军用登陆舰，即决策向量$D=[y_{1},\cdots,y_{14},z_{1},\cdots,z_{5}]$中$y_{k}(k=1,2,\cdots,14)$为恒定值且等于其上限。故能简化决策向量为：
+	\begin{gather*}
+	D=[z_{1},z_{2}\cdots,z_{5}]
+	\end{gather*}
+	 \paragraph{交叉}
+	 为保证变异率和本题采用的交叉
 
 	\subsubsection{参数的选取与确定}
 	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
@@ -325,7 +337,7 @@
 		\caption{PSO-DNN迭代过程中损失与准确率}\label{xxx}
 	\end{figure}
 
-	\begin{figure}[H]
+	\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{figures/quanzhong2.png}
 	\caption{指标重要度占权图}\label{quanzhong}
