@@ -176,7 +176,7 @@
 	    
 	    根据题意尽可能使用少的船舰数，即\textbf{目标函数}为使用船舰总数：
 	     \begin{gather}
-	     min Z=\sum D
+	    min Z=\sum _{1}^{19}D[k]
 	  \end{gather}
 	    
 	    
@@ -196,7 +196,7 @@
     	 
     	 即使用最少船舰装载每种旅的各一个旅级编制的模型为：
     	  \begin{gather}
-    	 min Z=\sum D\\ 
+    	 min Z=\sum _{1}^{19}D[k]\\ 
     	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
     	 \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
     	 \\S_{D}=[S_{y}, S_{z}]
@@ -258,6 +258,38 @@
 	\subsection{问题的描述与分析}
 	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的沙石算法，作为判断每个个体是否可以存活的验证算法，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入时间轴仿真模型，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得装载时间最短，同时使用海上运输工具最少的兵力装载方案。
 	\subsection{模型的建立}
+	    \subsubsection{优化函数与约束条件}
+	基于问题一模型\textbf{决策向量}为：
+	\begin{gather}
+	D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
+	\end{gather}
+	\textbf{目标函数}为：
+	\begin{gather}
+	min Z=\sum _{1}^{19}D[k]
+	\end{gather}
+	增加\textbf{目标函数}：
+		\begin{gather}
+	min \left \{ \underset{k}{max}\sum t_{i} \right \}
+	\end{gather}
+	其中$\sum t_{i}(i=1,2\cdots,71)$，表示在共计$71$个泊口中第$i$个泊口的装载时间总和。
+	即得到问题二优化模型：
+	\begin{gather}
+	min Z=\sum _{1}^{19}D[k]\\
+	min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
+	s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+	\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+	\\S_{D}=[S_{y}, S_{z}]
+	\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+	\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+	\\s_{pi}=p_{i}\times s
+	\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+	\\     s_{yi}=s_{i}\times \eta_{1}
+	\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+	\\      s_{zj}=s_{j}\times \eta_{2}
+	\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+	\end{matrix}\right. 
+	\end{gather}
+	其中$min \left \{ \underset{k}{max}\sum t_{i} \right \}$可利用\textbf{泊口仿真模型}计算，并通过\textbf{遗传算法}算得全局最优解。
 	\subsubsection{泊口仿真模型}
 	建立泊口仿真模型以计算每种方案的装载时间，首先输入决策向量：
 		\begin{gather*}
@@ -268,7 +300,7 @@
 		\begin{gather*}
 		T=[t_{1},t_{2},\cdots,t_{71}]
 		\end{gather*}
-	$t_{k}(k=1,2,3,\cdots,71)$代表$71$个港口当前任务的结束时间。当$t_{k}=t_{0}$ 时，表示港口$k$处于空闲状态，此时立即更新任务结束时间$t_{k}$，令：
+	$t_{k}(k=1,2,3,\cdots,71)$代表$71$个港口当前任务的结束时间。当$t_{k}=t_{0}$ 时，表示港口$k$处于空闲状态，此时立即更新任务结束时间$t_{k}$，即使得：
 		\begin{gather*}
 		t_{k}=t_{k}+t_{d}\\
 		D[d]=D[d]-1
@@ -279,7 +311,10 @@
 	\\t_{0}\geqslant max t_{k} 	
 	\end{matrix}\right.
 		\end{gather*}
-		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，作为装载最小时间。
+		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，即：
+			\begin{gather*}
+		min \left \{ \underset{k}{max}\sum t_{i} \right \}=t_{0}
+			\end{gather*}
 	\subsubsection{遗传算法}
 	 \paragraph{编码}
 	 如图所示，每个个体由下面三个方块构成，其中最后一个进行遗传操作：
@@ -293,98 +328,32 @@
 	D=[z_{1},z_{2}\cdots,z_{5}]
 	\end{gather*}
 	 \paragraph{交叉}
-	 为保证变异率和本题采用的交叉
+	 为保证变异率并保留优秀基因片段和本题采用的两种交叉方式：
+	\begin{itemize}
+	\item [(1)]： 单点交叉：对于两个父代个体$D=[z_{1},z_{2}\cdots,z_{5}]$和	$D'=[z_{1}',z_{2}'\cdots,z_{5}']$,随机选择第$k$个基因处为交叉点，将该基因后所有基因进行交换，得到子代基因
+	\item [(2)]：中间值交叉：对于两个父代个体$D=[z_{1},z_{2}\cdots,z_{5}]$和	$D'=[z_{1}',z_{2}'\cdots,z_{5}']$，随机选取$z_{k}''\in [z_{k},z_{k}']$得到子代基因。
+    \end{itemize}
+    再选取交叉个体时采用混合分组的方法，将父代均匀混合后选取所有编号为奇数的个体，与其相邻对应编号为偶数的个体，通过两种交叉方式产生处两种类型的子代。
+     \paragraph{变异}
+     为保证种群多样性，以$0.1$的变异率，对选择的个体执行变异操作。随机选择变异个体中的基因$z_{k}$，使其值以各$50\%$的概率加一或减一。
+     \paragraph{筛重}
+     由于该模型基因维度较低，有大概率出现基因重复的个体，其对种群多样性有不利影响，并易使算法早熟。故在每次交叉变异生成新个体时删除重复基因，以提高算法的全局搜素能力。
+     \paragraph{选择}
+     由于本题约束条件较多，且有两个包含两个适应度函数，故采用两种选择方式：
+     \begin{itemize}
+     \item [(1)]： 约束淘汰：对于生成的个体基因$D=[z_{1},z_{2}\cdots,z_{5}]$带入第一问的沙石算法中，计算部队是否可以完全装入船支中。若不能则删除个体，若能则保留个体。
+     \item [(2)]：精英选择：由于模型假设战场上使用较少的时间优先级高于使用更少船支，将每一代中的生成个体与上一代混合，的个体按照其\textbf{装载时间}由大到小进行\textbf{第一次排序}，再将装载时间相同的个体进行依照\textbf{调用总数}进行\textbf{第二次排序}。保留前列的$w$个个体，$w$为设定的种群容纳量。
+     \end{itemize}
+     重复上述进化过程，当进化代数足够多时，即可得到全局最优解。
+ 
 
-	\subsubsection{参数的选取与确定}
-	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
-	
-	在迭代修正的过程中，实验采用$Keras$自带优化器\textbf{Adam函数}进行迭代修正，如式~\ref{adam}~所示，其中$\beta_{1}$一般取0.9，$\beta_{2}$一般取0.999。
-	
-	\begin{gather*}\label{adam}
-	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
-	\end{gather*}
 
 
-	\subsection{实验与结果分析}
-	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$，DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。具体参数设置间表~\ref{canshu}~。
-			\begin{table}[H]
-		\centering		\caption{参数设置表}\label{canshu}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{4cm}}{\centering 参数名称}
-			& \multicolumn{1}{m{3cm}}{\centering 参数符号}
-			&\multicolumn{1}{m{3cm}}{\centering 参数值}
-			\\
-			\midrule[1pt]
-			选择粒子个数为	 &  T &$30$ \\ 
-			计算精度	 &  $\varepsilon$&$0.00001$  \\ 
-			学习率	 &  $\eta $ &0.01 \\ 
-			最大迭代次数	 &  $M$ &500\\ 
-						维度	 &  $S$ &11 \\ 
-									加速因子1	 &  $c_{1}$ &1.49\\ 
-												加速因子2	 &  $c_{2}$ &1.49 \\ 
-			惯性权重	 &  $\beta $ &$0.9$ \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
 
-	\end{table}
-	
-	通过上述参数设置，计算训练后各指标指标重要度，将指标重要度求和，计算每个指标重要度占权得到~\ref{quanzhong}~，最小均方误差为0.458，\textbf{预测准确率为$91.037\%$}。
-	其迭代过程中损失与准确率如下图所示：
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{figures/x.png}
-		\caption{PSO-DNN迭代过程中损失与准确率}\label{xxx}
-	\end{figure}
 
-	\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{figures/quanzhong2.png}
-	\caption{指标重要度占权图}\label{quanzhong}
-		
-\end{figure}
 
-	由图~\ref{quanzhong}~可知各指标对模型判别性能的影响，选取重要度占比最高的三个指标——时间序列熵，密实度，最大压痕深度作为核心指标。分别剔除三个指标，再次进行训练与预测，得到缺失核心指标的模型性能如下：
-	
-		\begin{table}[H]
-		\centering	\caption{缺失核心指标的模型性能}\label{hengl}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 缺失指标}
-			& \multicolumn{1}{m{3cm}}{\centering 分类准确度}
-			&\multicolumn{1}{m{3cm}}{\centering 精度损失率}
-			\\
-			\midrule[1pt]
-			时间序列熵	 & 84.721\%  &6.937\%  \\ 
-			密实度	 &  86.112\% &5.498\%  \\ 
-			最大压痕深度	 &  87.538\% &  3.559\%  \\ 
-		
-			\bottomrule[2pt]	
-		\end{tabular}
-		
-	\end{table}
 
-%	从图~\ref{xxx}~可以看出，PSO-DNN网络训练后，在测试集中表现良好效果良好，在
-	\subsubsection{模型性能评估}
-	表~\ref{heng}~中，实验与三种神经网络进行纵向比较可知，四种神经网络训练后准确率都在90\%左右，证实了神经网络非线性映射能力较强。Elman网络和DNN网络的测试准确率都大于BP网络，说明反馈动态网络的逼近能力要强于前反馈静态网络。使用PSO优化DNN网络后，模型的跟踪性能有所改善，测试集中损失(Validation Loss)仅为0.458，说明PSO-DNN网络的泛化能力和稳定性明显提高，且全局收敛性增强。
-	
-		\begin{table}[H]
-	 \centering	\caption{常见神经网络的比较}\label{heng}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 网络类型}
-			 & \multicolumn{1}{m{3cm}}{\centering 网络名称}
-			  &\multicolumn{1}{m{4cm}}{\centering 测试集中准确率}
-			  \\
-			\midrule[1pt]
-			静态网络	 &  BP &87.424\%  \\ 
-			静态网络	 &  Elman &90.541\%  \\ 
-			动态网络	 &  DNN &89.912\%  \\ 
-			动态网络	 &  PSO-DNN &91.037\%  \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
 
-	\end{table}
 
 
 
