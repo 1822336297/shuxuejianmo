@@ -236,8 +236,7 @@
 	     
 	     
 	     %其算法流程图如图~\ref{77}~
-	 	
-	  
+
 	      %\begin{figure}[H]
 	      %	\centering
 	      %	\includegraphics[width=.8\textwidth]{figures/lct.png}
@@ -246,7 +245,31 @@
 	      	
 	
 	\subsection{结果分析}
-	
+		\begin{table}[H]
+		\centering		\caption{各旅级单位装载方案}\label{zhuangzai}
+		\begin{tabular}{cccccc}
+			\toprule[2pt]
+			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
+			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
+			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
+			\\
+			\midrule[1pt]
+			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
+			$ &$42.85714286$ \\ 
+			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
+			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
+			$ &$0$\\ 
+			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
+			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
+			\bottomrule[2pt]	
+		\end{tabular}
+	\end{table}
 	
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
@@ -379,22 +402,27 @@
 	\subsection{实验与结果分析}
 	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$，DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。具体参数设置间表~\ref{canshu}~。
 			\begin{table}[H]
-		\centering		\caption{参数设置表}\label{canshu}
-		\begin{tabular}{ccc}
+		\centering		\caption{各旅级单位装载方案}\label{zhuangzai}
+		\begin{tabular}{cccccc}
 			\toprule[2pt]
-			\multicolumn{1}{m{4cm}}{\centering 参数名称}
-			& \multicolumn{1}{m{3cm}}{\centering 参数符号}
-			&\multicolumn{1}{m{3cm}}{\centering 参数值}
+			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
+			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
+			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
+			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
 			\\
 			\midrule[1pt]
-			选择粒子个数为	 &  T &$30$ \\ 
-			计算精度	 &  $\varepsilon$&$0.00001$  \\ 
-			学习率	 &  $\eta $ &0.01 \\ 
-			最大迭代次数	 &  $M$ &500\\ 
-						维度	 &  $S$ &11 \\ 
-									加速因子1	 &  $c_{1}$ &1.49\\ 
-												加速因子2	 &  $c_{2}$ &1.49 \\ 
-			惯性权重	 &  $\beta $ &$0.9$ \\ 
+			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
+			$ &$42.85714286$ \\ 
+			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
+			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
+			$ &$0$\\ 
+			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
+			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
 			\bottomrule[2pt]	
 		\end{tabular}
 
