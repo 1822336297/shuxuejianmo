@@ -153,38 +153,35 @@
 	    \subsection{模型的建立}
 	    \subsubsection{预备工作}
 	    \paragraph{兵力、装备与船载的面积量化}
-	    计算附件2中的每种装备与所占面积：
-	    \begin{gather*}
-	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-	    \end{gather*}
-	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。得到装备占用面积向量：
+
+	    计算附件2中的每种装备与所占面积，得到装备占用面积向量：
+	    \begin{gather}
+	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}\\
+	        S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+	    \end{gather}
+	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。
+	    
+	     计算附件2中每种旅一个营的占用面积，得到每营人口所占面积向量：
+
 	     \begin{gather}
-	     S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-	     \end{gather}
-	     计算附件2中每种旅一个营的占用面积：
-	     \begin{gather*}
-	     s_{pi}=p_{i}\times s
-	     \end{gather*}
-	     其中$p_{i}$是第$i(i=1,2,\cdots,12)$的全副武装人员数，取$s=0.5m^2$为每个全副武装人员占用的面积。得到每营人口所占面积向量：
-	     \begin{gather}
+	     s_{pi}=p_{i}\times s\\
 	     S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
 	     \end{gather}
-	     计算附件3中船舰可用装载面积：
+	     其中$p_{i}$是第$i(i=1,2,\cdots,12)$的全副武装人员数，取$s=0.5m^2$为每个全副武装人员占用的面积。
+	     
+	     计算附件3中登陆舰可用装载面积，得到登陆舰有效面积向量：
 	      \begin{gather}
-	      s_{yi}=s_{i}\times \eta_{1}
+	      s_{yi}=s_{i}\times \eta_{1}\\
+	      S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
 	      \end{gather}
-	    其中$s_{yi}$是登陆舰$Y_{i}(i=1,2\cdots,14)$的可用装载面积，$s_{i}$是登陆舰$Y_{i}$的总装载面积，取$\eta_{1}=75\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
-	     \begin{gather}
-	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-	      \end{gather}
+	    其中$s_{yi}$是登陆舰$Y_{i}(i=1,2\cdots,14)$的可用装载面积，$s_{i}$是登陆舰$Y_{i}$的总装载面积，取$\eta_{1}=75\%$为登陆舰的有效面积率。
+	    
+	    计算附件3中民用船可用装载面积，得到登陆舰有效面积向量：
 	      \begin{gather}
+	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]\\
 	      s_{zj}=s_{j}\times \eta_{2}
 	      \end{gather}
-	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。得到登陆舰有效面积向量：
-	       \begin{gather}
-	       S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-	      \end{gather}
-
+	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。
 	    \subsubsection{优化函数与约束条件}
 	    \textbf{决策向量}为：
 	     \begin{gather}
@@ -229,34 +226,7 @@
     	 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
     	 \end{matrix}\right. 
      	 \end{gather}
-%%<<<<<<< HEAD
-%    	  \subsubsection{沙石算法}
-%		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
-%	    \begin{gather*}
-%		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
-%		\end{gather*}
-%	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
-%	 \paragraph{算法思想}
-%	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
-%	 \paragraph{算法描述}
-%	 	\begin{itemize}
-%	 	\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
-%	 \begin{gather*}
-%	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
-%	\end{gather*}
-%	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
-%	 	\begin{gather*}
-%	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
-%	 	\end{gather*}
-%	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
-%		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
-%			\begin{gather*}
-%	T_{n}\geqslant 	T_{n+1}\\
-%	n\leq \sum_{1}^{K}n_{k}
-%		\end{gather*}
-%		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
-%			\begin{gather*}
-%=======
+
     		    	
 	\subsection{模型的求解}
   
@@ -348,115 +318,46 @@
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
 
+	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的沙石算法，作为判断每个个体是否可以存活的验证算法，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入时间轴仿真模型，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得装载时间最短，同时使用海上运输工具最少的兵力装载方案。
+	\subsection{模型的建立}
+	\subsubsection{泊口仿真模型}
+	建立泊口仿真模型以计算每种方案的装载时间，首先输入决策向量：
 
-
-
-	\subsection{模型的建立与求解}
-	
-	\subsubsection{DNN网络搭建}
-	DNN的正向传播主要依靠众多神经元的计算来完成的，此处设计的网络结构如图~\ref{dnn}~所示，工作过程中可以用下式来表示：
-			\begin{gather}
-{u_{k}=\sum_{i=1} w_{k i} x_{i}} \\ {y_{k}=f\left(u_{k}-b_{k}\right)}
-	\end{gather}
-	其中:$x_{i}$表示第 i 个输入; $w_{ki}$表示与第 i 输入量相 连的权值; $u_{k}$表示所有输入的加权和; $b_{k}$为神经 元阈值;$ f$ 为激活函数; $y_{k}$ 为神经网络的输出。
-	
-	激活函数的种类有很多，如 $sigmoid$， $tanh$ 及$ Relu$，本文应用的是 $Relu$作为激活函数搭建两层隐含层，如式~\ref{shiw}~所示：
-	\begin{gather}\label{shiw}
-		\begin{array}{c}{f_{\text {Relu}}=\max (0, z)}\\
-		\frac{d}{d z} f_{R e L U}=\left\{\begin{array}{ll}{1,} & {z>0} \\ {0,} & {z \leqslant 0}\end{array}\right.
-		\end{array}
-	\end{gather}
-	
-	网络的输出层使用$ softmax $函数作分类器， 式~\ref{shiq}~为第 i 个神经的输出：
-	\begin{gather}\label{shiq}
-		f_{\text {softinax }}=\mathrm{e}^{i} / \sum_{j} \mathrm{e}^{j}
-	\end{gather}
-	具体算法步骤如下：
-	\begin{itemize}
-	\item [(1)]进行网络的初始化设置，用$(-1,1)$之间的随机数对DNN各个层的权值和阈值分别进行相应初始化，设定误差函数为$e$、计算精度为$\epsilon $、学习速率为$\eta $以及最大学习次数为$M$。
-
-	\item [(2)]随机选取第$k$次输入样本$x(k)$以及对应的实际期望输出$d(k)$如下:
-	\begin{gather*}
-	x(k)=[x_{1}(k),x_{2}(k),...,x_{n}(k)]\\
-	d(k)=[d_{1}(k),d_{2}(k),...,d_{r}(k)]
-	\end{gather*}
-	
-	\item [(3)]计算DNN中第$1$隐含层、第$2$隐含层以及输出层的输入值和输出值具体计算公式如下:
-
-	\begin{gather*}
-	h_{\mathrm{bs}} (k)=\sum_{i=1}^{n} u_{i s} x_{i}(k)+b_{s} \quad s=1,2, \cdots,p\\
-	h_{\mathrm{os}} s(k)=f_{1}\left(h_{\mathrm{bs}}(k)\right) \quad s=1,2, \cdots, p	\\
-    g_{\mathrm{bt}}(k)=\sum_{s=1}^{p} v_{s t} h_{\mathrm{os}}(k)+b_{t} \quad t=1,2, \cdots, q\\
-   	g_{\mathrm{ot}}(k)=f_{2}\left(g_{\mathrm{bt}}(k)\right) \quad s=1,2, \cdots, q	\\
-   	y_{\mathrm{bj}}( k )=\sum_{i = 1 }^{q}w_{ij}g_{\mathrm{at}}(k)+b_{j} \quad j = 1,2 , \cdots,r\\
-   y_{\mathrm{oj}}( k ) = f _ { 3 } \left( y _ { b j } ( k ) \right) \quad j = 1,2 , \cdots,r
-	\end{gather*}
-	其中$x_{i}$输入层输入向量,$h_{\mathrm{b}}$为第$1$隐含层输入向量,$h_{\mathrm{o}}$为第$1$隐含层输出向量，$g_{\mathrm{b}}$为第$2$隐含层输入向量,$g_{\mathrm{o}}$为第$2$隐含层输出向量，$y_{\mathrm{b}}$为输出层输入向量，$y_{\mathrm{o}}$为输出层输出向量
-	输入向量
-	\item [(4)]首先给定误差函数如下：
-	\begin{gather*}
-	e = \frac { 1 } { 2 } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { bj } ( k ) \right) ^ { 2 }
-	\end{gather*}
-	误差函数$e$对输出各层求偏导数得：
 		\begin{gather*}
-        \frac { \partial e } { \partial y _ { b j}(k) }=\delta _{j}(k)\\
-        \frac { \partial e } { \partial g _ { bt }(k) }=\delta _{t}(k)\\
-        \frac { \partial e } { \partial h _ { bs} }(k)=\delta _{s}(k)
-        \end{gather*}
-
-	即通过$\delta$值与各层的输出修正各层级间的权值,其计算公式如下：
-	\begin{gather*}
-	w _ { t j } ^ { N + 1 } = w _ { t j } ^ { N } + \eta \delta _ { j } ( k ) g _ { o t } ( k )\\
-	w _ { s t } ^ { N + 1 } = w _ { s t } ^ { N } + \eta \delta _ { t } ( k ) g _ { o s } ( k )\\
-	w _ { i s } ^ { N + 1 } = w _ { i s } ^ { N } + \eta \delta _ { j } ( k ) g _ { o t } ( k )
-	\end{gather*}
-	同理，各层级阈值变化公式如下
-	\begin{gather*}
-	\begin{array} { l } { \Delta b _ { j } ( k ) = \eta \delta _ { j } ( k ) } \\ { \Delta b _ { l } ( k ) = \eta \delta _ { t } ( k ) } \\ { \Delta b _ { s } ( k ) = \eta \delta _ { s } ( k ) } \end{array}
-	\end{gather*}
-	使用当前权值计算全局误差，公式如下：
-	\begin{gather*}
-	E = \frac { 1 } { 2 m } \sum _ { k = 1 } ^ { m } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { o j } ( k ) \right) ^ { 2 }
-	\end{gather*}
-	当误差小于预设精度$\varepsilon $或达到最大学习次数$M$时网络算法结束,否则返回(2)进行下一轮学习训练.
-		\end{itemize}
-	
-		\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{figures/123546.png}
-		\caption{人工搭建DNN结构示意图}\label{dnn}
-	\end{figure}
-	
-	
-	\subsubsection{PSO优化DNN网络}
-	算法的具体实现步骤如下：
-	\begin{itemize}
-		\item [(1)]将DNN网络结构中所有神经元间的连接权值和各个神经元的阈值编码成实数码串表示的个体作为PSO算法要寻优的位置向量。
-		\item [(2)]在编码空间中随机生成一定数目的个体组成种群，其不同个体代表神经网络不同权值。
-		\item [(3)]DNN网络训练及个体的适应度评价。将微粒群中的每一个个体的分量映射为网络中的权值和阈值，从而构成个体对应的神经网络。首先划分训练样本和测试样本;其次输入训练样本进行网络训练，通过反复迭代来优化网络权值，并计算每一个网络在训练集上产生的均方误差,，以此作为目标函数;最后对每个个体进行适应度评价，从中找到最佳个体用来判断是否需要更新微粒的Gbest与Pbest，以全局误差值作为适应度函数:
-		\begin{gather*}
-		E = \frac { 1 } { 2 m } \sum _ { k = 1 } ^ { m } \sum _ { j = 1 } ^ { r } \left( d _ { j } ( k ) - y _ { o j } ( k ) \right) ^ { 2 }
+	 D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
 		\end{gather*}
-		
-		式中：$m$为训练样本个数，
-		$r$为输出端个数，$y_{oj}(k)$为训练样本在输出端的给定输出，$ d _ { j } ( k ) $为训练样本在输出端的实测值，他们俩个值的误差平方和越小，表示实际值和预测值越接近，网络的性能越好。
-		
-		\item [(4)]更新每个粒子的速度和位置，产生下一代的粒子群。更新公式如下:
-		\begin{gather}
-		v_{id}^{t+1}=v_{id}^{t}+c_{1}r_{1}(p_{id}^{t}-x_{id}^{t})+c_{2}r_{2}(g_{id}^{t}-x_{id}^{t})
-		\end{gather}	
-		\begin{gather}
-		x_{id}^{t+1}=x_{id}^{t}+v_{id}^{t+1}
-		\end{gather}
-		其中$i=1,2,...,n$;$d=1,2,...,d$;$t$为当前迭代次数；$v_{id}^{t}$为当前粒子速度($t$时刻)；$x_{id}^{t}$为当前粒子位置($t$时刻)；$(p_{id}^{t}-x_{id}^{t})$为当前位置与自己最好位置之间的距离；$(g_{id}^{t}-x_{id}^{t})$为当前位置与群体最好位置之间的距离；$v_{id}^{t+1}$为下一时刻粒子速度($t+1$时刻)；$c_{1},c_{2}$为非负常数，称为加速因子；$r_{1},r_{2}$为均匀分布与$[0,1]$区间的随机数。
-		
-		\item [(5)]当目标函数小于给定的误差或达到最大迭代次数时，算法结束。将PSO算法训练出来的最佳神经网络的权值和阈值作为DNN网络的初始值，并记录计算指标重要度：
-		\begin{gather}
-			Ipot(k)=\sum \left |  w _ { t j }(k)\right |
-		\end{gather}
-	其中$w _ { t j }(k)$为特征值$id_{k}$训练后的输入权重。
-	\end{itemize}
-	
+	定义时间函数为$t_{0}$，初始化时间函数令$t_{0}=0$，并令$t_{0}$以$1$为步长逐渐增加。
+	定义港口决策向量为：
+		\begin{gather*}
+		T=[t_{1},t_{2},\cdots,t_{71}]
+		\end{gather*}
+	$t_{k}(k=1,2,3,\cdots,71)$代表$71$个港口当前任务的结束时间。当$t_{k}=t_{0}$ 时，表示港口$k$处于空闲状态，此时立即更新任务结束时间$t_{k}$，令：
+		\begin{gather*}
+		t_{k}=t_{k}+t_{d}\\
+		D[d]=D[d]-1
+		\end{gather*}
+	其中$t_{d}$是决策向量$D$中第$d$各元素对应船舰的装载时间，$D[d]$为决策向量$D$中的第$d$个元素。当
+		\begin{gather*}
+	\left\{\begin{matrix} \sum_{1}^{19}D[d]=0
+	\\t_{0}\geqslant max t_{k} 	
+	\end{matrix}\right.
+		\end{gather*}
+		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，作为装载最小时间。
+	\subsubsection{遗传算法}
+	 \paragraph{编码}
+	 如图所示，每个个体由下面三个方块构成，其中最后一个进行遗传操作：
+	 	\begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=.7\textwidth]{figures/yichuan.png}
+	 	\caption{指标重要度占权图}\label{yichuan}
+	 	 \end{figure}
+	 根据题目要求，优先使用军用登陆舰，即决策向量$D=[y_{1},\cdots,y_{14},z_{1},\cdots,z_{5}]$中$y_{k}(k=1,2,\cdots,14)$为恒定值且等于其上限。故能简化决策向量为：
+	\begin{gather*}
+	D=[z_{1},z_{2}\cdots,z_{5}]
+	\end{gather*}
+	 \paragraph{交叉}
+	 为保证变异率和本题采用的交叉
+
 	\subsubsection{参数的选取与确定}
 	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
 	
@@ -504,7 +405,7 @@
 		\caption{PSO-DNN迭代过程中损失与准确率}\label{xxx}
 	\end{figure}
 
-	\begin{figure}[H]
+	\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{figures/quanzhong2.png}
 	\caption{指标重要度占权图}\label{quanzhong}
