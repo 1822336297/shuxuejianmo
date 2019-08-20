@@ -308,7 +308,8 @@
 				\bottomrule[2pt]	
 			\end{tabular}
 		\end{table}
-		%由表~\ref{zhuangzai}~可得，第Ⅰ型旅的一个旅级单位对船舰的需求为1艘Y1综合登陆舰，3艘Y2大型登陆舰，3艘Y3大型登陆舰，4艘Y4大型登陆舰，11艘Y5大型登陆舰，2艘Y6大型登陆舰和1艘Y8大型登陆舰。(第$Ⅺ$型旅的需求与其为同一艘Y1综合登陆舰)，第Ⅱ型旅的一个旅级单位的需求为8艘Y6中型登陆舰，1艘Y7中型登陆舰，7艘Y9中型登陆舰与1艘集装箱船只。	
+		
+		%由表~\ref{zhuangzai}~可得，第Ⅰ型旅的一个旅级单位对船舰的需求为1艘Y1综合登陆舰，3艘Y2大型登陆舰，3艘Y3大型登陆舰，4艘Y4大型登陆舰，11艘Y5大型登陆舰，2艘Y6大型登陆舰和1艘Y8大型登陆舰。(第$Ⅺ$型旅的需求与其为同一艘Y1综合登陆舰)，第Ⅱ型旅的一个旅级单位的需求为8艘Y6中型登陆舰，1艘Y7中型登陆舰，7艘Y9中型登陆舰与1艘集装箱船只。不同旅级单位的	
 		
 		
 	\section{问题二模型的建立与求解}
@@ -336,46 +337,15 @@
 		 t_{0}\geqslant max t_{k}
 		\end{gather*}
 		
-	
-	
-	
-
+		
 	\subsubsection{参数的选取与确定}
 	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
-
+	
+	\subsection{模型的求解}
+	
 	
 	\subsection{结果分析}
-	通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~
-		
-		\begin{table}[H]
-		\centering		\caption{各型旅级单位装备人口面积装载方案}\label{zhuangzai}
-		\begin{tabular}{cccccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{2cm}}{\centering 船舰类别}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
-			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
-			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
-			\\
-			\midrule[1pt]
-			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
-			$ &$42.85714286$ \\ 
-			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
-			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
-			$ &$0$\\ 
-			Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
-			$ &$0$\\ 
-			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
-			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
-			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
-	\end{table}
-	%由表~\ref{zhuangzai}~可得，第Ⅰ型旅的一个旅级单位对船舰的需求为1艘Y1综合登陆舰，3艘Y2大型登陆舰，3艘Y3大型登陆舰，4艘Y4大型登陆舰，11艘Y5大型登陆舰，2艘Y6大型登陆舰和1艘Y8大型登陆舰。(第$Ⅺ$型旅的需求与其为同一艘Y1综合登陆舰)，第Ⅱ型旅的一个旅级单位的需求为8艘Y6中型登陆舰，1艘Y7中型登陆舰，7艘Y9中型登陆舰与1艘集装箱船只。
-	
+     
 			
 	
 
