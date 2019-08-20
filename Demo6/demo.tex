@@ -147,18 +147,6 @@
 	    \subsection{模型的建立}
 	    \subsubsection{预备工作}
 	    \paragraph{兵力、装备与船载的面积量化}
-	    计算附件2中的每种装备与所占面积，得到装备占用面积向量：
-	    \begin{gather}
-	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}\\
-	        S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-	    \end{gather}
-	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。
-	    
-	     计算附件2中每种旅一个营的占用面积，得到每营人口所占面积向量： 
-    
-	    \subsection{模型的建立}
-	    \subsubsection{预备工作}
-	    \paragraph{兵力、装备与船载的面积量化}
 	    计算附件2中的每种装备与所占面积：
 	    \begin{gather*}
 	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
@@ -366,15 +354,39 @@
 		\end{gather*}
 	其中$t_{d}$是决策向量$D$中第$d$各元素对应船舰的装载时间，$D[d]$为决策向量$D$中的第$d$个元素。当
 		\begin{gather*}
-		 \sum_{1}^{19}D[d]=0\\
-		 t_{0}\geqslant max t_{k}
+	\left\{\begin{matrix} \sum_{1}^{19}D[d]=0
+	\\t_{0}\geqslant max t_{k} 	
+	\end{matrix}\right.
 		\end{gather*}
+
 		
+
+		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，作为装载最小时间。
+	\subsubsection{遗传算法}
+	 \paragraph{编码}
+	 如图所示，每个个体由下面三个方块构成，其中最后一个进行遗传操作：
+	 	\begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=.7\textwidth]{figures/yichuan.png}
+	 	\caption{指标重要度占权图}\label{yichuan}
+	 	 \end{figure}
+	 根据题目要求，优先使用军用登陆舰，即决策向量$D=[y_{1},\cdots,y_{14},z_{1},\cdots,z_{5}]$中$y_{k}(k=1,2,\cdots,14)$为恒定值且等于其上限。故能简化决策向量为：
+	\begin{gather*}
+	D=[z_{1},z_{2}\cdots,z_{5}]
+	\end{gather*}
+	 \paragraph{交叉}
+	 为保证变异率和本题采用的交叉
+
+
 	\subsubsection{参数的选取与确定}
-	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
+	
 	
 	\subsection{模型的求解}
 	
+	\begin{gather*}\label{adam}
+	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
+	\end{gather*}
+
 	
 	\subsection{结果分析}
      
