@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  21 AUG 2019 14:52
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  21 AUG 2019 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1200,11 +1200,11 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-)
+ [2])
 \tf@toc=\write5
 \openout5 = `demo.toc'.
 
- [2] [3] [4] [5] [6] [7]
+ [3] [4] [5] [6] [7]
 File: figures/shashi.jpg Graphic file (type bmp)
 <figures/shashi.jpg>
 
@@ -1230,21 +1230,21 @@ Overfull \hbox (32.53812pt too wide) in paragraph at lines 288--312
 [10] [11] [12]
 File: figures/yichuan.jpg Graphic file (type bmp)
 <figures/yichuan.jpg>
- [13] [14] [15] [16]
-Underfull \hbox (badness 7081) in paragraph at lines 518--519
+ [13] [14] [15] [16] [17]
+Underfull \hbox (badness 7081) in paragraph at lines 522--523
 []\TU/TimesNewRoman(0)/m/n/12.05 Matheus B. Vicari,Mathias Disney,Phil Wilkes,A
 ndrew Burt,Kim Calders,William
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 522--523
+Underfull \hbox (badness 1924) in paragraph at lines 526--527
 []\TU/SimSun(1)/m/n/12.05 侯 铜\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n
 /12.05 姚 立 红\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n/12.05 阚 江 明\TU/T
 imesNewRoman(0)/m/n/12.05 . \TU/SimSun(1)/m/n/12.05 基 于 叶 片 外 形 特 征 的 植 物 识 别 研
  究 \TU/TimesNewRoman(0)/m/n/12.05 [J]. \TU/SimSun(1)/m/n/12.05 湖 南 农 业 科
  []
 
-[17] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+[18] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1270,15 +1270,15 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 536.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 536.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 540.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 540.
 
 (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 536.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 540.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 540.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 4FE47786033ACEBE1C146C3912D2E1B3.
+(rerunfilecheck)             Checksum: 8C2748C2B19E8FFF722533381B78187D.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1286,7 +1286,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 540.
  ) 
 Here is how much of TeX's memory you used:
  29175 strings out of 492922
@@ -1297,4 +1297,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  61i,14n,81p,408b,1570s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (18 pages).
+Output written on demo.pdf (19 pages).
