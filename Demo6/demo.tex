@@ -428,10 +428,52 @@
      \paragraph{选择}
      由于本题约束条件较多，且有两个包含两个适应度函数，故采用两种选择方式：
      \begin{itemize}
-     \item [(1)]： 约束淘汰：对于生成的个体基因$D=[z_{1},z_{2}\cdots,z_{5}]$带入第一问的沙石算法中，计算部队是否可以完全装入船支中。若不能则删除个体，若能则保留个体。
+     \item [(1)]： 约束淘汰：对于生成的个体基因$D=[z_{1},z_{2}\cdots,z_{5}]$带入第一问的沙石算法中，计算部队是否可以完全装入船支中。若能则保留个体,否则删除个体。
      \item [(2)]：精英选择：由于模型假设战场上使用较少的时间优先级高于使用更少船支，将每一代中的生成个体与上一代混合，的个体按照其\textbf{装载时间}由大到小进行\textbf{第一次排序}，再将装载时间相同的个体进行依照\textbf{调用总数}进行\textbf{第二次排序}。保留前列的$w$个个体，$w$为设定的种群容纳量。
      \end{itemize}
      重复上述进化过程，当进化代数足够多时，即可得到全局最优解。
+     \subsection{模型的求解}
+   	 \paragraph{算法的实现}
+   	 	\begin{itemize}
+   	 	\item [(1)]： 将染色体中的单个基因取出，带入问题一沙石算法中。计算只使用的某种民用船时，需要的该民用船的数量，作为单个基因的取值范围。在使用卡特蒙洛法随机生成初始个体，当生成$50$个能通过沙石算法检验的初始个体时，停止生成。
+   	 	\item [(2)]：将输入体进行、交叉、变异、筛重和约束淘汰后，得到子代生成个体。将子代个体与附带个体混合，带入泊口仿真模型求出每个个体的装载时间作为适应度函数。根据装载时间对每个个体进行第一次排序，并将装载时间相同的个体进行第二次排序，取序列中的前$50$个个体作为下一代输入个体。
+   	 	\item [(3)]：重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出个体，将输出个体基因与军用登陆舰合并即可得到完整的船支调遣方案。
+   	 	 \end{itemize}
+     \paragraph{算法流程图}
+     \section{问题三模型的建立与求解}
+   	\subsection{问题的描述与分析}
+   	针对问题三，在问题二模型的基础上进行调整，当装载进行$24$小时后若干港口被摧毁，针对这一情况调整装载方案。由于问题二中的装载时间最优解小于$24$小时，故将码头被摧毁时间改为第$18$小时。本组延用问题二中的遗传算法，修改问题二中的港口仿真模型。当时间轴进行到$18$小时，取消A港口的$2$个$A1$、$1$个$A2$类型码头门位，D港口的$1$个$D2$、$2$个$D3$类型码头泊位上正在进行的任务，并在之后的检索中时跳过被毁港口。然后使用遗传算法得到修改后模型的最优解。
+  \subsection{模型的建立}
+    \subsubsection{模型调整}
+    \textbf{优化函数与约束条件}延用问题二模型：
+     	\begin{gather}
+     min Z=\sum _{1}^{19}D[k]\\
+     min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
+     s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+     \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+     \\S_{D}=[S_{y}, S_{z}]
+     \\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+     \\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+     \\s_{pi}=p_{i}\times s
+     \\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+     \\     s_{yi}=s_{i}\times \eta_{1}
+     \\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+     \\      s_{zj}=s_{j}\times \eta_{2}
+     \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+     \end{matrix}\right. 
+     \end{gather}
+     调整 \textbf{泊口仿真模型}，延用港口决策向量：
+     \begin{gather*}
+     T=[t_{1},t_{2},\cdots,t_{71}]
+     \end{gather*}
+     当时间轴函数$t_{0}=18$时，停止被毁泊口正在进行的任务，即使
+     \begin{gather}
+     t_{k}=18(k=1,2,11,37,46,47)
+     \end{gather}
+     且之后检索港口决策向量时，跳过$ t_{k}(k=1,2,11,37,46,47)$。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法，即可求得装载中途港口被摧毁的最优船舰调用方案。
+       \subsection{模型的求解}
+     \paragraph{算法的实现}
+     \paragraph{算法流程图}
  
 
 
@@ -443,67 +485,7 @@
 			
 
 
-	\section{问题三模型的建立与求解}
-    \subsection{问题描述与分析}
-    针对问题三，本题要求结合给出的叶子纹理的数据信息，对问题二原有模型进行改进并进行分析比较。本组基于问题二模型中原有的11维数据，加入叶子纹理的数据信息后增加网络输入层个数，修改PSO-DNN网络的参数，从而提高了叶片识别与分类的精度。
-		
-    \subsection{模型的建立与求解}
-    加入叶片纹理数据后，根据第二问中模型原理进行参数调整，进行树叶分类预测的仿真实验：随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*75$，测试输入样本为$320*75$，DNN网络输入层神经元$75$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。具体参数设置间表~\ref{canshu2}~。具体参数：
-    \begin{table}[H]
-    	\centering		\caption{参数设置表}\label{canshu2}
-    	\begin{tabular}{ccc}
-    		\toprule[2pt]
-    		\multicolumn{1}{m{4cm}}{\centering 参数名称}
-    		& \multicolumn{1}{m{3cm}}{\centering 参数符号}
-    		&\multicolumn{1}{m{3cm}}{\centering 参数值}
-    		\\
-    		\midrule[1pt]
-    		选择粒子个数为	 &  T &$30$ \\ 
-    		计算精度	 &  $\varepsilon$&$0.00001$  \\ 
-    		学习率	 &  $\eta $ &0.01 \\ 
-    		最大迭代次数	 &  $M$ &500\\ 
-    		维度	 &  $S$ &75 \\ 
-    		加速因子1	 &  $c_{1}$ &1.49\\ 
-    		加速因子2	 &  $c_{2}$ &1.49 \\ 
-    		惯性权重	 &  $\beta $ &$0.9$ \\ 
-    		\bottomrule[2pt]	
-    	\end{tabular}
-        \end{table}
-    
-    
-    通过上述参数设置，训练后求得最小均方误差为$0.253$，\textbf{预测准确率为$96.634\%$}，其迭代过程中损失与准确率如下图所示：
-    \begin{figure}[H]
-    	\centering
-    	\includegraphics[width=\textwidth]{figures/moxingsan.png}
-    	\caption{PSO-DNN迭代过程中损失与准确率}\label{xxxx}
-    \end{figure}	
-    
 
-    \subsection{结果分析}
-	分别与问题二中的PSO优化前后DNN模型进行比较，其结果如下所示：
-	\begin{table}[H]
-		\centering	\caption{新旧PSO-DNN网络的比较}\label{hengs}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-						\multicolumn{1}{m{3cm}}{\centering 网络模型}
-						&
-			\multicolumn{1}{m{3cm}}{\centering Validation Loss}
-			& \multicolumn{1}{m{4cm}}{\centering Validation Accuracy}
-
-
-			\\
-			\midrule[1pt]
-			新PSO-DNN网络	 &  0.253 &96.634\%  \\ 
-			旧PSO-DNN网络	 &  0.458 &91.037\%  \\ 
-			新DNN网络	 &  0.291 &95.142\%  \\ 
-			旧DNN网络	 &  0.518 &89.912\%  \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
-		
-	\end{table}
-
-	结果表明，问题三的PSO-DNN网络在测试集中准确率高于问题二中网络，说明在加入叶子纹理数据后，其分类模型预测能力升高，符合实际情况。与未经过PSO优化权值的网络比较均提升1\%左右，证实了PSO-DNN网络非线性映射能力较强。
-	
 	\section{模型的评价}
 	\subsection{模型的优点}
 		\begin{itemize}                                             
