@@ -271,11 +271,11 @@
 		D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
 		\end{gather*}
 	\end{itemize}
-
+	%沙石算法的流程图如图~\ref{shashiluc}~
 	 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/shashisuanfa.png}
+	\includegraphics[width=.9\textwidth]{figures/shashisuanfa.png}
 	\caption{沙石算法流程图}\label{shashiluc}
 \end{figure}
 
@@ -476,18 +476,12 @@
      \begin{gather}
      t_{k}=18(k=1,2,11,37,46,47)
      \end{gather}
-     且之后检索港口决策向量时，跳过$ t_{k}(k=1,2,11,37,46,47)$。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法，即可求得装载中途港口被摧毁的最优船舰调用方案。
+     且之后检索港口决策向量时，剔除$ t_{k}(k=1,2,11,37,46,47)$。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法。即可求得装载中途港口被摧毁后的最优船舰调整方案。
        \subsection{模型的求解}
      \paragraph{算法的实现}
      \paragraph{算法流程图}
 
 	
-	\subsection{模型的求解}
-	
-	\begin{gather*}\label{adam}
-	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
-	\end{gather*}
-
 
 	
 	\subsection{结果分析}
