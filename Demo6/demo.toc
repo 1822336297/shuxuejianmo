@@ -22,7 +22,7 @@
 \contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}遗传算法}{12}{subsubsection.5.2.3}
 \contentsline {paragraph}{编码}{12}{section*.8}
 \contentsline {paragraph}{交叉}{12}{section*.10}
-\contentsline {paragraph}{变异}{12}{section*.11}
+\contentsline {paragraph}{变异}{13}{section*.11}
 \contentsline {paragraph}{筛重}{13}{section*.12}
 \contentsline {paragraph}{选择}{13}{section*.13}
 \contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}参数的选取与确定}{13}{subsubsection.5.2.4}
@@ -30,11 +30,11 @@
 \contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}结果分析}{13}{subsection.5.4}
 \contentsline {section}{\numberline {六、}问题三模型的建立与求解}{13}{section.6}
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题描述与分析}{13}{subsection.6.1}
-\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立与求解}{13}{subsection.6.2}
+\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立与求解}{14}{subsection.6.2}
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}结果分析}{15}{subsection.6.3}
 \contentsline {section}{\numberline {七、}模型的评价}{15}{section.7}
 \contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{15}{subsection.7.1}
-\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{15}{subsection.7.2}
-\contentsline {section}{\numberline {附录A}代码}{17}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}图片名称读取--matlab源代码}{17}{subsection.A.1}
+\contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{16}{subsection.7.2}
+\contentsline {section}{\numberline {附录A}代码}{18}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}图片名称读取--matlab源代码}{18}{subsection.A.1}
 \contentsfinish 
