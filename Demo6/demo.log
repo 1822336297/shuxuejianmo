@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 16:51
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1825,10 +1825,10 @@ File: figures/shashi.jpg Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 243.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 240.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 255--257
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 252--254
 \TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
 /n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
 [] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
@@ -1838,7 +1838,7 @@ Overfull \hbox (2.32474pt too wide) in paragraph at lines 255--257
 File: figures/shashisuanfa.png Graphic file (type bmp)
 <figures/shashisuanfa.png>
  [9]
-Overfull \hbox (32.53804pt too wide) in paragraph at lines 288--312
+Overfull \hbox (32.53804pt too wide) in paragraph at lines 285--309
  [][] 
  []
 
@@ -1846,13 +1846,13 @@ Overfull \hbox (32.53804pt too wide) in paragraph at lines 288--312
 File: figures/yichuan.jpg Graphic file (type bmp)
 <figures/yichuan.jpg>
  [13] [14] [15] [16] [17]
-Underfull \hbox (badness 7081) in paragraph at lines 520--521
+Underfull \hbox (badness 7081) in paragraph at lines 517--518
 []\TU/TimesNewRoman(0)/m/n/12.05 Matheus B. Vicari,Mathias Disney,Phil Wilkes,A
 ndrew Burt,Kim Calders,William
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 524--525
+Underfull \hbox (badness 1924) in paragraph at lines 521--522
 []\TU/SimSun(1)/m/n/12.05 侯 铜\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n
 /12.05 姚 立 红\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n/12.05 阚 江 明\TU/T
 imesNewRoman(0)/m/n/12.05 . \TU/SimSun(1)/m/n/12.05 基 于 叶 片 外 形 特 征 的 植 物 识 别 研
@@ -1890,13 +1890,13 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 . <->"FangSong/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 538.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
  [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 538.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
 
 (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 538.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 538.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: 8DE42CB07A7D98951E0F9B01F95D57EB.
 
@@ -1906,7 +1906,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 538.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 535.
  ) 
 Here is how much of TeX's memory you used:
  27618 strings out of 494895
