@@ -140,19 +140,14 @@
 	\section{问题一模型的建立与求解}
 
     \subsection{问题描述与分析}
-    问题一要求根据输送任务和船舰情况分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量与装载方案。其本质是一个\textbf{多背包优化}问题：要求使用尽可能少的背包，装载各种旅的一个旅编制兵力。根据题目要求，以派出船舰种类和数量作为决策向量，以所用的总船只数量为目标函数，以每艘船的面积装载限制作为约束条件。通过本组设计的\textbf{沙石算法}，使得每艘船面积利用率达到最高，从而使得调用船支数达到最小值，并给出其装载方案。其沙石算法示意图如图 ~\ref{shashi}~所示：
-	   
-	    
-	    \begin{figure}[H]
-	    	\centering
-	    	\includegraphics[width=.8\textwidth]{figures/shashi.jpg}
-	    	\caption{沙石算法示意图}\label{shashi}
-	    \end{figure}
-	    
+
+    问题一要求根据输送任务和船舰情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位对船舰的需求量,给出装载方案。其本质是一个多背包优化问题，要求使用尽可能少的背包，装载各种旅的一个旅编制兵力。本组首先对兵力、装备与装载的面积进行量化，根据题目要求，以派出船舰种类和数量作为决策向量，以所用的总船只数量为目标函数，设计沙石算法,使得每艘船面积利用率达到最高,从而调用船支数达到最小值。
     
+
 	    \subsection{模型的建立}
 	    \subsubsection{预备工作}
 	    \paragraph{兵力、装备与船载的面积量化}
+
 
 	    计算附件2中的每种装备与所占面积，得到装备占用面积向量：
 	    \begin{gather}
@@ -162,6 +157,7 @@
 	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。
 	    
 	     计算附件2中每种旅一个营的占用面积，得到每营人口所占面积向量：
+
 
 	     \begin{gather}
 	     s_{pi}=p_{i}\times s\\
@@ -228,97 +224,95 @@
      	 \end{gather}
 
     		    	
-	\subsection{模型的求解}
-  
-	     
-	     %其算法流程图如图~\ref{77}~
-
-	      %\begin{figure}[H]
-	      %	\centering
-	      %	\includegraphics[width=.8\textwidth]{figures/lct.png}
-	      %	\caption{树叶特征工程示意图}\label{77}
-	      %\end{figure}
-		\subsubsection{沙石算法}
-	为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
-	\begin{gather}
-	min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
-	\end{gather}
-	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
-	\paragraph{算法思想}
-	根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。
-	\paragraph{算法描述}
-	\begin{itemize}
-		\item [(1)] 装备均分：将每个旅分解为连编制，即得到面积规划向量：
-		\begin{gather}
-		A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
-		\end{gather}
-		其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
-		\begin{gather}
-		min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
-		\end{gather}
-		重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
-		\item [(2)] 部队装载：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
-		\begin{gather}
-		T_{n}\geqslant 	T_{n+1}\\
-		n\leq \sum_{1}^{K}n_{k}
-		\end{gather}
-		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
-		\begin{gather*}
-%>>>>>>> cxr_sxjm
-		P_{n}\geqslant 	P_{n+1}\\
-		n\leq \sum D
+	\subsection{模型的求解}   
+    	  \subsubsection{沙石算法}
+		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+	    \begin{gather*}
+		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
 		\end{gather*}
+	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
+	 \paragraph{算法思想}
+	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。沙石算法示意图如图 ~\ref{shashi}~所示：
+	 
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=.8\textwidth]{figures/shashi.jpg}
+	 	\caption{沙石算法示意图}\label{shashi}
+	 \end{figure}
+	 
+	 \paragraph{算法描述}
+	 	\begin{itemize}
+	 	\item [(1)] \textbf{装备均分}：将每个旅分解为连编制，即得到面积规划向量：
+	 \begin{gather*}
+	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
+	\end{gather*}
+	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+	 	\begin{gather*}
+	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
+	 	\end{gather*}
+	 	重复检索直到该旅装备数$X=0$时，结束装备均分，得到装备均分后的部队$ \left \{A^k\right \}(k=1,2,\cdots,n_{k})$($n_{k}$为k旅连编制总数)。
+	
+		\item [(2)] \textbf{部队装载}：将装备均分后的部队$ \left \{A^k\right \}$中的元素混合后由大到小进行排序得到排序后的营编制总部对数列$ \left \{T_{n}\right \}$:
+			\begin{gather*}
+	T_{n}\geqslant 	T_{n+1}\\
+	n\leq \sum_{1}^{K}n_{k}
+		\end{gather*}
+		将所有派出船舰装载面积进行排序得到船舰面积数列$ \left \{P_{n}\right \}$：
 		依次检索总部对数列$ \left \{T_{n}\right \}$，并依次检索数列$ \left \{P_{n}\right \}$对应的船舰，将其装入剩余面积足够的船舰，即若$P_{n}\geqslant T_{n}$ 令：
 		\begin{gather*}
 		P_{n}=	P_{n}-	T_{n}
 		\end{gather*}
 		重复检索直到部队装载完成，即当部队检索次数$i=\sum_{1}^{K}n_{k}$时，算法结束。
-%<<<<<<< HEAD
-		\item [(3)] 结果输出：输出总共使用的船舰数量，即决策向量：
-			\begin{gather*}
-		  D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
-		  	\end{gather*}
-		\end{itemize}	
+		\item [(3)] \textbf{结果输出}：输出总共使用的船舰数量，即决策向量：
+		\begin{gather*}
+		D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
+		\end{gather*}
+	\end{itemize}
 
+\subsection{结果分析}
+通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~
 
+\begin{table}[H]
+\centering		\caption{各型旅级单位装备人口面积装载方案}\label{zhuangzai}
+\begin{tabular}{cccccc}
+	\toprule[2pt]
+	\multicolumn{1}{m{2cm}}{\centering 船舰类别}
+	& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
+	&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
+	& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
+	& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
+	& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
+	\\
+	\midrule[1pt]
+	Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
+	$ &$42.85714286$ \\ 
+	Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
+	Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
+	$ &$0$\\ 
+	Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
+	$ &$0$\\ 
+	$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+	Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
+	Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+	Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
+	2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
+	\bottomrule[2pt]	
+\end{tabular}
+\end{table}
+
+%由表~\ref{zhuangzai}~可得，第Ⅰ型旅的一个旅级单位对船舰的需求为1艘Y1综合登陆舰，3艘Y2大型登陆舰，3艘Y3大型登陆舰，4艘Y4大型登陆舰，11艘Y5大型登陆舰，2艘Y6大型登陆舰和1艘Y8大型登陆舰。(第$Ⅺ$型旅的需求与其为同一艘Y1综合登陆舰)，第Ⅱ型旅的一个旅级单位的需求为8艘Y6中型登陆舰，1艘Y7中型登陆舰，7艘Y9中型登陆舰与1艘集装箱船只。不同旅级单位的	
 	
-	\subsection{结果分析}
-
-		\begin{table}[H]
-		\centering		\caption{各旅级单位装备人口面积装载方案}\label{zhuangzai}
-		\begin{tabular}{cccccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{2cm}}{\centering 船舰类别}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
-			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
-			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
-			\\
-			\midrule[1pt]
-			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
-			$ &$42.85714286$ \\ 
-			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
-			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
-			$ &$0$\\ 
-			Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
-			$ &$0$\\ `
-			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
-			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
-			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
-	\end{table}
-
 	
-
-	
+		
 	\section{问题二模型的建立与求解}
 	\subsection{问题的描述与分析}
-
-	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的沙石算法，作为判断每个个体是否可以存活的验证算法，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入时间轴仿真模型，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得装载时间最短，同时使用海上运输工具最少的兵力装载方案。
+%<<<<<<< HEAD
+%
+%	问题二要求针对附件2中的具体运输任务，制定使得装载时间最短，使用海上运输工具最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的沙石算法，作为判断每个个体是否可以存活的验证算法，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入时间轴仿真模型，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得装载时间最短，同时使用海上运输工具最少的兵力装载方案。
+%=======
+	问题二要求针对具体运输任务，结合港口泊位，制定时间最短、船只数量最少的兵力装载方案。本组通过遗传算法，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的沙石算法，作为验证算法判断每个个体是否可以存活，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入时间轴仿真模型，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得装载时间最短，同时使用海上运输工具最少的兵力装载方案。
+%>>>>>>> cxr_sxjm///
 	\subsection{模型的建立}
 	\subsubsection{泊口仿真模型}
 	建立泊口仿真模型以计算每种方案的装载时间，首先输入决策向量：
@@ -342,6 +336,9 @@
 	\\t_{0}\geqslant max t_{k} 	
 	\end{matrix}\right.
 		\end{gather*}
+
+		
+
 		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，作为装载最小时间。
 	\subsubsection{遗传算法}
 	 \paragraph{编码}
@@ -358,103 +355,21 @@
 	 \paragraph{交叉}
 	 为保证变异率和本题采用的交叉
 
+
 	\subsubsection{参数的选取与确定}
-	由于训练epochs与步长选取较为困难，实验采取\textbf{网格搜索法}（Grid Search）来确定参数的选取，网格搜索是指定参数值的一种穷举搜索方法，通过将估计函数的参数通过交叉验证的方法进行优化来得到最优的学习算法。
 	
-	在迭代修正的过程中，实验采用$Keras$自带优化器\textbf{Adam函数}进行迭代修正，如式~\ref{adam}~所示，其中$\beta_{1}$一般取0.9，$\beta_{2}$一般取0.999。
+	
+	\subsection{模型的求解}
 	
 	\begin{gather*}\label{adam}
 	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
 	\end{gather*}
 
-
-	\subsection{实验与结果分析}
-	随机选取80\%的数据作为训练集进行数据\textbf{标准化处理}，再对树叶种类（species）进行\textbf{One-Hot编码}作为分类目标。训练输入样本为$1280*11$，测试输入样本为$320*11$，DNN网络输入层神经元$11$个，输出层神经元$100$ 个，包含$2$个隐含层，适应度函数选择均方误差。按照PSO优化DNN网络模型的步骤不断地迭代寻找最优网络参数，进行树叶分类预测的仿真实验。具体参数设置间表~\ref{canshu}~。
-			\begin{table}[H]
-		\centering		\caption{各旅级单位装载方案}\label{zhuangzai}
-		\begin{tabular}{cccccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅰ型旅}
-			&\multicolumn{1}{m{2cm}}{\centering 第Ⅱ型旅}
-			& \multicolumn{1}{m{3cm}}{\centering $ \cdots \cdots  $}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅺ型旅}
-			& \multicolumn{1}{m{2cm}}{\centering 第Ⅻ型支队（旅）}
-			\\
-			\midrule[1pt]
-			Y1综合登陆舰 &  $267.6285185$  &$0$ & $\cdots \cdots$&$5658.770914
-			$ &$42.85714286$ \\ 
-			Y2大型登陆舰	 &  $1586.951111$&$0$& $\cdots \cdots$ &$0$ &$0$\\ 
-			Y3大型登陆舰	 &  $3178.042222 $ &$0$& $\cdots \cdots$ &$5864.014286
-			$ &$0$\\ 
-			$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
-			Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
-			Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
-			2万吨级滚装船  &  $0 $ &$6549.897037$& $\cdots \cdots$ &$0$ &$0$ \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
-
-	\end{table}
 	
-	通过上述参数设置，计算训练后各指标指标重要度，将指标重要度求和，计算每个指标重要度占权得到~\ref{quanzhong}~，最小均方误差为0.458，\textbf{预测准确率为$91.037\%$}。
-	其迭代过程中损失与准确率如下图所示：
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{figures/x.png}
-		\caption{PSO-DNN迭代过程中损失与准确率}\label{xxx}
-	\end{figure}
-
-	\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{figures/quanzhong2.png}
-	\caption{指标重要度占权图}\label{quanzhong}
-		
-\end{figure}
-
-	由图~\ref{quanzhong}~可知各指标对模型判别性能的影响，选取重要度占比最高的三个指标——时间序列熵，密实度，最大压痕深度作为核心指标。分别剔除三个指标，再次进行训练与预测，得到缺失核心指标的模型性能如下：
+	\subsection{结果分析}
+     
+			
 	
-		\begin{table}[H]
-		\centering	\caption{缺失核心指标的模型性能}\label{hengl}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 缺失指标}
-			& \multicolumn{1}{m{3cm}}{\centering 分类准确度}
-			&\multicolumn{1}{m{3cm}}{\centering 精度损失率}
-			\\
-			\midrule[1pt]
-			时间序列熵	 & 84.721\%  &6.937\%  \\ 
-			密实度	 &  86.112\% &5.498\%  \\ 
-			最大压痕深度	 &  87.538\% &  3.559\%  \\ 
-		
-			\bottomrule[2pt]	
-		\end{tabular}
-		
-	\end{table}
-
-%	从图~\ref{xxx}~可以看出，PSO-DNN网络训练后，在测试集中表现良好效果良好，在
-	\subsubsection{模型性能评估}
-	表~\ref{heng}~中，实验与三种神经网络进行纵向比较可知，四种神经网络训练后准确率都在90\%左右，证实了神经网络非线性映射能力较强。Elman网络和DNN网络的测试准确率都大于BP网络，说明反馈动态网络的逼近能力要强于前反馈静态网络。使用PSO优化DNN网络后，模型的跟踪性能有所改善，测试集中损失(Validation Loss)仅为0.458，说明PSO-DNN网络的泛化能力和稳定性明显提高，且全局收敛性增强。
-	
-		\begin{table}[H]
-	 \centering	\caption{常见神经网络的比较}\label{heng}
-		\begin{tabular}{ccc}
-			\toprule[2pt]
-			\multicolumn{1}{m{3cm}}{\centering 网络类型}
-			 & \multicolumn{1}{m{3cm}}{\centering 网络名称}
-			  &\multicolumn{1}{m{4cm}}{\centering 测试集中准确率}
-			  \\
-			\midrule[1pt]
-			静态网络	 &  BP &87.424\%  \\ 
-			静态网络	 &  Elman &90.541\%  \\ 
-			动态网络	 &  DNN &89.912\%  \\ 
-			动态网络	 &  PSO-DNN &91.037\%  \\ 
-			\bottomrule[2pt]	
-		\end{tabular}
-
-	\end{table}
-
-
 
 	\section{问题三模型的建立与求解}
     \subsection{问题描述与分析}

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD:Demo6/demo.toc
 \contentsline {section}{\numberline {一、}问题重述}{4}{section.1}% 
 \contentsline {subsection}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题背景}{4}{subsection.1.1}% 
@@ -40,6 +42,7 @@
 \contentsline {subsection}{\numberline {A.6}PSO-DNN网络搭建--python源代码}{33}{subsection.A.6}% 
 \contentsline {subsection}{\numberline {A.7}各类分类器比较--python源代码}{36}{subsection.A.7}% 
 =======
+>>>>>>> lzc_sxjm
 \contentsline {section}{\numberline {一、}问题重述}{4}{section.1}
 \contentsline {subsection}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题背景}{4}{subsection.1.1}
 \contentsline {subsection}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}问题提出}{4}{subsection.1.2}
@@ -75,5 +78,8 @@
 \contentsline {subsection}{\numberline {A.5}数据可视化--python源代码}{33}{subsection.A.5}
 \contentsline {subsection}{\numberline {A.6}PSO-DNN网络搭建--python源代码}{35}{subsection.A.6}
 \contentsline {subsection}{\numberline {A.7}各类分类器比较--python源代码}{38}{subsection.A.7}
+<<<<<<< HEAD
+=======
 >>>>>>> cxr_sxjm:Demo5/demo.toc
+>>>>>>> lzc_sxjm
 \contentsfinish 
