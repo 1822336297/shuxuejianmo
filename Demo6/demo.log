@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 09:35
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 09:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1825,17 +1825,17 @@ File: figures/shashi.jpg Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 268.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 242.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 280--282
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 254--256
 \TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
 /n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
 [] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
  []
 
 [8]
-Overfull \hbox (32.53804pt too wide) in paragraph at lines 305--329
+Overfull \hbox (32.53804pt too wide) in paragraph at lines 279--303
  [][] 
  []
 
@@ -1846,13 +1846,13 @@ File: figures/yichuan.jpg Graphic file (type bmp)
 File: figures/moxingsan.png Graphic file (type bmp)
 <figures/moxingsan.png>
  [14] [15] [16]
-Underfull \hbox (badness 7081) in paragraph at lines 532--533
+Underfull \hbox (badness 7081) in paragraph at lines 508--509
 []\TU/TimesNewRoman(0)/m/n/12.05 Matheus B. Vicari,Mathias Disney,Phil Wilkes,A
 ndrew Burt,Kim Calders,William
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 536--537
+Underfull \hbox (badness 1924) in paragraph at lines 512--513
 []\TU/SimSun(1)/m/n/12.05 侯 铜\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n
 /12.05 姚 立 红\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n/12.05 阚 江 明\TU/T
 imesNewRoman(0)/m/n/12.05 . \TU/SimSun(1)/m/n/12.05 基 于 叶 片 外 形 特 征 的 植 物 识 别 研
@@ -1890,15 +1890,15 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 . <->"FangSong/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 526.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 526.
 
 (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 550.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 526.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 526.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: A6577517CA96DF45804B8AEA827523A5.
+(rerunfilecheck)             Checksum: 82E5CDC8D729D7822572CC9641240E90.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1906,13 +1906,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
  ) 
 Here is how much of TeX's memory you used:
- 27609 strings out of 494895
- 535110 string characters out of 6176373
- 641511 words of memory out of 5000000
- 31118 multiletter control sequences out of 15000+600000
+ 27619 strings out of 494895
+ 535747 string characters out of 6176373
+ 641642 words of memory out of 5000000
+ 31128 multiletter control sequences out of 15000+600000
  538491 words of font info for 94 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  60i,18n,78p,10457b,1570s stack positions out of 5000i,500n,10000p,200000b,80000s
