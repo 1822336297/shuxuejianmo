@@ -281,7 +281,7 @@
 
 
 \subsection{结果分析}
-通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~，其各连具体到每艘轮船数据见附件：
+通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~，其各连对应的某种装备具体到每艘轮船数据见附件：
 
 \begin{table}[H]
 \centering		\caption{各型旅级单位装备人口面积装载方案}\label{zhuangzai}
@@ -311,13 +311,13 @@
 \end{tabular}
 \end{table}
 
-	其各类舰船的使用数量与平均有效面积利用率$\frac{\sum P_{n}\cdot S_{k}}{\sum D*S_{n}*0.75}$如下表所示：
+	其种各类舰船的使用数量$num$与平均有效面积利用率$\eta=\frac{\sum P_{n}\cdot S_{k}}{\sum D*S_{n}*0.75}$如下表所示：
 	\begin{table}[H]
 		\centering		\caption{各类舰船的使用数量与平均有效面积利用率}\label{zhuansasgzai}
 		\begin{tabular}{ccc}
 			\toprule[2pt]
 			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
-			& \multicolumn{1}{m{3cm}}{\centering 使用数目}
+			& \multicolumn{1}{m{3cm}}{\centering 使用数量}
 			&\multicolumn{1}{m{3cm}}{\centering 平均有效面积利用率}
 			\\
 			\midrule[1pt]
@@ -331,7 +331,7 @@
 			\bottomrule[2pt]	
 		\end{tabular}
 	\end{table}
-由表~\ref{zhuansasgzai}~可知，由沙石算法设计的装备兵力装载方案，其有效面积利用率相当高，能大幅度减少船只数目填充更多武装兵力。
+由表~\ref{zhuansasgzai}~可知，由沙石算法设计的装备兵力装载方案，其有\textbf{效面积利用率相当高}，能最大程度的\textbf{利用最少的船只数目}填充更多武装兵力。在实际作战中，将建制单位细化至连并计算修正面积，再进行"沙石"思想的封装进船舰后，能大幅度减小船舰使用数目，以达到装载行动迅速高效的目的。
 	
 	
 		
@@ -342,9 +342,9 @@
 	\subsection{模型的建立}
 	    \subsubsection{优化函数与约束条件}
 	基于问题一模型\textbf{决策向量}为：
-	\begin{gather}
+	\begin{gather*}
 	D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
-	\end{gather}
+	\end{gather*}
 	\textbf{目标函数}为：
 	\begin{gather}
 	min Z=\sum _{1}^{19}D[k]
