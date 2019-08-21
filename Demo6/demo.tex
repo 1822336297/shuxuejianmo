@@ -209,19 +209,23 @@
 
     	 综上，建立得到使用最少船舰装载每种旅各一个旅级编制的\textbf{模型}为：
     	  \begin{gather}
-    	 min Z=\sum _{1}^{19}D[k]\\ 
-    	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-    	 \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-    	 \\S_{D}=[S_{y}, S_{z}]
-    	 \\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-    	 \\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-    	 \\s_{pi}=p_{i}\times s
-    	 \\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-    	 \\     s_{yi}=s_{i}\times \eta_{1}
-    	 \\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-    	 \\      s_{zj}=s_{j}\times \eta_{2}
-    	 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-    	 \end{matrix}\right. 
+\begin{matrix}
+minZ=\sum _{1}^{19}D[k]
+\\
+\\
+s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+\\S_{D}=[S_{y}, S_{z}]
+\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+\\s_{pi}=p_{i}\times s
+\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+\\     s_{yi}=s_{i}\times \eta_{1}
+\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+\\      s_{zj}=s_{j}\times \eta_{2}
+\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+\end{matrix}\right.
+\end{matrix}
      	 \end{gather}
 
     		    	
@@ -302,7 +306,19 @@
 	$ &$0$\\ 
 	Y4大型登陆舰	 &  $2114.508148 $ &$0$& $\cdots \cdots$ &$0
 	$ &$0$\\ 
-	$\cdots \cdots$	 &  $\cdots \cdots$  &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$ &$\cdots \cdots$\\ 
+	Y5大型登陆舰	 &$5621.115$ &$0$& $\cdots \cdots$ &$0
+	$ &$385.714$\\
+	Y6中型登陆舰	 &$492.417$ &$3557.613$& $\cdots \cdots$ &$0
+	$ &$0$\\
+	Y7中型登陆舰	 &$0$ &$438.3834$& $\cdots \cdots$ &$0
+	$ &$0$\\
+	Y8中型登陆舰	 &$793.7356$ &$0$& $\cdots \cdots$ &$0
+	$ &$0$\\
+	Y9中型登陆舰	 &$0$ &$1468.704$& $\cdots \cdots$ &$0
+	$ &$342.8571$\\
+	Y10中型登陆舰	 &$0$ &$0$ & $\cdots \cdots$ &$0
+	$ &$0$ \\
+	Y11登陆舰	 &$0$ &$0$& $\cdots \cdots$ &$0$ &$0$ \\
 	Y12登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$728.5714286$\\ 
 	Y13登陆艇	 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
 	Y14登陆艇		 &  $0$ &$0$ & $\cdots \cdots$ &$0$ &$0$\\ 
@@ -311,7 +327,7 @@
 \end{tabular}
 \end{table}
 
-	其种各类舰船的使用数量$num$与平均有效面积利用率$\eta=\frac{\sum P_{n}\cdot S_{k}}{\sum D*S_{n}*0.75}$如下表所示：
+	其种各类舰船的使用数量$num$与平均有效面积利用率$\eta=\frac{\sum P_{n}\cdot S_{k}}{\sum D*S_{n}*0.75}$，计算结果如表~\ref{zhuansasgzai}~所示。可以见的，其沙石算法设计的装备兵力装载方案\textbf{有效面积利用率相当高}，能最大程度的\textbf{利用最少的船只数目}填充更多武装兵力。在实际作战中，将建制单位细化至连并计算修正面积，再进行"沙石"思想的封装进船舰后，能大幅度减小船舰使用数目，以达到装载行动迅速高效的目的。
 	\begin{table}[H]
 		\centering		\caption{各类舰船的使用数量与平均有效面积利用率}\label{zhuansasgzai}
 		\begin{tabular}{ccc}
@@ -331,7 +347,7 @@
 			\bottomrule[2pt]	
 		\end{tabular}
 	\end{table}
-由表~\ref{zhuansasgzai}~可知，由沙石算法设计的装备兵力装载方案，其有\textbf{效面积利用率相当高}，能最大程度的\textbf{利用最少的船只数目}填充更多武装兵力。在实际作战中，将建制单位细化至连并计算修正面积，再进行"沙石"思想的封装进船舰后，能大幅度减小船舰使用数目，以达到装载行动迅速高效的目的。
+
 	
 	
 		
@@ -355,24 +371,41 @@
 	\end{gather}
 	其中$\sum t_{i}(i=1,2\cdots,71)$，表示在共计$71$个泊口中第$i$个泊口的装载时间总和。	
 	
-		综上，建立得到问题二\textbf{时间与船数优化模型}：
+
+	且由于集装箱船(Z3)无法装载装备X1，X2，X3和X4，增加	\textbf{约束条件}：
 	\begin{gather}
-	min Z=\sum _{1}^{19}D[k]\\
-	min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-	s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-	\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-	\\S_{D}=[S_{y}, S_{z}]
-	\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-	\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-	\\s_{pi}=p_{i}\times s
-	\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-	\\     s_{yi}=s_{i}\times \eta_{1}
-	\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-	\\      s_{zj}=s_{j}\times \eta_{2}
-	\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-	\end{matrix}\right. 
+	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
 	\end{gather}
-	其中$min \left \{ \underset{k}{max}\sum t_{i} \right \}$可利用\textbf{泊口仿真模型}计算，并通过\textbf{遗传算法}算得全局最优解。
+	
+	
+		综上，建立得到问题二\textbf{时间与船数优化模型}：
+
+	\begin{gather}
+
+\begin{matrix}
+min Z=\sum _{1}^{19}D[k]\\
+
+
+min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
+\\
+s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+\\S_{D}=[S_{y}, S_{z}]
+\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+\\s_{pi}=p_{i}\times s
+\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+\\     s_{yi}=s_{i}\times \eta_{1}
+\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+\\      s_{zj}=s_{j}\times \eta_{2}
+\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
+\end{matrix}\right. 
+\end{matrix}
+
+	\end{gather}
+	     ~\\
+	其中$ \underset{k}{max}\sum t_{i} $可利用\textbf{泊口仿真模型}计算，并通过\textbf{遗传算法}算得全局最优解。
 	\subsubsection{泊口仿真模型}
 	建立泊口仿真模型以计算每种方案的装载时间，首先输入决策向量：
 
@@ -441,7 +474,9 @@
    	 	\begin{itemize}
    	 	\item [(1)] 将染色体中的单个基因取出，带入问题一沙石算法中。计算只使用的某种民用船时，需要的该民用船的数量，作为单个基因的取值范围。在使用卡特蒙洛法随机生成初始个体，当生成$50$个能通过沙石算法检验的初始个体时，停止生成。
    	 	\item [(2)]将输入体进行、交叉、变异、筛重和约束淘汰后，得到子代生成个体。将子代个体与附带个体混合，带入泊口仿真模型求出每个个体的装载时间作为适应度函数。根据装载时间对每个个体进行第一次排序，并将装载时间相同的个体进行第二次排序，取序列中的前$50$个个体作为下一代输入个体。
-   	 	\item [(3)]重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出个体，将输出个体基因与军用登陆舰合并即可得到完整的船支调遣方案。
+
+   	 	\item [(3)]重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出个体，将输出个体基因与军用登陆舰总调遣数量合并即可得到完整的船支调遣方案。
+
    	 	 \end{itemize}
     \begin{figure}[H]
     	\centering
@@ -453,41 +488,51 @@
      \section{问题三模型的建立与求解}
    	\subsection{问题的描述与分析}
    	问题三要求，当装载行动开始24小时后，A港和D港有部分泊位被毁，给出调整方案和装载建议。
-   	本组基于问题二中模型求解的结果，作出合理假设，假设泊位被毁不损失船只和兵力，由于问题二中的装载时间最优解小于$24$小时，故将码头被摧毁时间改为第$18$小时。本组延用问题二中的遗传算法，当时间轴进行到$18$小时，剔除已经完成装载任务的船舰和A港、D港中部分被毁的码头泊位，修改问题二中的港口仿真模型。通过遗传算法求解出对剩余船舰、码头泊位的装载方案，给出装载建议。
-   	
-   	
+   	本组基于问题二中模型求解的结果，作出合理假设，假设泊位被毁不损失船只和兵力，由于问题二中的装载时间最优解小于$24$小时，根据建议将码头被摧毁时间改为第$18$小时。本组延用问题二中的遗传算法，当时间轴进行到$18$小时，剔除已经完成装载任务的船舰和A港、D港中部分被毁的码头泊位，修改问题二中的港口仿真模型。通过遗传算法求解出对剩余船舰、码头泊位的装载方案，给出装载建议。
   \subsection{模型的建立}
     \subsubsection{模型调整}
     \textbf{优化函数与约束条件}延用问题二模型：
      	\begin{gather}
-     min Z=\sum _{1}^{19}D[k]\\
-     min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-     s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-     \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-     \\S_{D}=[S_{y}, S_{z}]
-     \\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-     \\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-     \\s_{pi}=p_{i}\times s
-     \\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-     \\     s_{yi}=s_{i}\times \eta_{1}
-     \\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-     \\      s_{zj}=s_{j}\times \eta_{2}
-     \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-     \end{matrix}\right. 
+		\begin{matrix}
+		min Z=\sum _{1}^{19}D[k]\\
+		min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
+		
+		s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+		\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+		\\S_{D}=[S_{y}, S_{z}]
+		\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+		\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+		\\s_{pi}=p_{i}\times s
+		\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+		\\     s_{yi}=s_{i}\times \eta_{1}
+		\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+		\\      s_{zj}=s_{j}\times \eta_{2}
+		\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+		\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
+		\end{matrix}\right. 
+		
+		\end{matrix}
+
      \end{gather}
+     ~\\
      调整 \textbf{泊口仿真模型}，延用港口决策向量：
      \begin{gather*}
      T=[t_{1},t_{2},\cdots,t_{71}]
      \end{gather*}
-     当时间轴函数$t_{0}=18$时，停止被毁泊口正在进行的任务，即使
+     当时间轴函数$t_{0}=18$时，停止被毁泊口正在进行的任务，使得：
      \begin{gather}
-     t_{k}=18(k=1,2,11,37,46,47)
+     t_{k}=-1(k=1,2,11,37,46,47)\\
+   	 D[d]=D[d]+1
      \end{gather}
-     且之后检索港口决策向量时，剔除$ t_{k}(k=1,2,11,37,46,47)$。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法。即可求得装载中途港口被摧毁后的最优船舰调整方案。
+     即立刻终止港口正在进行的工作，且在$18$小时后检索港口决策向量时，剔除$t_{k}(k=1,2,11,37,46,47)$(其对应被摧毁的港口无法执行装载任务)。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法。即可求得装载中途港口被摧毁后的最优船舰调整方案。
        \subsection{模型的求解}
      \paragraph{算法的实现}
-     \paragraph{算法流程图}
-
+	沿用第二问算法，仅修改泊口仿真模型：如果达到摧毁时间，将第$i$个摧毁港口的任务结束时间$t_{ki}$修改为$-1$，并不再更新此港口。若此时港口$i$不是空闲港口，将对应船舰$d_{i}$的数目增加一个。其算法流程图如下：
+    \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/yyyy.png}
+	\caption{泊口仿真改进流程图}\label{dieyyrywen}
+\end{figure}
 	
 
 	
@@ -499,14 +544,17 @@
 	\section{模型的评价}
 	\subsection{模型的优点}
 		\begin{itemize}                                             
-		\item [(1)] 利用时间序列提取树叶边缘信息，相较于传统特征量能更准确直观的表述边缘特征。
-		\item [(2)] PSO优化后的DNN网络非线性映射能力强，泛化能力和稳定性明显高于一般神经网络，具有更强的鲁棒性。其全局收敛能力强，预测准确度高。
-	
+
+		\item [(1)] 将多目标优化转换成背包优化问题，自主设计沙石算法，使得船舰的面积利用率高，对船只数量的需求量少。
+		\item [(2)] 使用遗传算法，具有很强的全局搜索能力和鲁棒性，运算时间远小于全遍历算法。
 	\end{itemize}
 	\subsection{模型的缺点}
-	树叶二值化图片信息提取不够完全，若能提取更高维度特征向量，分类准确度可进一步提高。
+	由于遗传算法初始解由卡特蒙洛法随机生成，每次搜索结果不尽相同，需要多搜索几次选择得到的最优结果。
+	\subsection{模型改进与展望}
+   可使用改进的生命遗传算法，加强算法的局部搜索能力，解决算法早熟的问题。
+	
 
-    
+ 
 	\newpage	%换页符
 	%%参考文献
 	%\begin{thebibliography}{9}%宽度9
@@ -516,14 +564,8 @@
 %	%参考文献添加到wenxian.bib里，再引用
 %	
 \begin{thebibliography}{9}%宽度9
-	\bibitem{bib:one} Tan Jing Wei,Chang Siow-Wee,Binti Abdul Kareem Sameem,Yap Hwa Jen,Yong Kien-Thai. Deep Learning for Plant Species Classification using Leaf Vein Morphometric.[J]. IEEE/ACM transactions on computational biology and bioinformatics,2018.
-	\bibitem{bib:two}Liu Jing,Sun Wanning,Su Yuting,Jing Peiguang,Yang Xiaokang. BE-CALF: Bit-Depth Enhancement by Concatenating All Level Features of DNN.[J]. IEEE transactions on image processing : a publication of the IEEE Signal Processing Society,2019,28(10).
-	\bibitem{bib:three}Matheus B. Vicari,Mathias Disney,Phil Wilkes,Andrew Burt,Kim Calders,William Woodgate. Leaf and wood classification framework for terrestrial LiDAR point clouds[J]. Methods in Ecology and Evolution,2019,10(5).
-	\bibitem{bib:}田德红,何建敏.基于变异粒子群优化与深度神经网络的航空弹药消耗预测模型[J].南京理工大学学报,2018,42(06).
-	\bibitem{bib:}原继东,王志海,韩萌,游洋. 基于逻辑shapelets转换的时间序列分类算法[J]. 计算机学报,2015,38(07):1448-1459.
-	\bibitem{bib:}杨志辉,胡红萍,白艳萍. 基于主成分分析和PSO-SVM的树叶分类方法研究[J]. 数学的实践与认识,2016,46(18):170-175.
-	\bibitem{bib:}侯铜,姚立红,阚江明.基于叶片外形特征的植物识别研究[J].湖南农业科学,2009(04):123-125+129.
-	\bibitem{bib:}Febri Liantoni,Rifki Indra Perwira,Syahri Muharom,Riza Agung Firmansyah,Akhmad Fahruzi. Leaf classification with improved image feature based on the seven moment invariant[J]. Journal of Physics: Conference Series,2019,1175(1).
+	\bibitem{bib:one}Febri Liantoni,Rifki Indra Perwira,Syahri Muharom,Riza Agung Firmansyah,Akhmad Fahruzi. Leaf classification with improved image feature based on the seven moment invariant[J]. Journal of Physics: Conference Series,2019,1175(1).
+
 \end{thebibliography}
 
 	\newpage
@@ -531,9 +573,1864 @@
 	\appendix %%附录
 
 \section{代码}
-\subsection{图片名称读取--matlab源代码}
-\begin{lstlisting}[language=matlab]
+\subsection{问题一沙石算法--python源代码}
+\begin{lstlisting}[language=python]
+import math
+import numpy as np
+import pandas as pd
+
+
+def append(list,x):
+'''numpy数组中插入一个元素在末尾'''
+return np.append(list,x)
+
+
+def Merge(dict1, dict2):
+'''字典合并'''
+res = {**dict1, **dict2}
+return res
+
+
+def shell_sort(lists):
+'''
+按从大到小排序，时间复杂度O(n)
+:param lists:传进来的数组，比如船只或者包裹
+:return: 返回从大到小的包裹
+'''
+# 希尔排序
+lists = sorted(lists,reverse=True)
+return lists
+
+
+def kv_sort(kv):
+'''
+键值对由大到小排序
+eg:
+d = {'d1':2, 'd2':4, 'd4':1,'d3':3,}
+res = sorted(d.items(),key=lambda d:d[1],reverse=True)
+[('d2', 4), ('d3', 3), ('d1', 2), ('d4', 1)]
+:param kv:键值对
+:return:元组
+'''
+res = sorted(kv.items(), key=lambda d: d[1], reverse=True)
+return res
+
+
+def min_index(lists):
+'''
+返回最穷连的下标
+:param lists: 各连的装备面积数目
+:return: 最穷的那个连的下标
+'''
+index_min = 0
+for i in range(1, len(lists)):
+if lists[i] < lists[index_min]:
+index_min = i
+return index_min
+
+
+def ship_list2dict(sum_ship):
+'''
+船变字典
+:param sum_ship:船的列表
+:return: 船的字典
+'''
+# 船只变成列表
+# 列表转字典
+dict_ship = {}
+for i in range(len(sum_ship)):
+if i < 5:
+dict_ship["Y1_" + str(i)] = sum_ship[i]
+elif i < 8:
+dict_ship["Y2_" + str(i - 5)] = sum_ship[i]
+elif i < 17:
+dict_ship["Y3_" + str(i - 8)] = sum_ship[i]
+elif i < 21:
+dict_ship["Y4_" + str(i - 17)] = sum_ship[i]
+elif i < 32:
+dict_ship["Y5_" + str(i - 21)] = sum_ship[i]
+elif i < 42:
+dict_ship["Y6_" + str(i - 32)] = sum_ship[i]
+elif i < 43:
+dict_ship["Y7_" + str(i - 42)] = sum_ship[i]
+elif i < 44:
+dict_ship["Y8_" + str(i - 43)] = sum_ship[i]
+elif i < 75:
+dict_ship["Y9_" + str(i - 44)] = sum_ship[i]
+elif i < 87:
+dict_ship["Y10_" + str(i - 75)] = sum_ship[i]
+elif i < 97:
+dict_ship["Y11_" + str(i - 87)] = sum_ship[i]
+elif i < 297:
+dict_ship["Y12_" + str(i - 97)] = sum_ship[i]
+elif i < 333:
+dict_ship["Y13_" + str(i - 297)] = sum_ship[i]
+elif i < 341:
+dict_ship["Y14_" + str(i - 333)] = sum_ship[i]
+return dict_ship
+
+
+def sum_ship_list(ship_S, ship_num):
+'''
+计算所有的船只数目/装备数目
+:param ship_S: 船只面积/装备面积
+:param ship_num: 各类船只数目/装备数目
+:return: 所有用有船只面积/装备面积
+'''
+sum_ship = []
+if(len(ship_num)==len(ship_S)):
+for i in range(len(ship_num)):
+for j in range(ship_num[i]):
+sum_ship.append(ship_S[i])
+else:
+print('船数与船面积的两个列表不相等，可能是打错了\n')
+return sum_ship
+
+
+def zhuang_baoguo(zhuangbei_num_list, zhuangbei_S_list, lian_num, lian_mianji, type):
+'''
+给出装备数目，装备面积，要求*均分*给每个连
+均分打包思想：谁穷我给谁装备：
+装备我从小到大排序；
+for 装备的数目:
+装备先给连j；
+判断哪个连最穷
+给穷的连装备
+
+:param zhuangbei_num_list: 各个装备的数目
+:param zhuangbei_S_list: 不同装备的面积
+:param lian_num: 连的数量
+:param lian_mianji: 连中人的面积
+:param type:   旅的类型，键
+:return: 装备打包好了后，下一步就是上船
+'''
+
+#初始化连的数目
+lian = [0.0]*lian_num
+
+#c初始化装备数目
+zhuangbei = sum_ship_list(zhuangbei_S_list, zhuangbei_num_list)
+#装备排序
+zhuangbei = shell_sort(zhuangbei)
+# print("总的装备的排序\n"+str(zhuangbei)+'\n')
+
+for i in range(len(zhuangbei)):
+# 最穷的下标
+index_min = min_index(lian)
+lian[index_min] += zhuangbei[i]
+
+for i in range(len(lian)):
+lian[i] += lian_mianji
+# print(type+str(lian))
+
+#列表转字典
+dict_lian = {}
+for i in range(len(lian)):
+dict_lian[type+str(i)]=lian[i]
+return dict_lian
+
+
+def recode_zhuangzai(baoguo_k, ship_k, baoguo_v,zhuangzai_Map):
+'''记录每一次装载到哪里了'''
+if baoguo_k.startswith('一'):
+if ship_k not in zhuangzai_Map[0]:
+zhuangzai_Map[0][ship_k] = baoguo_v
+else:
+zhuangzai_Map[0][ship_k] += baoguo_v
+elif baoguo_k.startswith('二'):
+if ship_k not in zhuangzai_Map[1]:
+zhuangzai_Map[1][ship_k] = baoguo_v
+else:
+zhuangzai_Map[1][ship_k] += baoguo_v
+elif baoguo_k.startswith('三'):
+if ship_k not in zhuangzai_Map[2]:
+zhuangzai_Map[2][ship_k] = baoguo_v
+else:
+zhuangzai_Map[2][ship_k] += baoguo_v
+elif baoguo_k.startswith('四'):
+if ship_k not in zhuangzai_Map[3]:
+zhuangzai_Map[3][ship_k] = baoguo_v
+else:
+zhuangzai_Map[3][ship_k] += baoguo_v
+elif baoguo_k.startswith('五'):
+if ship_k not in zhuangzai_Map[4]:
+zhuangzai_Map[4][ship_k] = baoguo_v
+else:
+zhuangzai_Map[4][ship_k] += baoguo_v
+elif baoguo_k.startswith('六'):
+if ship_k not in zhuangzai_Map[5]:
+zhuangzai_Map[5][ship_k] = baoguo_v
+else:
+zhuangzai_Map[5][ship_k] += baoguo_v
+elif baoguo_k.startswith('七'):
+if ship_k not in zhuangzai_Map[6]:
+zhuangzai_Map[6][ship_k] = baoguo_v
+else:
+zhuangzai_Map[6][ship_k] += baoguo_v
+elif baoguo_k.startswith('八'):
+if ship_k not in zhuangzai_Map[7]:
+zhuangzai_Map[7][ship_k] = baoguo_v
+else:
+zhuangzai_Map[7][ship_k] += baoguo_v
+elif baoguo_k.startswith('九'):
+if ship_k not in zhuangzai_Map[8]:
+zhuangzai_Map[8][ship_k] = baoguo_v
+else:
+zhuangzai_Map[8][ship_k] += baoguo_v
+elif baoguo_k.startswith('十'):
+if ship_k not in zhuangzai_Map[9]:
+zhuangzai_Map[9][ship_k] = baoguo_v
+else:
+zhuangzai_Map[9][ship_k] += baoguo_v
+elif baoguo_k.startswith('eleven'):
+if ship_k not in zhuangzai_Map[10]:
+zhuangzai_Map[10][ship_k] = baoguo_v
+else:
+zhuangzai_Map[10][ship_k] += baoguo_v
+elif baoguo_k.startswith('twelve'):
+if ship_k not in zhuangzai_Map[11]:
+zhuangzai_Map[11][ship_k] = baoguo_v
+else:
+zhuangzai_Map[11][ship_k] += baoguo_v
+return zhuangzai_Map
+
+
+def zhuangzai_ship(sum_baoguo, sum_ship,zhuangzai_Map):
+'''
+第一问核心思想
+装船的操作，按石头装满装沙子的思想
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:param zhuangzai_Map:装载图
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x+=1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+zhuangzai_Map = recode_zhuangzai(baoguo_k, ship_k , baoguo_v, zhuangzai_Map)    #记录map中的位置
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items())==x and flag==False:
+print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,zhuangzai_Map,mod_dist
+
+def loss_baoguo(sum_baoguo):
+sum_ship = {"2万吨级滚装船":38000*0.7}
+mod_dist = {}
+a = []
+b = []
+c = []
+for baoguo_k, baoguo_v in sum_baoguo.items():
+flag = False
+x = 0
+for ship_k, ship_v in sum_ship.items():
+# 如果包裹量小于等于第j艘船的量，装入第j艘船中
+x += 1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag = True
+sum_ship[ship_k] -= baoguo_v
+print(baoguo_k+"装到"+ship_k)
+if baoguo_k.startswith("二"):
+a.append(baoguo_v)
+elif baoguo_k.startswith("三"):
+b.append(baoguo_v)
+else:
+c.append(baoguo_v)
+break  # 开始装第二个包裹
+else:
+pass  # 否则开启第二只船
+if len(sum_ship.items()) == x and flag == False:
+print(baoguo_k + "没有船可装" + str(baoguo_v))
+# 收集起来
+mod_dist[baoguo_k] = baoguo_v
+print(sum(a),sum(b),sum(c))
+return sum_ship, mod_dist
+
+
+if __name__ == '__main__':
+
+'''每个装备对应的面积'''
+x_len = np.array([11,10,8,7.5,6.7,6,6.7,7.5,13,9,5.2,5.6,7,8.5])
+x_kunan = np.array([3.5,3.2,3.5,3.3,3.3,3,3.2,3.3,12,2.5,3.5,3.5,3.5,2.4])
+x_weight = np.array([1.24,1.24,1.24,1.24,1.24,1.24,1,1,1.14,1.1,1.1,1.05,1.24,1.05])
+x_S = x_kunan*x_len*x_weight
+print("每个装备对应的面积\n"+str(x_S)+'\n')
+
+'''船只融载面积'''
+Y = np.array([4000,750,1500,750,750,600,600,1200,300,200,200,200,70,70])
+Y = Y*0.75
+num_Y = np.array([5,3,9,4,11,10,1,1,31,12,10,200,36,8])
+print("船只融载面积\n"+str(shell_sort(Y))+'\n')
+# print("所有船总面积sum(Y) = " + str(sum(Y*num_Y)))
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+#一个旅对应的包裹
+one_sum_baoguo = zhuang_baoguo([130,100,20,5,8,5,50],[47.74,34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'一')
+two_sum_baoguo = zhuang_baoguo([220,20,5,8,5,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'二')
+three_sum_baoguo = zhuang_baoguo([120,10,5,8,4,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,41.6666667,'三')
+four_sum_baoguo = zhuang_baoguo([120,50],[27.4164,21.42],35,37.14285714,'四')
+five_sum_baoguo = zhuang_baoguo([20,25,30],[21.44,24.75,30.38],35,28.5714285,'五')
+six_sum_baoguo_feiji = zhuang_baoguo([40,30],[177.84,21.42],35,28.57142857,'六')#带飞机的旅，先装！！！！！！！
+seven_sum_baoguo = zhuang_baoguo([30,15],[34.72,24.75],35,27.57142857,'七')
+eight_sum_baoguo = zhuang_baoguo([150],[20.02],35,35.71428571,'八')
+night_sum_baoguo = zhuang_baoguo([100],[20.58],35,32.85714286,'九')
+ten_sum_baoguo = zhuang_baoguo([100],[21.42],35,28.57142857,'十')
+elevn_sum_baoguo = zhuang_baoguo([100,105,18,12,50],[39.68,30.69,27.4164,22.32,21.42],35,71.42857143,'eleven')
+twelve_sum_baoguo = zhuang_baoguo([],[],35,42.85714286,'twelve')
+# sum_baoguo = [2000,140,1611,41,780,145,17,2510,1,148]   #测试数据1
+# sum_baoguo = one_sum_baoguo     #测试装包数据
+# print("第一旅的包裹\n"+str(sum_baoguo)+'\n')
+
+# '''这里写几个旅的包裹相加'''
+sum_baoguo = Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(one_sum_baoguo,two_sum_baoguo),three_sum_baoguo),four_sum_baoguo),five_sum_baoguo),seven_sum_baoguo),eight_sum_baoguo),night_sum_baoguo),ten_sum_baoguo),elevn_sum_baoguo),twelve_sum_baoguo)# +.........
+# print(sum_baoguo)
+first_baoguo = six_sum_baoguo_feiji
+# # 总船只
+sum_ship = sum_ship_list(Y,num_Y)
+dict_ship = ship_list2dict(sum_ship)#船变字典
+# print(dict_ship)
+
+
+# '''包裹与船只分别从大到小排序'''
+sum_baoguo = dict(kv_sort(sum_baoguo))
+first_baoguo = dict(kv_sort(first_baoguo))
+sum_ship = dict(kv_sort(dict_ship))
+
+# zhuangzai_Map = np.array([[0.0]*12]*len(sum_ship))
+zhuangzai_Map = [{},{},{},{},{},{},{},{},{},{},{},{}]
+sum_zhuangzai_ship,zhuangzai_Map2,mod_dist = zhuangzai_ship(first_baoguo,sum_ship,zhuangzai_Map)
+print('总船只装载飞机后的船只装载量\n'+str(sum_zhuangzai_ship)+'\n')
+# print("装载图\n"+str(zhuangzai_Map2)+'\n')
+# print("总船只\n"+str(sum_ship)+'\n')
+# print("总包裹\n"+str(sum_baoguo)+'\n')
+print("剩余的包裹\n"+str(mod_dist)+'\n')
+
+sum_zhuangzai_ship,zhuangzai_Map3,mod_dist = zhuangzai_ship(sum_baoguo,sum_zhuangzai_ship,zhuangzai_Map2)
+print('总船只装载后的装载量\n'+str(sum_zhuangzai_ship)+'\n')
+print("装载图\n"+str(zhuangzai_Map3)+'\n')
+print("剩余的包裹\n"+str(mod_dist)+'\n')
+sum_ship,mod_dist = loss_baoguo(mod_dist)
+print("总船只\n"+str(sum_ship)+'\n')
+
+#输出结果并存储
+zhuangzai_Map_df = pd.DataFrame(zhuangzai_Map3)
+zhuangzai_Map_df.to_csv('zhuangzai_Map.csv')
+\end{lstlisting}
+\subsection{问题二沙石遗传与时间轴仿真模型--python源代码}
+\begin{lstlisting}[language=python]
+import math
+import numpy as np
+import pandas as pd
+import random
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+
+my_font = font_manager.FontProperties(fname="C:\Windows\Fonts\msyh.ttc")#微软雅黑字体位置
+
+
+def append(list,x):
+'''numpy数组中插入一个元素在末尾'''
+return np.append(list,x)
+
+
+def max_iii(a):
+return a.index(max(a))
+
+
+def Merge(dict1, dict2):
+'''字典合并'''
+res = {**dict1, **dict2}
+return res
+
+
+def kv_deng(dic1):
+modddd = {}
+for k, v in dic1.items():
+modddd[k] = v
+return modddd
+
+
+def shell_sort(lists):
+'''
+按从大到小排序，时间复杂度O(n)
+:param lists:传进来的数组，比如船只或者包裹
+:return: 返回从大到小的包裹
+'''
+# 希尔排序
+lists = sorted(lists,reverse=True)
+return lists
+
+
+def kv_sort(kv):
+'''
+键值对由大到小排序
+eg:
+d = {'d1':2, 'd2':4, 'd4':1,'d3':3,}
+res = sorted(d.items(),key=lambda d:d[1],reverse=True)
+[('d2', 4), ('d3', 3), ('d1', 2), ('d4', 1)]
+:param kv:键值对
+:return:元组
+'''
+res = sorted(kv.items(), key=lambda d: d[1], reverse=True)
+return res
+
+
+def min_index(lists):
+'''
+返回最穷连的下标
+:param lists: 各连的装备面积数目
+:return: 最穷的那个连的下标
+'''
+index_min = 0
+for i in range(1, len(lists)):
+if lists[i] < lists[index_min]:
+index_min = i
+return index_min
+
+
+def jiaopei_1(live1,live2):
+'''
+遗传交配的第一种方法
+:param live1: 父代
+:param live2: 父代
+:return: 子代
+'''
+son = [0,0,0,0,0]
+for i in range(5):
+son[i] = random.randint(min(live1[i],live2[i]),max(live1[i],live2[i]))
+return son
+
+def jiaopei_2(live1,live2):
+'''
+遗传交配的第二种方法
+:param live1: 父代
+:param live2: 父代
+:return: 子代两个
+'''
+son1 = [0,0,0,0,0]
+son2 = [0,0,0,0,0]
+x = random.randint(1,4)
+for i in range(x):
+son1[i] = live1[i]
+son2[i] = live2[i]
+for i in range(5-x):
+son1[4-i] = live2[4-i]
+son2[4-i] = live1[4-i]
+
+return son1,son2
+
+def bianyi(geti , gailv):
+'''
+遗传操作中变异的操作
+:param geti 个体
+:param gailv 变异概率
+:return: 变异后的个体
+'''
+is_bianyi = False
+bianyihou = geti
+if gailv > random.random():
+# print("变异")
+x = random.randint(0, 4)
+y = random.randint(0, 4)
+if geti[2]==1 and y==2:
+geti[2]+=1
+is_bianyi=True
+elif geti[y] == 0:
+geti[y]+=1
+is_bianyi=True
+else:
+if random.random()>0.5:
+geti[y]+=1
+is_bianyi = True
+else:
+geti[y]-=1
+is_bianyi = True
+
+if geti[2]==1 and x==2:
+geti[2]+=1
+is_bianyi=True
+elif geti[x] == 0:
+geti[x]+=1
+is_bianyi=True
+else:
+if random.random()>0.5:
+geti[x]+=1
+is_bianyi = True
+else:
+geti[x]-=1
+is_bianyi = True
+
+return bianyihou,is_bianyi
+
+
+def ship_list2dict(sum_ship):
+'''
+船变字典
+:param sum_ship:船的列表
+:return: 船的字典
+'''
+# 船只变成列表
+# 列表转字典
+dict_ship = {}
+for i in range(len(sum_ship)):
+if i < 5:
+dict_ship["Y1_" + str(i)] = sum_ship[i]
+elif i < 8:
+dict_ship["Y2_" + str(i - 5)] = sum_ship[i]
+elif i < 17:
+dict_ship["Y3_" + str(i - 8)] = sum_ship[i]
+elif i < 21:
+dict_ship["Y4_" + str(i - 17)] = sum_ship[i]
+elif i < 32:
+dict_ship["Y5_" + str(i - 21)] = sum_ship[i]
+elif i < 42:
+dict_ship["Y6_" + str(i - 32)] = sum_ship[i]
+elif i < 43:
+dict_ship["Y7_" + str(i - 42)] = sum_ship[i]
+elif i < 44:
+dict_ship["Y8_" + str(i - 43)] = sum_ship[i]
+elif i < 75:
+dict_ship["Y9_" + str(i - 44)] = sum_ship[i]
+elif i < 87:
+dict_ship["Y10_" + str(i - 75)] = sum_ship[i]
+elif i < 97:
+dict_ship["Y11_" + str(i - 87)] = sum_ship[i]
+elif i < 297:
+dict_ship["Y12_" + str(i - 97)] = sum_ship[i]
+elif i < 333:
+dict_ship["Y13_" + str(i - 297)] = sum_ship[i]
+elif i < 341:
+dict_ship["Y14_" + str(i - 333)] = sum_ship[i]
+return dict_ship
+
+
+def ship_list2dict_z(sum_ship, z1, z2, z3, z4, z5):
+'''
+船变字典，带有一个参数的
+:param sum_ship:船的列表
+:return: 船的字典
+'''
+# 船只变成列表
+# 列表转字典
+dict_ship = {}
+for i in range(len(sum_ship)):
+if i < z1:
+dict_ship["Z1_"+str(i)] = sum_ship[i]
+elif i < z1+z2:
+dict_ship["Z2_"+str(i-z1)] = sum_ship[i]
+elif i < z1+z2+z3:
+dict_ship["Z3_"+str(i-z1-z2)] = sum_ship[i]
+elif i < z1+z2+z3+z4:
+dict_ship["Z4_"+str(i-z1-z2-z3)] = sum_ship[i]
+elif i < z1+z2+z3+z4+z5:
+dict_ship["Z5_"+str(i-z1-z2-z3-z4)] = sum_ship[i]
+return dict_ship
+
+
+def sum_ship_list(ship_S, ship_num):
+'''
+计算所有的船只数目/装备数目
+:param ship_S: 船只面积/装备面积
+:param ship_num: 各类船只数目/装备数目
+:return: 所有用有船只面积/装备面积
+'''
+sum_ship = []
+if(len(ship_num)==len(ship_S)):
+for i in range(len(ship_num)):
+for j in range(ship_num[i]):
+sum_ship.append(ship_S[i])
+else:
+print('船数与船面积的两个列表不相等，可能是打错了\n')
+return sum_ship
+
+
+def zhuang_baoguo(zhuangbei_num_list, zhuangbei_S_list, lian_num, lian_mianji, type, lv_num):
+'''
+给出装备数目，装备面积，要求*均分*给每个连
+均分打包思想：谁穷我给谁装备：
+装备我从小到大排序；
+for 装备的数目:
+装备先给连j；
+判断哪个连最穷
+给穷的连装备
+
+:param zhuangbei_num_list: 各个装备的数目
+:param zhuangbei_S_list: 不同装备的面积
+:param lian_num: 连的数量
+:param lian_mianji: 连中人的面积
+:param type:   旅的类型，键
+:param lv_num:  旅的数目
+:return: 装备打包好了后，下一步就是上船
+'''
+
+#初始化连的数目
+lian = [0.0]*lian_num
+
+#c初始化装备数目
+zhuangbei = sum_ship_list(zhuangbei_S_list, zhuangbei_num_list)
+#装备排序
+zhuangbei = shell_sort(zhuangbei)
+# print("总的装备的排序\n"+str(zhuangbei)+'\n')
+
+for i in range(len(zhuangbei)):
+# 最穷的下标
+index_min = min_index(lian)
+lian[index_min] += zhuangbei[i]
+
+for i in range(len(lian)):
+lian[i] += lian_mianji
+# print(type+str(lian))
+
+lian2 = []
+for i in range(lv_num):
+lian2 += lian
+
+#列表转字典
+dict_lian = {}
+for i in range(len(lian2)):
+dict_lian[type+str(i)] = lian2[i]
+return dict_lian
+
+
+def zhuangzai_ship(sum_baoguo, sum_ship):
+'''
+第一问核心思想
+装船的操作，按石头装满装沙子的思想
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x+=1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items()) == x and flag == False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangzai_zhishengji_ship(sum_baoguo, sum_ship):
+'''
+装六型旅的操作，按石头装满装沙子的思想
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x += 1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+if ship_k.startswith("Y1") or ship_k.startswith("Y5"):
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items())==x and flag==False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangzai_xuanze_ship(sum_baoguo, sum_Z_ship):
+'''
+剩余包裹装民船
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+# 一开始是不适应的
+flag = True
+for baoguo_k,baoguo_v in sum_baoguo.items():
+for ship_k,ship_v in sum_Z_ship.items():
+# 白包裹
+if baoguo_k.startswith("一") or baoguo_k.startswith("二") or baoguo_k.startswith("三") or baoguo_k.startswith("七") or baoguo_k.startswith("eleven"):
+if ship_k.startswith("Z3") or ship_k.startswith("Z4") or ship_k.startswith("Z5"):
+#如果白包裹碰到z345，换下一艘船
+pass
+else:
+if baoguo_v <= ship_v:
+# 装上船，换下一个包裹
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+#黄包裹
+elif baoguo_k.startswith("四") or baoguo_k.startswith("五") or baoguo_k.startswith("六") or baoguo_k.startswith("八") or baoguo_k.startswith("九") or baoguo_k.startswith("十"):
+if ship_k.startswith("Z4") or ship_k.startswith("Z5"):
+pass
+else:
+if baoguo_v <= ship_v:
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+#人
+else:
+if baoguo_v <= ship_v:
+
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+
+for baoguo_k, baoguo_v in sum_baoguo.items():
+if sum_baoguo[baoguo_k] != 0:
+flag=False
+
+return sum_Z_ship,flag
+
+
+def jizhuangxaing_zhishengji_ship(sum_baoguo, sum_ship):
+'''
+民船Z3装在直升机
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x += 1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+if ship_k.startswith("Y1") or ship_k.startswith("Y5"):
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items())==x and flag==False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangmingchuan(mod_dist, zx):
+'''
+剩余的包裹装一种类型船的数量
+:param mod_dist: 剩余的包裹
+:param zx: 船的容积
+:return: 船的数目
+'''
+zx_num = 1
+zxy=zx
+for baoguo_k, baoguo_v in mod_dist.items():
+if zxy>=0 and zxy>=baoguo_v:
+zxy-=baoguo_v
+else:
+zxy=zx
+zx_num+=1
+return zx_num
+
+
+def surt_time(live):
+'''
+计算适应度的函数，适应度为时间
+:param live: 存活个体[z1,z2...,z5]
+:return: 适应时间
+'''
+num_matou = [10, 5, 1, 3, 2, 10, 1, 4, 3, 6, 5, 3, 5, 3, 3, 7]
+w_mat = [30000, 20000, 1000, 30000, 1000, 1000, 1000, 30000, 1000, 30000, 1000, 1000, 500, 1000, 30000, 1000]
+t_matou = [0] * 71
+W_matou = sum_ship_list(w_mat,num_matou)
+numZ = np.array(live)
+# 第一行向量，船的数目
+num_ship = np.hstack((num_Y, numZ))
+# print("输入船的数量"+str(num_ship))
+# print(num_ship)
+# 第二行向量，船的吨位
+w_ship = [18500, 4170, 4800, 4170, 4800, 2000, 1650, 1800, 850, 850, 800, 600, 128, 85, 20000, 30000, 30000, 10000,
+5000]
+# 第三行向量，船的时间
+t_ship = [5, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 1, 1, 10, 15, 18, 5, 4]
+
+'''适应度的计算：时间t0'''
+t0 = -1
+while True:
+t0+=1
+
+if len(num_ship) != len(w_ship) or len(num_ship) != len(t_ship) or len(W_matou) != len(t_matou):
+print("输入错误，请查看船或码头个数")
+break
+
+#检索71次
+for i in range(len(t_matou)):
+#如果有码头是空闲的
+if t_matou[i]==t0:
+#检索对应的船
+manzu_w_ship = []
+manzu_j_ship = []
+for j in range(len(w_ship)):
+#如果满足条件
+if W_matou[i]>w_ship[j]:
+manzu_w_ship.append(w_ship[j])#记录重量和对应重量的位置
+manzu_j_ship.append(j)
+#取出最大满足吨位的船的下标
+j_max = max_iii(manzu_w_ship)
+if num_ship[j_max]>0:
+#船的数量减一
+num_ship[j_max] -= 1
+#码头对应时间加上tk
+# print(t_matou)
+t_matou[i] += t_ship[j_max]
+if num_ship[j_max]==0:
+w_ship[j_max]=0
+# print(t_matou)
+#跳出循环
+# print(num_ship)
+
+if t0>max(t_matou) and sum(num_ship)==0:
+break
+# print(t0)
+return t0
+
+
+def is_surt_manzai(Z_X,mod_dist):
+'''
+判断某一个个体是否满足能装载
+:return: 是否能装满
+'''
+Zx_w = [19000 * 0.7, 26000 * 0.7, 38000 * 0.7, 6000 * 0.7, 2000 * 0.7]
+sum_Z_ship = sum_ship_list(Zx_w, Z_X)
+dict_ship_Z = ship_list2dict_z(sum_Z_ship, Z_X[0], Z_X[1], Z_X[2], Z_X[3], Z_X[4])  # 船变字典
+dict_ship_Z['Z3_' + str(Z_X[2])] = 2494.836677158
+sum_Z_ship_dict = dict(kv_sort(dict_ship_Z))  # 排序
+moddd = kv_deng(mod_dist)
+shiying_ship, is_sure = zhuangzai_xuanze_ship(moddd, sum_Z_ship_dict)
+# print("是否适应\n" + str(is_sure) + '\n')
+
+return is_sure
+
+
+if __name__ == '__main__':
+
+'''每个装备对应的面积'''
+x_len = np.array([11,10,8,7.5,6.7,6,6.7,7.5,13,9,5.2,5.6,7,8.5])
+x_kunan = np.array([3.5,3.2,3.5,3.3,3.3,3,3.2,3.3,12,2.5,3.5,3.5,3.5,2.4])
+x_weight = np.array([1.24,1.24,1.24,1.24,1.24,1.24,1,1,1.14,1.1,1.1,1.05,1.24,1.05])
+x_S = x_kunan*x_len*x_weight
+# print("每个装备对应的面积\n"+str(x_S)+'\n')
+
+'''船只融载面积'''
+Y = np.array([4000,750,1500,750,750,600,600,1200,300,200,200,200,70,70])
+Y = Y*0.75
+num_Y = np.array([5,3,9,4,11,10,1,1,31,12,10,200,36,8])
+# print("船只融载面积\n"+str(shell_sort(Y))+'\n')
+# print("所有船总面积sum(Y) = " + str(sum(Y*num_Y)))
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+#一个旅对应的包裹
+one_sum_baoguo = zhuang_baoguo([130,100,20,5,8,5,50],[47.74,34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'一',12)
+two_sum_baoguo = zhuang_baoguo([220,20,5,8,5,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'二',3)
+three_sum_baoguo = zhuang_baoguo([120,10,5,8,4,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,41.6666667,'三',3)
+four_sum_baoguo = zhuang_baoguo([120,50],[27.4164,21.42],35,37.14285714,'四',3)
+five_sum_baoguo = zhuang_baoguo([20,25,30],[21.44,24.75,30.38],35,28.5714285,'五',3)
+six_sum_baoguo_feiji = zhuang_baoguo([40,30],[177.84,21.42],35,28.57142857,'六',5)#带飞机的旅，先装！！！！！！！
+seven_sum_baoguo = zhuang_baoguo([30,15],[34.72,24.75],35,27.57142857,'七',5)
+eight_sum_baoguo = zhuang_baoguo([150],[20.02],35,35.71428571,'八',3)
+night_sum_baoguo = zhuang_baoguo([100],[20.58],35,32.85714286,'九',3)
+ten_sum_baoguo = zhuang_baoguo([100],[21.42],35,28.57142857,'十',3)
+elevn_sum_baoguo = zhuang_baoguo([100,105,18,12,50],[39.68,30.69,27.4164,22.32,21.42],35,71.42857143,'eleven',6)
+twelve_sum_baoguo = zhuang_baoguo([],[],35,42.85714286,'twelve',10)
+# sum_baoguo = [2000,140,1611,41,780,145,17,2510,1,148]   #测试数据1
+# sum_baoguo = one_sum_baoguo     #测试装包数据
+# print("第一旅的包裹\n"+str(sum_baoguo)+'\n')
+
+# '''这里写几个旅的包裹相加'''
+sum_baoguo = Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(one_sum_baoguo,two_sum_baoguo),three_sum_baoguo),four_sum_baoguo),five_sum_baoguo),seven_sum_baoguo),eight_sum_baoguo),night_sum_baoguo),ten_sum_baoguo),elevn_sum_baoguo),twelve_sum_baoguo)# +.........
+# print(sum_baoguo)
+first_baoguo = six_sum_baoguo_feiji
+# # 总船只
+sum_ship = sum_ship_list(Y,num_Y)
+dict_ship = ship_list2dict(sum_ship)#船变字典
+print(dict_ship)
+
+
+'''包裹与船只分别从大到小排序'''
+sum_baoguo = dict(kv_sort(sum_baoguo))
+first_baoguo = dict(kv_sort(first_baoguo))
+sum_ship = dict(kv_sort(dict_ship))
+# print("总船只\n"+str(sum_ship)+'\n')
+
+# '''装直升机的操作'''
+sum_zhuangzai_ship, mod_dist = zhuangzai_zhishengji_ship(first_baoguo, sum_ship)
+print('总船只装载飞机后的船只装载量\n'+str(sum_zhuangzai_ship)+'\n')
+# print("总船只\n"+str(sum_ship)+'\n')
+print("总包裹\n"+str(sum_baoguo)+'\n')
+# '''106个直升机的包裹
+#  总面积24105.163322842
+#   开一个Z3装得下13300*2
+#   剩下2494.836677158
+#   '''
+# print("剩余的包裹\n"+str(mod_dist)+'\n')
+# z3 = 1
+#
+# '''装人的操作'''
+sum_zhuangzai_ship,mod_dist = zhuangzai_ship(sum_baoguo,sum_zhuangzai_ship)
+print('总船只装载后的装载量\n'+str(sum_zhuangzai_ship)+'\n')
+print("装民船的面积的面积\n"+str(sum(mod_dist.values())))
+mod_dist = dict(kv_sort(mod_dist))
+# print("剩余的包裹\n"+str(mod_dist)+'\n')
+#
+#
+# z1 = zhuangmingchuan(mod_dist,19000*0.7)
+# z2 = zhuangmingchuan(mod_dist,26000*0.7)
+# z3 += zhuangmingchuan(mod_dist,38000*0.7)
+#Z的最大上限
+# print(z1,z2,z3) #[25, 18, 14, 4, 11]
+
+#############################################################################################################################
+#存活个体数
+w = 50
+live = []
+Zx_w = [19000 * 0.7, 26000 * 0.7, 38000 * 0.7, 6000 * 0.7, 2000 * 0.7]
+Zx_num = [25, 18, 6, 4, 11]
+
+#初始化适应个体
+while len(live) != w:
+# 总民用船的数目
+random_W = np.array([random.random(),random.random(),random.random(),random.random(),random.random()])
+# 初始个体数目
+num_Zx = np.trunc(random_W*Zx_num).astype(np.int8)#取整
+
+# # 总民用船船只
+sum_Z_ship = sum_ship_list(Zx_w, num_Zx)
+# print("总民用船船只\n" + str(sum_Z_ship) + '\n')
+dict_ship_Z = ship_list2dict_z(sum_Z_ship,num_Zx[0],num_Zx[1],num_Zx[2],num_Zx[3],num_Zx[4])# 船变字典
+dict_ship_Z['Z3_'+str(num_Zx[2])] = 2494.836677158
+sum_Z_ship_dict = dict(kv_sort(dict_ship_Z))# 排序
+# print("民用船船只字典和个数\n" + str(sum_Z_ship_dict) + '\n')
+# print("剩余的包裹\n" + str(mod_dist) + '\n')
+# print(mod_dist)
+moddd = kv_deng(mod_dist)
+
+shiying_ship, is_sure = zhuangzai_xuanze_ship(moddd, sum_Z_ship_dict)
+# print("是否适应\n" + str(is_sure) + '\n')
+moddd = kv_deng(mod_dist)
+
+if is_sure:
+num_Zx[2] += 1
+live.append(num_Zx.tolist())
+# print("装完物体后民用船适应度\n" + str(shiying_ship) + '\n')
+
+# break
+# print("适应个体："+str(live)+'\n')
+
+#############################################################################################################################
+# 计算适应度
+# t0 = surt_time(live[0])
+# print("计算适应度：："+str(t0))
+# 测试交配
+# print(live[0],live[1])
+# print(jiaopei_1(live[0],live[1]))
+# print(jiaopei_2(live[0],live[1]))
+#
+# #测试变异
+# print(live[0])
+# print(bianyi(live[0],0.8))
+#
+# 测试是否满足适应
+# print(is_surt_manzai(live[4],mod_dist))
+#
+#############################################################################################################################
+# 遗传的实现
+min_t = []
+duiying_num = []
+for i in range(100):
+the_all_son = live
+bianyilv = 0.2
+for i in range(w):
+#变异
+bianyi_son,is_bianyi = bianyi(live[i],bianyilv)
+if is_bianyi:
+the_all_son.append(bianyi_son)
+# print(len(the_all_son))
+
+#交配
+random.shuffle(live)
+for i in range(0,w-1,2):
+son = jiaopei_1(live[i],live[i+1])
+the_all_son.append(son)
+son1,son2 = jiaopei_2(live[i],live[i+1])
+the_all_son.append(son1)
+the_all_son.append(son2)
+# the_all_son.append()
+# print(len(the_all_son))
+
+
+t0_all = []
+surt_son = []
+for i in range(len(the_all_son)):
+if is_surt_manzai(the_all_son[i],mod_dist):
+t0_all.append(surt_time(the_all_son[i]))
+surt_son.append(the_all_son[i])
+
+chongfu = []
+for i in range(len(surt_son)):
+for j in range(i,len(surt_son)):
+if i!=j and surt_son[i]==surt_son[j]:
+# print(j)
+chongfu.append(i)
+# print(t0_all)
+# print(surt_son)
+
+for i in range(len(chongfu),0,-1):
+surt_son.pop(i)
+t0_all.pop(i)
+
+# print("变异后个体："+str(len(the_all_son)))
+num_ship = []
+index = []
+for i in range(len(surt_son)):
+# if t0_all[i] == 21:
+#     print(surt_son[i])
+num_ship.append(sum(surt_son[i]))
+index.append(i)
+# print(t0_all)
+# print(num_ship)
+
+x = np.vstack((np.array(t0_all),np.array(num_ship),np.array(index)))
+# 第一行排序
+x = x.T[np.lexsort(x[::-1,:])].T
+min_t.append(x[0][0])
+duiying_num.append(x[1][0])
+
+youxiu_geti = []
+for i in range(w):
+youxiu_geti.append(surt_son[x[2][i]])
+print(youxiu_geti)
+print("时间："+str(x[0]))
+print("船数："+str(x[1]))
+live = youxiu_geti
+
+plt.plot(duiying_num, label='种群中对应船只数量', )
+
+plt.plot(min_t, label='种群中最小装载时间', color="r")
+plt.xlabel("迭代次数", fontproperties=my_font)
+plt.title("适应度变化趋势", fontproperties=my_font)
+plt.legend(prop=my_font, loc=0)
+plt.grid(alpha=0.3, linestyle="--")  # alpha为透明度 0-1
+
+plt.show()
+#############################################################################################################################
+######遍历Zx_num = [25, 18, 14, 4, 11]
+# file = 'test.txt'
+# with open(file, 'a+') as f:
+#     for i_a in range(25):
+#         for i_b in range(18):
+#             for i_c in range(6):
+#                 for i_d in range(4):
+#                     for i_e in range(11):
+#                         # print(i_a,i_b,i_c,i_d,i_e)
+#                         if is_surt_manzai([i_a,i_b,i_c,i_d,i_e], mod_dist):
+#                             tqqq = surt_time([i_a,i_b,i_c,i_d,i_e])
+#                             f.write(str(tqqq)+","+str([i_a,i_b,i_c,i_d,i_e])+","+str(sum([i_a,i_b,i_c,i_d,i_e]))+"\n")
+#                             print("*"*20+str(tqqq))
+#############################################################################################################################
+
 
 \end{lstlisting}
+\subsection{问题三改进时间轴仿真模型--python源代码}
+\begin{lstlisting}[language=python]
+import math
+import numpy as np
+import pandas as pd
+import random
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
 
+my_font = font_manager.FontProperties(fname="C:\Windows\Fonts\msyh.ttc")#微软雅黑字体位置
+
+
+def append(list,x):
+'''numpy数组中插入一个元素在末尾'''
+return np.append(list,x)
+
+
+def max_iii(a):
+return a.index(max(a))
+
+
+def Merge(dict1, dict2):
+'''字典合并'''
+res = {**dict1, **dict2}
+return res
+
+
+def kv_deng(dic1):
+modddd = {}
+for k, v in dic1.items():
+modddd[k] = v
+return modddd
+
+
+def shell_sort(lists):
+'''
+按从大到小排序，时间复杂度O(n)
+:param lists:传进来的数组，比如船只或者包裹
+:return: 返回从大到小的包裹
+'''
+# 希尔排序
+lists = sorted(lists,reverse=True)
+return lists
+
+
+def kv_sort(kv):
+'''
+键值对由大到小排序
+eg:
+d = {'d1':2, 'd2':4, 'd4':1,'d3':3,}
+res = sorted(d.items(),key=lambda d:d[1],reverse=True)
+[('d2', 4), ('d3', 3), ('d1', 2), ('d4', 1)]
+:param kv:键值对
+:return:元组
+'''
+res = sorted(kv.items(), key=lambda d: d[1], reverse=True)
+return res
+
+
+def min_index(lists):
+'''
+返回最穷连的下标
+:param lists: 各连的装备面积数目
+:return: 最穷的那个连的下标
+'''
+index_min = 0
+for i in range(1, len(lists)):
+if lists[i] < lists[index_min]:
+index_min = i
+return index_min
+
+
+def jiaopei_1(live1,live2):
+'''
+遗传交配的第一种方法
+:param live1: 父代
+:param live2: 父代
+:return: 子代
+'''
+son = [0,0,0,0,0]
+for i in range(5):
+son[i] = random.randint(min(live1[i],live2[i]),max(live1[i],live2[i]))
+return son
+
+def jiaopei_2(live1,live2):
+'''
+遗传交配的第二种方法
+:param live1: 父代
+:param live2: 父代
+:return: 子代两个
+'''
+son1 = [0,0,0,0,0]
+son2 = [0,0,0,0,0]
+x = random.randint(1,4)
+for i in range(x):
+son1[i] = live1[i]
+son2[i] = live2[i]
+for i in range(5-x):
+son1[4-i] = live2[4-i]
+son2[4-i] = live1[4-i]
+
+return son1,son2
+
+def bianyi(geti , gailv):
+'''
+遗传操作中变异的操作
+:param geti 个体
+:param gailv 变异概率
+:return: 变异后的个体
+'''
+is_bianyi = False
+bianyihou = geti
+if gailv > random.random():
+# print("变异")
+x = random.randint(0, 4)
+y = random.randint(0, 4)
+if geti[2]==1 and y==2:
+geti[2]+=1
+is_bianyi=True
+elif geti[y] == 0:
+geti[y]+=1
+is_bianyi=True
+else:
+if random.random()>0.5:
+geti[y]+=1
+is_bianyi = True
+else:
+geti[y]-=1
+is_bianyi = True
+
+if geti[2]==1 and x==2:
+geti[2]+=1
+is_bianyi=True
+elif geti[x] == 0:
+geti[x]+=1
+is_bianyi=True
+else:
+if random.random()>0.5:
+geti[x]+=1
+is_bianyi = True
+else:
+geti[x]-=1
+is_bianyi = True
+
+return bianyihou,is_bianyi
+
+
+def ship_list2dict(sum_ship):
+'''
+船变字典
+:param sum_ship:船的列表
+:return: 船的字典
+'''
+# 船只变成列表
+# 列表转字典
+dict_ship = {}
+for i in range(len(sum_ship)):
+if i < 5:
+dict_ship["Y1_" + str(i)] = sum_ship[i]
+elif i < 8:
+dict_ship["Y2_" + str(i - 5)] = sum_ship[i]
+elif i < 17:
+dict_ship["Y3_" + str(i - 8)] = sum_ship[i]
+elif i < 21:
+dict_ship["Y4_" + str(i - 17)] = sum_ship[i]
+elif i < 32:
+dict_ship["Y5_" + str(i - 21)] = sum_ship[i]
+elif i < 42:
+dict_ship["Y6_" + str(i - 32)] = sum_ship[i]
+elif i < 43:
+dict_ship["Y7_" + str(i - 42)] = sum_ship[i]
+elif i < 44:
+dict_ship["Y8_" + str(i - 43)] = sum_ship[i]
+elif i < 75:
+dict_ship["Y9_" + str(i - 44)] = sum_ship[i]
+elif i < 87:
+dict_ship["Y10_" + str(i - 75)] = sum_ship[i]
+elif i < 97:
+dict_ship["Y11_" + str(i - 87)] = sum_ship[i]
+elif i < 297:
+dict_ship["Y12_" + str(i - 97)] = sum_ship[i]
+elif i < 333:
+dict_ship["Y13_" + str(i - 297)] = sum_ship[i]
+elif i < 341:
+dict_ship["Y14_" + str(i - 333)] = sum_ship[i]
+return dict_ship
+
+
+def ship_list2dict_z(sum_ship, z1, z2, z3, z4, z5):
+'''
+船变字典，带有一个参数的
+:param sum_ship:船的列表
+:return: 船的字典
+'''
+# 船只变成列表
+# 列表转字典
+dict_ship = {}
+for i in range(len(sum_ship)):
+if i < z1:
+dict_ship["Z1_"+str(i)] = sum_ship[i]
+elif i < z1+z2:
+dict_ship["Z2_"+str(i-z1)] = sum_ship[i]
+elif i < z1+z2+z3:
+dict_ship["Z3_"+str(i-z1-z2)] = sum_ship[i]
+elif i < z1+z2+z3+z4:
+dict_ship["Z4_"+str(i-z1-z2-z3)] = sum_ship[i]
+elif i < z1+z2+z3+z4+z5:
+dict_ship["Z5_"+str(i-z1-z2-z3-z4)] = sum_ship[i]
+return dict_ship
+
+
+def sum_ship_list(ship_S, ship_num):
+'''
+计算所有的船只数目/装备数目
+:param ship_S: 船只面积/装备面积
+:param ship_num: 各类船只数目/装备数目
+:return: 所有用有船只面积/装备面积
+'''
+sum_ship = []
+if(len(ship_num)==len(ship_S)):
+for i in range(len(ship_num)):
+for j in range(ship_num[i]):
+sum_ship.append(ship_S[i])
+else:
+print('船数与船面积的两个列表不相等，可能是打错了\n')
+return sum_ship
+
+
+def zhuang_baoguo(zhuangbei_num_list, zhuangbei_S_list, lian_num, lian_mianji, type, lv_num):
+'''
+给出装备数目，装备面积，要求*均分*给每个连
+均分打包思想：谁穷我给谁装备：
+装备我从小到大排序；
+for 装备的数目:
+装备先给连j；
+判断哪个连最穷
+给穷的连装备
+
+:param zhuangbei_num_list: 各个装备的数目
+:param zhuangbei_S_list: 不同装备的面积
+:param lian_num: 连的数量
+:param lian_mianji: 连中人的面积
+:param type:   旅的类型，键
+:param lv_num:  旅的数目
+:return: 装备打包好了后，下一步就是上船
+'''
+
+#初始化连的数目
+lian = [0.0]*lian_num
+
+#c初始化装备数目
+zhuangbei = sum_ship_list(zhuangbei_S_list, zhuangbei_num_list)
+#装备排序
+zhuangbei = shell_sort(zhuangbei)
+# print("总的装备的排序\n"+str(zhuangbei)+'\n')
+
+for i in range(len(zhuangbei)):
+# 最穷的下标
+index_min = min_index(lian)
+lian[index_min] += zhuangbei[i]
+
+for i in range(len(lian)):
+lian[i] += lian_mianji
+# print(type+str(lian))
+
+lian2 = []
+for i in range(lv_num):
+lian2 += lian
+
+#列表转字典
+dict_lian = {}
+for i in range(len(lian2)):
+dict_lian[type+str(i)] = lian2[i]
+return dict_lian
+
+
+def zhuangzai_ship(sum_baoguo, sum_ship):
+'''
+第一问核心思想
+装船的操作，按石头装满装沙子的思想
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x+=1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items()) == x and flag == False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangzai_zhishengji_ship(sum_baoguo, sum_ship):
+'''
+装六型旅的操作，按石头装满装沙子的思想
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x += 1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+if ship_k.startswith("Y1") or ship_k.startswith("Y5"):
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items())==x and flag==False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangzai_xuanze_ship(sum_baoguo, sum_Z_ship):
+'''
+剩余包裹装民船
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+# 一开始是不适应的
+flag = True
+for baoguo_k,baoguo_v in sum_baoguo.items():
+for ship_k,ship_v in sum_Z_ship.items():
+# 白包裹
+if baoguo_k.startswith("一") or baoguo_k.startswith("二") or baoguo_k.startswith("三") or baoguo_k.startswith("七") or baoguo_k.startswith("eleven"):
+if ship_k.startswith("Z3") or ship_k.startswith("Z4") or ship_k.startswith("Z5"):
+#如果白包裹碰到z345，换下一艘船
+pass
+else:
+if baoguo_v <= ship_v:
+# 装上船，换下一个包裹
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+#黄包裹
+elif baoguo_k.startswith("四") or baoguo_k.startswith("五") or baoguo_k.startswith("六") or baoguo_k.startswith("八") or baoguo_k.startswith("九") or baoguo_k.startswith("十"):
+if ship_k.startswith("Z4") or ship_k.startswith("Z5"):
+pass
+else:
+if baoguo_v <= ship_v:
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+#人
+else:
+if baoguo_v <= ship_v:
+
+sum_Z_ship[ship_k] -= baoguo_v
+sum_baoguo[baoguo_k] = 0
+break
+
+for baoguo_k, baoguo_v in sum_baoguo.items():
+if sum_baoguo[baoguo_k] != 0:
+flag=False
+
+return sum_Z_ship,flag
+
+
+def jizhuangxaing_zhishengji_ship(sum_baoguo, sum_ship):
+'''
+民船Z3装在直升机
+:param sum_baoguo: 总的包裹
+:param sum_ship: 总的船只
+:return: 装载后的船只,装载图
+'''
+mod_dist = {}
+for baoguo_k,baoguo_v in sum_baoguo.items():
+flag = False
+x=0
+for ship_k,ship_v in sum_ship.items():
+#如果包裹量小于等于第j艘船的量，装入第j艘船中
+x += 1
+# if sum_baoguo[i] <= sum_ship[j]:
+if baoguo_v <= ship_v:
+if ship_k.startswith("Y1") or ship_k.startswith("Y5"):
+# sum_ship[j] -= sum_baoguo[i]    #第j量船的载容量减少
+flag=True
+sum_ship[ship_k] -= baoguo_v
+# print(baoguo_k+"装到"+ship_k)
+break   #开始装第二个包裹
+else:
+pass    #否则开启第二只船
+if len(sum_ship.items())==x and flag==False:
+# print(baoguo_k+"没有船可装"+str(baoguo_v))
+#收集起来
+mod_dist[baoguo_k] = baoguo_v
+return sum_ship,mod_dist
+
+
+def zhuangmingchuan(mod_dist, zx):
+'''
+剩余的包裹装一种类型船的数量
+:param mod_dist: 剩余的包裹
+:param zx: 船的容积
+:return: 船的数目
+'''
+zx_num = 1
+zxy=zx
+for baoguo_k, baoguo_v in mod_dist.items():
+if zxy>=0 and zxy>=baoguo_v:
+zxy-=baoguo_v
+else:
+zxy=zx
+zx_num+=1
+return zx_num
+
+
+def surt_time(live):
+'''
+计算适应度的函数，适应度为时间
+:param live: 存活个体[z1,z2...,z5]
+:return: 适应时间
+'''
+num_matou = [10, 5, 1, 3, 2, 10, 1, 4, 3, 6, 5, 3, 5, 3, 3, 7]
+w_mat = [30000, 20000, 1000, 30000, 1000, 1000, 1000, 30000, 1000, 30000, 1000, 1000, 500, 1000, 30000, 1000]
+t_matou = [0] * 71
+W_matou = sum_ship_list(w_mat,num_matou)
+numZ = np.array(live)
+# 第一行向量，船的数目
+num_ship = np.hstack((num_Y, numZ))
+# print("输入船的数量"+str(num_ship))
+# print(num_ship)
+# 第二行向量，船的吨位
+w_ship = [18500, 4170, 4800, 4170, 4800, 2000, 1650, 1800, 850, 850, 800, 600, 128, 85, 20000, 30000, 30000, 10000,
+5000]
+# 第三行向量，船的时间
+t_ship = [5, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 1, 1, 10, 15, 18, 5, 4]
+
+'''适应度的计算：时间t0'''
+# 销毁时间
+rtime = 18
+t0 = -1
+while True:
+t0+=1
+
+if len(num_ship) != len(w_ship) or len(num_ship) != len(t_ship) or len(W_matou) != len(t_matou):
+print("输入错误，请查看船或码头个数")
+break
+
+if t0 == rtime:
+# print("码头被摧毁！！！")
+pass
+
+#检索71次
+for i in range(len(t_matou)):
+if t0 == rtime:
+#摧毁对应码头
+t_matou[0]=-1
+t_matou[1]=-1
+t_matou[10]=-1
+t_matou[40]=-1
+t_matou[46]=-1
+t_matou[47]=-1
+pass
+#如果有码头是空闲的
+if t_matou[i]==t0:
+#检索对应的船
+manzu_w_ship = []
+manzu_j_ship = []
+for j in range(len(w_ship)):
+#如果满足条件
+if W_matou[i]>w_ship[j]:
+manzu_w_ship.append(w_ship[j])#记录重量和对应重量的位置
+manzu_j_ship.append(j)
+#取出最大满足吨位的船的下标
+j_max = max_iii(manzu_w_ship)
+if num_ship[j_max]>0:
+#船的数量减一
+num_ship[j_max] -= 1
+#码头对应时间加上tk
+# print(t_matou)
+t_matou[i] += t_ship[j_max]
+if i==0 or i==1 or i==40 or i==46 or i== 47 or i== 10:
+# print(str(j_max) + "装载到" + str(i) + "码头里")
+if t_matou[i]>rtime:
+num_ship[j_max] += 1
+if num_ship[j_max]==0:
+w_ship[j_max]=0
+# print(t_matou)
+#跳出循环
+# print(num_ship)
+
+if t0>max(t_matou) and sum(num_ship)==0:
+break
+# print(t0)
+return t0
+
+
+def is_surt_manzai(Z_X,mod_dist):
+'''
+判断某一个个体是否满足能装载
+:return: 是否能装满
+'''
+Zx_w = [19000 * 0.7, 26000 * 0.7, 38000 * 0.7, 6000 * 0.7, 2000 * 0.7]
+sum_Z_ship = sum_ship_list(Zx_w, Z_X)
+dict_ship_Z = ship_list2dict_z(sum_Z_ship, Z_X[0], Z_X[1], Z_X[2], Z_X[3], Z_X[4])  # 船变字典
+dict_ship_Z['Z3_' + str(Z_X[2])] = 2494.836677158
+sum_Z_ship_dict = dict(kv_sort(dict_ship_Z))  # 排序
+moddd = kv_deng(mod_dist)
+shiying_ship, is_sure = zhuangzai_xuanze_ship(moddd, sum_Z_ship_dict)
+# print("是否适应\n" + str(is_sure) + '\n')
+
+return is_sure
+
+
+if __name__ == '__main__':
+
+'''每个装备对应的面积'''
+x_len = np.array([11,10,8,7.5,6.7,6,6.7,7.5,13,9,5.2,5.6,7,8.5])
+x_kunan = np.array([3.5,3.2,3.5,3.3,3.3,3,3.2,3.3,12,2.5,3.5,3.5,3.5,2.4])
+x_weight = np.array([1.24,1.24,1.24,1.24,1.24,1.24,1,1,1.14,1.1,1.1,1.05,1.24,1.05])
+x_S = x_kunan*x_len*x_weight
+# print("每个装备对应的面积\n"+str(x_S)+'\n')
+
+'''船只融载面积'''
+Y = np.array([4000,750,1500,750,750,600,600,1200,300,200,200,200,70,70])
+Y = Y*0.75
+num_Y = np.array([5,3,9,4,11,10,1,1,31,12,10,200,36,8])
+# print("船只融载面积\n"+str(shell_sort(Y))+'\n')
+# print("所有船总面积sum(Y) = " + str(sum(Y*num_Y)))
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+#一个旅对应的包裹
+one_sum_baoguo = zhuang_baoguo([130,100,20,5,8,5,50],[47.74,34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'一',12)
+two_sum_baoguo = zhuang_baoguo([220,20,5,8,5,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,43.51851852,'二',3)
+three_sum_baoguo = zhuang_baoguo([120,10,5,8,4,50],[34.72,27.4164,22.32,21.44,24.75,21.42],54,41.6666667,'三',3)
+four_sum_baoguo = zhuang_baoguo([120,50],[27.4164,21.42],35,37.14285714,'四',3)
+five_sum_baoguo = zhuang_baoguo([20,25,30],[21.44,24.75,30.38],35,28.5714285,'五',3)
+six_sum_baoguo_feiji = zhuang_baoguo([40,30],[177.84,21.42],35,28.57142857,'六',5)#带飞机的旅，先装！！！！！！！
+seven_sum_baoguo = zhuang_baoguo([30,15],[34.72,24.75],35,27.57142857,'七',5)
+eight_sum_baoguo = zhuang_baoguo([150],[20.02],35,35.71428571,'八',3)
+night_sum_baoguo = zhuang_baoguo([100],[20.58],35,32.85714286,'九',3)
+ten_sum_baoguo = zhuang_baoguo([100],[21.42],35,28.57142857,'十',3)
+elevn_sum_baoguo = zhuang_baoguo([100,105,18,12,50],[39.68,30.69,27.4164,22.32,21.42],35,71.42857143,'eleven',6)
+twelve_sum_baoguo = zhuang_baoguo([],[],35,42.85714286,'twelve',10)
+# sum_baoguo = [2000,140,1611,41,780,145,17,2510,1,148]   #测试数据1
+# sum_baoguo = one_sum_baoguo     #测试装包数据
+# print("第一旅的包裹\n"+str(sum_baoguo)+'\n')
+
+# '''这里写几个旅的包裹相加'''
+sum_baoguo = Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(Merge(one_sum_baoguo,two_sum_baoguo),three_sum_baoguo),four_sum_baoguo),five_sum_baoguo),seven_sum_baoguo),eight_sum_baoguo),night_sum_baoguo),ten_sum_baoguo),elevn_sum_baoguo),twelve_sum_baoguo)# +.........
+# print(sum_baoguo)
+first_baoguo = six_sum_baoguo_feiji
+# # 总船只
+sum_ship = sum_ship_list(Y,num_Y)
+dict_ship = ship_list2dict(sum_ship)#船变字典
+print(dict_ship)
+
+
+'''包裹与船只分别从大到小排序'''
+sum_baoguo = dict(kv_sort(sum_baoguo))
+first_baoguo = dict(kv_sort(first_baoguo))
+sum_ship = dict(kv_sort(dict_ship))
+# print("总船只\n"+str(sum_ship)+'\n')
+
+# '''装直升机的操作'''
+sum_zhuangzai_ship, mod_dist = zhuangzai_zhishengji_ship(first_baoguo, sum_ship)
+print('总船只装载飞机后的船只装载量\n'+str(sum_zhuangzai_ship)+'\n')
+# print("总船只\n"+str(sum_ship)+'\n')
+print("总包裹\n"+str(sum_baoguo)+'\n')
+# '''106个直升机的包裹
+#  总面积24105.163322842
+#   开一个Z3装得下13300*2
+#   剩下2494.836677158
+#   '''
+# print("剩余的包裹\n"+str(mod_dist)+'\n')
+# z3 = 1
+#
+# '''装人的操作'''
+sum_zhuangzai_ship,mod_dist = zhuangzai_ship(sum_baoguo,sum_zhuangzai_ship)
+print('总船只装载后的装载量\n'+str(sum_zhuangzai_ship)+'\n')
+print("装民船的面积的面积\n"+str(sum(mod_dist.values())))
+mod_dist = dict(kv_sort(mod_dist))
+# print("剩余的包裹\n"+str(mod_dist)+'\n')
+#
+#
+# z1 = zhuangmingchuan(mod_dist,19000*0.7)
+# z2 = zhuangmingchuan(mod_dist,26000*0.7)
+# z3 += zhuangmingchuan(mod_dist,38000*0.7)
+#Z的最大上限
+# print(z1,z2,z3) #[25, 18, 14, 4, 11]
+
+#############################################################################################################################
+#存活个体数
+w = 50
+live = []
+Zx_w = [19000 * 0.7, 26000 * 0.7, 38000 * 0.7, 6000 * 0.7, 2000 * 0.7]
+Zx_num = [25, 18, 6, 4, 11]
+
+#初始化适应个体
+while len(live) != w:
+# 总民用船的数目
+random_W = np.array([random.random(),random.random(),random.random(),random.random(),random.random()])
+# 初始个体数目
+num_Zx = np.trunc(random_W*Zx_num).astype(np.int8)#取整
+
+# # 总民用船船只
+sum_Z_ship = sum_ship_list(Zx_w, num_Zx)
+# print("总民用船船只\n" + str(sum_Z_ship) + '\n')
+dict_ship_Z = ship_list2dict_z(sum_Z_ship,num_Zx[0],num_Zx[1],num_Zx[2],num_Zx[3],num_Zx[4])# 船变字典
+dict_ship_Z['Z3_'+str(num_Zx[2])] = 2494.836677158
+sum_Z_ship_dict = dict(kv_sort(dict_ship_Z))# 排序
+# print("民用船船只字典和个数\n" + str(sum_Z_ship_dict) + '\n')
+# print("剩余的包裹\n" + str(mod_dist) + '\n')
+# print(mod_dist)
+moddd = kv_deng(mod_dist)
+
+shiying_ship, is_sure = zhuangzai_xuanze_ship(moddd, sum_Z_ship_dict)
+# print("是否适应\n" + str(is_sure) + '\n')
+moddd = kv_deng(mod_dist)
+
+if is_sure:
+num_Zx[2] += 1
+live.append(num_Zx.tolist())
+# print("装完物体后民用船适应度\n" + str(shiying_ship) + '\n')
+
+# break
+# print("适应个体："+str(live)+'\n')
+
+#############################################################################################################################
+# 计算适应度
+t0 = surt_time(live[0])
+print("计算适应度：："+str(t0))
+# 测试交配
+# print(live[0],live[1])
+# print(jiaopei_1(live[0],live[1]))
+# print(jiaopei_2(live[0],live[1]))
+#
+# #测试变异
+# print(live[0])
+# print(bianyi(live[0],0.8))
+#
+# 测试是否满足适应
+# print(is_surt_manzai(live[4],mod_dist))
+#
+#############################################################################################################################
+# 遗传的实现
+ min_t = []
+ duiying_num = []
+ for i in range(100):
+     the_all_son = live
+     bianyilv = 0.2
+     for i in range(w):
+         #变异
+         bianyi_son,is_bianyi = bianyi(live[i],bianyilv)
+         if is_bianyi:
+            the_all_son.append(bianyi_son)
+    # print(len(the_all_son))
+
+     #交配
+     random.shuffle(live)
+     for i in range(0,w-1,2):
+         son = jiaopei_1(live[i],live[i+1])
+         the_all_son.append(son)
+         son1,son2 = jiaopei_2(live[i],live[i+1])
+         the_all_son.append(son1)
+         the_all_son.append(son2)
+         # the_all_son.append()
+    # print(len(the_all_son))
+
+
+     t0_all = []
+     surt_son = []
+     for i in range(len(the_all_son)):
+         if is_surt_manzai(the_all_son[i],mod_dist):
+             t0_all.append(surt_time(the_all_son[i]))
+             surt_son.append(the_all_son[i])
+     #改进遗传算法种的实现
+     # chongfu = []
+     # for i in range(len(surt_son)):
+     #     for j in range(i,len(surt_son)):
+     #         if i!=j and surt_son[i]==surt_son[j]:
+     #             # print(j)
+     #             chongfu.append(i)
+     # # print(t0_all)
+     # # print(surt_son)
+     #
+     # for i in range(len(chongfu),0,-1):
+     #     surt_son.pop(i)
+    #     t0_all.pop(i)
+
+     # print("变异后个体："+str(len(the_all_son)))
+     num_ship = []
+     index = []
+     for i in range(len(surt_son)):
+         # if t0_all[i] == 21:
+         #     print(surt_son[i])
+         num_ship.append(sum(surt_son[i]))
+         index.append(i)
+     # print(t0_all)
+     # print(num_ship)
+
+     x = np.vstack((np.array(t0_all),np.array(num_ship),np.array(index)))
+     # 第一行排序
+     x = x.T[np.lexsort(x[::-1,:])].T
+     min_t.append(x[0][0])
+     duiying_num.append(x[1][0])
+
+     youxiu_geti = []
+     for i in range(w):
+         youxiu_geti.append(surt_son[x[2][i]])
+     print(youxiu_geti)
+     print("时间："+str(x[0]))
+     print("船数："+str(x[1]))
+     live = youxiu_geti
+
+plt.plot(duiying_num, label='种群中对应船只数量', )
+
+plt.plot(min_t, label='种群中最小装载时间', color="r")
+plt.xlabel("迭代次数", fontproperties=my_font)
+plt.title("适应度变化趋势", fontproperties=my_font)
+plt.legend(prop=my_font, loc=0)
+plt.grid(alpha=0.3, linestyle="--")  # alpha为透明度 0-1
+
+plt.show()
+#############################################################################################################################
+#####遍历Zx_num = [25, 18, 14, 4, 11]
+# file = 'testaaaa.txt'
+# with open(file, 'a+') as f:
+#     for i_a in range(25):
+#         for i_b in range(18):
+#             for i_c in range(6):
+#                 for i_d in range(4):
+#                     for i_e in range(11):
+#                         # print(i_a,i_b,i_c,i_d,i_e)
+#                         if is_surt_manzai([i_a,i_b,i_c,i_d,i_e], mod_dist):
+#                             tqqq = surt_time([i_a,i_b,i_c,i_d,i_e])
+#                             f.write(str(tqqq)+","+str([i_a,i_b,i_c,i_d,i_e])+","+str(sum([i_a,i_b,i_c,i_d,i_e]))+"\n")
+#                             print("*"*20+str(tqqq))
+############################################################################################################################
+
+
+\end{lstlisting}
 \end{document}
