@@ -227,10 +227,11 @@
     		    	
 	\subsection{模型的求解}   
     	  \subsubsection{沙石算法}
-		为使得调用的船舰数量最少，即需使得每艘船的有效面积利率用达到最大：
-	    \begin{gather*}
+
+		为使得调用的船舰数量最少，即需使得每艘船的未利用面积值达到最小：
+	    \begin{gather}
 		min \Delta S= \sum  S_{x} + \sum  S_{p}-D\cdot S_{D} 
-		\end{gather*}
+		\end{gather}
 	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
 	 \paragraph{算法思想}
 	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计\textbf{沙石算法}，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。沙石算法示意图如图 ~\ref{shashi}~所示：
@@ -248,7 +249,7 @@
 	 \begin{gather*}
 	 	A^k=[a^k_{1},a^k_{2},\cdots,a^k_{n}]
 	\end{gather*}
-	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，其中$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为k旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
+	 	其中$a^k_{i}$的初始值是第$k$旅中的全副武装人员所占面积，$k=1,2,\cdots,K$($K$为旅队编制总数)，$n=n_{k}$($n_{k}$为$k$旅连编制总数)。根据题目中装备均匀分配的要求，重复检索向量$A^k$中的每一个元素，选择最小值$min \left \{ a_{i} \right \}$ (装备量最少的营)使得该连添加装备$X_{j}$,即令：
 	 	\begin{gather*}
 	   min \left \{ a_{i} \right \}=min \left \{ a_{i} \right \}+s_{xj}
 	 	\end{gather*}
@@ -270,9 +271,17 @@
 		D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
 		\end{gather*}
 	\end{itemize}
-	
+
+	 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/shashisuanfa.png}
+	\caption{沙石算法流程图}\label{shashiluc}
+\end{figure}
+
+
 \subsection{结果分析}
-通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~
+通过量化各型旅成建制单位的人数、装备面积和船舰的有效装载面积，结合相关条件和要求,再运用沙石算法进行计算,求解出各旅级单位装备人口面积装载方案如表~\ref{zhuangzai}~，其各连具体到每艘轮船数据见附件：
 
 \begin{table}[H]
 \centering		\caption{各型旅级单位装备人口面积装载方案}\label{zhuangzai}
@@ -302,7 +311,27 @@
 \end{tabular}
 \end{table}
 
-%由表~\ref{zhuangzai}~可得，第Ⅰ型旅的一个旅级单位对船舰的需求为1艘Y1综合登陆舰，3艘Y2大型登陆舰，3艘Y3大型登陆舰，4艘Y4大型登陆舰，11艘Y5大型登陆舰，2艘Y6大型登陆舰和1艘Y8大型登陆舰。(第$Ⅺ$型旅的需求与其为同一艘Y1综合登陆舰)，第Ⅱ型旅的一个旅级单位的需求为8艘Y6中型登陆舰，1艘Y7中型登陆舰，7艘Y9中型登陆舰与1艘集装箱船只。不同旅级单位的	
+	其各类舰船的使用数量与平均有效面积利用率$\frac{\sum P_{n}\cdot S_{k}}{\sum D*S_{n}*0.75}$如下表所示：
+	\begin{table}[H]
+		\centering		\caption{各类舰船的使用数量与平均有效面积利用率}\label{zhuansasgzai}
+		\begin{tabular}{ccc}
+			\toprule[2pt]
+			\multicolumn{1}{m{3cm}}{\centering 船舰类别}
+			& \multicolumn{1}{m{3cm}}{\centering 使用数目}
+			&\multicolumn{1}{m{3cm}}{\centering 平均有效面积利用率}
+			\\
+			\midrule[1pt]
+			Y1综合登陆舰 &  $5$  &$99.25$\% \\ 
+			Y2大型登陆舰	 &  $3$&$94.04$\%\\ 
+			Y3大型登陆舰	 &  $9 $ &$99.81$\%\\ 
+			Y4大型登陆舰	 &  $4$ &$93.98$\%\\ 
+			$\cdots \cdots$	 & 	$\cdots \cdots$&	$\cdots \cdots$\\ 
+			Y12登陆艇	 &  $138$ &$70.38$\%\\ 
+			2万吨级滚装船  &  $1 $ &$93.74$\% \\ 
+			\bottomrule[2pt]	
+		\end{tabular}
+	\end{table}
+由表~\ref{zhuansasgzai}~可知，由沙石算法设计的装备兵力装载方案，其有效面积利用率相当高，能大幅度减少船只数目填充更多武装兵力。
 	
 	
 		
@@ -404,9 +433,6 @@
      \end{itemize}
      重复上述进化过程，当进化代数足够多时，求解得到全局最优解。
  
-
-	\subsubsection{参数的选取与确定}
-	
 	
 	\subsection{模型的求解}
 	
@@ -414,11 +440,10 @@
 	\left\{\begin{array}{l}{m_{t}=\beta_{1} m_{t-1}+\left(1-\beta_{1}\right) \nabla_{w} f\left(w_{t}\right)} \\ {v_{t}=\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) \nabla_{w} f\left(w_{t}\right)^{2}} \\ {\widehat{m}_{t}=\frac{m_{t}}{1-\beta_{1}^{t}}, \hat{v}_{t}=\frac{v_{t}}{1-\beta_{2}^{t}}} \\ {w_{t}=w_{t-1}-\eta \frac{\widehat{m}_{t}}{\sqrt{\hat{v}_{t}+\varepsilon}}}\end{array}\right.
 	\end{gather*}
 
+
 	
 	\subsection{结果分析}
      
-			
-	
 
 
 	\section{问题三模型的建立与求解}
