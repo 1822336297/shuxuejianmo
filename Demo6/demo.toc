@@ -18,20 +18,19 @@
 \contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立}{11}{subsection.5.2}% 
 \contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}优化函数与约束条件}{11}{subsubsection.5.2.1}% 
 \contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}泊口仿真模型}{12}{subsubsection.5.2.2}% 
-\contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}遗传算法}{13}{subsubsection.5.2.3}% 
-\contentsline {paragraph}{编码}{13}{section*.10}% 
+\contentsline {subsubsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}遗传算法}{14}{subsubsection.5.2.3}% 
+\contentsline {paragraph}{编码}{14}{section*.10}% 
 \contentsline {paragraph}{交叉}{14}{section*.12}% 
 \contentsline {paragraph}{变异}{14}{section*.13}% 
 \contentsline {paragraph}{筛重}{14}{section*.14}% 
-\contentsline {paragraph}{选择}{14}{section*.15}% 
-\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的求解}{15}{subsection.5.3}% 
-\contentsline {paragraph}{算法的实现}{15}{section*.16}% 
+\contentsline {paragraph}{选择}{15}{section*.15}% 
+\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的求解与算法实现}{15}{subsection.5.3}% 
 \contentsline {section}{\numberline {六、}问题三模型的建立与求解}{16}{section.6}% 
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题的描述与分析}{16}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立}{17}{subsection.6.2}% 
 \contentsline {subsubsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型调整}{17}{subsubsection.6.2.1}% 
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型的求解}{18}{subsection.6.3}% 
-\contentsline {paragraph}{算法的实现}{18}{section*.18}% 
+\contentsline {paragraph}{算法的实现}{18}{section*.17}% 
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}结果分析}{18}{subsection.6.4}% 
 \contentsline {section}{\numberline {七、}模型的评价}{18}{section.7}% 
 \contentsline {subsection}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{18}{subsection.7.1}% 

@@ -81,61 +81,37 @@
 	
 	
 	\section{符号说明}
-%	每行都有线的表
-%	\begin{center}
-%		\begin{tabular}{cc}
-%			\hline
-%			\makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
-%			$C_{0}$	    &  污染源初始浓度 \\ \hline
-%			$C(x,t)$	    &  污染浓度随时空变化 \\ \hline
-%			$u_{x}$	    &  江河平均纵向流速 \\ \hline
-%			$E_{x}$  &  铊在江河纵向弥散系数\\ \hline
-%		$p$   &  面污染物纵向距离\\ \hline
-%			$K_{c}$	    & 污染物降解系数  \\ \hline
-%		    $a$	& 污染超标系数 \\ \hline
-%		     $x$	& 距污染源的一维距离 \\ \hline
-%		      $t$	& 距污染发生后的时间 \\ \hline
-%		       $V_{A}$	& 溶液摩尔体积 \\ \hline
-%		      $M_{B}$	& 江水的摩尔质量 \\ \hline
-%		     $\mu_{B}$	& 溶剂的粘度 \\ \hline		      
-%		\end{tabular}
-%	\end{center}
-
-%三线表
 	\begin{table}[H]
 	\label{biao} \centering
-		\begin{tabular}{cc}
-			\toprule[1.5pt]
-			\multicolumn{1}{m{5cm}}{\centering 符号} & \multicolumn{1}{m{5cm}}{\centering 说明} \\
-			\midrule[1pt]
-			$I$  &  研究图像 \\ 
-			$A(I)$  &  图像面积 \\ 
-			$C(I)$  & 图像几何中心\\
-			$\partial I$  &  图像边界 \\ 
-		    $d(.)$ & 运算两点间欧式距离\\
-			$ID$	 &  总特征向量  \\ 
-			$ID_{shape}$ &  形状特征向量 \\ 
-			$ID_{margin}$	 &  边缘特征向量 \\ 
-			$id_{k}$  &   研究图像特征值\\ 
-			$r$  &  极径\\	
-			$\theta$ & 极角\\
-			$X$ &  时间序列集\\ 
-			$S$ & shapelet子序列\\
-			$x_{i}$ & 神经网络第$i$个输入值\\
-			$w_{ki}$ & 第$i$个输入量连接的权值\\
-			$b_{k}$ & 神经网络阈值\\
-			$f$  & 激活函数\\
-			$e$ & 误差函数\\
-			$E$ & 全局误差\\
-			$\eta $ &  学习率\\
-			$c_{1,2}$ & 加速因子\\
-			$\beta$ & 惯性权重\\
-			
-
+	\begin{tabular}{cc}
+		\toprule[1.5pt]
+		\multicolumn{1}{m{5cm}}{\centering 符号} & \multicolumn{1}{m{5cm}}{\centering 说明} \\
+		\midrule[1pt]		
+		$X_{i}$  &  第i型装备 \\ 
+		$s_{xi}$  &  装备$X_{i}$的占用面积 \\ 
+		$l_{i}$  & 装备$X_{i}$的长\\
+		$w_{i}$  &  装备$X_{i}$的宽 \\ 
+		$\varepsilon _{i}$ & 装备$X_{i}$的面积修正系数\\
+		$p_{i}$	 &  全副武装人员数  \\ 
+		$eta_{1}$ &  海军船舰的有效面积率 \\ 
+		$eta_{2}$	 &  民用船只的有效面积率 \\ 
+		$y_{k}$  &   登陆舰数量\\ 
+		$z_{n}$  &  民用船数量\\	
+		$D$ & 决策向量\\
+		$S_{D}$ &  舰载面积系数向量\\ 
+		$S_{z}$ & 民用船有效面积向量\\
+		$S_{y}$ & 登陆舰有效面积向量\\
+		$S_{p}$ & 每营人口面积向量\\
+		$b_{k}$ & 神经网络阈值\\
+		$A^{k}$  & 面积规划向量\\
+		$T_{n}$ & 颖编制总部对数列\\
+		$P_{n}$ & 船舰面积数列\\
+		$\eta $ &  平均有效面积利用率\\
 		
-			\bottomrule[1.5pt]
-		\end{tabular}
-	\end{table}
+		
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
 
 	\section{问题一模型的建立与求解}
 
@@ -381,13 +357,8 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
 		综上，建立得到问题二\textbf{时间与船数优化模型}：
 
 	\begin{gather}
-
-\begin{matrix}
 min Z=\sum _{1}^{19}D[k]\\
-
-
 min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-\\
 s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
 \\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
 \\S_{D}=[S_{y}, S_{z}]
@@ -401,9 +372,7 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
 \\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
 \\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
 \end{matrix}\right. 
-\end{matrix}
-
-	\end{gather}
+\end{gather}
 	     ~\\
 	其中$ \underset{k}{max}\sum t_{i} $可利用\textbf{泊口仿真模型}计算，并通过\textbf{遗传算法}算得全局最优解。
 	\subsubsection{泊口仿真模型}
@@ -435,7 +404,7 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
 			\end{gather*}
     \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/yyy.png}
+	\includegraphics[width=.9\textwidth]{figures/yyy.png}
 	\caption{泊口仿真流程图}\label{dieyyrwen}
 \end{figure}
 	\subsubsection{遗传算法}
@@ -469,15 +438,17 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
      \end{itemize}
      重复上述进化过程，当进化代数足够多时，求解得到全局最优解。
 
-     \subsection{模型的求解}
-   	 \paragraph{算法的实现}
-   	 	\begin{itemize}
-   	 	\item [(1)] 将染色体中的单个基因取出，带入问题一沙石算法中。计算只使用的某种民用船时，需要的该民用船的数量，作为单个基因的取值范围。在使用卡特蒙洛法随机生成初始个体，当生成$50$个能通过沙石算法检验的初始个体时，停止生成。
-   	 	\item [(2)]将输入体进行、交叉、变异、筛重和约束淘汰后，得到子代生成个体。将子代个体与附带个体混合，带入泊口仿真模型求出每个个体的装载时间作为适应度函数。根据装载时间对每个个体进行第一次排序，并将装载时间相同的个体进行第二次排序，取序列中的前$50$个个体作为下一代输入个体。
+     \subsection{模型求解与算法实现}
 
-   	 	\item [(3)]重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出个体，将输出个体基因与军用登陆舰总调遣数量合并即可得到完整的船支调遣方案。
 
-   	 	 \end{itemize}
+   	 （1） 将染色体中的单个基因取出，带入问题一沙石算法中。计算只使用的某种民用船时，需要的该民用船的数量，作为单个基因的取值范围。在使用卡特蒙洛法随机生成初始个体，当生成$50$个能通过沙石算法检验的初始个体时，停止生成。
+   	 （2）将输入体进行、交叉、变异、筛重和约束淘汰后，得到子代生成个体。将子代个体与附带个体混合，带入泊口仿真模型求出每个个体的装载时间作为适应度函数。根据装载时间对每个个体进行第一次排序，并将装载时间相同的个体进行第二次排序，取序列中的前$50$个个体作为下一代输入个体。
+
+   （3）重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出的个体，将输出个体基因与军用登陆舰总调遣数量合并即可得到完整的船支调遣方案。
+
+
+    	 
+    	 其求解该模型的具体流程图如~\ref{dierwen}~所示：
     \begin{figure}[H]
     	\centering
     	\includegraphics[width=\textwidth]{figures/dierwen.png}
@@ -493,27 +464,22 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
     \subsubsection{模型调整}
     \textbf{优化函数与约束条件}延用问题二模型：
      	\begin{gather}
-		\begin{matrix}
-		min Z=\sum _{1}^{19}D[k]\\
-		min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-		
-		s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-		\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-		\\S_{D}=[S_{y}, S_{z}]
-		\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-		\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-		\\s_{pi}=p_{i}\times s
-		\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-		\\     s_{yi}=s_{i}\times \eta_{1}
-		\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-		\\      s_{zj}=s_{j}\times \eta_{2}
-		\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-		\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
-		\end{matrix}\right. 
-		
-		\end{matrix}
-
-     \end{gather}
+min Z=\sum _{1}^{19}D[k]\\
+min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
+s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
+\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
+\\S_{D}=[S_{y}, S_{z}]
+\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
+\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
+\\s_{pi}=p_{i}\times s
+\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
+\\     s_{yi}=s_{i}\times \eta_{1}
+\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
+\\      s_{zj}=s_{j}\times \eta_{2}
+\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
+\end{matrix}\right. 
+\end{gather}
      ~\\
      调整 \textbf{泊口仿真模型}，延用港口决策向量：
      \begin{gather*}
@@ -521,8 +487,10 @@ s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
      \end{gather*}
      当时间轴函数$t_{0}=18$时，停止被毁泊口正在进行的任务，使得：
      \begin{gather}
-     t_{k}=-1(k=1,2,11,37,46,47)\\
-   	 D[d]=D[d]+1
+     \left\{\begin{matrix}
+     t_{k}=-1(k=1,2,11,37,46,47)\\ 
+     D[d]=D[d]+1
+     \end{matrix}\right.
      \end{gather}
      即立刻终止港口正在进行的工作，且在$18$小时后检索港口决策向量时，剔除$t_{k}(k=1,2,11,37,46,47)$(其对应被摧毁的港口无法执行装载任务)。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法。即可求得装载中途港口被摧毁后的最优船舰调整方案。
        \subsection{模型的求解}

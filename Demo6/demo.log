@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  21 AUG 2019 17:06
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  21 AUG 2019 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1198,10 +1198,10 @@ File: figures/shashi.jpg Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 247.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 223.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 259--261
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 235--237
 \TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
 /n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
 [] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
@@ -1211,112 +1211,11 @@ Overfull \hbox (2.32474pt too wide) in paragraph at lines 259--261
 File: figures/shashisuanfa.png Graphic file (type bmp)
 <figures/shashisuanfa.png>
  [9]
-Overfull \hbox (35.21524pt too wide) in paragraph at lines 292--328
+Overfull \hbox (35.21524pt too wide) in paragraph at lines 268--304
  [][] 
  []
 
-[10] [11]
-Runaway argument?
- 
-! Paragraph ended before \gather was complete.
-<to be read again> 
-                   \par 
-l.384 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.384 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.384 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.384 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.387 ^^I\end{gather}
-                     
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.387 ^^I\end{gather}
-                     
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.387 ^^I\end{gather}
-                     
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (282.7955pt too wide) detected at line 387
-[]
- []
-
-! Extra }, or forgotten \endgroup.
-\endgather ->\math@cr \black@ \totwidth@ \egroup 
-                                                 $$\ignorespacesafterend 
-l.387 ^^I\end{gather}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.387 ^^I\end{gather}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.387 ^^I\end{gather}
-                     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[12]
+[10] [11] [12]
 File: figures/yyy.png Graphic file (type bmp)
 <figures/yyy.png>
 File: figures/yichuan.jpg Graphic file (type bmp)
@@ -1325,188 +1224,10 @@ File: figures/yichuan.jpg Graphic file (type bmp)
 File: figures/dierwen.png Graphic file (type bmp)
 <figures/dierwen.png>
  [15] [16]
-Runaway argument?
- \begin {matrix} min Z=\sum _{1}^{19}D[k]\\ min \left \{ \underset {k\ETC.
-! Paragraph ended before \gather was complete.
-<to be read again> 
-                   \par 
-l.480 ^^I^^I
-            
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.480 ^^I^^I
-            
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.480 ^^I^^I
-            
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.480 ^^I^^I
-            
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.481 ^^I^^Is.t.\left
-                     \{\begin{matrix}^^I D\cdot S_{D}\geq \sum  S_{x} + \sum...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.494 ^^I^^I
-            
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced \crcr.
-\endarray ->\crcr 
-                  \egroup \egroup \@arrayright \gdef \@preamble {}
-l.495 ^^I^^I\end{matrix}
-                        
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup 
-                          \egroup \@arrayright \gdef \@preamble {}
-l.495 ^^I^^I\end{matrix}
-                        
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup \egroup 
-                                  \@arrayright \gdef \@preamble {}
-l.495 ^^I^^I\end{matrix}
-                        
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: \begin{gather} on input line 476 ended by \end{matrix}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.495 ^^I^^I\end{matrix}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.497      \end{gather}
-                       
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.497      \end{gather}
-                       
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.497      \end{gather}
-                       
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (94.59137pt too wide) detected at line 497
-[]
- []
-
-! Too many }'s.
-\endgather ->\math@cr \black@ \totwidth@ \egroup 
-                                                 $$\ignorespacesafterend 
-l.497      \end{gather}
-                       
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-
-! LaTeX Error: \begin{document} ended by \end{gather}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.497      \end{gather}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.497      \end{gather}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.497      \end{gather}
-                       
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.497      \end{gather}
-                       
-Things are pretty mixed up, but I think the worst is over.
-
 File: figures/yyyy.png Graphic file (type bmp)
 <figures/yyyy.png>
-[17] [18] [19] [20] (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+ [17] [18] [19] [20]
+(c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1532,147 +1253,145 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [21] [22] [23] [24] [25] [26]
-Overfull \hbox (48.06084pt too wide) in paragraph at lines 865--866
+ [21] [22] [23]
+[24] [25] [26]
+Overfull \hbox (48.06084pt too wide) in paragraph at lines 852--853
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (0.63371pt too wide) in paragraph at lines 866--867
+Overfull \hbox (0.63371pt too wide) in paragraph at lines 853--854
 [][][][][][][][][][][][][]  
  []
 
 [27]
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 882--883
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 869--870
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 1447--1448
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 1434--1435
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 1448--1449
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 1435--1436
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 1449--1450
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 1436--1437
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 1457--1458
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 1444--1445
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 1464--1465
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 1451--1452
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [40]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1506--1507
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1493--1494
 [][][][][][][][][]  
  []
 
 [41]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1543--1544
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1530--1531
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1559--1560
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1546--1547
 [][][][][][][][][]  
  []
 
 [42] [43]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1639--1640
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1626--1627
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1653--1656
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1640--1643
 [][][][][][][][][]  
  []
 
 [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 2207--2208
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 2194--2195
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 2208--2209
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 2195--2196
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 2209--2210
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 2196--2197
 [][][][][][][][][][][][][]  
  []
 
 [56]
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 2217--2218
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 2204--2205
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 2224--2225
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 2211--2212
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [57]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2266--2267
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2253--2254
 [][][][][][][][][]  
  []
 
 [58]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2303--2304
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2290--2291
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2319--2320
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2306--2307
 [][][][][][][][][]  
  []
 
 [59] [60]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2399--2400
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2386--2387
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (132.85217pt too wide) in paragraph at lines 2413--2416
+Overfull \hbox (132.85217pt too wide) in paragraph at lines 2400--2403
 [][][][][][][][][]  
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2417.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2404.
 [61]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2417.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2404.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2417.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2417.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2404.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2404.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 922227437580FC1555D90A9E4D1726F6.
+(rerunfilecheck)             Checksum: 2067FFCE74800605922E4D56F03836EA.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2417.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2404.
  ) 
 Here is how much of TeX's memory you used:
- 29017 strings out of 494857
- 566975 string characters out of 6176225
- 860020 words of memory out of 5000000
- 32548 multiletter control sequences out of 15000+600000
+ 29030 strings out of 494857
+ 567839 string characters out of 6176225
+ 861682 words of memory out of 5000000
+ 32561 multiletter control sequences out of 15000+600000
  540709 words of font info for 115 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  61i,19n,81p,442b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
