@@ -145,45 +145,44 @@
     
 
 	    \subsection{模型的建立}
-	    \subsubsection{预备工作}
-	    \paragraph{兵力、装备与船载的面积量化}
+	    \subsubsection{兵力、装备与船载的面积量化}
 
 
 	    计算附件2中的每种装备与所占面积，得到装备占用面积向量：
-	    \begin{gather}
+	    \begin{gather*}
 	    s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}\\
 	        S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-	    \end{gather}
+	    \end{gather*}
 	    其中$s_{xi}$是装备$X_{i}(i=1,2\cdots,14)$的占用面积，$l_{i}$、$w_{i}$与$\varepsilon _{i}$分别是装备$X_{i}$的长、宽与面积修正系数。
 	    
 	     计算附件2中每种旅一个营的占用面积，得到每营人口所占面积向量：
 
 
-	     \begin{gather}
+	     \begin{gather*}
 	     s_{pi}=p_{i}\times s\\
 	     S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-	     \end{gather}
+	     \end{gather*}
 	     其中$p_{i}$是第$i(i=1,2,\cdots,12)$的全副武装人员数，取$s=0.5m^2$为每个全副武装人员占用的面积。
 	     
 	     计算附件3中登陆舰可用装载面积，得到登陆舰有效面积向量：
-	      \begin{gather}
+	      \begin{gather*}
 	      s_{yi}=s_{i}\times \eta_{1}\\
 	      S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-	      \end{gather}
+	      \end{gather*}
 	    其中$s_{yi}$是登陆舰$Y_{i}(i=1,2\cdots,14)$的可用装载面积，$s_{i}$是登陆舰$Y_{i}$的总装载面积，取$\eta_{1}=75\%$为登陆舰的有效面积率。
 	    
 	    计算附件3中民用船可用装载面积，得到登陆舰有效面积向量：
-	      \begin{gather}
-	     S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]\\
-	      s_{zj}=s_{j}\times \eta_{2}
-	      \end{gather}
+	      \begin{gather*}
+	      s_{zj}=s_{j}\times \eta_{2}\\
+	      S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
+	      \end{gather*}
 	       其中$s_{zi}$民用船$Z_{j}(i=1,2\cdots,5)$的可用装载面积，$s_{j}$是民用船$Z_{j}$的总装载面积，取$\eta_{2}=70\%$为登陆舰的有效面积率。
 	    \subsubsection{优化函数与约束条件}
-	    \textbf{决策向量}为：
-	     \begin{gather}
+	    令$y_{k}$为派出的登陆舰数量，$z_{k}$为派出民用船的数量，建立\textbf{决策向量}：
+	     \begin{gather*}
 	     D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
-	    \end{gather}
-	    其中$y_{k}$是派出的登陆舰数量，$z_{k}$是派出民用船的数量。
+	    \end{gather*}
+	    
 	    
 	    根据题意尽可能使用少的船舰数，即\textbf{目标函数}为使用船舰总数：
 	     \begin{gather}
@@ -191,22 +190,24 @@
 	  \end{gather}
 	    
 	    
-	   舰载面积系数向量为：
-	    \begin{gather}
+	   其中舰载面积系数向量为：
+	    \begin{gather*}
 	    S_{D}=[S_{y}, S_{z}]
-    	\end{gather}
+    	\end{gather*}
+    	
     	根据题目要求总舰载有效面积不小于总兵力装备占用面积：
-    	 \begin{gather}
+    	 \begin{gather*}
     	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-    	 \end{gather}
-    	 且由登陆舰Y1的有效舰载面积大于装备X9(直升机)的部队占用的面积：
-    	  \begin{gather}
+    	 \end{gather*}
+    	 
+    	 且由登陆舰Y1的有效舰载面积大于装备X9(直升机)的部队占用的面积，其中$\sum  s_{p6}$是唯一装备的部队—$\uppercase\expandafter{\romannumeral6}$旅的人口总和：
+    	  \begin{gather*}
     	 y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-    	 \end{gather}
-    	 其中$\sum  s_{p6}$是唯一装备的部队——$\uppercase\expandafter{\romannumeral6}$旅的人口总和。
+    	 \end{gather*}
+    	 
     	 
 
-    	 建立得到使用最少船舰装载每种旅各一个旅级编制的模型为：
+    	 综上，建立得到使用最少船舰装载每种旅各一个旅级编制的\textbf{模型}为：
     	  \begin{gather}
     	 min Z=\sum D\\ 
     	  s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
@@ -232,7 +233,7 @@
 		\end{gather*}
 	其中$\Delta S$为损失面积，本组设计沙石算法优化部队装载方案，使其得面积损失达到最小，具体如下：
 	 \paragraph{算法思想}
-	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计沙石算法，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。沙石算法示意图如图 ~\ref{shashi}~所示：
+	 根据经验，使用沙砾和石子填满某个刚性容器，较好的方法是先装入石子，后灌入沙砾，可以让剩余空间达到最小。基于此，本组设计\textbf{沙石算法}，将带待装载部队(其占用面积不尽相同)视作沙砾与石子，将船舰视作刚性容器，即可求出面积利用率最高的部队装载方案。沙石算法示意图如图 ~\ref{shashi}~所示：
 	 
 	 
 	 \begin{figure}[H]

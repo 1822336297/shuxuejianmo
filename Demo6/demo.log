@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  21 AUG 2019 09:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  21 AUG 2019 09:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1210,17 +1210,17 @@ File: figures/shashi.jpg Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 241.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 242.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 253--255
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 254--256
 \TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
 /n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
 [] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
  []
 
 [8]
-Overfull \hbox (32.53812pt too wide) in paragraph at lines 278--302
+Overfull \hbox (32.53812pt too wide) in paragraph at lines 279--303
  [][] 
  []
 
@@ -1231,13 +1231,13 @@ File: figures/yichuan.png Graphic file (type bmp)
 File: figures/moxingsan.png Graphic file (type bmp)
 <figures/moxingsan.png>
  [12] [13] [14]
-Underfull \hbox (badness 7081) in paragraph at lines 457--458
+Underfull \hbox (badness 7081) in paragraph at lines 458--459
 []\TU/TimesNewRoman(0)/m/n/12.05 Matheus B. Vicari,Mathias Disney,Phil Wilkes,A
 ndrew Burt,Kim Calders,William
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 461--462
+Underfull \hbox (badness 1924) in paragraph at lines 462--463
 []\TU/SimSun(1)/m/n/12.05 侯 铜\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n
 /12.05 姚 立 红\TU/TimesNewRoman(0)/m/n/12.05 , \TU/SimSun(1)/m/n/12.05 阚 江 明\TU/T
 imesNewRoman(0)/m/n/12.05 . \TU/SimSun(1)/m/n/12.05 基 于 叶 片 外 形 特 征 的 植 物 识 别 研
@@ -1270,15 +1270,15 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
 
 (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 475.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 475.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 1753B6585EB6619A1A7CFF66C93BDFBF.
+(rerunfilecheck)             Checksum: 0B04FB0409383EAEBAD5E9C30A427990.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1286,13 +1286,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 475.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 29166 strings out of 494857
- 564637 string characters out of 6176225
- 827151 words of memory out of 5000000
- 32701 multiletter control sequences out of 15000+600000
+ 29176 strings out of 494857
+ 565274 string characters out of 6176225
+ 827281 words of memory out of 5000000
+ 32711 multiletter control sequences out of 15000+600000
  540701 words of font info for 114 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  61i,18n,81p,396b,1570s stack positions out of 5000i,500n,10000p,200000b,80000s
