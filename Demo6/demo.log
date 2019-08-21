@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 18:22
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  21 AUG 2019 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1714,36 +1714,31 @@ Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 30--32
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 32.
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 (e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 32--34
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 39--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--45
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 
  []
 
@@ -1813,10 +1808,10 @@ File: figures/shashi.jpg Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 222.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 224.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 234--236
+Overfull \hbox (2.32474pt too wide) in paragraph at lines 236--238
 \TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
 /n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
 [] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
@@ -1826,7 +1821,7 @@ Overfull \hbox (2.32474pt too wide) in paragraph at lines 234--236
 File: figures/shashisuanfa.png Graphic file (type bmp)
 <figures/shashisuanfa.png>
  [9]
-Overfull \hbox (35.21516pt too wide) in paragraph at lines 267--303
+Overfull \hbox (35.21516pt too wide) in paragraph at lines 269--305
  [][] 
  []
 
@@ -1875,129 +1870,129 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 .................................................
  [22] [23] [24]
 [25] [26] [27]
-Overfull \hbox (48.06084pt too wide) in paragraph at lines 853--854
+Overfull \hbox (48.06084pt too wide) in paragraph at lines 855--856
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (0.63371pt too wide) in paragraph at lines 854--855
+Overfull \hbox (0.63371pt too wide) in paragraph at lines 856--857
 [][][][][][][][][][][][][]  
  []
 
 [28]
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 870--871
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 872--873
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 1435--1436
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 1437--1438
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 1436--1437
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 1438--1439
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 1437--1438
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 1439--1440
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 1445--1446
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 1447--1448
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 1452--1453
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 1454--1455
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [41]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1494--1495
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1496--1497
 [][][][][][][][][]  
  []
 
 [42]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1531--1532
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1533--1534
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1547--1548
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1549--1550
 [][][][][][][][][]  
  []
 
 [43] [44]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1627--1628
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1629--1630
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1641--1644
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1643--1646
 [][][][][][][][][]  
  []
 
 [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 2195--2196
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 2197--2198
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 2196--2197
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 2198--2199
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 2197--2198
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 2199--2200
 [][][][][][][][][][][][][]  
  []
 
 [57]
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 2205--2206
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 2207--2208
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 2212--2213
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 2214--2215
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
 [58]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2254--2255
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2256--2257
 [][][][][][][][][]  
  []
 
 [59]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2291--2292
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2293--2294
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2307--2308
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2309--2310
 [][][][][][][][][]  
  []
 
 [60] [61]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2387--2388
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2389--2390
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (132.85217pt too wide) in paragraph at lines 2401--2404
+Overfull \hbox (132.85217pt too wide) in paragraph at lines 2403--2406
 [][][][][][][][][]  
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2405.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2407.
 [62]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2405.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2407.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2405.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2405.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2407.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2407.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: ABC50975391C5A06367B98575520A33C.
@@ -2005,7 +2000,7 @@ Package rerunfilecheck Info: File `demo.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2405.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2407.
  ) 
 Here is how much of TeX's memory you used:
  27473 strings out of 494895
