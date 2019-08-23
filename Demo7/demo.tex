@@ -177,13 +177,13 @@ p_{E1} & p_{E2} & p_{E3}
 	     \begin{gather}
 	     \overline{x}(k) =\widehat{x}(k)-\eta
 	   \end{gather}
-	
+	   
 	\subsection{模型的求解}   
+	  通过GM(1,1)计算2004-2016年发病人数预测值，并求解其误差状态区间如表~~所示。
 	  
-	  
-	  
+	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~~所示
 	  \begin{table}[H]
-	  	\centering\caption{相对误差和状态区间}\label{qujian}
+	  	\centering\caption{发病人数误差状态区间}\label{fff}
 	  	\begin{tabular}{cccccccccccccc}
 	  		\toprule[2pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 年份}
@@ -206,11 +206,43 @@ p_{E1} & p_{E2} & p_{E3}
 	  		\bottomrule[2pt]	
 	  	\end{tabular}
 	  \end{table}
+	  由此求得初始状态概率向量$t_{0}$,转移矩阵$P$为:
+		  \begin{gather}
+	t_{0}'=[3/13,9/13,1/13]\\
+	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
+	\end{gather}
 	  
-	  
-	  
-	  
-	  
+	  同理计算死亡人数预测值，并求解其误差状态区间如表~~所示。
+	  \begin{table}[H]
+	  	\centering\caption{死亡人数误差状态区间}\label{sss}
+	  	\begin{tabular}{cccccccccccccc}
+	  		\toprule[2pt]
+	  		\multicolumn{1}{m{2cm}}{\centering 年份}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2004}
+	  		&\multicolumn{1}{m{.7cm}}{\centering 2005}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2006}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2007}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2008}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2009}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2010}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2011}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2012}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2013}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2014}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2015}
+	  		& \multicolumn{1}{m{.7cm}}{\centering 2016}
+	  		\\
+	  		\midrule[1pt]
+	  		所处状态区间 &  $E_{2}$  &$E_{2}$ & $E_{2}$&$E_{3}$ &$E_{1}$ &$E_{3}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{1}$&$E_{2}$&$E_{2}$  \\ 
+	  		\bottomrule[2pt]	
+	  	\end{tabular}
+	  \end{table}
+	
+	   求得初始状态概率向量$t_{0}'$,转移矩阵$P'$为:
+	  \begin{gather}
+	  t_{0}'=[2/13,9/13,2/13]\\
+	  P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
+	  \end{gather}
 	  
 	  
 	  
