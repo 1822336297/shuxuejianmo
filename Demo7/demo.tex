@@ -58,10 +58,9 @@
 	
 	\section{问题重述}	
 	\subsection{问题背景}
-    诺曼底登陆：代号“霸王行动”，是第二次世界大战中盟军在欧洲西线战场发起的一场大规模攻势，接近三百万士兵渡过英吉利海峡前往法国诺曼底。诺曼底战役是人类战争史上规模最大的一次海上登陆战役行动，使第二次世界大战的战略态势发生了根本性的变化。
+    随着全球化的进程，人类活动范围日益扩大，人群流动频繁，传染病可在大范围内迅速传播，是对人类社会存在威胁的公共卫生问题。在疾病控制实际工作中，疾病的发病与流行趋势分析是极其重要的一环，科学、准确的分析能对卫生行政部分制定疾病预防与控制策略产生重要的影响，传染病早期预警将大大降低传染病的社会经济危害。
     
-    海运装载是海上登陆战役中的一种作战行动，将需要登陆的部队人员、装备、补给品装载到海上运输工具，该行动会直接影响着登陆作战效果。以诺曼底战役的第一批海上登陆输送兵力为参考，不同成建制单位的部队人员、装备和补给品都有不同的数量级需求,研究合理利用海军运输船和民用船只进行兵力装载以及对装载方案的优化都具有重要意义。
-    
+    为了提高某传染病疫情和突发公共卫生事件报告的质量和时效，加强对全国感染病人的诊断、治疗和督导管理，卫生部建立了全国监管机制,及时通报相关病情和相关数据,并通过对疫情数据的动态分析，建立该传染病防治工作督导检查、防治效果评价和制定防治对策和策略，控制并逐渐消灭该传染病。构建预测模型从早期探测到传染病的爆发并及时预警，采取应对措施，是目前传染病防控的重要手段，具有重要的实际意义。
     
     
 
@@ -69,11 +68,13 @@
     围绕相关附件和条件要求，研究海运装载行动输送兵力任务的合理安排，依次提出以下问题:
 		 
 	
-	\textbf{问题一：}根据输送任务和海上运输工具情况，结合相关条件和要求，分析运输船舰和兵力的关系，概算各类型旅一个旅级单位的运输工具的需求量,并给出具体装载方案。
+	\textbf{问题一：}根据合适的指标建立模型，分析流行病在2004-2016年的变化趋势，并预测2019年全国感染该病的发病数和死亡数。
 	
-	\textbf{问题二：}根据输送任务，结合附件中的港口及码头泊位,制定时间最短、船只数量最少的兵力装载方案。
+	\textbf{问题二：}基于2004-2016年每隔三年的不同地区的和职业分类的数据，建立疾病传播模型，并预测2019年传染病重点防控前3名的区域和职业人群。
+		
+	\textbf{问题三：}结合地区经济发展的相关数据，选择一个角度建立传染病与经济发展相关的模型，并分析结论。
 	
-	\textbf{问题三：}假设装载行动开始24小时后,A港口的两个A1和一个A2泊位,D港口的一个D2和两个D3泊位被毁，给出具体调整方案以及完成装载任务的对策建议。
+	\textbf{问题四: }综合模型结果及分析，给卫生健康委员会相关部门写一封公开信，谈谈对传染病疫情防治的看法和建议。
 	
 	
 	\section{模型假设}
@@ -120,6 +121,7 @@
 
 	\section{问题一模型的建立与求解}
     \subsection{问题描述与分析}
+
     问题一要求，根据附件中2004年至2016年的流行病相关数据，预测2019年全国感染该疾病的发病人数和死亡人数。本组首先基于灰色预测，预测分析2004-2019年该流行病的发病人数和死亡人数。再通过马尔科夫模型，由2004-2016年的数据模拟残差在各个区间的分布，计算2017-2019年预测残差的期望值。最后将预测结果与残差期望做差，校正传统灰色预测的固有偏差。
    
 	    \subsection{模型的建立}
@@ -152,7 +154,7 @@
 	     \end{gather}
 	    最大残差绝对值为$\delta _{max}=\underset{1\leqslant i\leqslant13 }{max}\left | \varepsilon(i) \right |$，将预测误差化均分为三个状态。令$\lambda =\frac{\delta _{max}}{6}$。状态分别为$E_{1}:(-3\lambda,-\lambda)$、$E_{2}:(-\lambda,\lambda)$和$E_{1}:(\lambda,3\lambda)$。其中初始状态概率向量计算公式为：
 	   \begin{gather}
-	 t_{0}=[p_{E1},p_{E2},P_{E3}]\\
+	 t_{0}=[p_{E1},p_{E2},p_{E3}]\\
 	 p_{Ek}=\frac{n_{Ek}}{13}
 	  \end{gather}
 	  式中$n_{Ek}$是状态$E_{k}$在2004-2016年内出现的次数，以状态$E_{k}$出现的频率代替其出现的概率$p_{Ek}$。且构建状态转移矩阵为：
@@ -180,10 +182,24 @@ p_{E1} & p_{E2} & p_{E3}
 	   
 	\subsection{模型的求解}   
 	  通过GM(1,1)计算2004-2016年发病人数预测值得到灰度预测解如下：
+	  	  \begin{gather}
 	  
-	  
-	  其误差状态区间如表~~所示：
-	  
+	  \end{gather}
+	  其误差状态区间如表~\ref{ff}~所示：
+	  	 \begin{table}[H]
+	  	\centering\caption{发病人数状态区间划分}\label{ff}
+	  	\begin{tabular}{ccccc}
+	  		\toprule[2pt]
+	  		\multicolumn{1}{m{3cm}}{\centering 状态}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{1}$}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{2}$}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{3}$}
+	  		\\
+	  		\midrule[1pt]
+	  		相对误差区间 &  $(-66389,-22130]$  &$(-22130,22130)$ & $(22130,66389]$   \\ 
+	  		\bottomrule[2pt]	
+	  	\end{tabular}
+	  \end{table}  
 	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~\ref{fff}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{发病人数误差状态区间}\label{fff}
@@ -215,10 +231,27 @@ p_{E1} & p_{E2} & p_{E3}
 	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
 	\end{gather}
 	  
+
 	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
+	  	  \begin{gather}
+
+	  \end{gather}
 	  
-	  
-	  其误差状态区间如表~~所示：
+	  其误差状态区间如表~\ref{ss}~所示：
+	    \begin{table}[H]
+	  	\centering\caption{死亡数状态区间划分}\label{ss}
+	  	\begin{tabular}{ccccc}
+	  		\toprule[2pt]
+	  		\multicolumn{1}{m{3cm}}{\centering 状态}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{1}$}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{2}$}
+	  		& \multicolumn{1}{m{2cm}}{\centering $E_{3}$}
+	  		\\
+	  		\midrule[1pt]
+	  		相对误差区间 &  $(-684,-228]$  &$(-228,228)$ & $(228,684]$   \\ 
+	  		\bottomrule[2pt]	
+	  	\end{tabular}
+	  \end{table}
 	  
 	  将发病人数预测值归类于误差区间如表~\ref{sss}~所示：
 	  \begin{table}[H]
@@ -251,160 +284,11 @@ p_{E1} & p_{E2} & p_{E3}
 	  t_{0}'=[2/13,9/13,2/13]\\
 	  P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
 	  \end{gather}
+
+
 	  
-	  
-	  
-	
-		
-	\section{问题二模型的建立与求解}
-	\subsection{问题的描述与分析}
-
-	问题二要求针对具体运输任务，结合港口泊位，制定时间最短、船只数量最少的兵力装载方案。本组通过\textbf{遗传算法}，将问题一中的决策向量作为染色体，装载时间和船支数量作为适应度函数，建立装载方案优化模型。修改问题一中的\textbf{沙石算法}，作为验证算法判断每个个体是否可以存活，并随机生成$w$个能通过验证算法的初始个体。将某一代个体经过交叉、变异后的基因带入\textbf{时间轴仿真模型}，计算出装载所用时间作为适应度函数，将生成个体按照适应度函数大小进行第一次排序，再将装载所用时间大小相同的函数进行第二次排序，取出排序中前$w$个个体进行下一次进化，进化$g$代个体后可求得\textbf{装载时间最短、使用海上运输工具最少}的兵力装载方案。	                                                                                                   
-	\subsection{模型的建立}
-	    \subsubsection{优化函数与约束条件}
-	基于问题一模型\textbf{决策向量}为：
-	\begin{gather*}
-	D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
-	\end{gather*}
-	\textbf{目标函数}为：
-	\begin{gather}
-	min Z=\sum _{1}^{19}D[k]
-	\end{gather}
-	增加\textbf{目标函数}：
-		\begin{gather}
-	min \left \{ \underset{k}{max}\sum t_{i} \right \}
-	\end{gather}
-	其中$\sum t_{i}(i=1,2\cdots,71)$，表示在共计$71$个泊口中第$i$个泊口的装载时间总和。	
-	
-
-	且由于集装箱船(Z3)无法装载装备X1，X2，X3和X4，增加	\textbf{约束条件}：
-	\begin{gather}
-	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
-	\end{gather}
-	
-	
-		综上，建立得到问题二\textbf{时间与船数优化模型}：
-
-	\begin{gather}
-min Z=\sum _{1}^{19}D[k]\\
-min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-\\S_{D}=[S_{y}, S_{z}]
-\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-\\s_{pi}=p_{i}\times s
-\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-\\     s_{yi}=s_{i}\times \eta_{1}
-\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-\\      s_{zj}=s_{j}\times \eta_{2}
-\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
-\end{matrix}\right. 
-\end{gather}
-	     ~\\
-	其中$ \underset{k}{max}\sum t_{i} $可利用\textbf{泊口仿真模型}计算，并通过\textbf{遗传算法}算得全局最优解。
-	\subsubsection{泊口仿真模型}
-	建立泊口仿真模型以计算每种方案的装载时间，首先输入决策向量：
-
-		\begin{gather*}
-	 D=[y_{1},y_{2},\cdots,y_{14},z_{1},z_{2},\cdots,z_{5}]
-		\end{gather*}
-	定义时间函数为$t_{0}$，初始化时间函数令$t_{0}=0$，并令$t_{0}$以$1$为步长逐渐增加。
-	定义港口决策向量为：
-		\begin{gather*}
-		T=[t_{1},t_{2},\cdots,t_{71}]
-		\end{gather*}
-	$t_{k}(k=1,2,3,\cdots,71)$代表$71$个港口当前任务的结束时间。当$t_{k}=t_{0}$ 时，表示港口$k$处于空闲状态，此时立即更新任务结束时间$t_{k}$，即使得：
-		\begin{gather*}
-		t_{k}=t_{k}+t_{d}\\
-		D[d]=D[d]-1
-		\end{gather*}
-	其中$t_{d}$是决策向量$D$中第$d$各元素对应船舰的装载时间，$D[d]$为决策向量$D$中的第$d$个元素。当
-		\begin{gather*}
-	\left\{\begin{matrix} \sum_{1}^{19}D[d]=0
-	\\t_{0}\geqslant max t_{k} 	
-	\end{matrix}\right.
-		\end{gather*}
-
-		即所有船支装载完成时，结束运算，输出当前的时间函数$t_{0}$，即：
-			\begin{gather*}
-		min \left \{ \underset{k}{max}\sum t_{i} \right \}=t_{0}
-			\end{gather*}
-    \begin{figure}[H]
-	\centering
-	\includegraphics[width=.9\textwidth]{figures/yyy.png}
-	\caption{泊口仿真流程图}\label{dieyyrwen}
-\end{figure}
-	\subsubsection{遗传算法}
-	 \paragraph{编码}
-	 如图所示，每个个体由下面三个方块构成，其中最后一个进行遗传操作：
-	 	\begin{figure}[H]
-	 	\centering
-	 	\includegraphics[width=.5\textwidth]{figures/yichuan.jpg}
-	 	\caption{指标重要度占权图}\label{yichuan}
-	 	 \end{figure}
-	 根据题目要求，优先使用军用登陆舰，即决策向量$D=[y_{1},\cdots,y_{14},z_{1},\cdots,z_{5}]$中$y_{k}(k=1,2,\cdots,14)$为恒定值且等于其上限。故能简化决策向量为：
-	\begin{gather*}
-	D=[z_{1},z_{2}\cdots,z_{5}]
-	\end{gather*}
-	 \paragraph{交叉}
-	 为保证变异率并保留优秀基因片段和本题采用的两种交叉方式：
-	\begin{itemize}
-	\item [(1)]单点交叉：对于两个父代个体$D=[z_{1},z_{2}\cdots,z_{5}]$和	$D'=[z_{1}',z_{2}'\cdots,z_{5}']$,随机选择第$k$个基因处为交叉点，将该基因后所有基因进行交换，得到子代基因
-	\item [(2)]中间值交叉：对于两个父代个体$D=[z_{1},z_{2}\cdots,z_{5}]$和	$D'=[z_{1}',z_{2}'\cdots,z_{5}']$，随机选取$z_{k}''\in [z_{k},z_{k}']$得到子代基因。
-    \end{itemize}
-    再选取交叉个体时采用混合分组的方法，将父代均匀混合后选取所有编号为奇数的个体，与其相邻对应编号为偶数的个体，通过两种交叉方式产生处两种类型的子代。
-     \paragraph{变异}
-     为保证种群多样性，以$0.1$的变异率，对选择的个体执行变异操作。随机选择变异个体中的基因$z_{k}$，使其值以各$50\%$的概率加一或减一。
-     \paragraph{筛重}
-     由于该模型基因维度较低，有大概率出现基因重复的个体，其对种群多样性有不利影响，并易使算法早熟。故在每次交叉变异生成新个体时删除重复基因，以提高算法的全局搜素能力。
-     \paragraph{选择}
-     由于本题约束条件较多，且有两个包含两个适应度函数，故采用两种选择方式：
-     \begin{itemize}
-     \item [(1)] \textbf{约束淘汰：}对于生成的个体基因$D=[z_{1},z_{2}\cdots,z_{5}]$带入第一问的沙石算法中，计算部队是否可以完全装入船支中。若不能则删除个体，若能则保留个体。
-     \item [(2)]\textbf{精英选择：}由于模型假设战场上使用较少的时间优先级高于使用更少船支，将每一代中的生成个体与上一代混合，的个体按照其\textbf{装载时间}由大到小进行\textbf{第一次排序}，再将装载时间相同的个体进行依照\textbf{调用总数}进行\textbf{第二次排序}。保留前列的$w$个个体，$w$为设定的种群容纳量。
-     \end{itemize}
-     重复上述进化过程，当进化代数足够多时，求解得到全局最优解。
-
-     \subsection{模型求解与算法实现}
 
 
-   	 （1） 将染色体中的单个基因取出，带入问题一沙石算法中。计算只使用的某种民用船时，需要的该民用船的数量，作为单个基因的取值范围。在使用卡特蒙洛法随机生成初始个体，当生成$50$个能通过沙石算法检验的初始个体时，停止生成。
-   	 
-   	 （2）将输入体进行、交叉、变异、筛重和约束淘汰后，得到子代生成个体。将子代个体与附带个体混合，带入泊口仿真模型求出每个个体的装载时间作为适应度函数。根据装载时间对每个个体进行第一次排序，并将装载时间相同的个体进行第二次排序，取序列中的前$50$个个体作为下一代输入个体。
-
-   （3）重复上述步骤(2)，当进化次数达到$100$次时结束进化，选取当前最优个体作为输出的个体，将输出个体基因与军用登陆舰总调遣数量合并即可得到完整的船支调遣方案。
-
-
-    	 
-    	 其求解该模型的具体流程图如~\ref{dierwen}~所示：
-    \begin{figure}[H]
-    	\centering
-    	\includegraphics[width=\textwidth]{figures/dierwen.png}
-    	\caption{沙石遗传算法与时间轴仿真流程图}\label{dierwen}
-    \end{figure}
-     
-     	\subsection{结果分析}
-     	遗传算法的算法收敛图如图~\ref{sdsd}~所示：
-     	    \begin{figure}[H]
-     		\centering
-     		\includegraphics[width=.7\textwidth]{figures/shou1.png}
-     		\caption{遗传算法收敛图}\label{sdsd}
-     	\end{figure}
-     	
-     	由算法收敛图可知算法收敛速度较慢，早熟问题解决的较好，全局搜素能力较强，求得最优个体基因为：$[15,5,1,1,1]$
-     	
-     	其对应装载方案为军用登陆舰全部调用，民用船调用方案为2万吨级滚装船$15$艘，3万吨级滚装船$5$艘，集装箱船$1$艘，杂货船$1$艘和客船$1$艘，共使用船舰$23$艘。
-     	其对应的泊口装载时间图如图~\ref{sbsb}~所示：
-     	\begin{figure}[H]
-     		\centering
-     		\includegraphics[width=\textwidth]{figures/bo1.png}
-     		\caption{泊口装载时间图}\label{sbsb}
-     	\end{figure}
-     	
-     	其中最后完成装载的泊口用时$20$个小时。即最优装载方案中装载时间为$20$个小时。
-     	
      \section{问题三模型的建立与求解}
    	\subsection{问题的描述与分析}
    	问题三要求，当装载行动开始24小时后，A港和D港有部分泊位被毁，给出调整方案和装载建议。
