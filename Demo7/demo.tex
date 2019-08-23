@@ -179,9 +179,12 @@ p_{E1} & p_{E2} & p_{E3}
 	   \end{gather}
 	   
 	\subsection{模型的求解}   
-	  通过GM(1,1)计算2004-2016年发病人数预测值，并求解其误差状态区间如表~~所示。
+	  通过GM(1,1)计算2004-2016年发病人数预测值得到灰度预测解如下：
 	  
-	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~~所示
+	  
+	  其误差状态区间如表~~所示：
+	  
+	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~\ref{fff}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{发病人数误差状态区间}\label{fff}
 	  	\begin{tabular}{cccccccccccccc}
@@ -212,7 +215,12 @@ p_{E1} & p_{E2} & p_{E3}
 	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
 	\end{gather}
 	  
-	  同理计算死亡人数预测值，并求解其误差状态区间如表~~所示。
+	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
+	  
+	  
+	  其误差状态区间如表~~所示：
+	  
+	  将发病人数预测值归类于误差区间如表~\ref{sss}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{死亡人数误差状态区间}\label{sss}
 	  	\begin{tabular}{cccccccccccccc}
