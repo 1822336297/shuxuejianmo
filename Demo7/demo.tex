@@ -179,6 +179,18 @@ p_{E1} & p_{E2} & p_{E3}
 	     \begin{gather}
 	     \overline{x}(k) =\widehat{x}(k)-\eta
 	   \end{gather}
+	   \subsubsection{预测结果评价指标}
+	   均方根误差(RMSE)、平均相位误差绝对值(MAPE)和纳什效率系数(NSE)三者是常用来衡量预测结果的指标。RMSE能评价患病人数和死亡人数中高值的预测结果，其计算公式为：
+	   
+	   均方根误差越小，表明模型可靠性越高，结果越准确。
+	     MAPE用来评价预测数据中平稳部分的预测结果，其计算公式为：
+	     
+	     MAPE所求值为绝对值，是一个相对指标，当两个MAPE值进行比较时，值越小的说明模型可靠性越高。
+	       NSE可以用来评价模型的预测能力，其计算公式如下：
+	       
+	       求得NSE值越接近$1$，表示模型质量越好，模型可信度越高。接近$0$，表示模拟结果接近观测值的平均水平，即总体结果可信，但模拟误差较大。远远小于$0$，则模型是不可信的。
+	   
+	   
 	   
 	\subsection{模型的求解}   
 	  通过GM(1,1)计算2004-2016年发病人数预测值得到灰度预测解如下：
@@ -230,8 +242,12 @@ p_{E1} & p_{E2} & p_{E3}
 	t_{0}'=[3/13,9/13,1/13]\\
 	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
 	\end{gather}
-	  
-
+	  得到由灰色预测与马尔科夫校正后预测解如图~\ref{afd}~所示
+    \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/f.png}
+	\caption{发病人数预测对比曲线}\label{afd}
+\end{figure}
 	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
 	  	  \begin{gather}
 
@@ -278,78 +294,24 @@ p_{E1} & p_{E2} & p_{E3}
 	  		\bottomrule[2pt]	
 	  	\end{tabular}
 	  \end{table}
-	
 	   求得初始状态概率向量$t_{0}'$,转移矩阵$P'$为:
 	  \begin{gather}
 	  t_{0}'=[2/13,9/13,2/13]\\
 	  P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
 	  \end{gather}
-
+       得到由灰色预测与马尔科夫校正后预测解如图~\ref{asf}~所示
+     \begin{figure}[H]
+	    \centering
+     	\includegraphics[width=\textwidth]{figures/s.png}
+     	\caption{死亡人数预测对比曲线}\label{asf}
+     \end{figure}
+   \subsection{结果分析}
+   由图像直观对比可知由马尔科夫模型校正后的预测值相较于普通灰色预测值更加贴近实际值，且两种模型预测指标如表~\ref{label}~所示：
 
 	  
 
 
-     \section{问题三模型的建立与求解}
-   	\subsection{问题的描述与分析}
-   	问题三要求，当装载行动开始24小时后，A港和D港有部分泊位被毁，给出调整方案和装载建议。
-   	本组基于问题二中模型求解的结果，作出合理假设，假设泊位被毁不损失船只和兵力，由于问题二中的装载时间最优解小于$24$小时，根据建议将码头被摧毁时间改为第$18$小时。本组延用问题二中的遗传算法，当时间轴进行到$18$小时，剔除已经完成装载任务的船舰和A港、D港中部分被毁的码头泊位，修改问题二中的港口仿真模型。通过遗传算法求解出对剩余船舰、码头泊位的装载方案，给出装载建议。
-  \subsection{模型的建立}
-    \subsubsection{模型调整}
-    \textbf{优化函数与约束条件}延用问题二模型：
-     	\begin{gather}
-min Z=\sum _{1}^{19}D[k]\\
-min \left \{ \underset{k}{max}\sum t_{i} \right \}\\
-s.t.\left\{\begin{matrix}	 D\cdot S_{D}\geq \sum  S_{x} + \sum  S_{p}
-\\ y_{1}\cdot s_{y1}\geq \sum s_{x9}+ \sum  s_{p6}
-\\S_{D}=[S_{y}, S_{z}]
-\\ s_{xi}=l_{i}\times w_{i} \times \varepsilon _{i}
-\\S_{x}=[s_{x1},s_{x2},\cdots,s_{x14}]
-\\s_{pi}=p_{i}\times s
-\\S_{p}=[s_{p1},s_{p2},\cdots,s_{p12}]
-\\     s_{yi}=s_{i}\times \eta_{1}
-\\   S_{y}=[s_{y1},s_{y2},\cdots,s_{y14}]
-\\      s_{zj}=s_{j}\times \eta_{2}
-\\ S_{z}=[s_{z1},s_{z2},\cdots,s_{z5}]
-\\	D \cdot S_{D} - z_{3} \cdot s_{z3} \geq  \sum s_{x1}+ \sum s_{x2}+\sum s_{x3}+ \sum s_{x4}
-\end{matrix}\right. 
-\end{gather}
-     ~\\
-     调整 \textbf{泊口仿真模型}，延用港口决策向量：
-     \begin{gather*}
-     T=[t_{1},t_{2},\cdots,t_{71}]
-     \end{gather*}
-     当时间轴函数$t_{0}=18$时，停止被毁泊口正在进行的任务，使得：
-     \begin{gather}
-     \left\{\begin{matrix}
-     t_{k}=-1(k=1,2,11,37,46,47)\\ 
-     D[d]=D[d]+1
-     \end{matrix}\right.
-     \end{gather}
-     即立刻终止港口正在进行的工作，且在$18$小时后检索港口决策向量时，剔除$t_{k}(k=1,2,11,37,46,47)$(其对应被摧毁的港口无法执行装载任务)。并将修改后泊口仿真模型算得的装载时间，带入遗传算法的适应度函数值，重新运行遗传算法。即可求得装载中途港口被摧毁后的最优船舰调整方案。
-       \subsection{模型的求解}
-     \paragraph{算法的实现}
-     	沿用第二问算法，仅修改泊口仿真模型：如果达到摧毁时间，将第$i$个摧毁港口的任务结束时间$t_{ki}$修改为$-1$，并不再更新此港口。若此时港口$i$不是空闲港口，将对应船舰$d_{i}$的数目增加一个。其算法流程图如~\ref{dieyyrywen}~：
-    \begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{figures/yyyy.png}
-	\caption{泊口仿真改进流程图}\label{dieyyrywen}
-\end{figure}
-
-	\subsection{结果分析}
-     	求得最优个体基因为：$[15,5,1,1,1]$
-     
-     其对应装载方案为军用登陆舰全部调用，民用船调用方案为2万吨级滚装船$18$艘，3万吨级滚装船$3$艘，集装箱船$1$艘，杂货船$1$艘和客船$1$艘，共使用民用船舰$24$艘。
-     其对应的泊口装载图如图~\ref{nb}~所示：
-   	\begin{figure}[H]
-     	\centering
-     	\includegraphics[width=\textwidth]{figures/bo2.png}
-     	\caption{泊口装载时间图}\label{nb}
-     \end{figure}
-     
-     其中最后完成装载的泊口用时$20$个小时。即最优装载方案中装载时间为$20$个小时。
-
-
-
+    
 	\section{模型的评价}
 	\subsection{模型的优点}
 		\begin{itemize}                                             
