@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  23 AUG 2019 20:36
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  23 AUG 2019 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1565,7 +1565,74 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 18.
 Package: xeCJK-listings 2018/04/07 v3.7.0 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count335
 \l__xeCJK_listings_flag_int=\count336
-) (./demo.aux)
+) (./demo.aux
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Label `biao' multiply defined.
+
+
+LaTeX Warning: Label `dieyyrwen' multiply defined.
+
+
+LaTeX Warning: Label `yichuan' multiply defined.
+
+
+LaTeX Warning: Label `dierwen' multiply defined.
+
+
+LaTeX Warning: Label `sdsd' multiply defined.
+
+
+LaTeX Warning: Label `sbsb' multiply defined.
+
+
+LaTeX Warning: Label `dieyyrywen' multiply defined.
+
+
+LaTeX Warning: Label `nb' multiply defined.
+
+
+LaTeX Warning: Label `bib:one' multiply defined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.145 >>>>>>> cy_
+                 sxjm
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 145.
+(e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 145.
+
+(e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+! Missing $ inserted.
+<inserted text> 
+                $
+l.23 \begin{document}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 \openout1 = `demo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -1588,7 +1655,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 23.
 .................................................
@@ -1719,15 +1785,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--33
  []
 
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 34.
-LaTeX Font Info:    Try loading font information for U+msa on input line 34.
-(e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
-(e:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
@@ -1747,6 +1805,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 
  []
 
+[1
+
+]
 \g__fontspec_family_SimHei_int=\count339
 .................................................
 . fontspec info: "no-font-shape"
@@ -1774,9 +1835,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 . - 'normal' (m/n) with NFSS spec.: <->"SimHei/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-[1
-
-] (./demo.toc
+ [2] (./demo.toc
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1803,54 +1862,140 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [2])
+ [3]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...ction}{\numberline {一、}问题重述}{4}{section.1}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.85 >>>>>>> cy_
+                sxjm
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+)
 \tf@toc=\write5
 \openout5 = `demo.toc'.
 
- [3] [4] [5] [6] [7]
-File: figures/shashi.jpg Graphic file (type bmp)
-<figures/shashi.jpg>
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.56 ^^I\tableofcontents
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[5] [6] [7] [8]
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 228.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 188.
 
 
-Overfull \hbox (2.32474pt too wide) in paragraph at lines 240--242
-\TU/SimSun(1)/m/n/12.05 重 复 检 索 直 到 该 旅 装 备 数 $\OML/cmm/m/it/12.05 X \OT1/cmr/m
-/n/12.05 = 0$ \TU/SimSun(1)/m/n/12.05 时，|  结 束 装 备 均 分，|  得 到 装 备 均 分 后 的 部 队 $
-[] \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 k \OT1/cmr/m/n/12.05 =
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 192--192
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2004| 
  []
 
-[8]
-File: figures/shashisuanfa.png Graphic file (type bmp)
-<figures/shashisuanfa.png>
- [9]
-Overfull \hbox (35.21516pt too wide) in paragraph at lines 273--309
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 193--193
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2005| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 194--194
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2006| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 195--195
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2007| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 196--196
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2008| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 197--197
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2009| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 198--198
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2010| 
+ []
+
+
+Overfull \hbox (3.736pt too wide) in paragraph at lines 199--199
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2011| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 200--200
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2012| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 201--201
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2013| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 202--202
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2014| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 203--203
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2015| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 204--204
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2016| 
+ []
+
+
+Overfull \hbox (43.97482pt too wide) in paragraph at lines 189--210
  [][] 
  []
 
-[10] [11] [12]
+[9] [10] [11]
 File: figures/yyy.png Graphic file (type bmp)
 <figures/yyy.png>
 File: figures/yichuan.jpg Graphic file (type bmp)
 <figures/yichuan.jpg>
- [13] [14]
+ [12] [13]
 File: figures/dierwen.png Graphic file (type bmp)
 <figures/dierwen.png>
- [15]
+ [14]
 File: figures/shou1.png Graphic file (type bmp)
 <figures/shou1.png>
- [16]
+ [15]
 File: figures/bo1.png Graphic file (type bmp)
 <figures/bo1.png>
- [17] [18]
+ [16] [17]
 File: figures/yyyy.png Graphic file (type bmp)
 <figures/yyyy.png>
- [19]
+ [18]
 File: figures/bo2.png Graphic file (type bmp)
 <figures/bo2.png>
- [20] [21] [22]
+ [19] [20] [21]
 (e:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -1882,147 +2027,156 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 . <->"FangSong/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [23] [24] [25]
-[26] [27] [28]
-Overfull \hbox (48.06084pt too wide) in paragraph at lines 885--886
+ [22] [23] [24]
+[25] [26] [27]
+Overfull \hbox (48.06084pt too wide) in paragraph at lines 771--772
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (0.63371pt too wide) in paragraph at lines 886--887
+Overfull \hbox (0.63371pt too wide) in paragraph at lines 772--773
 [][][][][][][][][][][][][]  
  []
 
-[29]
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 902--903
+[28]
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 788--789
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
-[30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 1467--1468
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 1353--1354
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 1468--1469
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 1354--1355
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 1469--1470
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 1355--1356
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 1477--1478
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 1363--1364
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 1484--1485
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 1370--1371
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
+ []
+
+[41]
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1412--1413
+[][][][][][][][][]  
  []
 
 [42]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1526--1527
-[][][][][][][][][]  
- []
-
-[43]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1563--1564
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1449--1450
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1579--1580
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1465--1466
 [][][][][][][][][]  
  []
 
-[44] [45]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1659--1660
+[43] [44]
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1545--1546
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 1673--1676
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 1559--1562
 [][][][][][][][][]  
  []
 
-[46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
-Overfull \hbox (62.28899pt too wide) in paragraph at lines 2227--2228
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56]
+Overfull \hbox (62.28899pt too wide) in paragraph at lines 2113--2114
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (10.11914pt too wide) in paragraph at lines 2228--2229
+Overfull \hbox (10.11914pt too wide) in paragraph at lines 2114--2115
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (5.37642pt too wide) in paragraph at lines 2229--2230
+Overfull \hbox (5.37642pt too wide) in paragraph at lines 2115--2116
 [][][][][][][][][][][][][]  
  []
 
-[58]
-Overfull \hbox (5.82811pt too wide) in paragraph at lines 2237--2238
+[57]
+Overfull \hbox (5.82811pt too wide) in paragraph at lines 2123--2124
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (755.1765pt too wide) in paragraph at lines 2244--2245
+Overfull \hbox (755.1765pt too wide) in paragraph at lines 2130--2131
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][] 
  []
 
+[58]
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2172--2173
+[][][][][][][][][]  
+ []
+
 [59]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2286--2287
-[][][][][][][][][]  
- []
-
-[60]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2323--2324
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2209--2210
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2339--2340
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2225--2226
 [][][][][][][][][]  
  []
 
-[61] [62]
-Overfull \hbox (137.59491pt too wide) in paragraph at lines 2419--2420
+[60] [61]
+Overfull \hbox (137.59491pt too wide) in paragraph at lines 2305--2306
 [][][][][][][][][]  
  []
 
 
-Overfull \hbox (132.85217pt too wide) in paragraph at lines 2433--2436
+Overfull \hbox (132.85217pt too wide) in paragraph at lines 2319--2322
 [][][][][][][][][]  
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2437.
-[63]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2437.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2323.
+[62]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2323.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2437.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2437.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2323.
 
-Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: ABC50975391C5A06367B98575520A33C.
 
+
+Package rerunfilecheck Warning: File `demo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `demo.out':
+(rerunfilecheck)             Before: DF1BFBA56E2E14E3092D71ED83ADC343
+(rerunfilecheck)             After:  C0733D841A00E615ABD824226598A1B2.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2437.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2323.
  ) 
 Here is how much of TeX's memory you used:
- 27442 strings out of 494895
- 535535 string characters out of 6176373
- 667712 words of memory out of 5000000
- 30944 multiletter control sequences out of 15000+600000
- 538499 words of font info for 95 fonts, out of 8000000 for 9000
+ 27445 strings out of 494895
+ 534525 string characters out of 6176373
+ 667764 words of memory out of 5000000
+ 30942 multiletter control sequences out of 15000+600000
+ 544095 words of font info for 116 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 60i,19n,78p,10457b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,78p,10457b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (63 pages).
+Output written on demo.pdf (62 pages).
