@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  24 AUG 2019 16:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  24 AUG 2019 17:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1964,17 +1964,17 @@ File: figures/s.png Graphic file (type bmp)
 LaTeX Warning: Reference `label' on page 9 undefined on input line 367.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
 
  []
 
 [10] [11] [12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 468.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: 4C6C206E12600A9A4AD7C45F2E074319.
 
@@ -1984,7 +1984,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 468.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
  ) 
 Here is how much of TeX's memory you used:
  26980 strings out of 494895
