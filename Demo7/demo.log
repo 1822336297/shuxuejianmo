@@ -1989,4 +1989,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 26980 s
+ 26980 strings out of 494895
+ 526234 string characters out of 6176373
+ 622188 words of memory out of 5000000
+ 30505 multiletter control sequences out of 15000+600000
+ 538459 words of font info for 90 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 60i,15n,78p,10457b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on demo.pdf (14 pages).
