@@ -230,22 +230,22 @@ p_{E1} & p_{E2} & p_{E3}
 	  	 \begin{table}[H]
 	  	\centering\caption{发病人数状态区间划分}\label{ff}
 	  	\begin{tabular}{cccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 状态}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{1}$}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{2}$}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{3}$}
 	  		\\
-	  		\midrule[1pt]
+	  		\midrule[0.5pt]
 	  		残差区间 &  $(-66389,-22130]$  &$(-22130,22130]$ & $(22130,66389]$   \\ 
-	  		\bottomrule[2pt]	
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}  
 	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~\ref{fff}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{发病人数误差状态区间}\label{fff}
 	  	\begin{tabular}{cccccccccccccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 年份}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2004}
 	  		&\multicolumn{1}{m{.7cm}}{\centering 2005}
@@ -261,40 +261,46 @@ p_{E1} & p_{E2} & p_{E3}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2015}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2016}
 	  		\\
-	  		\midrule[1pt]
-	  		所处状态区间 &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$  \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		状态区间 &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$  \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	  由此求得初始状态概率向量$t_{0}$,转移矩阵$P$为:
 		  \begin{gather}
-	t_{0}'=[3/13,9/13,1/13]\\
-	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
+\begin{matrix}
+t_{0}'=[3/13,9/13,1/13]\\ 
+\\ 
+P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
+\end{matrix}
 	\end{gather}
-	  得到由灰色预测与马尔科夫校正后预测解如图~\ref{afd}~所示
+	
+	  得到由灰色预测与马尔科夫校正后预测解如图~\ref{afd}~所示:
     \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/f.png}
-	\caption{发病人数预测对比曲线}\label{afd}
+	\caption{发病人数预测对比曲线图}\label{afd}
 \end{figure}
+
 	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
 %	  	  \begin{gather}
 %
 %	  \end{gather}
 %	  
+
 	  其误差状态区间如表~\ref{ss}~所示：
 	    \begin{table}[H]
 	  	\centering\caption{死亡数状态区间划分}\label{ss}
-	  	\begin{tabular}{ccccc}
-	  		\toprule[2pt]
-	  		\multicolumn{1}{m{3cm}}{\centering 状态}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{1}$}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{2}$}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{3}$}
+	  	\begin{tabular}{cccc}
+	  		\toprule[1.5pt]
+	  		\multicolumn{1}{m{2cm}}{\centering 状态}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{1}$}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{2}$}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{3}$}
 	  		\\
-	  		\midrule[1pt]
-	  		相对误差区间 &  $(-684,-228]$  &$(-228,228)$ & $(228,684]$   \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		残差区间 &  $(-684,-228]$  &$(-228,228)$ & $(228,684]$   \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	  
@@ -302,7 +308,7 @@ p_{E1} & p_{E2} & p_{E3}
 	  \begin{table}[H]
 	  	\centering\caption{死亡人数误差状态区间}\label{sss}
 	  	\begin{tabular}{cccccccccccccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 年份}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2004}
 	  		&\multicolumn{1}{m{.7cm}}{\centering 2005}
@@ -318,22 +324,26 @@ p_{E1} & p_{E2} & p_{E3}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2015}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2016}
 	  		\\
-	  		\midrule[1pt]
-	  		所处状态区间 &  $E_{2}$  &$E_{2}$ & $E_{2}$&$E_{3}$ &$E_{1}$ &$E_{3}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{1}$&$E_{2}$&$E_{2}$  \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		状态区间 &  $E_{2}$  &$E_{2}$ & $E_{2}$&$E_{3}$ &$E_{1}$ &$E_{3}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{1}$&$E_{2}$&$E_{2}$  \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	   求得初始状态概率向量$t_{0}'$,转移矩阵$P'$为:
 	  \begin{gather}
-	  t_{0}'=[2/13,9/13,2/13]\\
-	  P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
+\begin{matrix}
+t_{0}'=[2/13,9/13,2/13]\\ 
+\\ 
+P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
+\end{matrix}
 	  \end{gather}
-       得到由灰色预测与马尔科夫校正后预测解如图~\ref{asf}~所示
+       得到由灰色预测与马尔科夫校正后预测解如图~\ref{asf}~所示：
      \begin{figure}[H]
 	    \centering
      	\includegraphics[width=\textwidth]{figures/s.png}
-     	\caption{死亡人数预测对比曲线}\label{asf}
+     	\caption{死亡人数预测对比曲线图}\label{asf}
      \end{figure}
+ 
    \subsection{结果分析}
    由图像直观对比可知由马尔科夫模型校正后的预测值相较于普通灰色预测值更加贴近实际值，且两种模型预测指标如表~\ref{label}~所示：
 
