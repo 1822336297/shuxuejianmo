@@ -142,7 +142,7 @@
 	     \begin{gather}
 	     \widehat{\alpha }=(B^TB)^{-1}B^{T}Y_{n}
 	     \end{gather}
-	     求解方程(~\ref{333}~),可得第$k+1$年能源消费预测为：
+	     求解方程(~\ref{333}~),可得第$k+1$年发病人数预测为：
 	     \begin{gather}
 	     \widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,16
 	     \end{gather}
@@ -195,7 +195,7 @@ p_{E1} & p_{E2} & p_{E3}
 	\subsection{模型的求解}   
 	  通过GM(1,1)计算2004-2016年发病人数预测值得到灰度预测解如下：
 	  	  \begin{gather}
-	  
+	  \widehat{X}(k+1)=-2527359e^{-0.037k}+3497638,k=1,2,\cdots,16
 	  \end{gather}
 	  其误差状态区间如表~\ref{ff}~所示：
 	  	 \begin{table}[H]
@@ -250,7 +250,7 @@ p_{E1} & p_{E2} & p_{E3}
 \end{figure}
 	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
 	  	  \begin{gather}
-
+	  	  \widehat{X}(k+1)=-92315e^{-ak}+93750,k=1,2,\cdots,16
 	  \end{gather}
 	  
 	  其误差状态区间如表~\ref{ss}~所示：
