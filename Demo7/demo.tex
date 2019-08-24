@@ -122,8 +122,8 @@
 	\section{问题一模型的建立与求解}
     \subsection{问题描述与分析}
 
-    问题一要求，根据附件中2004年至2016年的流行病相关数据，预测2019年全国感染该疾病的发病人数和死亡人数。本组首先选择合适的指标后建立\textbf{灰色预测}模型，预测分析2004-2019年该流行病的发病人数和死亡人数。再通过\textbf{马尔科夫模型}，对灰度预测误差项的状态及状态概率进行预估，由2004-2016年的数据模拟残差在各个区间的分布，计算2017-2019年预测残差的期望值。最后将预测结果与残差期望做差，\textbf{校正}传统灰色预测的固有偏差，经过两种模型的有效结合达到科学预流行病的未来发展趋势。问题一思维流程图如图~\ref{lct}~所示
-    
+    问题一要求，根据附件中2004年至2016年的流行病相关数据，预测2019年全国感染该疾病的发病人数和死亡人数。本组首先选择合适的指标后建立\textbf{灰色预测}模型，预测分析2004-2019年该流行病的发病人数和死亡人数。再通过\textbf{马尔科夫模型}，由2004-2016年的数据模拟残差在各个区间的分布，计算2017-2019年预测残差的期望值。最后将预测结果与残差期望做差，\textbf{校正}传统灰色预测的固有偏差，经过两种模型的有效结合达到科学预流行病的未来发展趋势。其问题一思维流程图如图~\ref{lct}~所示：
+
        \begin{figure}[H]
    	\centering
    	\includegraphics[width=\textwidth]{figures/lctc.png}
@@ -226,6 +226,7 @@ p_{E1} & p_{E2} & p_{E3}
 	\subsection{灰色马尔可夫模型的求解}   
 	  通过GM(1,1)计算2004-2016年发病人数预测值得到灰度预测解如下：
 
+
 	  %	  \begin{gather}
 	  
 %	  \end{gather}
@@ -242,22 +243,22 @@ p_{E1} & p_{E2} & p_{E3}
 	  	 \begin{table}[H]
 	  	\centering\caption{发病人数状态区间划分}\label{ff}
 	  	\begin{tabular}{cccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 状态}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{1}$}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{2}$}
 	  		& \multicolumn{1}{m{3cm}}{\centering $E_{3}$}
 	  		\\
-	  		\midrule[1pt]
+	  		\midrule[0.5pt]
 	  		残差区间 &  $(-66389,-22130]$  &$(-22130,22130]$ & $(22130,66389]$   \\ 
-	  		\bottomrule[2pt]	
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}  
 	  根据误差区间范围，将2004-2016年发病人数预测值归类于误差区间如表~\ref{fff}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{发病人数误差状态区间}\label{fff}
 	  	\begin{tabular}{cccccccccccccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 年份}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2004}
 	  		&\multicolumn{1}{m{.7cm}}{\centering 2005}
@@ -273,30 +274,29 @@ p_{E1} & p_{E2} & p_{E3}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2015}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2016}
 	  		\\
-	  		\midrule[1pt]
-	  		所处状态区间 &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$  \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		状态区间 &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$  \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	  由此求得初始状态概率向量$t_{0}$,转移矩阵$P$为:
 		  \begin{gather}
-	t_{0}'=[3/13,9/13,1/13]\\
-	P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
+\begin{matrix}
+t_{0}'=[3/13,9/13,1/13]\\ 
+\\ 
+P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
+\end{matrix}
 	\end{gather}
-	  得到由灰色预测与马尔科夫校正后预测解如图~\ref{afd}~所示
+	
+	  得到由灰色预测与马尔科夫校正后预测解如图~\ref{afd}~所示:
     \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/f.png}
-	\caption{发病人数预测对比曲线}\label{afd}
+	\caption{发病人数预测对比曲线图}\label{afd}
 \end{figure}
+
 	  同理，计算2004-2016年死亡人数预测值得到灰度预测解如下：
-
-
-	%  	  \begin{gather}
-
-	 % \end{gather}
-=======
-	  	  \begin{gather}
+	  \begin{gather}
 	  	  \widehat{X}(k+1)=-92315e^{-ak}+93750,k=1,2,\cdots,16
 	  \end{gather}
 
@@ -309,24 +309,24 @@ p_{E1} & p_{E2} & p_{E3}
 	  其误差状态区间如表~\ref{ss}~所示：
 	    \begin{table}[H]
 	  	\centering\caption{死亡数状态区间划分}\label{ss}
-	  	\begin{tabular}{ccccc}
-	  		\toprule[2pt]
-	  		\multicolumn{1}{m{3cm}}{\centering 状态}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{1}$}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{2}$}
-	  		& \multicolumn{1}{m{2cm}}{\centering $E_{3}$}
+	  	\begin{tabular}{cccc}
+	  		\toprule[1.5pt]
+	  		\multicolumn{1}{m{2cm}}{\centering 状态}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{1}$}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{2}$}
+	  		& \multicolumn{1}{m{3cm}}{\centering $E_{3}$}
 	  		\\
-	  		\midrule[1pt]
-	  		相对误差区间 &  $(-684,-228]$  &$(-228,228)$ & $(228,684]$   \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		残差区间 &  $(-684,-228]$  &$(-228,228)$ & $(228,684]$   \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	  
-	  将发病人数预测值归类于误差区间如表~\ref{sss}~所示：
+	  将死亡人数预测值归类于误差区间如表~\ref{sss}~所示：
 	  \begin{table}[H]
 	  	\centering\caption{死亡人数误差状态区间}\label{sss}
 	  	\begin{tabular}{cccccccccccccc}
-	  		\toprule[2pt]
+	  		\toprule[1.5pt]
 	  		\multicolumn{1}{m{2cm}}{\centering 年份}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2004}
 	  		&\multicolumn{1}{m{.7cm}}{\centering 2005}
@@ -342,22 +342,26 @@ p_{E1} & p_{E2} & p_{E3}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2015}
 	  		& \multicolumn{1}{m{.7cm}}{\centering 2016}
 	  		\\
-	  		\midrule[1pt]
-	  		所处状态区间 &  $E_{2}$  &$E_{2}$ & $E_{2}$&$E_{3}$ &$E_{1}$ &$E_{3}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{1}$&$E_{2}$&$E_{2}$  \\ 
-	  		\bottomrule[2pt]	
+	  		\midrule[0.5pt]
+	  		状态区间 &  $E_{2}$  &$E_{2}$ & $E_{2}$&$E_{3}$ &$E_{1}$ &$E_{3}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{2}$&$E_{1}$&$E_{2}$&$E_{2}$  \\ 
+	  		\bottomrule[1.5pt]	
 	  	\end{tabular}
 	  \end{table}
 	   求得初始状态概率向量$t_{0}'$,转移矩阵$P'$为:
 	  \begin{gather}
-	  t_{0}'=[2/13,9/13,2/13]\\
-	  P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
+\begin{matrix}
+t_{0}'=[2/13,9/13,2/13]\\ 
+\\ 
+P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
+\end{matrix}
 	  \end{gather}
-       得到由灰色预测与马尔科夫校正后预测解如图~\ref{asf}~所示
+       得到由灰色预测与马尔科夫校正后预测解如图~\ref{asf}~所示：
      \begin{figure}[H]
 	    \centering
      	\includegraphics[width=\textwidth]{figures/s.png}
-     	\caption{死亡人数预测对比曲线}\label{asf}
+     	\caption{死亡人数预测对比曲线图}\label{asf}
      \end{figure}
+ 
    \subsection{结果分析}
 
 	由图~\ref{afd}~和图~\ref{asf}~中的预测解曲线直观对比可知，由马尔科夫模型校正后的预测值相较于普通灰色预测值与实际值的拟合度更高，波动性一致，且灰色模型预测值是一条相对平滑的曲线，不能反应实际值的波动。两种模型预测指标如表~\ref{label}~所示：
@@ -372,12 +376,6 @@ p_{E1} & p_{E2} & p_{E3}
 	 问题二本质是一个预测与综合评价问题，题目要求结合不同地区和职业分类统计的数据，预测2019年传染病防控排名前3位的重点区域和重点人群。首先将附件中不同地区与不同职业的发病人数、死亡人数数据，带入问题一的灰色马尔科夫模型中。预测出2019年发病人数、死亡人数，并计算出每个地区和每种职业对应的发病人数增长率、死亡人数增长率和死亡率。并将上述五个数据带入topsis综合评价模型，分别选取排序前三位的省市和人群作为重点防控区域和人群。
 
 
-
-	\section{问题二模型的建立与求解}
-	\subsection{问题描述与分析}
-    问题二要求，基于2004、2007、2010、2013、2016年不同地区的和职业分类的数据，建立疾病传播模型，预测2019年传染病重点防控前3名的区域和职业人群。
-    
-    
     \subsection{模型的建立}
     
     
