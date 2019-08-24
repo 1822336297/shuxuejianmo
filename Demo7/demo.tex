@@ -408,9 +408,9 @@ p_{E1} & p_{E2} & p_{E3}
 	     
 	     
 	  将附件中$20$个职业2004年，2007年，2010年，2013年和2016年的患病人数数据$X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5}](i=1,2,\cdots,20)$，带入后，得到预测结果：
-     \begin{gather}
+     \begin{gather*}
       X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5},x_{i6}](i=1,2,\cdots,20)
-     \end{gather}
+     \end{gather*}
      
      同理，将死亡人数数据$X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}'](i=1,2,\cdots,20)$带入得到预测结果$X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}',x_{i6}'](i=1,2,\cdots,20)$。
 
@@ -424,49 +424,44 @@ p_{E1} & p_{E2} & p_{E3}
       \end{matrix}\right.
       \end{gather}
       得到各个人群的决策属性向量：
-      \begin{gather}
+      \begin{gather*}
       d_{i}=[x_{i6},x_{i6}', \delta_{i} , \delta _{i}',\eta_{i} ]
-      \end{gather}
+      \end{gather*}
       
       同理，将全国各省即直辖市各年患病人口与死亡人口数据带入模型可得各个地区的决策属性向量$d_{i}'(i=1,2,\cdots,31)$。
     \subsubsection{TOPSIS法}
     设职业多属性决策矩阵$A=(a_{ij})_{20 \times 5}$可表示为：
-     \begin{gather}
-  A= \begin{bmatrix}d_{1}
-   \\ d_{2}
-   \\ \cdot
-   \\ \cdot
-   \\ \cdot
-   \\ d_{20}
-    \end{bmatrix}
-    \end{gather}
+     \begin{gather*}
+  A= [d_{1}^{T},d_{2}^{T},\cdot,,d_{20}^{T}]^{T}
+    \end{gather*}
     将$A$标准化可得规范化决策矩阵$B=(b_{ij})_{20 \times 5}$，其中：
-     \begin{gather}
+     \begin{gather*}
    b_{ij}=a_{ij}/\sqrt{\sum_{i=1}^{20}a_{ij}^{2}},i=1,2,\cdots,20;j=1,2,\cdots,5
-    \end{gather}
-    假定患病人数和死亡人数增长率高的区域更需要重点防控，构造权重向量：
+    \end{gather*}
+    
+    假定\textbf{患病人数和死亡人数增长率高的区域更需要重点防控}，构造权重向量：
      \begin{gather}
      W=[0.15,0.3,0.15,0.3,0.1]
     \end{gather}
-    即可求得加权规范矩阵为$C=(c_{ij})_{20 \times 5}$：
-     \begin{gather}
-     c_{ij}=w_{j} \cdot b_{ij} ,i=1,2,\cdots,20;j=1,2,\cdots,5
-    \end{gather}
-    即可求得正理想解$C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]$和负理想解$C^{0}=[c_{1}^{0},c_{2}^{0},c_{3}^{0},c_{4}^{0},c_{5}^{0}]$，其中：
-      \begin{gather}
-      c_{j}^{*}=\underset{i}{max}(c_{ij}) ,j=1,2,\cdots,5\\
-      c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
-    \end{gather}
+    即可求得加权规范矩阵为$C=(c_{ij})_{20 \times 5}$、正理想解$C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]$、负理想解$C^{0}=[c_{1}^{0},c_{2}^{0},c_{3}^{0},c_{4}^{0},c_{5}^{0}]$，其中：
+     \begin{gather*}
+     \begin{matrix}
+     c_{ij}=w_{j} \cdot b_{ij} ,i=1,2,\cdots,20;j=1,2,\cdots,5\\
+c_{j}^{*}=\underset{i}{max}(c_{ij}) ,j=1,2,\cdots,5\\
+c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
+     \end{matrix}
+    \end{gather*}
+    
     计算各职业属性决策向量到正理想解和负理想解的距离。备选职业属性决策向量$d_{i}$到正理想解的距离为与到负理想解的距离为：
-    \begin{gather}
+    \begin{gather*}
     s_{j}^{*}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^*)^{2}},i=1,2,\cdots,20\\
     s_{j}^{0}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^{0})^{2}},i=1,2,\cdots,20
-    \end{gather}
+    \end{gather*}
     计算各方案的综合评价指数：
     \begin{gather}
     f_{i}^{*}=s_{j}^{0}/(s_{j}^{0}+s_{j}^{*}),i=1,2,\cdots,20
     \end{gather}
-    按$f_{i}^{*}$由大到小排列求得重点防控人群次序。同理将各地区决策向量$d_{i}'(i=1,2,\cdots,31)$带入topsis模型可得重点防控地区次序。
+    按$f_{i}^{*}$由大到小排列求得重点防控人群次序。同理将各地区决策向量$d_{i}'(i=1,2,\cdots,31)$带入TOPSIS模型可得重点防控地区次序即可。
     \subsection{模型的求解}
     将各职业患病人数数据带入灰度马尔科夫模型得到预测值如表~\ref{label}~所示：
     
