@@ -602,11 +602,26 @@ c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
      
      
      \subsection{模型的建立}
+     	\subsubsection{灰色关联分析}
+     由于考虑到患病数与死亡数受多个经济因素的影响，我们采取灰色关联分析来分析各个因素对于结果的影响程度，根据分析结果来选择回归模型中的自变量。灰色关联分析是指对一个系统发展变化态势的定量描述和比较的方法，其基本思想是通过确定参考数据列和若干个比较数据列的几何形状相似程度来判断其联系是否紧密，它反映了曲线间的关联程度。首先对每个特征确定分析数列并做归一化，再进行关联系数，其公式如下：
+     
+     \begin{gather}
+     \xi _{i}\left ( k \right )=\frac{min_{i} min_{k}\Delta _{i}(k)+\rho max_{i} max_{k}\Delta _{i}(k)}{\Delta _{i}(k)+\rho max_{i} max_{k}\Delta _{i}(k)}
+     \end{gather}
      
      
+     式中记$\Delta _{i}(k)=|y(k)-x_{i}(k)|$，$\rho \in (0,\infty )$称为分辨系数。$\rho $越小，分辨力越大，一般$\rho $的取值区间为(0,1),具体取值可视情况而定。
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=.7\textwidth]{figures/Figure_8.png}
+ 	\caption{相关系数矩阵热力图}\label{re}
+ \end{figure}
+     	
+     	得到\textbf{人均国内总产值，居民消费水平，一般预算收入}三个特征的$\rho $分别为0.917019、0.892481、0.833659。分辨力均较好，即都与传染病相关联。因此在回归模型中同时考虑3种经济因素。
+
      
      
-     \subsection{模型的求解}   
+     \subsection{非线性回归模型}   
      
      
      \subsection{结果分析}
