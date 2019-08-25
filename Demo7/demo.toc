@@ -22,12 +22,12 @@
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}问题描述与分析}{17}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的建立}{17}{subsection.6.2}% 
 \contentsline {subsubsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}灰色关联分析}{17}{subsubsection.6.2.1}% 
-\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}非线性回归模型}{18}{subsection.6.3}% 
-\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}结果分析}{18}{subsection.6.4}% 
-\contentsline {section}{\numberline {七、}问题四:写给卫生健康委员会相关部门的一封公开信}{18}{section.7}% 
-\contentsline {section}{\numberline {八、}模型的评价}{19}{section.8}% 
-\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{19}{subsection.8.1}% 
-\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{19}{subsection.8.2}% 
-\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型改进}{19}{subsection.8.3}% 
-\contentsline {section}{\numberline {附录A}代码}{21}{appendix.A}% 
+\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}SMO-SVR模型}{18}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}模型的求解与分析}{19}{subsection.6.4}% 
+\contentsline {section}{\numberline {七、}问题四:写给卫生健康委员会相关部门的一封公开信}{19}{section.7}% 
+\contentsline {section}{\numberline {八、}模型的评价}{21}{section.8}% 
+\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}模型的优点}{21}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{21}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型改进}{21}{subsection.8.3}% 
+\contentsline {section}{\numberline {附录A}代码}{23}{appendix.A}% 
 \contentsfinish 
