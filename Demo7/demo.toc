@@ -30,4 +30,9 @@
 \contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}模型的缺点}{21}{subsection.8.2}% 
 \contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}模型改进}{21}{subsection.8.3}% 
 \contentsline {section}{\numberline {附录A}代码}{23}{appendix.A}% 
+\contentsline {subsection}{\numberline {A.1}灰色马尔可夫模型--matlab源代码}{23}{subsection.A.1}% 
+\contentsline {subsection}{\numberline {A.2}TOPSIS分析--matlab源代码}{27}{subsection.A.2}% 
+\contentsline {subsection}{\numberline {A.3}数据可视化--python源代码}{28}{subsection.A.3}% 
+\contentsline {subsection}{\numberline {A.4}灰色关联度分析--python源代码}{29}{subsection.A.4}% 
+\contentsline {subsection}{\numberline {A.5}SMO-SVR--python源代码}{32}{subsection.A.5}% 
 \contentsfinish 
