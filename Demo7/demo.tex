@@ -51,11 +51,9 @@
 \keywords{沙石算法\quad  遗传算法\quad  泊口仿真模型\quad 部队装载优化模型\quad }
 
 
-
 	\end{abstract}
-	
 	%目录
-3	\tableofcontents
+	\tableofcontents
 	\newpage	%换页符
 	
 	\section{问题重述}	
@@ -357,8 +355,11 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
      \end{figure}
  
    \subsection{结果分析}
-	
-	由图~\ref{afd}~和图~\ref{asf}~中的预测解曲线直观对比可知，由马尔科夫模型校正后的预测值相较于普通灰色预测值与实际值的拟合度更高，波动性一致，且灰色模型预测值是一条相对平滑的曲线，不能反应实际值的波动。两种模型预测指标如表~\ref{jjj}~所示：
+
+
+	根据灰色马尔可夫模型预估出$ 2019$ 年全国感染该疾病的发病人数为 $7.4096\times  10^{5}$，死亡人数为 $2.211\times  10^{3}
+	$。由图~\ref{afd}~和图~\ref{asf}~中的预测解曲线直观对比可知，由马尔科夫模型校正后的预测值相较于普通灰色预测值与实际值的\textbf{拟合度更高}，波动性一致，且灰色模型预测值是一条相对平滑的曲线，不能反应实际值的波动。两种模型预测指标如表~\ref{jjj}~所示：
+
  \begin{table}[H]
 	\centering\caption{预测结果检验}\label{jjj}
 	\begin{tabular}{cccc}
@@ -377,78 +378,97 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
 	\end{tabular}
 \end{table} 
 
-    从上述的预测结果可以得出:利用灰色马尔科夫模型修正后求出的患病人数与死亡人数的均方根误差值RMSE，其值都小于传统灰色模型预测值RMSE值，表明校正后结果可靠性更高。且修正后模型MPAE值较于传统模型更接近$0$，NSE值更接近 $1$，说明改进后的灰色马尔科夫模型的拟合程度更高，预测效果更好，适用于传染病发病数和死亡数的短期预测。最终预测的2019年全国感染该疾病的患病数为740960，死亡数为2211。
 
-
+    从上述的预测结果可以得出:利用灰色马尔科夫模型修正后求出的患病人数与死亡人数的均方根误差值RMSE，其值都小于传统灰色模型预测值RMSE值，表明校正后结果可靠性更高。且修正后模型MPAE值较于传统模型更接近$0$，NSE值更接近 $1$，说明改进后的灰色马尔科夫模型的拟合程度更高，预测效果更好，适用于传染病发病数和死亡数的短期预测。
 
 	  
 	  \section{问题二模型的建立与求解}
 	  \subsection{问题描述与分析}
-	
-	问题二要求结合不同地区和职业分类统计的数据，预测2019年传染病防控排名前3位的重点区域和重点人群，其本质是一个预测与综合评价问题。首先将附件中不同地区与不同职业的发病人数、死亡人数数据带入问题一的灰色马尔科夫模型中，预测出2019年发病人数、死亡人数，并计算出每个地区和每种职业对应的发病人数增长率、死亡人数增长率和死亡率。并将上述五个指标带入TOPSIS综合评价模型，得到了每个地区和各人群的综合评价指数，分别选取排序前三位的省市和人群作为重点防控区域和对象。
+
+	 问题二本质是一个预测与综合评价问题，题目要求结合不同地区和职业分类统计的数据，预测2019年传染病防控排名前3位的重点区域和重点人群。首先将附件中不同地区与不同职业的发病人数、死亡人数数据，带入问题一的\textbf{灰色马尔科夫模型}中。预测出2019年各省与各职业的发病人数、死亡人数，并计算出每个地区和每种职业对应的发病人数\textbf{增长率、死亡人数增长率和死亡率}。并将上述五个指标带入\textbf{TOPSIS综合评价模型}，分别选取排序前三位的省市和人群作为重点防控区域和人群。其问题二思维流程图如图~\ref{lctcc}~所示：
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=.5\textwidth]{figures/lctcc.png}
+	 	\caption{问题二思维流程图}\label{lctcc}
+	 \end{figure}
+	  \subsection{模型的建立}
+	  根据各年数据的不同对第一问的灰色马尔可夫模型进行修正，得：
+	  \begin{gather}
+\left\{\begin{matrix}
+\overline{x}(k) =\widehat{x}(k)-\eta\\
+\widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,6\\ 
+\eta =\begin{bmatrix}
+p_{E1} & p_{E2} & p_{E3}
+\end{bmatrix} \cdot \begin{bmatrix}
+\overline{E}_{1} & \overline{E}_{2} & \overline{E}_{3}
+\end{bmatrix}^{T}
+\end{matrix}\right.
+	  \end{gather}
+	 式中：第$k$年的患病或死亡人数据修正后预测值为$\overline{x}(k)$，$\widehat{x}(k)$为传统GM(1,1)的预测值，$\eta$为第$k$年GM(1,1)的误差期望值。
+	     \subsubsection{预测评价指标计算}
+	     
+	     
+	     
+	  将附件中$20$个职业2004年，2007年，2010年，2013年和2016年的患病人数数据$X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5}](i=1,2,\cdots,20)$，带入后，得到预测结果：
+     \begin{gather*}
+      X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5},x_{i6}](i=1,2,\cdots,20)
+     \end{gather*}
+     
+     同理，将死亡人数数据$X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}'](i=1,2,\cdots,20)$带入得到预测结果$X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}',x_{i6}'](i=1,2,\cdots,20)$。
 
 
-    \subsection{模型的建立}
-    \subsubsection{预测评价指标计算}
-    将附件中$20$个职业2004年，2007年，2010年，2013年和2016年的患病人数数据$X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5}](i=1,2,\cdots,20)$，带入问题一灰色马尔科夫模型，得到预测结果：
-    \begin{gather}
-    X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5},x_{i6}](i=1,2,\cdots,20)
-    \end{gather}
-    同理，将死亡人数数据$X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}'](i=1,2,\cdots,20)$带入第一问模型，得到预测结果:
-    \begin{gather}
-    X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}',x_{i6}'](i=1,2,\cdots,20)
-    \end{gather}
-    则预测中2019年发病人数增长率$ \delta_{i}$、死亡人数增长率 $ \delta _{i}'$和患病人口死亡率$\eta_{i}$分别为：
-    \begin{gather}
-    \delta _{i}=\frac{x_{i6}-x_{i5}}{x_{i5}} \times 100\%\\
-    \delta '_{i} =\frac{x_{i6}'-x_{i5}'}{x_{i5}'} \times 100\%\\
-    \eta_{i} =\frac{x_{i6}'}{x_{i6}} \times 100\%
-    \end{gather}
-    得到各个人群的决策属性向量：
-    \begin{gather}
-    d_{i}=[x_{i6},x_{i6}', \delta_{i} , \delta _{i}',\eta_{i} ]
-    \end{gather}
-    同理将全国各省即直辖市各年患病人口与死亡人口数据带入模型可得各个地区的决策属性向量$d_{i}'(i=1,2,\cdots,31)$。
+     则预测中2019年发病人数增长率$ \delta_{i}$、死亡人数增长率 $ \delta _{i}'$和患病人口死亡率$\eta_{i}$分别为：
+      \begin{gather}
+      \left\{\begin{matrix}
+      \delta _{i}=\frac{x_{i6}-x_{i5}}{x_{i5}} \times 100\%\\ 
+      \delta '_{i} =\frac{x_{i6}'-x_{i5}'}{x_{i5}'} \times 100\%\\ 
+      \eta_{i} =\frac{x_{i6}'}{x_{i6}} \times 100\%
+      \end{matrix}\right.
+      \end{gather}
+      得到各个人群的决策属性向量：
+      \begin{gather*}
+      d_{i}=[x_{i6},x_{i6}', \delta_{i} , \delta _{i}',\eta_{i} ]
+      \end{gather*}
+      
+      同理，将全国各省即直辖市各年患病人口与死亡人口数据带入模型可得各个地区的决策属性向量$d_{i}'(i=1,2,\cdots,31)$。
     \subsubsection{TOPSIS法}
     设职业多属性决策矩阵$A=(a_{ij})_{20 \times 5}$可表示为：
-    \begin{gather}
-    A= \begin{bmatrix}d_{1}
-    \\ d_{2}
-    \\ \cdot
-    \\ \cdot
-    \\ \cdot
-    \\ d_{20}
-    \end{bmatrix}
-    \end{gather}
+     \begin{gather*}
+  A= [d_{1}^{T},d_{2}^{T},\cdot,,d_{20}^{T}]^{T}
+    \end{gather*}
     将$A$标准化可得规范化决策矩阵$B=(b_{ij})_{20 \times 5}$，其中：
-    \begin{gather}
-    b_{ij}=a_{ij}/\sqrt{\sum_{i=1}^{20}a_{ij}^{2}},i=1,2,\cdots,20;j=1,2,\cdots,5
+     \begin{gather*}
+   b_{ij}=a_{ij}/\sqrt{\sum_{i=1}^{20}a_{ij}^{2}},i=1,2,\cdots,20;j=1,2,\cdots,5
+    \end{gather*}
+    
+    假定\textbf{患病人数和死亡人数增长率高的区域更需要重点防控}，构造权重向量：
+     \begin{gather}
+     W=[0.15,0.3,0.15,0.3,0.1]
     \end{gather}
-    假定患病人数和死亡人数增长率高的区域更需要重点防控，构造权重向量：
-    \begin{gather}
-    W=[0.15,0.3,0.15,0.3,0.1]
-    \end{gather}
-    即可求得加权规范矩阵为$C=(c_{ij})_{20 \times 5}$：
-    \begin{gather}
-    c_{ij}=w_{j} \cdot b_{ij} ,i=1,2,\cdots,20;j=1,2,\cdots,5
-    \end{gather}
-    即可求得正理想解$C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]$和负理想解$C^{0}=[c_{1}^{0},c_{2}^{0},c_{3}^{0},c_{4}^{0},c_{5}^{0}]$，其中：
-    \begin{gather}
-    c_{j}^{*}=\underset{i}{max}(c_{ij}) ,j=1,2,\cdots,5\\
-    c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
-    \end{gather}
+    即可求得加权规范矩阵为$C=(c_{ij})_{20 \times 5}$、正理想解$C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]$、负理想解$C^{0}=[c_{1}^{0},c_{2}^{0},c_{3}^{0},c_{4}^{0},c_{5}^{0}]$，其中：
+     \begin{gather*}
+     \begin{matrix}
+     c_{ij}=w_{j} \cdot b_{ij} ,i=1,2,\cdots,20;j=1,2,\cdots,5\\
+c_{j}^{*}=\underset{i}{max}(c_{ij}) ,j=1,2,\cdots,5\\
+c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
+     \end{matrix}
+    \end{gather*}
+    
     计算各职业属性决策向量到正理想解和负理想解的距离。备选职业属性决策向量$d_{i}$到正理想解的距离为与到负理想解的距离为：
-    \begin{gather}
+    \begin{gather*}
     s_{j}^{*}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^*)^{2}},i=1,2,\cdots,20\\
     s_{j}^{0}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^{0})^{2}},i=1,2,\cdots,20
-    \end{gather}
+    \end{gather*}
     计算各方案的综合评价指数：
     \begin{gather}
     f_{i}^{*}=s_{j}^{0}/(s_{j}^{0}+s_{j}^{*}),i=1,2,\cdots,20
     \end{gather}
-    按$f_{i}^{*}$由大到小排列求得重点防控人群次序。同理将各地区决策向量$d_{i}'(i=1,2,\cdots,31)$带入TOPSIS模型可得重点防控地区次序。
+
+    按$f_{i}^{*}$由大到小排列求得重点防控人群次序。同理将各地区决策向量$d_{i}'(i=1,2,\cdots,31)$带入TOPSIS模型可得重点防控地区次序即可。
+
     \subsection{模型的求解}
-    将各职业患病人数数据带入灰度马尔科夫模型得到预测值如表~\ref{label}~所示：
+
+    将各职业患病人数数据带入灰度马尔科夫模型得到预测值如表所示：
     即正理想解与负理想解分别为：
     \begin{gather}
     C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]\\
@@ -462,24 +482,10 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
     \end{figure}
 	
 
-    由图~\ref{label}~可知防控排名前$3$位的职业分别为农民、家政家务和退休人员。
+    由图~\ref{oc}~可知防控排名前$3$位的职业分别为农民、家政家务和退休人员。
     
     同理将各地区求得预测值带入TOPSIS模型求得加权规范矩阵如表~\ref{label}~所示：
-    
-    
-      即正理想解与负理想解分别为：
-    \begin{gather}
-    C^{*}=[-0.1856,-0.1847,-0.0809,-0.1163,-0.0929]\\
-    C^{0}=[0.0066,0.0048,0.0653,0.0261,0.0331]
-    \end{gather}
-    即求得$20$种职业综合评价指数如图~\ref{oc}~所示：
-    \begin{figure}[H]
-    	\centering
-    	\includegraphics[width=.9\textwidth]{figures/oc.png}
-    	\caption{人群综合评价指数}\label{oc}
-    \end{figure}
-    由图~\ref{label}~可知防控排名前$3$位的职业分别为农民、家政家务和退休人员。
-    
+     
     其正理想解与负理想解分别为：
     \begin{gather}
     C^{*}=[-0.0355,-0.0567,0,0,0]\\
@@ -549,18 +555,48 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
     		\bottomrule[1.5pt]	
     	\end{tabular}
     \end{table}
-    
 
-    
-    \subsection{结果分析}
-    农民、家政家务和退休人员的发病人数、死亡人数灰色马尔科夫预测曲线如下图所示：
-    
-    由图可知家政家务从业人员发病人数和死亡人数都处于上升趋势，且上升率较高，属于重点防控人群。而农民发病人数和死亡人数都虽处于下降趋势但其患病人口基数较大导致其综合评价指数较高，属于重点防控人群。而退休人口发病人数和死亡人数的增长率和基数都不大，但其发病后死亡较高，也属于重点防控人群。
-    
+
+\subsection{结果分析}
+农民、家政家务和退休人员的发病人数、死亡人数灰色马尔科夫预测曲线如下图所示：
+	\begin{figure}[H]
+	\begin{minipage}[t]{0.5\linewidth}
+		%并排插图时，线宽很重要，自己慢慢试，俩张图就不要超过0.5，三张图不要超过0.33之类的，自己看着办
+		\centering
+		\includegraphics[width=\textwidth]{figures/Figure_6.png}
+		\caption{职业前三每年发病人数}\label{sanrenf}
+	\end{minipage}
+	\hfill%分栏的意思吧
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/sannrens.png}
+		\caption{职业前三每年死亡人数}\label{sannrens}
+	\end{minipage}
+\end{figure}
+
+由图~\ref{sanrenf}~和图~\ref{sannrens}~可知家政家务从业人员发病人数和死亡人数都处于上升趋势，且\textbf{上升率较高}，属于重点防控人群。而农民发病人数和死亡人数都虽处于下降趋势但其\textbf{患病人口基数较大}导致其综合评价指数较高，属于重点防控人群。而退休人口发病人数和死亡人数的增长率和基数都不大，但其发病后死亡较高，也属于重点防控人群。
+
+新疆，西藏和青海的灰色马尔科夫预测曲线如下图所示：
+	\begin{figure}[H]
+	\begin{minipage}[t]{0.5\linewidth}
+		%并排插图时，线宽很重要，自己慢慢试，俩张图就不要超过0.5，三张图不要超过0.33之类的，自己看着办
+		\centering
+		\includegraphics[width=\textwidth]{figures/Figure_5.png}
+		\caption{前三省份每年发病人数}\label{Figure_5}
+	\end{minipage}
+	\hfill%分栏的意思吧
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Figure_1.png}
+		\caption{前三省份每年死亡人数}\label{Figure_6}
+	\end{minipage}
+\end{figure}
+由图~\ref{Figure_5}~和图~\ref{Figure_6}~可知新疆，西藏和青海的\textbf{发病人数和死亡人数都处于整体上升趋势}，尤其是新疆还有相对于其它二者较大的患病人口基数，都属于重点防控区域。
+
+ 
     新疆，西藏和青海的灰色马尔科夫预测曲线如下图所示：
     
     由图可知新疆，西藏和青海的发病人数和死亡人数都处于整体上升趋势，尤其是新疆还有相对于其它二者较大的患病人口基数，都属于重点防控区域。
-
 
      	\section{问题三模型的建立与求解}
      \subsection{问题描述与分析}
@@ -579,7 +615,7 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
      
      
     \section{问题四:写给卫生健康委员会相关部门的一封公开信}
-    致卫生健康委员会相关部门的一封信:
+    \textbf{致卫生健康委员会相关部门的一封信}:
     ~\\
     
     随着全球化的进程，人类活动范围日益扩大，人群流动频繁，传染病可在大范围内迅速传播，是对人类社会存在威胁的公共卫生问题。传染病的,防治与人民的身体健康和生命安全有着密切的关系，关系着经济社会发展和国家安全稳定。近十几年来，我国先后爆发了非典型性肺炎(SARS)，高致病性禽流感H5N1，甲型H1N1流感等突发传染病疫情，均对生命健康和社会生活造成了重大影响。艾滋病、肺结核病等重大传染病防治形势依然严峻，防治工作任务繁重。如何遏制传染病爆发，缓解传染病流行，是当今社会面临的紧迫问题。为了提高传染病疫情和突发公共卫生事件报告的质量和时效，加强对全国传染病感染病人的诊断、治疗和监督管理，建立完善的全国卫生监管机制是目前最为紧急的事情。
