@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  25 AUG 2019 14:36
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.8.2)  25 AUG 2019 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1707,6 +1707,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
 LaTeX Info: Redefining \nameref on input line 23.
+
+(./demo.out) (./demo.out)
 \@outlinefile=\write4
 \openout4 = `demo.out'.
 
@@ -2053,13 +2055,13 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
  [23]
-Overfull \hbox (66.45412pt too wide) in paragraph at lines 795--796
+Overfull \hbox (66.45412pt too wide) in paragraph at lines 793--794
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (52.226pt too wide) in paragraph at lines 824--825
+Overfull \hbox (52.226pt too wide) in paragraph at lines 822--823
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][]  
  []
@@ -2067,14 +2069,14 @@ Overfull \hbox (52.226pt too wide) in paragraph at lines 824--825
 [24] [25] [26] [27] (e:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Overfull \hbox (84.87328pt too wide) in paragraph at lines 986--987
+Overfull \hbox (84.87328pt too wide) in paragraph at lines 984--985
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (80.13057pt too wide) in paragraph at lines 987--988
+Overfull \hbox (80.13057pt too wide) in paragraph at lines 985--986
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -2082,35 +2084,29 @@ Overfull \hbox (80.13057pt too wide) in paragraph at lines 987--988
  []
 
 [28] [29] [30] [31] [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1219.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1217.
  [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1219.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1217.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1219.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1219.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1217.
 
+Package rerunfilecheck Info: File `demo.out' has not changed.
+(rerunfilecheck)             Checksum: 70841B28B9F8B076CB833558DFDCBD5A.
 
-
-Package rerunfilecheck Warning: File `demo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `demo.out':
-(rerunfilecheck)             Before: 
-(rerunfilecheck)             After:  70841B28B9F8B076CB833558DFDCBD5A.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1219.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1217.
  ) 
 Here is how much of TeX's memory you used:
- 28071 strings out of 494895
- 544435 string characters out of 6176373
- 682055 words of memory out of 5000000
- 31574 multiletter control sequences out of 15000+600000
+ 28085 strings out of 494895
+ 544588 string characters out of 6176373
+ 681118 words of memory out of 5000000
+ 31584 multiletter control sequences out of 15000+600000
  538483 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  60i,20n,78p,10457b,2349s stack positions out of 5000i,500n,10000p,200000b,80000s
