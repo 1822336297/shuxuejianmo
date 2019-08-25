@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  25 AUG 2019 14:48
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  25 AUG 2019 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -968,9 +968,6 @@ LaTeX Warning: Label `oc' multiply defined.
 
 LaTeX Warning: Label `area' multiply defined.
 
-
-LaTeX Warning: Label `zhiye1' multiply defined.
-
 )
 \openout1 = `demo.aux'.
 
@@ -1117,33 +1114,38 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 33.
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
@@ -1177,7 +1179,7 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 
 [1
 
-] [2] (./demo.toc
+] (./demo.toc
 
 Package fontspec Info: Could not resolve font "SimSun/BI" (it probably doesn't
 (fontspec)             exist).
@@ -1201,183 +1203,183 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [3])
+ [2])
 \tf@toc=\write5
 \openout5 = `demo.toc'.
 
- [4] [5]
+ [3] [4] [5]
 File: figures/lctc.png Graphic file (type bmp)
 <figures/lctc.png>
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 140.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 141.
 
-[6] [7] [8]
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 266--266
- []|\TU/TimesNewRoman(0)/m/n/12.05 2004| 
- []
-
-
+[6] [7]
 Overfull \hbox (4.18317pt too wide) in paragraph at lines 267--267
- []|\TU/TimesNewRoman(0)/m/n/12.05 2005| 
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2004| 
  []
 
 
 Overfull \hbox (4.18317pt too wide) in paragraph at lines 268--268
- []|\TU/TimesNewRoman(0)/m/n/12.05 2006| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 269--269
- []|\TU/TimesNewRoman(0)/m/n/12.05 2007| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 270--270
- []|\TU/TimesNewRoman(0)/m/n/12.05 2008| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 271--271
- []|\TU/TimesNewRoman(0)/m/n/12.05 2009| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 272--272
- []|\TU/TimesNewRoman(0)/m/n/12.05 2010| 
- []
-
-
-Overfull \hbox (3.736pt too wide) in paragraph at lines 273--273
- []|\TU/TimesNewRoman(0)/m/n/12.05 2011| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 274--274
- []|\TU/TimesNewRoman(0)/m/n/12.05 2012| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 275--275
- []|\TU/TimesNewRoman(0)/m/n/12.05 2013| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 276--276
- []|\TU/TimesNewRoman(0)/m/n/12.05 2014| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 277--277
- []|\TU/TimesNewRoman(0)/m/n/12.05 2015| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 278--278
- []|\TU/TimesNewRoman(0)/m/n/12.05 2016| 
- []
-
-
-Overfull \hbox (28.5803pt too wide) in paragraph at lines 263--284
- [][] 
- []
-
-[9]
-File: figures/f.png Graphic file (type bmp)
-<figures/f.png>
- [10]
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 329--329
- []|\TU/TimesNewRoman(0)/m/n/12.05 2004| 
- []
-
-
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 330--330
  []|\TU/TimesNewRoman(0)/m/n/12.05 2005| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 331--331
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 269--269
  []|\TU/TimesNewRoman(0)/m/n/12.05 2006| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 332--332
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 270--270
  []|\TU/TimesNewRoman(0)/m/n/12.05 2007| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 333--333
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 271--271
  []|\TU/TimesNewRoman(0)/m/n/12.05 2008| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 334--334
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 272--272
  []|\TU/TimesNewRoman(0)/m/n/12.05 2009| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 335--335
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 273--273
  []|\TU/TimesNewRoman(0)/m/n/12.05 2010| 
  []
 
 
-Overfull \hbox (3.736pt too wide) in paragraph at lines 336--336
+Overfull \hbox (3.736pt too wide) in paragraph at lines 274--274
  []|\TU/TimesNewRoman(0)/m/n/12.05 2011| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 337--337
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 275--275
  []|\TU/TimesNewRoman(0)/m/n/12.05 2012| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 338--338
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 276--276
  []|\TU/TimesNewRoman(0)/m/n/12.05 2013| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 339--339
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 277--277
  []|\TU/TimesNewRoman(0)/m/n/12.05 2014| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 340--340
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 278--278
  []|\TU/TimesNewRoman(0)/m/n/12.05 2015| 
  []
 
 
-Overfull \hbox (4.18317pt too wide) in paragraph at lines 341--341
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 279--279
  []|\TU/TimesNewRoman(0)/m/n/12.05 2016| 
  []
 
 
-Overfull \hbox (28.5803pt too wide) in paragraph at lines 326--347
+Overfull \hbox (28.5803pt too wide) in paragraph at lines 264--285
+ [][] 
+ []
+
+[8]
+File: figures/f.png Graphic file (type bmp)
+<figures/f.png>
+ [9]
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 330--330
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2004| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 331--331
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2005| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 332--332
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2006| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 333--333
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2007| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 334--334
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2008| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 335--335
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2009| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 336--336
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2010| 
+ []
+
+
+Overfull \hbox (3.736pt too wide) in paragraph at lines 337--337
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2011| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 338--338
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2012| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 339--339
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2013| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 340--340
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2014| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 341--341
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2015| 
+ []
+
+
+Overfull \hbox (4.18317pt too wide) in paragraph at lines 342--342
+ []|\TU/TimesNewRoman(0)/m/n/12.05 2016| 
+ []
+
+
+Overfull \hbox (28.5803pt too wide) in paragraph at lines 327--348
  [][] 
  []
 
 File: figures/s.png Graphic file (type bmp)
 <figures/s.png>
-[11] [12] [13]
-Overfull \hbox (44.49117pt too wide) in paragraph at lines 459--478
+[10] [11] [12]
+Overfull \hbox (44.49117pt too wide) in paragraph at lines 474--493
  [][] 
  []
 
 
-Overfull \hbox (32.44618pt too wide) in paragraph at lines 482--503
+Overfull \hbox (32.44618pt too wide) in paragraph at lines 497--518
  [][] 
  []
 
-[14]
+[13]
 File: figures/oc.png Graphic file (type bmp)
 <figures/oc.png>
- [15]
+ [14]
 File: figures/area.png Graphic file (type bmp)
 <figures/area.png>
- [16]
+ [15]
 File: figures/oc.png Graphic file (type bmp)
 <figures/oc.png>
- [17]
+ [16]
 File: figures/area.png Graphic file (type bmp)
 <figures/area.png>
 File: figures/Figure_6.png Graphic file (type bmp)
@@ -1385,46 +1387,46 @@ File: figures/Figure_6.png Graphic file (type bmp)
 File: figures/sannrens.png Graphic file (type bmp)
 <figures/sannrens.png>
 
-Overfull \hbox (2.00833pt too wide) in paragraph at lines 626--638
+Overfull \hbox (2.00833pt too wide) in paragraph at lines 617--629
 [][]  [] 
  []
 
-[18]
+[17]
 File: figures/Figure_5.png Graphic file (type bmp)
 <figures/Figure_5.png>
 File: figures/Figure_1.png Graphic file (type bmp)
 <figures/Figure_1.png>
 
-Overfull \hbox (2.00833pt too wide) in paragraph at lines 644--656
+Overfull \hbox (2.00833pt too wide) in paragraph at lines 635--647
 [][]  [] 
  []
 
-[19] [20]
+[18] [19]
 File: figures/Figure_8.png Graphic file (type bmp)
 <figures/Figure_8.png>
 
 
-LaTeX Warning: Citation `bib:7' on page 21 undefined on input line 718.
+LaTeX Warning: Citation `bib:5' on page 20 undefined on input line 708.
 
 
-LaTeX Warning: Citation `bib:8' on page 21 undefined on input line 719.
+LaTeX Warning: Citation `bib:7' on page 20 undefined on input line 708.
 
-[21]
+[20]
 File: figures/Figure_9.png Graphic file (type bmp)
 <figures/Figure_9.png>
 File: figures/Figure_10.png Graphic file (type bmp)
 <figures/Figure_10.png>
 
-Overfull \hbox (2.00833pt too wide) in paragraph at lines 728--740
+Overfull \hbox (2.00833pt too wide) in paragraph at lines 718--730
 [][]  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--765
+Underfull \hbox (badness 10000) in paragraph at lines 753--755
 
  []
 
-[22] [23] [24] [25] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+[21] [22] [23] [24] (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 
@@ -1450,14 +1452,14 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 826.
- [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 826.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 817.
+ [25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 817.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 826.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 826.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 817.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 817.
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 27CCC68341A779AE6C64573472F9A6CC.
+(rerunfilecheck)             Checksum: 0F28DA673922214685BF6F45E21843E8.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1468,15 +1470,15 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 826.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 817.
  ) 
 Here is how much of TeX's memory you used:
- 28824 strings out of 492922
- 562303 string characters out of 6136751
- 829967 words of memory out of 5000000
- 32476 multiletter control sequences out of 15000+600000
+ 28812 strings out of 492922
+ 561450 string characters out of 6136751
+ 829693 words of memory out of 5000000
+ 32464 multiletter control sequences out of 15000+600000
  540685 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 61i,18n,81p,430b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,18n,81p,445b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (26 pages).
+Output written on demo.pdf (25 pages).
