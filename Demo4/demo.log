@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  16 AUG 2019 18:56
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  14 NOV 2019 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,9 +1379,8 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `demo.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'demo.bbl' not found.
-
-No file demo.bbl.
+Package biblatex Info: ... file 'demo.bbl' found.
+ (./demo.bbl)
 
 Package biblatex Warning: citation 'lepawsky2010metropolis' was not found at al
 l in the .bbl, bibliography labels cannot be generated, please correct the cita
@@ -1496,23 +1495,23 @@ File: figures/1111.png Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 142.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 143.
 
 [6]
 
 LaTeX Warning: Citation 'lepawsky2010metropolis' on page 7 undefined on input l
-ine 149.
+ine 150.
 
 File: figures/clt.png Graphic file (type bmp)
 <figures/clt.png>
 
 LaTeX Warning: Citation '张瑞红2012河南省产业集群环境人才吸引力评价研究' on page 7 undefined on inpu
-t line 158.
+t line 159.
 
 
-Overfull \hbox (79.85918pt too wide) in paragraph at lines 158--159
-\TU/SimSun(1)/m/n/12.05 好，|  为 方 便 比 较，|  对 这 三 个 指 标 进 行 同 向 化 处 理 \TU/TimesNe
-wRoman(0)/m/n/12.05 [[]]\TU/SimSun(1)/m/n/12.05 ，|
+Overfull \hbox (63.008pt too wide) in paragraph at lines 159--160
+\TU/SimSun(1)/m/n/12.05 为 方 便 比 较，|  对 这 三 个 指 标 进 行 同 向 化 处 理 \TU/TimesNewRoma
+n(0)/m/n/12.05 [[]]\TU/SimSun(1)/m/n/12.05 ，|
  []
 
 [7]
@@ -1524,7 +1523,7 @@ File: figures/123.png Graphic file (type bmp)
  [10] [11]
 
 LaTeX Warning: Citation '宋鸿2010城市人才吸引力的影响因素及提升对策' on page 12 undefined on input
- line 302.
+ line 303.
 
 [12] [13]
 File: figures/wuhan.png Graphic file (type bmp)
@@ -1534,10 +1533,10 @@ File: figures/2222.png Graphic file (type bmp)
 <figures/2222.png>
  [15]
 
-LaTeX Warning: Citation '武汉统计局' on page 16 undefined on input line 411.
+LaTeX Warning: Citation '武汉统计局' on page 16 undefined on input line 412.
 
 [16]
-Overfull \hbox (12.70981pt too wide) in paragraph at lines 446--465
+Overfull \hbox (12.70981pt too wide) in paragraph at lines 447--466
  [][] 
  []
 
@@ -1551,13 +1550,13 @@ File: figures/22.png Graphic file (type bmp)
 File: figures/33.png Graphic file (type bmp)
 <figures/33.png>
  [20]
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
 [21] [22] [23]
 
-LaTeX Warning: Empty bibliography on input line 577.
+LaTeX Warning: Empty bibliography on input line 578.
 
 (d:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
@@ -1587,20 +1586,20 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 586
+Package Listings Warning: Text dropped after begin of listing on input line 587
 .
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 627
+Package Listings Warning: Text dropped after begin of listing on input line 628
 .
 
 [24]
-Overfull \hbox (981.48975pt too wide) in paragraph at lines 673--711
+Overfull \hbox (981.48975pt too wide) in paragraph at lines 674--712
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 248.88112pt on input line 711.
+LaTeX Warning: Float too large for page by 248.88112pt on input line 712.
 
 File: figures/1.png Graphic file (type bmp)
 <figures/1.png>
@@ -1623,12 +1622,12 @@ File: figures/5.png Graphic file (type bmp)
 File: figures/6.png Graphic file (type bmp)
 <figures/6.png>
  [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 749.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
  [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 749.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
  (./demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 749.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 749.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 750.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: 3FE0EC11E6669454170516E2128EFC24.
 
@@ -1649,11 +1648,11 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'demo.run.xml'.
 \openout1 = `demo.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 749.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
  ) 
 Here is how much of TeX's memory you used:
- 35667 strings out of 492922
- 692241 string characters out of 6136751
+ 35669 strings out of 492922
+ 692259 string characters out of 6136751
  1216649 words of memory out of 5000000
  39250 multiletter control sequences out of 15000+600000
  540709 words of font info for 115 fonts, out of 8000000 for 9000
