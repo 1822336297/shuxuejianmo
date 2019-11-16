@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{geometry}
-
+\usepackage{booktabs}
 %-----------------------------format.tex-----------------
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -119,7 +119,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 \paragraph{Analysis of task one}
 
 Make reasonable predictions of the aging trend of China and the medical needs of the residents according to the data of residents' income, age structure of the population and the economic development level etc. in the relevant statistical analysis data of the National Bureau of Statistic. 
-According to the relevant data from 2009 to 2018 in the National Bureau of statistics, the group first selects appropriate indicators and then establishes a grey prediction model to predict and analyze the population aging trend and residents' medical needs of the epidemic in 2009-2018. Then, through the Markov model, the data from 2009-2018 simulates the distribution of residual in each interval and calculates the expectation of the predicted residual in 2010-2019 Value. Finally, the prediction results and residual expectation are made to be different, and the inherent deviation of traditional grey prediction is corrected. Through the combination of the two models, the goal of scientific prediction of the future development of population aging and the trend of residents' medical needs is achieved. Its thought flow chart is shown in Figure ~\ref{lct}~ :
+According to the relevant data from 2009 to 2018 in the National Bureau of statistics, the group first selects appropriate indicators and then establishes a grey prediction model to predict and analyze the population aging trend and residents' medical needs of the epidemic in 2009-2018. Then, through the Markov model, the data from 2009-2018 simulates the distribution of residual in each interval and calculates the expectation of the predicted residual in 2019-2021 Value. Finally, the prediction results and residual expectation are made to be different, and the inherent deviation of traditional grey prediction is corrected. Through the combination of the two models, the goal of scientific prediction of the future development of population aging and the trend of residents' medical needs is achieved. Its thought flow chart is shown in Figure ~\ref{lct}~ :
 
 
 \paragraph{Analysis of task two}
@@ -162,37 +162,270 @@ The question three ask us to propose a common queuing theory method and figure i
 \section{Establishment and solution of the model}
 
  \subsection{The model of Problem 1}
-	\subsection{solution of the model 1}   
-\begin{center}
-\begin{figure}[htpb]
-\centering
-\includegraphics[scale=0.8]{locationofpoint}
-\caption{location of point}\label{fig:locationofpoint}
-\end{figure}
-\end{center}
+	\subsubsection{Establishment of model}   
+	\paragraph{GM(1,1)}The total number of cases in 2009-2018 is time series:
+	
+	 \begin{gather*}
+	X^{(0)}=[x^{(0)}(1),x^{(0)}(2),\cdots,x^{(0)}(10)]
+	\end{gather*}
+	
+	
+	Generate a 1-AGO sequence by one accumulation:
+	\begin{gather*}
+	X^{(1)}=[x^{(1)}(1),x^{(1)}(2),\cdots,x^{(1)}(10)]
+	\end{gather*}
+	
+	In the formula:$x^{(1)}(k)=\sum_{i=1}^{k}x^{(1)}(i),k=1,2,\cdots,10$.
 
-\begin{eqnarray}
-m\cdot v_i=m\cdot v_f+M\cdot V_f \\
-b\cdot m\cdot v_i+I\cdot \omega_i=b\cdot m\cdot v_f+I\cdot \omega_f\\
-e_0\cdot (v_i-\omega_i\cdot b)=V_f+\omega_f\cdot b-v_f
-\end{eqnarray}
+Establish a differential equation based on the 1-AGO sequence as:\begin{gather}\label{333}
+\frac{d X^{(1)}}{dt}+a X^{(1)} = u
+\end{gather}
 
-\subsection{Conclusion}
-
-\begin{center}
-\begin{figure}[htpb]
-\centering
-\includegraphics[scale=0.6]{firstwen}
-\caption{final velocity $v_f$ varies by impact point location $b$}\label{fig:maximum}
-\end{figure}
-\end{center}
-	  \subsection{The model of Problem 2}
+In the formula:$a$ is Develop grayscale,$u$ is Endogenous control grayscale.Let $\widehat{\alpha}$ be the parameter vector to be estimated and $\widehat{\alpha }=[a,u]^T$, be found by least squares method:
+\begin{gather}
+\widehat{\alpha }=(B^TB)^{-1}B^{T}Y_{n}
+\end{gather}
 
 
+Solving equation~\ref{333}~,The preliminary prediction model for the $k+1$ aging is available:
 
+\begin{gather}
+\widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,16
+\end{gather}
+
+Similarly, the death number is taken as the vector $X^{(0)}=[x^{(0)}(1),x^{(0)}(2),\cdots,x^{(0)}(10)]$ Bring in the model to obtain the 2019-2021 death number grayscale prediction value.
+	     
+	     \paragraph{Markov model correction}
+The Markov model is used to estimate the state and state probability of the GM(1,1) prediction error term, and the predicted value of the predicted state is used to correct the GM(1,1) prediction value. The state is divided by the 2009-2018 forecast data and the real data residual, and the residual sequence is:
+\begin{gather*}
+\varepsilon =[\varepsilon(1) ,\varepsilon(2), \cdots,\varepsilon(10)]
+\end{gather*}
+
+Absolute maximum residual value $\delta _{max}=\underset{1\leqslant i\leqslant13 }{max}\left | \varepsilon(i) \right |$.The prediction error is divided into three states. Let $\lambda =\frac{\delta _{max}}{6}$. The status is$E_{1}:(-3\lambda,-\lambda)$,$E_{2}:(-\lambda,\lambda)$ and $E_{1}:(\lambda,3\lambda)$. The formula for calculating the initial state probability vector is:
+
+\begin{gather}
+\left\{\begin{matrix}
+p_{Ek}=\frac{n_{Ek}}{13}\\
+t_{0}=[p_{E1},p_{E2},p_{E3}]
+\end{matrix}\right.
+\end{gather}
+In the formula:$n_{Ek}$is number of $E_{k}$ occurrences in 2008-2019.Replace the probability $E_{k}$ of its occurrence with the frequency at which the state $p_{Ek}$ appears. And construct the state transition matrix as:
+\begin{gather*}
+P=\left(\begin{array}{lll}{P_{11}} & {P_{12}} & {P_{13}} \\ {P_{21}} & {P_{22}} & {P_{23}} \\ {P_{31}} & {P_{32}} & {P_{33}}\end{array}\right)
+\end{gather*}
+In the formula:$P_{ij}$is $E_{i}$ transition probability transferred to $E_{j}$ after a period.
+
+That is, the Markov model can be expressed as:	  
+\begin{gather}
+t_{k+1}=t_{k} \cdot p
+\end{gather}
+Let the middle value of the status interval be $\overline{E}_{1}$,$\overline{E}_{2}$ and $\overline{E}_{3}$, so the error expectation of GM(1,1) in the kth year is:
+.
+\begin{gather}
+\eta =\begin{bmatrix}
+p_{E1} & p_{E2} & p_{E3}
+\end{bmatrix} \cdot\begin{bmatrix}
+\overline{E}_{1}\\ 
+\overline{E}_{2}\\ 
+\overline{E}_{3}
+\end{bmatrix}
+\end{gather}
+
+When the predicted value of GM(1,1) for the number of patients in the $k$ year is $\widehat{x}(k)$, \textbf{Modified grey Markov combination forecast model} $\overline{x}(k)$ Can be recorded as?
+\begin{gather}
+\overline{x}(k) =\widehat{x}(k)-\eta
+\end{gather}
+	
+
+	
+\paragraph{Forecast result evaluation index}
+Root mean square error (RMSE), average phase error absolute value (MAPE), and Nash efficiency coefficient (NSE) are commonly used to measure prediction results. The RMSE can evaluate the high-value predictions of the number of patients and the number of deaths. The calculation formula is:
+
+\begin{gather*}
+\operatorname{RMSE}=\sqrt{\frac{1}{n} \sum_{i=1}^{n}\left(y_{i}-y_{i}^{*}\right)^{2}}
+\end{gather*}
+
+
+The smaller the root mean square error, the higher the reliability of the model and the more accurate the result.
+
+MAPE is used to evaluate the prediction results of the stationary part of the prediction data. The calculation formula is:
+\begin{gather*}
+\mathrm{MAPE}=\frac{1}{n} \sum_{i=1}^{n}\left|\frac{y_{i}-y_{i}^{*}}{y_{i}}\right| \times 100 \%
+\end{gather*}
+The value obtained by MAPE is an absolute value, which is a relative index. When two MAPE values are compared, the smaller the value, the higher the reliability of the model.
+
+The NSE can be used to evaluate the predictive power of the model. The formula is as follows:
+\begin{gather*}
+\mathrm{NSE}=1-\frac{\sum_{i=1}^{n}\left(y_{i}-y_{i}^{*}\right)^{2}}{\sum_{i=1}^{n}\left(y_{i}-\overline{y}\right)^{2}}       
+\end{gather*}
+The closer the NSE value is to $1$, the better the model quality and the higher the model's credibility. Close to $0$, indicating that the simulation result is close to the average level of observations, that is, the overall result is credible, but the simulation error is large. Far less than $0$, the model is not credible.
+\subsubsection{Solution of Grey Markov Model}
+The predicted values of the Chinese elderly population forecast for 2009-2018 by GM(1,1) are as follows:
+
+
+\begin{gather}
+\widehat{X}(k+1)=-???e^{-???k}+???,k=1,2,\cdots,10
+\end{gather}
+
+The error status range is shown in the table ~\ref{ff}~.
+
+ \begin{table}[htbp]
+	\centering\caption{The age range division of the elderly}\label{ff}
+	\begin{tabular}{cccc}
+		\toprule[1.5pt]
+		{\centering Status}
+		& {\centering $E_{1}$}
+		& {\centering $E_{2}$}
+		& {\centering $E_{3}$}
+		\\
+		\midrule[0.5pt]
+		Residual interval &  $[-???,-???]$  &$(-???,???]$ & $(???,???]$   \\ 
+		\bottomrule[1.5pt]	
+	\end{tabular}
+\end{table}  
+According to the error interval range, the predicted number of elderly people in 2009-2018 is classified into the error interval as shown in the table ~\ref{fff}~.
+\begin{table}[htbp]
+	\centering\caption{The age range division of the elderly}\label{fff}
+	\begin{tabular}{ccccccccccc}
+		\toprule[1.5pt]
+		{\centering year}
+		& {\centering 2009}
+		&{\centering 2010}
+		& {\centering 2011}
+		&{\centering 2012}
+		& {\centering 2013}
+		& {\centering 2014}
+		&{\centering 2015}
+		&{\centering 2016}
+		&{\centering 2017}
+		&{\centering 2018}
+		\\
+		\midrule[0.5pt]
+		Residual interval &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$\\ 
+		\bottomrule[1.5pt]	
+	\end{tabular}
+\end{table}
+
+From this, the initial state probability vector $t_{0}$ is obtained, and the transfer matrix $P$ is:
+
+\begin{gather}
+\begin{matrix}
+t_{0}'=[???,???,???]\\ 
+\\ 
+P'=\left(\begin{array}{lll} ??? & ??? & ???\\ ??? & ??? & ??? \\??? & ??? & ???\end{array}\right)
+\end{matrix}
+\end{gather}
+
+The predicted solution obtained by gray prediction and Markov correction is shown in the figure ~\ref{afd}~.
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[width=\textwidth]{figures/f.png}
+%	\caption{???????????}\label{afd}
+%\end{figure}
+
+
+Similarly, the calculation of the medical demand forecast value for 2009-2018 is obtained as follows:
+\begin{gather}
+\widehat{X}(k+1)=-???e^{-???k}+???,k=1,2,\cdots,10
+\end{gather}
+
+
+
+The error status range is shown in the table ~\ref{ss}~.
+\begin{table}[htbp]
+	\centering\caption{Medical demand status interval division}\label{ss}
+	\begin{tabular}{cccc}
+		\toprule[1.5pt]
+		{\centering Status}
+		& {\centering $E_{1}$}
+		& {\centering $E_{2}$}
+		& {\centering $E_{3}$}
+		\\
+		\midrule[0.5pt]
+		Residual interval &  $[-???,-???]$  &$(-???,???]$ & $(???,???]$   \\ 
+		\bottomrule[1.5pt]	
+	\end{tabular}
+\end{table}
+
+The medical demand forecast is classified into the error interval as shown in the table ~\ref{sss}~:
+\begin{table}[htbp]
+	\centering\caption{Medical demand error status interval}\label{sss}
+	\begin{tabular}{ccccccccccc}
+	\toprule[1.5pt]
+	{\centering year}
+	& {\centering 2009}
+	&{\centering 2010}
+	& {\centering 2011}
+	&{\centering 2012}
+	& {\centering 2013}
+	& {\centering 2014}
+	&{\centering 2015}
+	&{\centering 2016}
+	&{\centering 2017}
+	&{\centering 2018}
+	\\
+	\midrule[0.5pt]
+	Residual interval &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$\\ 
+	\bottomrule[1.5pt]	
+\end{tabular}
+\end{table}
+From this, the initial state probability vector $t_{0}$ is obtained, and the transfer matrix $P$ is:
+\begin{gather}
+\begin{matrix}
+t_{0}'=[???,???,???]\\ 
+\\ 
+P'=\left(\begin{array}{lll} ??? & ??? & ???\\ ??? & ??? & ??? \\??? & ??? & ???\end{array}\right)
+\end{matrix}
+\end{gather}
+
+The predicted solution obtained by gray prediction and Markov correction is shown in the figure ~\ref{asf}~.
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=\textwidth]{figures/s.png}
+%	\caption{???????????}\label{asf}
+%\end{figure}
+
+
+\subsubsection{Conclusion}
+ \subsection{The model of Problem 2}
 \subsection{The model of Problem 3}
-\subsection{solution of the model 3}   
+	\subsubsection{Establishment of model}  
+	 \paragraph{ $M/M/c/\infty$ model}
+As the theory of$M/M/c/\infty$ illusteate:
+\begin{gather}
+\left\{\begin{array}{ll}{P_{0}=} & {\left[\sum_{k=0}^{-1} \frac{1}{k !}\left(\frac{\lambda}{\mu}\right)^{k}+\frac{1}{c !} \cdot \frac{1}{1-\rho} \cdot\left(\frac{\lambda}{\mu}\right)^{c}\right]^{-1}} \\ {P_{n}=} & {\left\{\begin{array}{ll}{\frac{1}{n !}\left(\frac{\lambda}{\mu}\right)^{n} P_{0}} & {(n \leqslant c)} \\ {\frac{1}{c ! c^{n-c}}\left(\frac{\lambda}{\mu}\right)^{n} P_{0}} & {(n>c)}\end{array}\right.}\end{array}\right.
+\end{gather}
+In the above expression, n is the amount of patient.$p_{n}$ is the probability of number of patient reach n in the moment t. C represents the amount of doctors in an outpatient department. $\lambda$ means the average arrival rate of patients. And the $\mu$ means the average inspection rate of the doctor.
+
+Based on this theory, the following relation is set up:       
+\begin{gather}
+\left\{\begin{array}{l}{L_{s}=L_{q}+\frac{\lambda}{\mu}} \\ {L_{q}=\sum_{n=c+1}^{\infty}(n-c) P_{n}=\frac{\left(c_{\rho}\right)^{c} \rho}{c !(1-\rho)^{2}} P_{0}}\end{array}\right.
+\end{gather}
+In the above expression, $L_{s}$ is the average length of the queuing which means the number of patient waiting in the system. Depending on it, we could derive the expression of average waiting time $W_{q}$ and average time of stay $W_{s}$:
+\begin{gather}
+\left\{\begin{matrix}W_{q}=\frac{L_{q}}{\lambda }
+\\ W_{s}=\frac{L_{s}}{\lambda }
+\end{matrix}\right.
+\end{gather}
+	\subsubsection{Solution of model}
+\paragraph{Optimized systems design} 
+For $M/M/c/\infty$ system, the expection of the social cost per hour in the steady state is set up as $Z$. And $Z$ could be calculated as the following expression:     
+ \begin{gather}
+ z=c_{s} \cdot c+c_{w} \cdot L_{s}
+ \end{gather}
+ In this expression, $C$ is the number of doctors in the outpatient department. $C_(s)$ represents the average hourly wage of the doctors while $C_(w)$ represents the patient's.$L_{s}$ is the amount of patient waiting in the system witch is function of $C$.Thus ,$Z$ is the function of $C$. To get the optimal solution of $C^*$ which make $Z$ the minimum, we adopt the marginal analysis to solve it.And accroding to the feature that $Z$ is the minimum, the following relation exists:  
+\begin{gather}
+\left\{\begin{matrix}Z(c^*)\leqslant Z(c^*-1)
+\\ Z(c^*)\leqslant Z(c^*+1)
+\end{matrix}\right.
+\end{gather}
+ Take expression (15) into expression (16) to gain:
+  \begin{gather}
+L(C^*)-L(C^*+1)\leqslant \frac{C_(s)}{C_(w)}\leqslant L(C^*-1)-L(C^*)
+ \end{gather}
+Thus, we utilize the ergodic algorithm to obtain the value of $C^*$.
 \subsection{The model of Problem 4}
+
 %===========================  \section{Sensitivity Analysis}===============================
   \section{Sensitivity Analysis}
 
