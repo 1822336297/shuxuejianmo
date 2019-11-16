@@ -7,6 +7,7 @@
 \usepackage{fancybox}
 \usepackage{fancyhdr}
 \usepackage{float}
+\usepackage{listings}
 \usepackage{lastpage}
 \usepackage{hyperref}
 \hypersetup{
@@ -27,6 +28,7 @@
 	colorlinks=true,
 	linkcolor=black
 }
+\usepackage{xcolor}
 \newtheorem{definition}{{definition}}
 \newcounter{numdefinition}
 \renewenvironment{definition}[1]
@@ -796,6 +798,551 @@ This is for your reference only.
 
 \newpage
 %??
-%\appendix %%??
+\appendix
+\lstset{
+	columns=fixed,       
+	numbers=left,                                        % ???????
+	numberstyle=\tiny\color{gray},                       % ??????
+	frame=none,                                          % ???????
+	backgroundcolor=\color[RGB]{245,245,244},            % ??????
+	keywordstyle=\color[RGB]{40,40,255},                 % ???????
+	numberstyle=\footnotesize\color{darkgray},           
+	commentstyle=\it\color[RGB]{0,96,96},                % ?????????
+	stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % ???????
+	showstringspaces=false,                              % ??????????
+	language=python,                                        % ????
+}
+\begin{lstlisting}[language=matlab]
+x = [970279 1259308 1127571 1163959 1169540 1076938 991350 953275 951508 904434 889381 864015 836236];
+
+%??????GM(1,1)??
+sizexd2 = size(x,2);
+%?????
+
+k=0;
+for y1=x
+k=k+1;
+if k>1
+x1(k)=x1(k-1)+x(k);
+%????
+z1(k-1)=-0.5*(x1(k)+x1(k-1));   
+%z1???1?????B
+yn1(k-1)=x(k);
+else
+x1(k)=x(k);
+end
+end
+%x1,z1,k,yn1
+
+sizez1=size(z1,2);
+%size(yn1);
+z2 = z1';
+z3 = ones(1,sizez1)';
+
+YN = yn1';   %??
+%YN
+
+B=[z2 z3];
+au0=inv(B'*B)*B'*YN;
+au = au0';
+%B,au0,au
+
+afor = au(1);
+ufor = au(2);
+ua = au(2)./au(1);
+%afor,ufor,ua 
+%?????  a u ? u/a??
+
+constant1 = x(1)-ua;
+afor1 = -afor;
+x1t1 = 'x1(t+1)';
+estr = 'exp';
+tstr = 't';
+leftbra = '(';
+rightbra = ')';
+%constant1,afor1,x1t1,estr,tstr,leftbra,rightbra
+
+strcat(x1t1,'=',num2str(constant1),estr,leftbra,num2str(afor1),tstr,rightbra,'+',leftbra,num2str(ua),rightbra)
+%????????
+
+%******************************************************
+%????
+
+k2 = 0;
+for y2 = x1
+k2 = k2 + 1;
+if k2 > k  
+else
+ze1(k2) = exp(-(k2-1)*afor);  
+end
+end
+%ze1
+
+sizeze1 = size(ze1,2);
+z4 = ones(1,sizeze1)';
+G=[ze1' z4];
+X1 = x1';
+au20=inv(G'*G)*G'*X1;
+au2 = au20';
+%z4,X1,G,au20
+
+Aval = au2(1);
+Bval = au2(2);
+%Aval,Bval
+%?????  A,B??
+
+strcat(x1t1,'=',num2str(Aval),estr,leftbra,num2str(afor1),tstr,rightbra,'+',leftbra,num2str(Bval),rightbra)
+%????????
+
+nfinal = sizexd2-1 + 3;
+%????????5  ????????????
+
+%nfinal = sizexd2 - 1 + 1;
+%?????? 1
+
+for  k3=1:nfinal
+x3fcast(k3) = constant1*exp(afor1*k3)+ua;
+end
+%x3fcast
+%???????
+
+for  k31=nfinal:-1:0
+if k31>1
+x31fcast(k31+1) = x3fcast(k31)-x3fcast(k31-1);
+else
+if k31>0
+x31fcast(k31+1) = x3fcast(k31)-x(1);
+else
+x31fcast(k31+1) = x(1);
+end
+end
+
+end
+x31fcast
+%???????
+
+
+for  k4=1:nfinal
+x4fcast(k4) = Aval*exp(afor1*k4)+Bval;
+end
+%x4fcast
+
+for  k41=nfinal:-1:0
+if k41>1
+x41fcast(k41+1) = x4fcast(k41)-x4fcast(k41-1);
+else
+if k41>0
+x41fcast(k41+1) = x4fcast(k41)-x(1);
+else
+x41fcast(k41+1) = x(1);
+end
+end
+
+end
+x41fcast,x
+%???????
+
+%***????p C************//////////////////////////////////
+k5 = 0;
+for y5 = x
+k5 = k5 + 1;
+if k5 > sizexd2  
+else
+err1(k5) = x(k5) - x41fcast(k5);  
+end
+end
+%err1
+%????
+
+
+xavg = mean(x);
+%xavg
+%x???
+
+err1avg = mean(err1);
+%err1avg
+%err1???
+
+k5 = 0;
+s1total = 0 ;
+for y5 = x
+k5 = k5 + 1;
+if k5 > sizexd2  
+else
+s1total = s1total + (x(k5) - xavg)^2;  
+end
+end
+s1suqare = s1total ./ sizexd2;
+s1sqrt = sqrt(s1suqare);
+%s1suqare,s1sqrt
+%s1suqare  ????x???  s1sqrt ?x??????S1
+
+k5 = 0;
+s2total = 0 ;
+for y5 = x
+k5 = k5 + 1;
+if k5 > sizexd2  
+else
+s2total = s2total + (err1(k5) - err1avg)^2;  
+end
+end
+s2suqare = s2total ./ sizexd2;
+%s2suqare   ????err1???S2
+
+Cval = sqrt(s2suqare ./ s1suqare);
+%nnn = 0.6745 * s1sqrt
+%Cval  C???
+
+k5 = 0;
+pnum = 0 ;
+for y5 = x
+k5 = k5 + 1;
+if abs( err1(k5) - err1avg ) < 0.6745 * s1sqrt
+pnum = pnum + 1;
+%ppp = abs( err1(k5) - err1avg )     
+else
+end
+end
+pval = pnum ./ sizexd2;
+
+%p???
+
+%arr1 = x41fcast(1:6)
+\end{lstlisting}
+
+\begin{lstlisting}[language=python]
+from example.commons import Faker
+from pyecharts import options as opts
+from pyecharts.charts import Bar,Funnel
+from pyecharts.globals import ThemeType
+import pandas as pd
+import numpy as np
+import random
+import matplotlib
+from matplotlib import pyplot as plt
+from matplotlib import font_manager
+my_font = font_manager.FontProperties(fname="C:\Windows\Fonts\msyh.ttc")#????????
+from sklearn.metrics import explained_variance_score,mean_squared_error
+
+
+def funnel_label_inside() -> Funnel:
+c = (
+Funnel()
+.add(
+"",
+[list(z) for z in zip(["heart disease","Respiratory disease","Cerebrovascular disease","Cancer","Immunodeficiency","......","Parasite"], [0.6886,0.4613,0.3995,0.3869,0.2896,0.2840,0.2661])],
+label_opts=opts.LabelOpts(position="inside"),
+)
+.set_global_opts(title_opts=opts.TitleOpts(title=""))
+)
+return c
+
+# funnel_label_inside().render()
+# plt.figure(figsize=(15, 8), dpi=80)
+x = [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021]
+# ????????,
+plt.plot(x,[128.8231	,129.1872	,132.0385	,131.6355	,133.8391	,136.2059,	136.6068	,138.6991	,141.613	,146.34	,
+149.45	,153.454	,155.6778
+], label='heart disease')  # ??
+# plt.plot(x, [54916,	67490.08141	,78063.99174	,81181.69584,	106503.6705,	110400.3167
+# ], label='????/?')  # ???
+# plt.plot(x, [47991	,48952.06066	,43076.23039	,40811.81632	,34969.5661,	33507.68682
+# ], label='????/?',color="red")  # ???
+
+
+# ????
+_xtick_labels = ["{}".format(int(i)) for i in x]
+plt.xticks(x, _xtick_labels, fontproperties=my_font)
+# plt.yticks(range(0, 9))
+
+# ????
+plt.grid(alpha=0.3, linestyle="--")  # alpha???? 0-1
+plt.title("Focus on diseases", fontproperties=my_font)
+plt.xlabel("year", fontproperties=my_font)
+plt.ylabel("sick/thousand", fontproperties=my_font)
+# ????
+plt.legend(prop=my_font, loc=0)
+plt.show()
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=python]
+# import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+if __name__ == "__main__":
+filename = r'data.xlsx'
+data = pd.read_excel(filename)
+y = data['???'].values[0:13]
+predict = data["?????"].values[0:13]
+
+exc  = y-predict
+# print(exc)
+lamada = max(exc)/3
+print(-3*lamada,-lamada,lamada,3*lamada)
+
+lable = [0]*len(exc)
+for i in range(len(exc)):
+if exc[i]>=-3*lamada and exc[i]<-lamada:
+lable[i]=1
+elif exc[i]<=lamada and exc[i]>=-lamada:
+lable[i]=2
+else:
+lable[i]=3
+
+print("??????" + str(lable))
+e1=0
+e2=0
+e3=0
+for i in lable:
+if i==1:
+e1+=1
+elif i==2:
+e2 += 1
+else:
+e3+=1
+P = np.array([e1/len(lable),e2/len(lable),e3/len(lable)])
+print("???????P?" + str(P))
+E = np.array([-2*lamada,0,2*lamada])
+
+print("???????E?" + str(E))
+
+diyihang_fenmu = 0
+diyihang_fenzi = np.array([0]*3)
+
+dierhang_fenmu = 0
+dierhang_fenzi = np.array([0]*3)
+
+disanhang_fenmu = 0
+disanhang_fenzi = np.array([0]*3)
+for i in range(len(lable)-1):
+#?????
+if lable[i] ==1:
+diyihang_fenmu+=1
+elif lable[i] == 2:
+dierhang_fenmu+=1
+else:
+disanhang_fenmu+=1
+
+#?????
+if lable[i]==1 and lable[i+1]==1:
+diyihang_fenzi[0] += 1
+if lable[i]==1 and lable[i+1]==2:
+diyihang_fenzi[1] += 1
+if lable[i]==1 and lable[i+1]==3:
+diyihang_fenzi[2] += 1
+
+if lable[i]==2 and lable[i+1]==1:
+dierhang_fenzi[0] += 1
+if lable[i]==2 and lable[i+1]==2:
+dierhang_fenzi[1] += 1
+if lable[i]==2 and lable[i+1]==3:
+dierhang_fenzi[2] += 1
+
+if lable[i]==3 and lable[i+1]==1:
+disanhang_fenzi[0] += 1
+if lable[i]==3 and lable[i+1]==2:
+disanhang_fenzi[1] += 1
+if lable[i]==3 and lable[i+1]==3:
+disanhang_fenzi[2] += 1
+
+P0 = np.array([diyihang_fenzi/diyihang_fenmu,dierhang_fenzi/dierhang_fenmu,disanhang_fenzi/disanhang_fenmu])
+print("????P0:"+str(P0))
+
+pre2017 = np.dot(P,E)
+# print(pre2017)
+print(2239.50918495696-pre2017)
+#
+print(2150.39689699288 - np.dot(np.dot(P, P0),E))
+
+print(2064.83047520321 - np.dot(np.dot(np.dot(P, P0),P0),E))
+\end{lstlisting}
+
+\begin{lstlisting}[language=python]
+def Identification_Algorithm(x):  
+B = np.array([[1]*2]*10)
+tmp = np.cumsum(x)
+
+print("x len:", len(x))
+print("tmp len:", len(tmp))
+for i in range(len(x)-1):
+B[i][0] = ( tmp[i] + tmp[i+1] ) * (-1.0) / 2
+print(i)
+Y = np.transpose(x[1:])
+BT = np.transpose(B)
+a = np.linalg.inv(np.dot(BT,B))
+a = np.dot(a,BT)
+a = np.dot(a,Y)
+a = np.transpose(a)
+return a;
+
+
+def GM_Model(X0,a,tmp):          #GM(1,1)
+A = np.ones(len(X0))
+for i in range(len(A)):
+A[i] = a[1]/a[0] + (X0[0]-a[1]/a[0])*np.exp(a[0]*(tmp[i]-1)*(-1))
+print ('GM(1,1)???:\nX(k) = ',X0[0]-a[1]/a[0],'exp(',-a[0],'(k-1))',a[1]/a[0])
+XK = Series(A,index=pd.period_range('2003','2013',freq = 'A-DEC'))
+print ('GM(1,1)??????:')
+print (XK)
+return XK;
+
+
+def Return(XK):      
+tmp = np.ones(len(XK))
+for i in range(len(XK)):
+if i == 0:
+tmp[i] = XK[i]
+else:
+tmp[i] = XK[i] - XK[i-1]
+X_Return = Series(tmp,index=pd.period_range('2003','2013',freq = 'A-DEC'))
+print ('????:\n')
+print (X_Return)
+return X_Return
+
+
+if __name__ == '__main__':
+# ???????
+filename = r'data.xlsx'
+data = pd.read_excel(filename, index_col=u'??')
+date = pd.period_range('2003','2013',freq = 'A-DEC')
+tmp = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+data = np.array([129227, 129988, 130756, 131448, 132129, 132802, 133450, 134091, 134735, 135404, 136072])
+data = data ** (1 / 10)
+X0 = Series(data,index = date)
+X0_copy = Series(data,index=tmp)
+print ('?????:\n')
+print(X0)
+
+# ???????????
+X1 = np.cumsum(X0)
+print ('???????:')
+print(X1)
+
+# ????
+a = Identification_Algorithm(data)
+print ('a???:')
+print (a)
+
+# GM(1,1)??
+XK = GM_Model(X0,a,tmp)
+
+# ?????
+X_Return = Return(XK)
+
+# ??????????
+X_Compare1 = np.ones(len(X0))
+X_Compare2 = np.ones(len(X0))
+for i in range(len(data)):
+X_Compare1[i] = data[i]-X_Return[i]
+X_Compare2[i] = X_Compare1[i]/data[i]*100
+Compare = {'GM':XK,'1?AGO':np.cumsum(data),'Returnvalue':X_Return,'Realityvalue':data,'Error':X_Compare1,'RelativeError(%)':X_Compare2}
+X_Compare = DataFrame(Compare,index=date)
+print ('??????????')
+print (X_Compare)
+
+# ????
+error_square = np.dot(X_Compare,np.transpose(X_Compare))    # ?????
+error_avg = np.mean(error_square)                           # ??????
+
+S = 0                                                       # X0????
+for i in range(1,len(X0)-1,1):
+S += X0[i]-X0[0]+(XK[-1]-XK[0])/2
+S = np.abs(S)
+
+SK = 0                                                      # XK????
+for i in range(1,len(XK)-1,1):
+SK += XK[i]-XK[0]+(XK[-1]-XK[0])/2
+SK = np.abs(SK)
+
+S_Sub = 0                                                   # |S-SK|b
+for i in range(1, len(XK)-1, 1):
+S_Sub += X0[i]-X0[0]-(XK[i]-XK[0])+((X0[-1]-X0[0])-(XK[i]-XK[0]))/2
+S_Sub = np.abs(S_Sub)
+
+T = (1+S+SK)/(1+S+SK+S_Sub)
+
+if T >= 0.9:
+print ('?????')
+print ('???GM(1,1)??\nX(k) = ',X0[0]-a[1]/a[0], 'exp(', -a[0], '(k-1))', a[1]/a[0])
+elif T >= 0.8:
+print ('?????')
+print ('???GM(1,1)??\nX(k) = ',X0[0]-a[1]/a[0], 'exp(', -a[0], '(k-1))', a[1]/a[0])
+elif T >= 0.7:
+print ('?????')
+print ('???GM(1,1)??\nX(k) = ',X0[0]-a[1]/a[0], 'exp(', -a[0], '(k-1))', a[1]/a[0])
+elif T >= 0.6:
+print ('?????')
+print ('?????GM(1,1)??\nX(k) = ',X0[0]-a[1]/a[0], 'exp(', -a[0], '(k-1))', a[1]/a[0])
+
+print('??T?', T)
+
+X2014 = Series(np.array([136782]) ** (1 / 10), index=pd.period_range('2014', '2014', freq='A-DEC'))
+X_Return = X_Return.append(X2014)
+print (X_Return)
+
+B = pd.DataFrame([X0, X_Return], index=['X0', 'X_Return'])
+B = np.transpose(B)
+B.plot()
+plt.plot(B)
+plt.show()
+\end{lstlisting}
+
+\begin{lstlisting}[language=python]
+import pandas as pd
+import numpy as np
+import random
+import matplotlib
+from matplotlib import pyplot as plt
+from matplotlib import font_manager
+my_font = font_manager.FontProperties(fname="C:\Windows\Fonts\msyh.ttc")#????????
+from sklearn.metrics import explained_variance_score,mean_squared_error
+def evalmape(y_true, y_pred):
+n = len(y_true)
+mape = sum(np.abs((y_true - y_pred)/y_true))/n
+return mape
+
+def nse(y_true, y_pred):
+return 1 - (sum((y_true-y_pred)**2)/sum((y_true-np.mean(y_true))**2))
+
+if __name__ == "__main__":
+filename = r'data.xlsx'
+data = pd.read_excel(filename)
+x = [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021]
+y1 = [11307,11894,12288	,12714	,13161,	13755	,14386	,15203,	15831	,16658]
+y2 = [11307,11964,12588	,12311	,13645,	13199	,14766	,15320,	16301	,17058,17234,17541,17574]
+y3 =[11307,11794,12388	,12611	,13245,	13599	,14476	,15340,	16101	,16958,16934,17441,17511]
+# ??????
+plt.figure(figsize=(15, 8), dpi=80)
+
+# ????????
+plt.plot(x[0:10],y1 , label='True',linestyle="-.")  # ??
+plt.plot(x, y2, label='GM(1,1)', linestyle=":")  # ???
+plt.plot(x, y3, label='Markov-GM(1,1)',color="red")  # ???
+
+# ????
+_xtick_labels = ["{}".format(int(i)) for i in x]
+plt.xticks(x, _xtick_labels, fontproperties=my_font)
+# plt.yticks(range(0, 9))
+
+# ????
+plt.grid(alpha=0.3, linestyle="--")  # alpha???? 0-1
+plt.title("Comparison curve of prediction value of the number of the elderly", fontproperties=my_font)
+plt.xlabel("T / year", fontproperties=my_font)
+plt.ylabel("Number / million", fontproperties=my_font)
+# ????
+plt.legend(prop=my_font, loc=0)
+
+# ??
+plt.show()
+
+mse_predict = mean_squared_error(y1, y2[0:10])
+print(np.sqrt(mse_predict))
+MAPE = evalmape(pd.DataFrame(y1), pd.DataFrame(y2)[0:10])
+print(MAPE)
+# NSE = nse(pd.DataFrame(y1), pd.DataFrame(y2)[0:10])
+# print(NSE)
+\end{lstlisting}
 
 \end{document}
