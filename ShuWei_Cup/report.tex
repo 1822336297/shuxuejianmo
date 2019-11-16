@@ -127,20 +127,22 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 %============================\input{definitions1}===========
 \section{Problem Analysis}
-\paragraph{Analysis of question one}
+\paragraph{Analysis of task one}
 
 
 According to the relevant data from 2009 to 2018 in the National Bureau of statistics, the group first selects appropriate indicators and then establishes a grey prediction model to predict and analyze the population aging trend and residents' medical needs of the epidemic in 2009-2018. Then, through the Markov model, the data from 2009-2018 simulates the distribution of residual in each interval and calculates the expectation of the predicted residual in 2019-2021 Value. Finally, the prediction results and residual expectation are made to be different, and the inherent deviation of traditional grey prediction is corrected. Through the combination of the two models, the goal of scientific prediction of the future development of population aging and the trend of residents' medical needs is achieved. 
 
 
-\paragraph{Analysis of question two}
+\paragraph{Analysis of task two}
 
 According to the second question, we are asked to analyze the most common diseases in a specific province in the future . we took the Hubei province as an example to collect data on common diseases such as heart  disease ,and established a model with Markov model.And calculated The number of cases, growth rate of cases, growth rate of deaths and death rate of each disease ,Then substituted the five index data into the principal component analysis model. The disease with the highest score was the most common disease in the province in the future.
 
-\paragraph{Analysis of question three}
-\paragraph{Analysis of question four}
+\paragraph{Analysis of task three} 
+The question three ask us to propose a common queuing theory method and figure its related optimal queuing for this kind of queuing problem.Via refering to the operational mode of the real world hospital, we choose to adopt the $M/M/c/\infty$ model as the required theory. Then we acquire the hospital statistics and abstract the data into the parameter in model. Finally, to get the social cost to be lowest, we manage to find the optimized systems design for the queuing model.
 
-\paragraph{Analysis of question five}
+\paragraph{Analysis of task four}
+
+\paragraph{Analysis of task five}
 %=======================\input{Assumptions1}=====================================
 	\section{Symbol and Assumptions}
 \subsection{Symbol Description}
@@ -161,11 +163,12 @@ According to the second question, we are asked to analyze the most common diseas
 
 \subsection{Fundamental assumptions}
 \begin{enumerate}
-\item The bat is rigid, so there is no vibration in the bat(for the basic model).
-\item The ball hit and rebound perpendicular to the bat and is in the plane of the swing.
-\item The ball can be considered as a linear spring with friction.
-\item The bat is a free object in collision,and both ends of the bat is completely free.
-\item The vibration of the bat is harmonic(for augmented model).
+%\item The bat is rigid, so there is no vibration in the bat(for the basic model).
+%\item The ball hit and rebound perpendicular to the bat and is in the plane of the swing.
+%\item The ball can be considered as a linear spring with friction.
+%\item The bat is a free object in collision,and both ends of the bat is completely free.
+%\item The vibration of the bat is harmonic(for augmented model).
+\item The hourly wage of patient could be considered as the cost dissipated in queuing. And the hourly wage of  doctor could be seen as the cost of cost of service.
 \end{enumerate}
 
 %=============================\input{ModelforCollision}==========================
@@ -229,8 +232,8 @@ That is, the Markov model can be expressed as:
 \begin{gather}
 t_{k+1}=t_{k} \cdot p
 \end{gather}
-
 Let the middle value of the status interval be $\overline{E}_{1}$,$\overline{E}_{2}$ and $\overline{E}_{3}$, so the error expectation of GM(1,1) in the kth year is:
+.
 \begin{gather}
 \eta =\begin{bmatrix}
 p_{E1} & p_{E2} & p_{E3}
@@ -334,8 +337,6 @@ The predicted solution obtained by gray prediction and Markov correction is show
 \end{figure}
 
 
-
-
 Similarly, the calculation of the medical demand forecast value for 2009-2018 is obtained as follows:
 \begin{gather}
 \widehat{X}(k+1)=258.7846e^{-0.043809k}-246.9258,k=1,2,\cdots,10
@@ -383,7 +384,6 @@ The medical demand forecast is classified into the error interval as shown in th
 \end{table}
 
 From this, the initial state probability vector $t_{0}$ is obtained, and the transfer matrix $P$ is:
-
 \begin{gather}
 \begin{matrix}
 t_{0}'=[3/10,2/5,3/10]\\ 
@@ -401,6 +401,7 @@ The predicted solution obtained by gray prediction and Markov correction is show
 
 
 \subsubsection{Conclusion}
+
 According to the direct comparison of the prediction solution curves in Figure ~\ref{afd}~ and figure ~\ref{asf}~, the predicted value corrected by Markov model has higher fitting degree and consistent volatility compared with the traditional gray prediction value, and can reflect the actual value fluctuation better than the traditional gray model prediction value. The prediction indexes of the two models are shown in table ~\ref{jjj}~:
 
  \begin{table}[htbp]
@@ -575,11 +576,61 @@ That is, the comprehensive evaluation index of the disease of $13$ is shown in t
   	\caption{TOPSIS scores for different diseases}\label{oc}
   \end{figure}
 
+
 \subsection{The model of Problem 3}
+	\subsubsection{Establishment of model}  
+	 \paragraph{ $M/M/c/\infty$ model}
+As the theory of $M/M/c/\infty$ illusteate:
+\begin{gather}
+\left\{\begin{array}{ll}{P_{0}=} & {\left[\sum_{k=0}^{-1} \frac{1}{k !}\left(\frac{\lambda}{\mu}\right)^{k}+\frac{1}{c !} \cdot \frac{1}{1-\rho} \cdot\left(\frac{\lambda}{\mu}\right)^{c}\right]^{-1}} \\ {P_{n}=} & {\left\{\begin{array}{ll}{\frac{1}{n !}\left(\frac{\lambda}{\mu}\right)^{n} P_{0}} & {(n \leqslant c)} \\ {\frac{1}{c ! c^{n-c}}\left(\frac{\lambda}{\mu}\right)^{n} P_{0}} & {(n>c)}\end{array}\right.}\end{array}\right.
+\end{gather}
+In the above expression, n is the amount of patient.$p_{n}$ is the probability of number of patient reach n in the moment t. C represents the amount of doctors in an outpatient department. $\lambda$ means the average arrival rate of patients. And the $\mu$ means the average inspection rate of the doctor.
 
-
-
+Based on this theory, the following relation is set up:       
+\begin{gather}
+\left\{\begin{array}{l}{L_{s}=L_{q}+\frac{\lambda}{\mu}} \\ {L_{q}=\sum_{n=c+1}^{\infty}(n-c) P_{n}=\frac{\left(c_{\rho}\right)^{c} \rho}{c !(1-\rho)^{2}} P_{0}}\end{array}\right.
+\end{gather}
+In the above expression, $L_{s}$ is the average length of the queuing which means the number of patient waiting in the system. Depending on it, we could derive the expression of average waiting time $W_{q}$ and average time of stay $W_{s}$:
+\begin{gather}
+\left\{\begin{matrix}W_{q}=\frac{L_{q}}{\lambda }
+\\ W_{s}=\frac{L_{s}}{\lambda }
+\end{matrix}\right.
+\end{gather}
+	\subsubsection{Solution of model}
+\paragraph{Optimized systems design} 
+For $M/M/c/\infty$ system, the expection of the social cost per hour in the steady state is set up as $Z$. And $Z$ could be calculated as the following expression:     
+ \begin{gather}
+ z=c_{s} \cdot c+c_{w} \cdot L_{s}
+ \end{gather}
+ In this expression, $C$ is the number of doctors in the outpatient department. $C_(s)$ represents the average hourly wage of the doctors while $C_(w)$ represents the patient's.$L_{s}$ is the amount of patient waiting in the system witch is function of $C$.Thus ,$Z$ is the function of $C$. To get the optimal solution of $C^*$ which make $Z$ the minimum, we adopt the marginal analysis to solve it.And accroding to the feature that $Z$ is the minimum, the following relation exists:  
+\begin{gather}
+\left\{\begin{matrix}Z(c^*)\leqslant Z(c^*-1)
+\\ Z(c^*)\leqslant Z(c^*+1)
+\end{matrix}\right.
+\end{gather}
+ Take expression (15) into expression (16) to gain:
+  \begin{gather}
+L(C^*)-L(C^*+1)\leqslant \frac{C_(s)}{C_(w)}\leqslant L(C^*-1)-L(C^*)
+ \end{gather}
+Thus, we utilize the ergodic algorithm to obtain the value of $C^*$.
 \subsection{The model of Problem 4}
+
+
+
+\subsection{A letter to the medical department}
+
+\textbf{Dear Medical leaders}:
+  ~\\
+
+
+According to our modeling research, the aging trend in China is increasingly strengthened, and the majority of people's medical needs are increasingly high. It is estimated that the aging population over 65 will reach 170 million in 2021, which means that China will enter the aging society. According to the data, China's aging is on the rise, and meeting the medical and old-age needs of the elderly will be a huge social problem. Therefore, we should take measures as soon as possible in the field of gerontology scientific research, clinical medicine, rehabilitation nursing and public health policy, health management to actively carry out the diagnosis and treatment of the elderly related diseases difficult critical illness, demonstration and promotion of appropriate and effective high-level diagnosis and treatment technology; We will carry out teaching and training of high-level geriatric medical personnel, and train backbone clinical technicians and academic leaders. Undertake national geriatric medicine clinical translational research, in view of the elderly health has a major impact on disease organizations to carry out the relevant scientific research, in a timely manner to translate into clinical application and scientific research achievements at home and abroad for the next "five-year plan", and establish a medical, nursing, scientific research, teaching, prevention, management and policy making of the "seven" function of the major disease prevention and health management at the core of the organization.
+
+Strengthening cooperation between public and private hospitals is the focus of improving medical efficiency. In order to alleviate the "three difficulties" of patients in public hospitals, such as difficulty in seeing a doctor, difficulty in hospitalization and difficulty in operation, public hospitals and private hospitals can cooperate and learn from each other. The cooperation between public hospitals and private hospitals includes public hospitals exporting management and technology to private hospitals, public hospitals borrowing beds from private hospitals, public hospitals hosting private hospitals, private hospitals or private capital participating in public hospitals. The cooperative hospital carries out standardized management and operation according to the standards of public hospitals to provide medical services for ordinary patients. At the same time, public hospitals' technical advantages, talent advantages and management advantages are utilized to enhance the popularity and credibility of private hospitals, improve the management and technical level of private hospitals, and create a win-win situation for public hospitals, private hospitals, patients and the society. It is suggested to set up a hospital management group with large public hospitals as the leading role to promote the development of private hospitals or small hospitals and at the same time make rational use of resources.
+
+Finally, according to the model in question 2, we can predict the key disease prevention of each province in the next few years, and the corresponding province can take emergency measures on the medical problems that should be solved most, strengthen the prevention and treatment of related diseases, establish an appropriate medical insurance system, and the corresponding hospital should also make preparations in advance. I believe that with the hard work of all medical staff, China's medical environment will be better and better.
+
+This is for your reference only.
+
 %===========================  \section{Sensitivity Analysis}===============================
   \section{Sensitivity Analysis}
 
