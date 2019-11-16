@@ -112,17 +112,30 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 \section{Introduction}	
 \subsection{Background}
 
+	With the rapid development of China's economy and the deepening trend of aging, people's demand for hospital health services is also getting higher and higher. Therefore, it is of great significance to establish an appropriate model to study the trend of aging in the future and the trend of people's demand for medical care. At the same time, the establishment of a reasonable competition and cooperation mechanism between private and public hospitals can also maximize the utilization of resources.
+
 \subsection{Work}
+	The problem requires us to make rational use of network resources?answer the following questions
+	
+	\begin{itemize}                                             
+		\item [1.] The aging trend of China and the people's medical needs to make a reasonable forecast.
+		\item [2.] Take a province as an example to analyze the most common disease in the future.
+		\item [3.] According to the medical needs of patients, an optimal queuing method is proposed to equalize the number of queues between different hospitals and different departments of the same hospital.
+		\item [4.] Put forward the best cooperation and competition strategy between private hospital and public hospital.
+		\item [5.] Write recommendations for relevant medical departments and prepare "14 five-year plans" for their reference.
+	\end{itemize}		
 
 %============================\input{definitions1}===========
 \section{Problem Analysis}
 \paragraph{Analysis of question one}
 
-Make reasonable predictions of the aging trend of China and the medical needs of the residents according to the data of residents' income, age structure of the population and the economic development level etc. in the relevant statistical analysis data of the National Bureau of Statistic. 
-According to the relevant data from 2009 to 2018 in the National Bureau of statistics, the group first selects appropriate indicators and then establishes a grey prediction model to predict and analyze the population aging trend and residents' medical needs of the epidemic in 2009-2018. Then, through the Markov model, the data from 2009-2018 simulates the distribution of residual in each interval and calculates the expectation of the predicted residual in 2019-2021 Value. Finally, the prediction results and residual expectation are made to be different, and the inherent deviation of traditional grey prediction is corrected. Through the combination of the two models, the goal of scientific prediction of the future development of population aging and the trend of residents' medical needs is achieved. Its thought flow chart is shown in Figure ~\ref{lct}~ :
+
+According to the relevant data from 2009 to 2018 in the National Bureau of statistics, the group first selects appropriate indicators and then establishes a grey prediction model to predict and analyze the population aging trend and residents' medical needs of the epidemic in 2009-2018. Then, through the Markov model, the data from 2009-2018 simulates the distribution of residual in each interval and calculates the expectation of the predicted residual in 2019-2021 Value. Finally, the prediction results and residual expectation are made to be different, and the inherent deviation of traditional grey prediction is corrected. Through the combination of the two models, the goal of scientific prediction of the future development of population aging and the trend of residents' medical needs is achieved. 
 
 
 \paragraph{Analysis of question two}
+
+According to the second question, we are asked to analyze the most common diseases in a specific province in the future . we took the Hubei province as an example to collect data on common diseases such as heart  disease ,and established a model with Markov model.And calculated The number of cases, growth rate of cases, growth rate of deaths and death rate of each disease ,Then substituted the five index data into the principal component analysis model. The disease with the highest score was the most common disease in the province in the future.
 
 \paragraph{Analysis of question three}
 \paragraph{Analysis of question four}
@@ -187,18 +200,18 @@ In the formula:$a$ is Develop grayscale,$u$ is Endogenous control grayscale.Let 
 Solving equation~\ref{333}~,The preliminary prediction model for the $k+1$ aging is available:
 
 \begin{gather}
-\widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,16
+\widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,10
 \end{gather}
 
 Similarly, the death number is taken as the vector $X^{(0)}=[x^{(0)}(1),x^{(0)}(2),\cdots,x^{(0)}(10)]$ Bring in the model to obtain the 2019-2021 death number grayscale prediction value.
 	     
-	     \paragraph{Markov model correction}
+	     \paragraph{Markov correction}
 The Markov model is used to estimate the state and state probability of the GM(1,1) prediction error term, and the predicted value of the predicted state is used to correct the GM(1,1) prediction value. The state is divided by the 2009-2018 forecast data and the real data residual, and the residual sequence is:
 \begin{gather*}
 \varepsilon =[\varepsilon(1) ,\varepsilon(2), \cdots,\varepsilon(10)]
 \end{gather*}
 
-Absolute maximum residual value $\delta _{max}=\underset{1\leqslant i\leqslant13 }{max}\left | \varepsilon(i) \right |$.The prediction error is divided into three states. Let $\lambda =\frac{\delta _{max}}{6}$. The status is$E_{1}:(-3\lambda,-\lambda)$,$E_{2}:(-\lambda,\lambda)$ and $E_{1}:(\lambda,3\lambda)$. The formula for calculating the initial state probability vector is:
+Absolute maximum residual value $\delta _{max}=\underset{1\leqslant i\leqslant10 }{max}\left | \varepsilon(i) \right |$.The prediction error is divided into three states. Let $\lambda =\frac{\delta _{max}}{6}$. The status is$E_{1}:(-3\lambda,-\lambda)$,$E_{2}:(-\lambda,\lambda)$ and $E_{1}:(\lambda,3\lambda)$. The formula for calculating the initial state probability vector is:
 
 \begin{gather}
 \left\{\begin{matrix}
@@ -228,7 +241,7 @@ p_{E1} & p_{E2} & p_{E3}
 \end{bmatrix}
 \end{gather}
 
-When the predicted value of GM(1,1) for the number of patients in the $k$ year is $\widehat{x}(k)$, \textbf{Modified grey Markov combination forecast model} $\overline{x}(k)$ Can be recorded as?
+When the predicted value of GM(1,1) for the number of patients in the $k$ year is $\widehat{x}(k)$, Modified grey Markov combination forecast model $\overline{x}(k)$ Can be recorded as?
 \begin{gather}
 \overline{x}(k) =\widehat{x}(k)-\eta
 \end{gather}
@@ -261,7 +274,7 @@ The predicted values of the Chinese elderly population forecast for 2009-2018 by
 
 
 \begin{gather}
-\widehat{X}(k+1)=-???e^{-???k}+???,k=1,2,\cdots,10
+\widehat{X}(k+1)=266856.0905e^{0.042782k}-255354.5841,k=1,2,\cdots,10
 \end{gather}
 
 The error status range is shown in the table ~\ref{ff}~.
@@ -276,7 +289,7 @@ The error status range is shown in the table ~\ref{ff}~.
 		& {\centering $E_{3}$}
 		\\
 		\midrule[0.5pt]
-		Residual interval &  $[-???,-???]$  &$(-???,???]$ & $(???,???]$   \\ 
+		Residual interval & $[-469,-221]$  &$(-221,221]$ & $(221,469]$   \\ 
 		\bottomrule[1.5pt]	
 	\end{tabular}
 \end{table}  
@@ -307,25 +320,25 @@ From this, the initial state probability vector $t_{0}$ is obtained, and the tra
 
 \begin{gather}
 \begin{matrix}
-t_{0}'=[???,???,???]\\ 
+t_{0}'=[3/10,3/5,1/10]\\ 
 \\ 
-P'=\left(\begin{array}{lll} ??? & ??? & ???\\ ??? & ??? & ??? \\??? & ??? & ???\end{array}\right)
+P'=\left(\begin{array}{lll} 1/3 & 2/3 & 0\\ 1/4 & 5/8 & 1/8 \\0 & 1 & 0\end{array}\right)
 \end{matrix}
 \end{gather}
 
 The predicted solution obtained by gray prediction and Markov correction is shown in the figure ~\ref{afd}~.
-%\begin{figure}[htbp]
-%	\centering
-%	\includegraphics[width=\textwidth]{figures/f.png}
-%	\caption{???????????}\label{afd}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{pic/Figure_1.png}
+	\caption{Comparison curve of prediction value of the number of the elderly}\label{afd}
+\end{figure}
 
 
 
 
 Similarly, the calculation of the medical demand forecast value for 2009-2018 is obtained as follows:
 \begin{gather}
-\widehat{X}(k+1)=-???e^{-???k}+???,k=1,2,\cdots,10
+\widehat{X}(k+1)=258.7846e^{-0.043809k}-246.9258,k=1,2,\cdots,10
 \end{gather}
 
 
@@ -341,12 +354,12 @@ The error status range is shown in the table ~\ref{ss}~.
 		& {\centering $E_{3}$}
 		\\
 		\midrule[0.5pt]
-		Residual interval &  $[-???,-???]$  &$(-???,???]$ & $(???,???]$   \\ 
+		Residual interval &  $[-164.45,-58.74]$  &$(-58.74,58.74]$ & $(58.74,164.45]$  \\ 
 		\bottomrule[1.5pt]	
 	\end{tabular}
 \end{table}
 
-The medical demand forecast is classified into the error interval as shown in the table ~\ref{sss}~:
+The medical demand forecast is classified into the error interval as shown in the table ~\ref{sss}~.
 \begin{table}[htbp]
 	\centering\caption{Medical demand error status interval}\label{sss}
 	\begin{tabular}{ccccccccccc}
@@ -364,33 +377,203 @@ The medical demand forecast is classified into the error interval as shown in th
 	&{\centering 2018}
 	\\
 	\midrule[0.5pt]
-	Residual interval &  $E_{2}$  &$E_{2}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{2}$&$E_{1}$&$E_{1}$&$E_{2}$&$E_{2}$\\ 
+	Residual interval &  $E_{2}$  &$E_{3}$ & $E_{1}$&$E_{2}$ &$E_{3}$ &$E_{1}$&$E_{1}$&$E_{3}$&$E_{2}$&$E_{2}$\\ 
 	\bottomrule[1.5pt]	
 \end{tabular}
 \end{table}
+
 From this, the initial state probability vector $t_{0}$ is obtained, and the transfer matrix $P$ is:
 
 \begin{gather}
 \begin{matrix}
-t_{0}'=[???,???,???]\\ 
+t_{0}'=[3/10,2/5,3/10]\\ 
 \\ 
-P'=\left(\begin{array}{lll} ??? & ??? & ???\\ ??? & ??? & ??? \\??? & ??? & ???\end{array}\right)
+P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{array}\right)
 \end{matrix}
 \end{gather}
 
 The predicted solution obtained by gray prediction and Markov correction is shown in the figure ~\ref{asf}~.
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=\textwidth]{figures/s.png}
-%	\caption{???????????}\label{asf}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{pic/Figure_2.png}
+	\caption{Comparison curve of medical demand forecast}\label{asf}
+\end{figure}
 
 
 \subsubsection{Conclusion}
+According to the direct comparison of the prediction solution curves in Figure ~\ref{afd}~ and figure ~\ref{asf}~, the predicted value corrected by Markov model has higher fitting degree and consistent volatility compared with the traditional gray prediction value, and can reflect the actual value fluctuation better than the traditional gray model prediction value. The prediction indexes of the two models are shown in table ~\ref{jjj}~:
+
+ \begin{table}[htbp]
+	\centering\caption{Test of prediction results}\label{jjj}
+	\begin{tabular}{cccc}
+		\toprule[1.5pt]
+		{\centering Test parameters}
+		&{\centering RMSE}
+		&{\centering MAPE}
+		&{\centering NSE}
+		\\
+		\midrule[0.5pt]	
+		GM(1,1) for elderly people&   3040.04 &  0.0213 & 0.9455\\ 
+		Markov-GM(1,1) for elderly people&  1238.64  &  0.0095  &  0.9900 \\ 
+		GM(1,1) for medical demand&  265.88   & 0.0628   &0.8178  \\
+		Markov-GM(1,1) for medical demand &   101.13 &   0.0273 & 0.9736  \\   
+		\bottomrule[1.5pt]	
+	\end{tabular}
+\end{table} 
+
+From the above prediction results, it can be concluded that the RMSE of the number of patients and the number of deaths calculated by using the modified grey Markov model is smaller than that of the traditional grey model, which shows that the modified results are more reliable. The MPAE value of the modified model is closer to $0 $and the NSE value is closer to $1 $compared with the traditional model, which shows that the improved gray Markov model has a higher fitting degree and better prediction effect, which is suitable for the short-term prediction of the number of infectious diseases and deaths.
+
 
 	  \subsection{The model of Problem 2}
+	\subsubsection{Establishment of model}  
+According to the different data of each year,we modified the grey markov model of the first question.
+
+	  \begin{gather}
+\left\{\begin{matrix}
+\overline{x}(k) =\widehat{x}(k)-\eta\\
+\widehat{X}(k+1)=[X^{(0)}(1)-\frac{u}{a}]e^{-ak}+\frac{u}{a},k=1,2,\cdots,13\\ 
+\eta =\begin{bmatrix}
+p_{E1} & p_{E2} & p_{E3}
+\end{bmatrix} \cdot \begin{bmatrix}
+\overline{E}_{1} & \overline{E}_{2} & \overline{E}_{3}
+\end{bmatrix}^{T}
+\end{matrix}\right.
+\end{gather}
+
+The revised predicted number of patients in year $k$ was  $\overline{x}(k)$ , $\widehat{x}(k)$ is the traditional predicted value of  $GM(1,1) $, $\eta$ is the expected error of $GM$ in year$ k$.
+
+	     \subsubsection{Calculation of predictors}
+We set $X_{i}$ as the incidence data of 13 diseases from 2009 to 2021 in hubei province, $X_{i}=[x_{i1},x_{i2},x_{i3},x_{i4},x_{i5}](i=1,2,\cdots,13)$, The prediction results are obtained by using markov model. Similarly, Put the death toll data $X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}'](i=1,2,\cdots,13)$ into the forecasting results $X_{i}'=[x_{i1}',x_{i2}',x_{i3}',x_{i4}',x_{i5}',x_{i6}'](i=1,2,\cdots,13)$. 
+
+According to the prediction, the growth rate of the number of cases, the growth rate of the number of deaths and the mortality rate of the sick population in 2019 are respectively:
+
+ \begin{gather}
+\left\{\begin{matrix}
+\delta _{i}=\frac{x_{i6}-x_{i5}}{x_{i5}} \times 100\%\\ 
+\delta '_{i} =\frac{x_{i6}'-x_{i5}'}{x_{i5}'} \times 100\%\\ 
+\eta_{i} =\frac{x_{i6}'}{x_{i6}} \times 100\%
+\end{matrix}\right.
+\end{gather}
 
 
+Get the decision attribute vector of each group:
+
+\begin{gather*}
+d_{i}=[x_{i6},x_{i6}', \delta_{i} , \delta _{i}',\eta_{i} ]
+\end{gather*}
+
+
+Similarly, the number of morbidity and mortality of various diseases in Hubei province were brought into the model to obtain the decision attribute vectors of various diseases $d_{i}'(i=1,2,\cdots,13)$.
+
+\subsubsection{TOPSIS}
+
+
+Let the disease multi-attribute decision matrix $A=(a_{ij})_{13 \times 5}$ be expressed as:
+
+  \begin{gather*}
+A= [d_{1}^{T},d_{2}^{T},\cdot,,d_{13}^{T}]^{T}
+\end{gather*}
+
+Normalize $A$ to obtain normalized decision matrix$B=(b_{ij})_{13 \times 5}$, where:
+
+\begin{gather*}
+b_{ij}=a_{ij}/\sqrt{\sum_{i=1}^{13}a_{ij}^{2}},i=1,2,\cdots,13;j=1,2,\cdots,5
+\end{gather*}
+
+
+It is assumed that regions with high growth rates of the number of patients and deaths need to focus on prevention and control,  construct weight vectors:
+
+
+ \begin{gather}
+W=[0.15,0.3,0.15,0.3,0.1]
+\end{gather}
+
+The weighted canonical matrix, positive ideal solution,  negative ideal solutioncan be obtained as follows: $C=(c_{ij})_{13 \times 5}$,  $C^{*}=[c_{1}^{*},c_{2}^{*},c_{3}^{*},c_{4}^{*},c_{5}^{*}]$,  $C^{0}=[c_{1}^{0},c_{2}^{0},c_{3}^{0},c_{4}^{0},c_{5}^{0}]$,  where in:
+     
+     \begin{gather*}
+\left\{\begin{matrix}
+c_{ij}=w_{j} \cdot b_{ij} ,i=1,2,\cdots,13;j=1,2,\cdots,5\\
+c_{j}^{*}=\underset{i}{max}(c_{ij}) ,j=1,2,\cdots,5\\
+c_{j}^{0}=\underset{i}{min}(c_{ij}) ,j=1,2,\cdots,5
+\end{matrix}\right.
+\end{gather*}
+
+Calculating the distance from each disease attribute decision vector to the positive and negative ideal solution. The distance from      $d_{i}$ to the positive ideal solution and from $d_{i}$ to the negative ideal solution is: 
+
+\begin{gather*}
+\left\{\begin{matrix}
+s_{j}^{*}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^*)^{2}},i=1,2,\cdots,13\\
+s_{j}^{0}=\sqrt{\sum_{j=1}^{n}(c_{ij}-c_{j}^{0})^{2}},i=1,2,\cdots,13
+\end{matrix}\right.
+\end{gather*}
+
+Calculating the comprehensive evaluation index of each program:
+ \begin{gather}
+f_{i}^{*}=s_{j}^{0}/(s_{j}^{0}+s_{j}^{*}),i=1,2,\cdots,13
+\end{gather}
+
+Obtain the order of key prevention and control diseases according to  $f_{i}^{*}$ (range from large to small). Similarly, the decision vector $d_{i}'(i=1,2,\cdots,13)$ of each disease can be brought into TOPSIS model to obtain the priority of disease prevention and control
+
+
+\subsubsection{Results and Conclusion}
+
+The number of cases and deaths of each occupation were put into the grayscale markov model to obtain the predicted values, as shown in table ~\ref{zhdsaiye1}~ .
+
+
+
+ \begin{table}[htbp]
+	\centering\caption{Predicted results of patients with various diseases}\label{zhdsaiye1}
+	\begin{tabular}{ccccccc}
+		\toprule[1.5pt]
+		{\centering disease/10*thousand}
+		& {\centering 2009}
+		& {\centering 2010}
+		& {\centering $\cdots$}
+		& {\centering 2019}
+		& {\centering 2020}
+		& {\centering 2021}
+		\\
+		\midrule[0.5pt]	
+		Immunodeficiency &   1.5686& 1.5021&	$\cdots$ &	1.3377
+		  & 1.2777& 1.2673\\ 
+		Endocrine disease&  20.3322 &  18.129 &	$\cdots$ &20.3322
+		  &	19.2462&18.6414\\ 
+		Nervous system&  6.8927& 5.8433 &		$\cdots$  &	8.6325 &	8.9582&7.8506\\
+		$\cdots$ &  $\cdots$ &  $\cdots$&  $\cdots$&  $\cdots$&  $\cdots$&  $\cdots$   \\   
+		Heart disease  & 128.8231
+		& 129.1872
+		&$\cdots$ 
+		&149.45
+		&153.454
+		&155.6778
+		 \\ 
+		infectious disease & 7.9431
+		 &7.421
+		 &$\cdots$
+		  &5.437
+		  &	4.824
+		  &	4.534
+		   \\
+		\bottomrule[1.5pt]	
+	\end{tabular}
+\end{table}
+
+Calculate the positive ideal solution and the negative ideal solution as:
+
+\begin{gather*}
+\begin{matrix}
+C^{0}=[0.0066,0.0048,0.0653,0.0261,0.0331]\\
+C^{*}=[-0.1856,-0.1847,-0.0809,-0.1163,-0.0929]
+\end{matrix}
+\end{gather*}
+
+That is, the comprehensive evaluation index of the disease of $13$ is shown in the figure ~\ref{oc}~:
+
+  \begin{figure}[htbp]
+  	\centering
+  	\includegraphics[width=\textwidth]{pic/Figure_3.png}
+  	\caption{TOPSIS scores for different diseases}\label{oc}
+  \end{figure}
 
 \subsection{The model of Problem 3}
 
