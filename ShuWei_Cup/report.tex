@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{fancybox}
 \usepackage{fancyhdr}
+\usepackage{float}
 \usepackage{lastpage}
 \usepackage{hyperref}
 \hypersetup{
@@ -44,7 +45,7 @@
 \graphicspath{{pic/}}
 %=========================¶¨ÒåÒ³Ã¼===============================
 \pagestyle{fancy} 
-\rhead{page\thepage\ of \pageref{LastPage}}
+\rhead{page \thepage\ of \pageref{LastPage}}
 \chead{} \lhead{Team \footnotesize{\#} 201906177} \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
@@ -92,9 +93,15 @@ Problem Chosen\\[5pt]
 \vspace{7pt}
 
 %==========================abstract.tex================================
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-\textbf{keyword}: sweet spot; corked bat; coefficient of restitution;%xxx speed; finite element method; 
+In view of the first problem, on the basis of the traditional grey prediction model, the Markov chain is used to correct the prediction result error, and the grey Markov model is obtained and predicted. This group first established the traditional GM (1,1) model to predict and analyze the number of elderly people and medical needs in the period of 2009-2021. Then through Markov model, the expected value of predicted residual is calculated. Finally, residual expectation is used to correct the inherent deviation of traditional grey prediction. The prediction error of the model is less than 7\%, and the NSE value approaches to 1, which indicates that the model has high reliability.
+~\\
+
+To solve the problem two, the problem based model was used to predict the characteristics of the disease, and then the key prevention and control objects were selected by TOPSIS. Firstly, the number of disease and death in Hubei Province is selected into the grey Markov model of question one. The number of morbidity and mortality, the growth rate of morbidity and mortality and the morbidity and mortality in 2019-2021 are predicted. The above five indexes are brought into the TOPSIS comprehensive evaluation model, with weights of 0.15, 0.3, 0.15, 0.3 and 0.1 respectively. The comprehensive evaluation scores of each population and each region are calculated. The ranking results show that heart disease is the key monitored disease in Hubei Province.
+
+~\\
+
+\textbf{keyword}: GM (1,1); Markov; TOPSIS;%xxx speed; finite element method; 
 \newpage
 
 %====================Ä¿Â¼Ò³========================================
@@ -151,11 +158,29 @@ The task four ask us to analyse the complex cooperation and competition between 
 	\hline
 	symbols&definitions\\
 	\hline
-	$v_i$& velocity of ball before collision\\
-	$v_f$& velocity of ball after collision\\
-	$V_f$& velocity of bat after collision\\
-	$S$ & the shear modulus the bat\\
-	$Y$ & Young¡¯s modulus of the bat\\
+		$X^{(i)}$  & People time series  \\ 
+$a$  &  Developing grayscale \\ 
+$u$  &  Endogenous control gray\\
+$\widehat{\alpha}$  &  Parameter vector to be estimated \\ 
+$\varepsilon$ & Residual sequence\\
+$P$	 &  State transition matrix  \\ 
+$E_{k}$ &  State interval \\ 
+%	$n_{Ek}$	 &  ??$E_{k}$????? \\ 
+$\eta $  &   Error expectation\\ 
+$\overline{x}(k)$  &  GM-Markov combination forecast value\\	
+$\widehat{x}(k)$ & GM prediction value\\
+$t_{0}'$ &  Initial state probability vector\\ 
+$A$ & Multiple attribute decision matrix\\
+$B$ & Normalized decision matrix\\
+$W$ & Weight vector\\
+$C$  & Weighted gauge matrix\\
+$C^{*}$ & Positive ideal solution\\
+$C^{0}$ & Negative ideal solution\\
+$d_{i}$ & Attribute decision vector\\
+$ f_{i}^{*}$ &  Comprehensive evaluation index\\
+$ \delta_{i}$ & Incidence growth rate \\
+$ \eta_{i}$    & Morbidity and mortality \\
+
 	\hline
 \end{tabular}
 \end{center}
@@ -163,11 +188,10 @@ The task four ask us to analyse the complex cooperation and competition between 
 
 \subsection{Fundamental assumptions}
 \begin{enumerate}
-%\item The bat is rigid, so there is no vibration in the bat(for the basic model).
-%\item The ball hit and rebound perpendicular to the bat and is in the plane of the swing.
-%\item The ball can be considered as a linear spring with friction.
-%\item The bat is a free object in collision,and both ends of the bat is completely free.
-%\item The vibration of the bat is harmonic(for augmented model).
+\item In order to ensure the accuracy of the prediction results, it is assumed that the data given in the database is authentic.
+\item It is assumed that the growth rate of morbidity and mortality is more important than its base in the key prevention and control of diseases.
+\item Ignore the influence of different diagnosis methods on the total number of patients and deaths.
+
 \item The hourly wage of patient could be considered as the cost dissipated in queuing. And the hourly wage of  doctor could be seen as the cost of cost of service.
 \end{enumerate}
 
@@ -282,7 +306,7 @@ The predicted values of the Chinese elderly population forecast for 2009-2018 by
 
 The error status range is shown in the table ~\ref{ff}~.
 
- \begin{table}[htbp]
+ \begin{table}[H]
 	\centering\caption{The age range division of the elderly}\label{ff}
 	\begin{tabular}{cccc}
 		\toprule[1.5pt]
@@ -297,7 +321,7 @@ The error status range is shown in the table ~\ref{ff}~.
 	\end{tabular}
 \end{table}  
 According to the error interval range, the predicted number of elderly people in 2009-2018 is classified into the error interval as shown in the table ~\ref{fff}~.
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering\caption{The age range division of the elderly}\label{fff}
 	\begin{tabular}{ccccccccccc}
 		\toprule[1.5pt]
@@ -345,7 +369,7 @@ Similarly, the calculation of the medical demand forecast value for 2009-2018 is
 
 
 The error status range is shown in the table ~\ref{ss}~.
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering\caption{Medical demand status interval division}\label{ss}
 	\begin{tabular}{cccc}
 		\toprule[1.5pt]
@@ -360,8 +384,8 @@ The error status range is shown in the table ~\ref{ss}~.
 	\end{tabular}
 \end{table}
 
-The medical demand forecast is classified into the error interval as shown in the table ~\ref{sss}~.
-\begin{table}[htbp]
+The medical demand forecast is classified into the error interval as shown in the table ~\ref{Hss}~.
+\begin{table}[H]
 	\centering\caption{Medical demand error status interval}\label{sss}
 	\begin{tabular}{ccccccccccc}
 	\toprule[1.5pt]
@@ -393,7 +417,7 @@ P'=\left(\begin{array}{lll} 0 & 1/2 & 1/2\\ 1/8 & 3/4 & 1/8 \\1/2 & 1/2 & 0\end{
 \end{gather}
 
 The predicted solution obtained by gray prediction and Markov correction is shown in the figure ~\ref{asf}~.
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{pic/Figure_2.png}
 	\caption{Comparison curve of medical demand forecast}\label{asf}
@@ -404,7 +428,7 @@ The predicted solution obtained by gray prediction and Markov correction is show
 
 According to the direct comparison of the prediction solution curves in Figure ~\ref{afd}~ and figure ~\ref{asf}~, the predicted value corrected by Markov model has higher fitting degree and consistent volatility compared with the traditional gray prediction value, and can reflect the actual value fluctuation better than the traditional gray model prediction value. The prediction indexes of the two models are shown in table ~\ref{jjj}~:
 
- \begin{table}[htbp]
+ \begin{table}[H]
 	\centering\caption{Test of prediction results}\label{jjj}
 	\begin{tabular}{cccc}
 		\toprule[1.5pt]
@@ -522,7 +546,7 @@ The number of cases and deaths of each occupation were put into the grayscale ma
 
 
 
- \begin{table}[htbp]
+ \begin{table}[H]
 	\centering\caption{Predicted results of patients with various diseases}\label{zhdsaiye1}
 	\begin{tabular}{ccccccc}
 		\toprule[1.5pt]
@@ -540,6 +564,12 @@ The number of cases and deaths of each occupation were put into the grayscale ma
 		Endocrine disease&  20.3322 &  18.129 &	$\cdots$ &20.3322
 		  &	19.2462&18.6414\\ 
 		Nervous system&  6.8927& 5.8433 &		$\cdots$  &	8.6325 &	8.9582&7.8506\\
+		Urogenital diseases&7.3363
+		& 7.2032
+		&		$\cdots$  &6.892
+		&6.943
+		&7.042
+		\\
 		$\cdots$ &  $\cdots$ &  $\cdots$&  $\cdots$&  $\cdots$&  $\cdots$&  $\cdots$   \\   
 		Heart disease  & 128.8231
 		& 129.1872
@@ -555,12 +585,46 @@ The number of cases and deaths of each occupation were put into the grayscale ma
 		  &	4.824
 		  &	4.534
 		   \\
+		   Perinatal diseases
+		   & 1.5351 &2.0284 &$\cdots$
+		   &1.124 &0.943  &0.7423 \\
+		   
+		    Digestive system diseases
+		   & 16.578
+		   
+		   &16.9643
+		   
+		   &$\cdots$
+		   &14.45
+		   
+		   &14.43
+		   
+		   
+		   &14.34
+		   
+		   \\
+		   Other
+		   & 10.7305
+		   
+		   
+		   &9.5811
+		   
+		   
+		   &$\cdots$
+		   &6.745
+		   
+		   
+		   &7.345
+		   
+		   
+		   &7.123
+		   
+		   \\
 		\bottomrule[1.5pt]	
 	\end{tabular}
 \end{table}
 
 Calculate the positive ideal solution and the negative ideal solution as:
-
 \begin{gather*}
 \begin{matrix}
 C^{0}=[0.0066,0.0048,0.0653,0.0261,0.0331]\\
@@ -568,13 +632,25 @@ C^{*}=[-0.1856,-0.1847,-0.0809,-0.1163,-0.0929]
 \end{matrix}
 \end{gather*}
 
+~\\
+
 That is, the comprehensive evaluation index of the disease of $13$ is shown in the figure ~\ref{oc}~:
 
-  \begin{figure}[htbp]
+  \begin{figure}[H]
   	\centering
   	\includegraphics[width=\textwidth]{pic/Figure_3.png}
   	\caption{TOPSIS scores for different diseases}\label{oc}
   \end{figure}
+
+
+According to TOPSIS ranking, the number of heart attack and death in Hubei Province is on the rise, and the rising rate is high, which belongs to the key population of prevention and control.
+
+
+  \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pic/Figure_4.png}
+	\caption{Focus on diseases}\label{oc4}
+\end{figure}
 
 
 \subsection{The model of Problem 3}
@@ -659,24 +735,18 @@ Finally, according to the model in question 2, we can predict the key disease pr
 
 This is for your reference only.
 
-
-
-%===========================  \section{Sensitivity Analysis}===============================
-  \section{Sensitivity Analysis}
-
 %====================================\input{StrengthsandWeaknesses}============================================
 \section{Strengths and Weaknesses}
 
 \subsection{Strengths}
 \begin{enumerate}
-\item Vibration of bat is taken into account so that the accuracy of the model can be fairly good.
-\item Physical explanation is put forward besides the model for a better understanding of the collision process.
-\item Figures are used for explanation of the problem,thus making it more intuitive and easier to understand.
+\item The gray prediction value improved by Markov model has higher fitting degree with the actual value, and the volatility is consistent, so the prediction effect is better
+\item the queue model of more service system based on the analysis of queue Doctor-patient system with the method of queueing theory.
 \end{enumerate}
 
 \subsection{Weaknesses}
 \begin{enumerate}
-\item The ball is actually nonlinear when deformation of the ball go beyond a certain limit.The approximation of linear model turned to be flawed when the force applied on the ball become very large.
+\item The GM(1,1) prediction model can only make short-term prediction, and is not suitable for long-term prediction.
 \item Effective coefficient of restitution can not be calculated accurately.This affect the accuracy of the result of the model.
 \end{enumerate}
 
@@ -688,14 +758,25 @@ This is for your reference only.
 %	%???????wenxian.bib?????
 %	
 \begin{thebibliography}{9}%??9
-	\bibitem{bib:one}Saad Ahmed Javed,Sifeng Liu. Correction to: Predicting the research output/growth of selected countries: application of Even GM (1, 1) and NDGM models[J]. Scientometrics,2019,120(3).
-	\bibitem{bib:2}???,???,???.?????????????????[J].??????,2018(15):74-75.	
-	\bibitem{bib:3}Yawen Wang,Zhongzhou Shen,Yu Jiang. Analyzing maternal mortality rate in rural China by Grey-Markov model[J]. Medicine,2019,98(6).
+	\bibitem{bib:one}Javed S A, Liu S, Mahmoudi A, et al. Patients' satisfaction and public and private sectors' health care service quality in Pakistan: Application of grey decision analysis approaches[J]. The International journal of health planning and management, 2019, 34(1): e168-e182.
+	
+	\bibitem{bib:2}Xu S, Zou B, Shafi S, et al. A hybrid Grey-Markov/LUR model for PM10 concentration prediction under future urban scenarios[J]. Atmospheric environment, 2018, 187: 401-409.
+	
+	\bibitem{bib:3}Ye J, Dang Y, Li B. Grey-Markov prediction model based on background value optimization and central-point triangular whitenization weight function[J]. Communications in Nonlinear Science and Numerical Simulation, 2018, 54: 320-330.
+	
 	\bibitem{bib:4}Saad Ahmed Javed,Sifeng Liu. Correction to: Predicting the research output/growth of selected countries: application of Even GM (1, 1) and NDGM models[J]. Scientometrics,2019,120(3).
-	\bibitem{bib:5}??,???,???.??????GM(1,N)-Markov???????[J].??????,2019(03):43-48.
-	\bibitem{bib:6}???,???,???,???.??GM(1,1)?????????GM(1,1)????????????????[J].???????,2011,45(09):1075-1079.
-	\bibitem{bib:7}Kate Childs,Christopher Davis,Mary Cannon,Sarah Montague,Ana Filipe,Lily Tong,Peter Simmonds,Donald Smith,Emma C. Thomson,Geoff Dusheiko,Kosh Agarwal. Suboptimal SVR rates in African patients with atypical Genotype 1 subtypes: implications for global elimination of Hepatitis C[J]. Journal of Hepatology,2019.
-	\bibitem{bib:8}Yuyan Cao. Failure Prognosis for Electro-Mechanical Actuators Based on Improved SMO-SVR Method[A]. ?????????????????????????????????IEEE??????????.Proceedings of 2016 IEEE Chinese Guidance, Navigation and Control Conference (IEEE CGNCC2016)[C].2016:6.
+	
+	\bibitem{bib:5}Ervural B C, Zaim S, Demirel O F, et al. An ANP and fuzzy TOPSIS-based SWOT analysis for Turkey?s energy planning[J]. Renewable and Sustainable Energy Reviews, 2018, 82: 1538-1550.
+	
+	\bibitem{bib:6}Olson D L. Comparison of weights in TOPSIS models[J]. Mathematical and Computer Modelling, 2004, 40(7-8): 721-727.
+	
+	\bibitem{bib:7}Gu M, Johar M. Profiling hospital utilization in a mixed public?private system[J]. Applied Economics, 2017, 49(4): 361-375.
+	
+	\bibitem{bib:8}Alnowibet K, Tadj L. Analysis of Two Phases Queue With Vacations and Breakdowns Under T-Policy[M]//Advanced Methodologies and Technologies in Digital Marketing and Entrepreneurship. IGI Global, 2019: 13-31.
+	
+	\bibitem{bib:9}Liao J, Mawditt C, Scholes S, et al. Similarities and Differences in Health-Related Behaviour Clustering Among Older Adults in East and West: A Latent Class Analysis of Global Ageing Cohorts[J]. Available at SSRN 3218733, 2018.
+	
+	
 \end{thebibliography}
 
 \newpage
