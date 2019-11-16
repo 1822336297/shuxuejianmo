@@ -94,14 +94,18 @@ Problem Chosen\\[5pt]
 
 %==========================abstract.tex================================
 
-In view of the first problem, on the basis of the traditional grey prediction model, the Markov chain is used to correct the prediction result error, and the grey Markov model is obtained and predicted. This group first established the traditional GM (1,1) model to predict and analyze the number of elderly people and medical needs in the period of 2009-2021. Then through Markov model, the expected value of predicted residual is calculated. Finally, residual expectation is used to correct the inherent deviation of traditional grey prediction. The prediction error of the model is less than 7\%, and the NSE value approaches to 1, which indicates that the model has high reliability.
-~\\
+With the rapid development of China's economy and society, and the aging trend, the demand for hospital health service continues to increase.The core objective of this paper is to establish mathematical models to describe the relationship between the common disease, the medical development and the hospitals. Thus we can allocate social resources more appropriately.
 
-To solve the problem two, the problem based model was used to predict the characteristics of the disease, and then the key prevention and control objects were selected by TOPSIS. Firstly, the number of disease and death in Hubei Province is selected into the grey Markov model of question one. The number of morbidity and mortality, the growth rate of morbidity and mortality and the morbidity and mortality in 2019-2021 are predicted. The above five indexes are brought into the TOPSIS comprehensive evaluation model, with weights of 0.15, 0.3, 0.15, 0.3 and 0.1 respectively. The comprehensive evaluation scores of each population and each region are calculated. The ranking results show that heart disease is the key monitored disease in Hubei Province.
+In the first task, on the basis of the traditional grey prediction model, we use the Markov chain to correct the result residual. We first established the traditional GM (1,1) model to predict and analyze the proportion of elderly people and medical demand in the period of 2009-2021. Then we calculate the expected value of predicted residual through Markov model. Finally, residual expectation is used to correct the inherent deviation of traditional grey prediction. The prediction residual of the model is less than 7\%, and the NSE value approaches to 1, which indicates that the model has high reliability.
 
-~\\
+In the second task, accroding to characteristics of each disease, we selecte the most common diease by TOPSIS. Firstly, via the grey Markov model of question one, we predict number of disease and death in Hubei Province. The morbidity and mortality, the growth rate of morbidity and mortality and the morbidity and mortality in 2019-2021 are obtain. The above five factor are brought into the TOPSIS model, with weights of 0.15, 0.3, 0.15, 0.3 and 0.1 respectively. The comprehensive evaluation scores of each diease and each region are calculated. The ranking results show that heart disease is the key monitored disease in Hubei Province.
 
-\textbf{keyword}: GM (1,1); Markov; TOPSIS;%xxx speed; finite element method; 
+In the third task, accroding to the data of real world hospital, we first establish the $M/M/c/\infty$ queuing model and then abstract the medical statistic into model parameters. Then based on this queuing model, we adopt the optimized systems design by figuring out the number of docters in each outpatient department where the social cost get to the minimum. 
+
+In the forth task, we use latent class analysis (LCA) to identify each patient segments based on detailed information on their use of hospital services.Then we described the resultant patient types in terms of their characteristics.Finally, we exploit the availability of hospital data in the post-survey period to test the relevance of the patient types in order to optimize the future hospital utilisation.
+
+
+\textbf{keyword}: GM (1,1)-Markov; TOPSIS; LCA; queuing model;%xxx speed; finite element method; 
 \newpage
 
 %====================Ŀ¼ҳ========================================
@@ -158,6 +162,7 @@ The task four ask us to analyse the complex cooperation and competition between 
 	\hline
 	symbols&definitions\\
 	\hline
+
 		$X^{(i)}$  & People time series  \\ 
 $a$  &  Developing grayscale \\ 
 $u$  &  Endogenous control gray\\
@@ -180,6 +185,16 @@ $d_{i}$ & Attribute decision vector\\
 $ f_{i}^{*}$ &  Comprehensive evaluation index\\
 $ \delta_{i}$ & Incidence growth rate \\
 $ \eta_{i}$    & Morbidity and mortality \\
+	$C$ &  amount of doctors \\	
+	$\lambda$ &  average arrival rate\\
+	$\mu$ &  average inspection rate\\
+	$P_{n}$ & probability of number of people reach $n$\\
+	$W_{q}$ & average waiting time\\
+	$W_{s}$ & average time of stay\\
+	$L_{s}$ & average length of queuing\\
+	$Z$ & social cost\\
+	$c_{s}$ & cost of each doctor\\
+	$c_{w}$ & cost of waiting\\
 
 	\hline
 \end{tabular}
@@ -750,7 +765,7 @@ This is for your reference only.
 \item Effective coefficient of restitution can not be calculated accurately.This affect the accuracy of the result of the model.
 \end{enumerate}
 
-\section{Conclusion}
+%\section{Conclusion}
 %========================Bibtex
 \newpage
 	\nocite{*}		%??????????

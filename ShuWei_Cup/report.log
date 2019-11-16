@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  16 NOV 2019 19:05
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.8)  16 NOV 2019 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,15 +433,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
 (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -453,35 +444,33 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 \openout5 = `report.toc'.
 
  [0] [1] [2] [3]
-Overfull \hbox (21.296pt too wide) in paragraph at lines 233--234
+Overfull \hbox (21.296pt too wide) in paragraph at lines 248--249
 []\TU/lmr/m/n/12 Similarly, the death number is taken as the vector $\OML/cmm/m
 /it/12 X[] \OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 (1)\OML/cmm/m
 /it/12 ; x[]\OT1/cmr/m/n/12 (2)\OML/cmm/m/it/12 ; []  ; x[]\OT1/cmr/m/n/12 (10)
 ]$
  []
 
-[4] [5]
-Overfull \hbox (23.60742pt too wide) in paragraph at lines 326--344
+[4] [5] [6]
+Overfull \hbox (23.60742pt too wide) in paragraph at lines 341--359
  [][] 
  []
 
-[6]
 File: pic/Figure_1.png Graphic file (type bmp)
 <pic/Figure_1.png>
 
+LaTeX Warning: Reference `Hss' on page 7 undefined on input line 402.
 
-LaTeX Warning: Reference `Hss' on page 7 undefined on input line 387.
 
-
-Overfull \hbox (23.60742pt too wide) in paragraph at lines 390--408
+Overfull \hbox (23.60742pt too wide) in paragraph at lines 405--423
  [][] 
  []
 
 [7]
 File: pic/Figure_2.png Graphic file (type bmp)
 <pic/Figure_2.png>
- [8]
-Overfull \hbox (7.37871pt too wide) in paragraph at lines 471--472
+ [8] [9]
+Overfull \hbox (7.37871pt too wide) in paragraph at lines 486--487
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; []  ; \
 OT1/cmr/m/n/12 13)$ \TU/lmr/m/n/12 into the forecasting results $\OML/cmm/m/it/
 12 X[] \OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 x[]; x[]; x[]; x[]; x[]; x[]\OT1/cmr
@@ -489,40 +478,46 @@ OT1/cmr/m/n/12 13)$ \TU/lmr/m/n/12 into the forecasting results $\OML/cmm/m/it/
 /12 2\OML/cmm/m/it/12 ; []  ; \OT1/cmr/m/n/12 13)$\TU/lmr/m/n/12 . 
  []
 
-[9] [10]
-Overfull \hbox (10.14732pt too wide) in paragraph at lines 551--625
+[10]
+Overfull \hbox (10.14732pt too wide) in paragraph at lines 566--640
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
 File: pic/Figure_3.png Graphic file (type bmp)
 <pic/Figure_3.png>
-[11]
+[12]
 File: pic/Figure_4.png Graphic file (type bmp)
 <pic/Figure_4.png>
- [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 726--728
+ [13] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 741--743
 
  []
 
-[16] [17] [18] 
+[17] [18] [19] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 786.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 786.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 801.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 801.
 (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 786.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 786.
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 33F9CF3528431CCEBB8565DDEB4676E5.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 801.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 801.
 
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: 33F9CF3528431CCEBB8565DDEB4676E5
+(rerunfilecheck)             After:  1D05777B4533968AE20D66326B908128.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 786.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 801.
  ) 
 Here is how much of TeX's memory you used:
  9918 strings out of 494857
@@ -531,6 +526,6 @@ Here is how much of TeX's memory you used:
  13745 multiletter control sequences out of 15000+600000
  8749 words of font info for 46 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 28i,23n,45p,1548b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,23n,45p,1548b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (20 pages).
+Output written on report.pdf (21 pages).
