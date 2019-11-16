@@ -125,10 +125,10 @@ According to the relevant data from 2009 to 2018 in the National Bureau of stati
 \paragraph{Analysis of task two}
 
 \paragraph{Analysis of task three} 
-The question three ask us to propose a common queuing theory method and figure its related optimal queuing for this kind of queuing problem.Via refering to the operational mode of the real world hospital, we choose to adopt the $M/M/c/\infty$ model as the required theory. Then we acquire the hospital statistics and abstract the data into the parameter in model. Finally, to get the social cost to be lowest, we manage to find the optimized systems design for the queuing model.
+The task three ask us to propose a common queuing theory method and figure its related optimal queuing for this kind of queuing problem.Via refering to the operational mode of the real world hospital, we choose to adopt the $M/M/c/\infty$ model as the required theory. Then we acquire the hospital statistics and abstract the data into the parameter in model. Finally, to get the social cost to be lowest, we manage to find the optimized systems design for the queuing model.
 
 \paragraph{Analysis of task four}
-
+The task four ask us to analyse the complex cooperation and competition between private hospitals and public hospitals then propose the optimal cooperation and competition strategies among multiple hospitals. After refering to a deal of data and document, we are aware of that there exist complicated partnerships. Based on latent class analysis (LCA),we would provide the best strategies we come up with. 
 \paragraph{Analysis of task five}
 %=======================\input{Assumptions1}=====================================
 	\section{Symbol and Assumptions}
@@ -425,7 +425,37 @@ L(C^*)-L(C^*+1)\leqslant \frac{C_(s)}{C_(w)}\leqslant L(C^*-1)-L(C^*)
  \end{gather}
 Thus, we utilize the ergodic algorithm to obtain the value of $C^*$.
 \subsection{The model of Problem 4}
-
+	\subsubsection{Establishment of model}  
+ \paragraph{Latent class analysis (LCA)}
+we use latent class analysis (LCA) to identify distinct consumer segments in the hospital care markets based on detailed information on their use of hospital services. By examining the hospital utilisation pattern of each type, we assign putative names for all types. For indicators of hospital use, we consider not only the location and frequency of admissions, but also resource use during admissions, which reflects patient health. The indicators of resource use that we considered are the number of secondary procedures, which reflect the complexity of procedures for  example due to comorbidities, the length of stay and any record of emergency department  presentation. The resultant patient types are described in terms of their demographics and background characteristics, as well as variables that can be  manipulated such as income and lifestyle-related factors. And in the end, we exploit the availability of hospital data in the post-survey period to test the  relevance of the patient types in predicting future hospital utilisation. 
+ 
+ Let $Y_{i}=(Y_{i1},\cdots ,Y_{iM})$  denote patient's response to $M$ hospital indicator variables, where the possible values of $Y_{iM}$ are $1,\cdots ,r_{m}$. Let $L_{i}=1,2,\cdots ,n_{c}$be the latent type of patient. Where $n_{c}$ is the possible number of latent types.And let $X_{i}$ denote the covariates of patient $i$ that affects the market segmentation.The contribution by patient $i$ to the likelihood is:
+   
+ \begin{gather}\label{sda}
+ \text { (1) } P\left(Y_{i}=y | X_{i}=x\right)=\sum_{l=1}^{n_{c}} \gamma_{l}(x) \prod_{m=1}^{M} \prod_{k=1}^{r_{m}} \rho_{m k | l}^{I\left(y_{m}=k\right)}
+ \end{gather}
+ where $I(y_{m}=k)$ is an indicator function that is equal to $1$ if $y_{m}$ is equal to $k$ and $0$ otherwise. The parameters to estimate are the probability of membership in each latent
+ type, which is the gamma parameters, $\gamma$ , and the item-response probabilities conditional on
+ type membership, which is the rho parameter, $\beta$. The gamma parameter can be given by a
+ multinomial logit (MNL) model such as:
+ \begin{gather}
+ \gamma_{l}(x)=P\left(L_{i}=l | X_{i}=x\right)=\frac{\exp \left(x \beta_{l}\right)}{\sum_{j=1}^{n_{c}} \exp \left(x \beta_{j}\right)^{\prime}}
+ \end{gather}
+ where $\beta$ is the MNL coefficient.
+ 	\subsubsection{Solution of model}
+ 	From ~\ref{sda}~, we can see that the model will increase in size very quickly with $M$ and $r_{m}$. For example, a model with eight binary indicators would result in 28 or 256 cells. In our case, we have six hospital indicator variables which are a mix of continuous and count variables at many levels. Therefore, some grouping of the levels is needed. We base ours on the
+ 	inspection of the distribution of each indicator with the intention that each level represents
+ 	a distinct case of hospital use. 
+ 	
+ 	The next part of our analysis concerns the extent to which the identified patient types can
+ 	predict future demand for hospital services. The patient types are included as covariates, and the identifying	restriction is satisfied using lifestyle variables; lifestyles affect the probability of an admission but do not directly affect the choice between public or private hospital. We us	hospital data from a year after the survey date. Because only a few patients in our data were hospitalised for the same health problems again in the following year, for prospective	use, we consider both repeat procedures and the overall demand for any procedure.In this case, we find that private health insurance can lower the utilisation of public hospitals, thereby reducing the public health care burden. A reduction in health costs may	also be achieved through public policies that promote a general improvement in health to
+ 	reduce use of resources per admission. 
+ 	
+ 	As a consequence, the strategies is to moderate the private health insurance and encourage the private hospital to establish the outpatient department the public hospital have little of while improving the quality of service of private hospital.
+ 	  
+ 	
+  
+  
 %===========================  \section{Sensitivity Analysis}===============================
   \section{Sensitivity Analysis}
 

@@ -25,8 +25,11 @@
 \contentsline {subsubsection}{\numberline {4.3.2}Solution of model}{6}{subsubsection.4.3.2}% 
 \contentsline {paragraph}{Optimized systems design}{6}{section*.11}% 
 \contentsline {subsection}{\numberline {4.4}The model of Problem 4}{7}{subsection.4.4}% 
-\contentsline {section}{\numberline {5}Sensitivity Analysis}{7}{section.5}% 
-\contentsline {section}{\numberline {6}Strengths and Weaknesses}{7}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Strengths}{7}{subsection.6.1}% 
-\contentsline {subsection}{\numberline {6.2}Weaknesses}{7}{subsection.6.2}% 
-\contentsline {section}{\numberline {7}Conclusion}{8}{section.7}% 
+\contentsline {subsubsection}{\numberline {4.4.1}Establishment of model}{7}{subsubsection.4.4.1}% 
+\contentsline {paragraph}{Latent class analysis (LCA)}{7}{section*.12}% 
+\contentsline {subsubsection}{\numberline {4.4.2}Solution of model}{8}{subsubsection.4.4.2}% 
+\contentsline {section}{\numberline {5}Sensitivity Analysis}{9}{section.5}% 
+\contentsline {section}{\numberline {6}Strengths and Weaknesses}{9}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Strengths}{9}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Weaknesses}{9}{subsection.6.2}% 
+\contentsline {section}{\numberline {7}Conclusion}{9}{section.7}% 

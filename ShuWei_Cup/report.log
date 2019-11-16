@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  16 NOV 2019 12:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.17)  16 NOV 2019 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,55 +464,55 @@ Overfull \hbox (23.60742pt too wide) in paragraph at lines 353--371
 
 LaTeX Warning: Reference `asf' on page 5 undefined on input line 381.
 
-[5] [6] [7] [8]
-Overfull \hbox (54.01538pt too wide) in paragraph at lines 461--462
+[5] [6] [7] [8] [9]
+Overfull \hbox (54.01538pt too wide) in paragraph at lines 491--492
 []\TU/lmr/m/n/12 ???,???,???,???.??GM(1,1)?????????GM(1,1)????????????????[J].?
 ??????,2011,45(09):1075-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
 []\TU/lmr/m/n/12 Yuyan Cao. Failure Prognosis for Electro-Mechanical Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
 \TU/lmr/m/n/12 tuators Based on Improved SMO-SVR Method[A].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
 \TU/lmr/m/n/12 ?????????????????????????????????IEEE??????????.Proceedings of 2
 016
  []
 
 
-Underfull \hbox (badness 8189) in paragraph at lines 463--464
+Underfull \hbox (badness 8189) in paragraph at lines 493--494
 \TU/lmr/m/n/12 IEEE Chinese Guidance, Navigation and Control Conference (IEEE
  []
 
-[9] 
+[10] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 500.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 500.
 (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 500.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 500.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: DAEED1E512DEF1A42951F80642CC05F6.
+(rerunfilecheck)             Checksum: 07B68FDF84FBF4452562EEC180B8C179.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 500.
  ) 
 Here is how much of TeX's memory you used:
- 9826 strings out of 492922
- 134842 string characters out of 6136751
- 230876 words of memory out of 5000000
- 13792 multiletter control sequences out of 15000+600000
- 8733 words of font info for 44 fonts, out of 8000000 for 9000
+ 9834 strings out of 492922
+ 135031 string characters out of 6136751
+ 231121 words of memory out of 5000000
+ 13796 multiletter control sequences out of 15000+600000
+ 8749 words of font info for 46 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 29i,23n,45p,893b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,23n,45p,1078b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (11 pages).
+Output written on report.pdf (12 pages).
